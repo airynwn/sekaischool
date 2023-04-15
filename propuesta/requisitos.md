@@ -8,7 +8,7 @@
 | **Tipo**        | Técnico                |
 | **Complejidad** | Fácil         |
 | **Entrega**     | v1             |
-
+| **Incidencia**  | [1](https://github.com/airynwn/sekaischool/issues/1) |
 
 | **R2**     | **Código fuente**         |
 | --------------: | :------------------- |
@@ -17,7 +17,7 @@
 | **Tipo**        | Técnico                |
 | **Complejidad** | Fácil         |
 | **Entrega**     | v1             |
-
+| **Incidencia**  | [2](https://github.com/airynwn/sekaischool/issues/2) |
 
 | **R3**     | **Estilo del código**         |
 | --------------: | :------------------- |
@@ -26,7 +26,7 @@
 | **Tipo**        | Técnico                |
 | **Complejidad** | Fácil         |
 | **Entrega**     | v1             |
-
+| **Incidencia**  | [3](https://github.com/airynwn/sekaischool/issues/3) |
 
 | **R4**     | **Tres lanzamientos**         |
 | --------------: | :------------------- |
@@ -35,7 +35,7 @@
 | **Tipo**        | Técnico                |
 | **Complejidad** | Fácil         |
 | **Entrega**     | v1             |
-
+| **Incidencia**  | [4](https://github.com/airynwn/sekaischool/issues/4) |
 
 | **R5**     | **README.md**         |
 | --------------: | :------------------- |
@@ -44,7 +44,7 @@
 | **Tipo**        | Técnico                |
 | **Complejidad** | Fácil         |
 | **Entrega**     | v1             |
-
+| **Incidencia**  | [5](https://github.com/airynwn/sekaischool/issues/5) |
 
 | **R6**     | **Documentación**         |
 | --------------: | :------------------- |
@@ -53,7 +53,7 @@
 | **Tipo**        | Técnico                |
 | **Complejidad** | Fácil         |
 | **Entrega**     | v1             |
-
+| **Incidencia**  | [6](https://github.com/airynwn/sekaischool/issues/6) |
 
 | **R7**     | **Incidencias en GitHub**         |
 | --------------: | :------------------- |
@@ -62,7 +62,7 @@
 | **Tipo**        | Técnico                |
 | **Complejidad** | Fácil         |
 | **Entrega**     | v1             |
-
+| **Incidencia**  | [7](https://github.com/airynwn/sekaischool/issues/7) |
 
 | **R8**     | **Etiquetas e hitos**         |
 | --------------: | :------------------- |
@@ -71,7 +71,7 @@
 | **Tipo**        | Técnico                |
 | **Complejidad** | Fácil         |
 | **Entrega**     | v1             |
-
+| **Incidencia**  | [8](https://github.com/airynwn/sekaischool/issues/8) |
 
 | **R9**     | **Rama master**         |
 | --------------: | :------------------- |
@@ -80,7 +80,7 @@
 | **Tipo**        | Técnico                |
 | **Complejidad** | Fácil         |
 | **Entrega**     | v1             |
-
+| **Incidencia**  | [9](https://github.com/airynwn/sekaischool/issues/9) |
 
 | **R10**     | **Gestión del proyecto**         |
 | --------------: | :------------------- |
@@ -89,7 +89,7 @@
 | **Tipo**        | Técnico                |
 | **Complejidad** | Fácil         |
 | **Entrega**     | v1             |
-
+| **Incidencia**  | [10](https://github.com/airynwn/sekaischool/issues/10) |
 
 | **R11**     | **Final de cada iteración**         |
 | --------------: | :------------------- |
@@ -98,7 +98,7 @@
 | **Tipo**        | Técnico                |
 | **Complejidad** | Fácil         |
 | **Entrega**     | v1             |
-
+| **Incidencia**  | [11](https://github.com/airynwn/sekaischool/issues/11) |
 
 | **R12**     | **Validación de formularios**         |
 | --------------: | :------------------- |
@@ -107,7 +107,7 @@
 | **Tipo**        | Técnico                |
 | **Complejidad** | Fácil         |
 | **Entrega**     | v1             |
-
+| **Incidencia**  | [12](https://github.com/airynwn/sekaischool/issues/12) |
 
 | **R13**     | **Gestión de ventanas**         |
 | --------------: | :------------------- |
@@ -116,7 +116,7 @@
 | **Tipo**        | Técnico                |
 | **Complejidad** | Fácil         |
 | **Entrega**     | v1             |
-
+| **Incidencia**  | [13](https://github.com/airynwn/sekaischool/issues/13) |
 
 | **R14**     | **Manejo de eventos**         |
 | --------------: | :------------------- |
@@ -125,7 +125,7 @@
 | **Tipo**        | Técnico                |
 | **Complejidad** | Fácil         |
 | **Entrega**     | v1             |
-
+| **Incidencia**  | [14](https://github.com/airynwn/sekaischool/issues/14) |
 
 | **R15**     | **DOM**         |
 | --------------: | :------------------- |
@@ -134,7 +134,7 @@
 | **Tipo**        | Técnico                |
 | **Complejidad** | Fácil         |
 | **Entrega**     | v1             |
-
+| **Incidencia**  | [15](https://github.com/airynwn/sekaischool/issues/15) |
 
 | **R16**     | **Almacenamiento en el lado del cliente**         |
 | --------------: | :------------------- |
@@ -143,7 +143,7 @@
 | **Tipo**        | Técnico                |
 | **Complejidad** | Fácil         |
 | **Entrega**     | v1             |
-
+| **Incidencia**  | [16](https://github.com/airynwn/sekaischool/issues/16) |
 
 | **R17**     | **Alpine.js**         |
 | --------------: | :------------------- |
@@ -152,7 +152,7 @@
 | **Tipo**        | Técnico                |
 | **Complejidad** | Fácil         |
 | **Entrega**     | v1             |
-
+| **Incidencia**  | [17](https://github.com/airynwn/sekaischool/issues/17) |
 
 | **R18**     | **Utilización de AJAX**         |
 | --------------: | :------------------- |
@@ -161,7 +161,7 @@
 | **Tipo**        | Técnico                |
 | **Complejidad** | Fácil         |
 | **Entrega**     | v1             |
-
+| **Incidencia**  | [18](https://github.com/airynwn/sekaischool/issues/18) |
 
 | **R19**     | **ECMAScript2015 (ES6)**         |
 | --------------: | :------------------- |
@@ -170,7 +170,7 @@
 | **Tipo**        | Técnico                |
 | **Complejidad** | Fácil         |
 | **Entrega**     | v1             |
-
+| **Incidencia**  | [19](https://github.com/airynwn/sekaischool/issues/19) |
 
 | **R20**     | **PHP**         |
 | --------------: | :------------------- |
@@ -179,7 +179,7 @@
 | **Tipo**        | Técnico                |
 | **Complejidad** | Fácil         |
 | **Entrega**     | v1             |
-
+| **Incidencia**  | [20](https://github.com/airynwn/sekaischool/issues/20) |
 
 | **R21**     | **Laravel Framework**         |
 | --------------: | :------------------- |
@@ -188,7 +188,7 @@
 | **Tipo**        | Técnico                |
 | **Complejidad** | Fácil         |
 | **Entrega**     | v1             |
-
+| **Incidencia**  | [21](https://github.com/airynwn/sekaischool/issues/21) |
 
 | **R22**     | **PostgreSQL**         |
 | --------------: | :------------------- |
@@ -197,7 +197,7 @@
 | **Tipo**        | Técnico                |
 | **Complejidad** | Fácil         |
 | **Entrega**     | v1             |
-
+| **Incidencia**  | [22](https://github.com/airynwn/sekaischool/issues/22) |
 
 | **R23**     | **Cloud computing**         |
 | --------------: | :------------------- |
@@ -206,7 +206,7 @@
 | **Tipo**        | Técnico                |
 | **Complejidad** | Fácil         |
 | **Entrega**     | v1             |
-
+| **Incidencia**  | [23](https://github.com/airynwn/sekaischool/issues/23) |
 
 | **R24**     | **Pruebas funcionales**         |
 | --------------: | :------------------- |
@@ -215,7 +215,7 @@
 | **Tipo**        | Técnico                |
 | **Complejidad** | Fácil         |
 | **Entrega**     | v1             |
-
+| **Incidencia**  | [24](https://github.com/airynwn/sekaischool/issues/24) |
 
 | **R25**     | **Aplicación escalable**         |
 | --------------: | :------------------- |
@@ -224,7 +224,7 @@
 | **Tipo**        | Técnico                |
 | **Complejidad** | Fácil         |
 | **Entrega**     | v1             |
-
+| **Incidencia**  | [25](https://github.com/airynwn/sekaischool/issues/25) |
 
 | **R26**     | **Etiquetas semánticas de HTML5**         |
 | --------------: | :------------------- |
@@ -233,7 +233,7 @@
 | **Tipo**        | Técnico                |
 | **Complejidad** | Fácil         |
 | **Entrega**     | v1             |
-
+| **Incidencia**  | [26](https://github.com/airynwn/sekaischool/issues/26) |
 
 | **R27**     | **Presentación mediante CSS**         |
 | --------------: | :------------------- |
@@ -242,7 +242,7 @@
 | **Tipo**        | Técnico                |
 | **Complejidad** | Fácil         |
 | **Entrega**     | v1             |
-
+| **Incidencia**  | [27](https://github.com/airynwn/sekaischool/issues/27) |
 
 | **R28**     | **Diseño flexible**         |
 | --------------: | :------------------- |
@@ -251,7 +251,7 @@
 | **Tipo**        | Técnico                |
 | **Complejidad** | Fácil         |
 | **Entrega**     | v1             |
-
+| **Incidencia**  | [28](https://github.com/airynwn/sekaischool/issues/28) |
 
 | **R29**     | **Transiciones, transformaciones, animaciones y contenido multimedia**         |
 | --------------: | :------------------- |
@@ -260,7 +260,7 @@
 | **Tipo**        | Técnico                |
 | **Complejidad** | Fácil         |
 | **Entrega**     | v1             |
-
+| **Incidencia**  | [29](https://github.com/airynwn/sekaischool/issues/29) |
 
 | **R30**     | **Validación HTML5, CSS3 y accesibilidad**         |
 | --------------: | :------------------- |
@@ -269,7 +269,7 @@
 | **Tipo**        | Técnico                |
 | **Complejidad** | Fácil         |
 | **Entrega**     | v1             |
-
+| **Incidencia**  | [30](https://github.com/airynwn/sekaischool/issues/30) |
 
 | **R31**     | **Diseño para varias resoluciones**         |
 | --------------: | :------------------- |
@@ -278,7 +278,7 @@
 | **Tipo**        | Técnico                |
 | **Complejidad** | Fácil         |
 | **Entrega**     | v1             |
-
+| **Incidencia**  | [31](https://github.com/airynwn/sekaischool/issues/31) |
 
 | **R32**     | **Varios navegadores**         |
 | --------------: | :------------------- |
@@ -287,7 +287,7 @@
 | **Tipo**        | Técnico                |
 | **Complejidad** | Fácil         |
 | **Entrega**     | v1             |
-
+| **Incidencia**  | [32](https://github.com/airynwn/sekaischool/issues/32) |
 
 | **R33**     | **Despliegue en un servidor local**         |
 | --------------: | :------------------- |
@@ -296,7 +296,7 @@
 | **Tipo**        | Técnico                |
 | **Complejidad** | Fácil         |
 | **Entrega**     | v1             |
-
+| **Incidencia**  | [33](https://github.com/airynwn/sekaischool/issues/33) |
 
 | **R34**     | **Acceso desde Cliente Virtual**         |
 | --------------: | :------------------- |
@@ -305,7 +305,7 @@
 | **Tipo**        | Técnico                |
 | **Complejidad** | Fácil         |
 | **Entrega**     | v1             |
-
+| **Incidencia**  | [34](https://github.com/airynwn/sekaischool/issues/34) |
 
 | **R35**     | **Registro**         |
 | --------------: | :------------------- |
@@ -314,7 +314,7 @@
 | **Tipo**        | Funcional                |
 | **Complejidad** | Fácil         |
 | **Entrega**     | v1             |
-
+| **Incidencia**  | [35](https://github.com/airynwn/sekaischool/issues/35) |
 
 | **R36**     | **Iniciar sesión**         |
 | --------------: | :------------------- |
@@ -323,7 +323,7 @@
 | **Tipo**        | Funcional                |
 | **Complejidad** | Fácil         |
 | **Entrega**     | v1             |
-
+| **Incidencia**  | [36](https://github.com/airynwn/sekaischool/issues/36) |
 
 | **R37**     | **Portal de administración**         |
 | --------------: | :------------------- |
@@ -332,7 +332,7 @@
 | **Tipo**        | Funcional                |
 | **Complejidad** | Fácil         |
 | **Entrega**     | v1             |
-
+| **Incidencia**  | [37](https://github.com/airynwn/sekaischool/issues/37) |
 
 | **R38**     | **Añadir cartas**         |
 | --------------: | :------------------- |
@@ -341,7 +341,7 @@
 | **Tipo**        | Funcional                |
 | **Complejidad** | Fácil         |
 | **Entrega**     | v1             |
-
+| **Incidencia**  | [38](https://github.com/airynwn/sekaischool/issues/38) |
 
 | **R39**     | **Modificar cartas**         |
 | --------------: | :------------------- |
@@ -350,7 +350,7 @@
 | **Tipo**        | Funcional                |
 | **Complejidad** | Fácil         |
 | **Entrega**     | v1             |
-
+| **Incidencia**  | [39](https://github.com/airynwn/sekaischool/issues/39) |
 
 | **R40**     | **Eliminar cartas**         |
 | --------------: | :------------------- |
@@ -359,7 +359,7 @@
 | **Tipo**        | Funcional                |
 | **Complejidad** | Fácil         |
 | **Entrega**     | v1             |
-
+| **Incidencia**  | [40](https://github.com/airynwn/sekaischool/issues/40) |
 
 | **R41**     | **Añadir personajes**         |
 | --------------: | :------------------- |
@@ -368,7 +368,7 @@
 | **Tipo**        | Funcional                |
 | **Complejidad** | Fácil         |
 | **Entrega**     | v1             |
-
+| **Incidencia**  | [41](https://github.com/airynwn/sekaischool/issues/41) |
 
 | **R42**     | **Modificar personajes**         |
 | --------------: | :------------------- |
@@ -377,7 +377,7 @@
 | **Tipo**        | Funcional                |
 | **Complejidad** | Fácil         |
 | **Entrega**     | v1             |
-
+| **Incidencia**  | [42](https://github.com/airynwn/sekaischool/issues/42) |
 
 | **R43**     | **Eliminar personajes**         |
 | --------------: | :------------------- |
@@ -386,7 +386,7 @@
 | **Tipo**        | Funcional                |
 | **Complejidad** | Fácil         |
 | **Entrega**     | v1             |
-
+| **Incidencia**  | [43](https://github.com/airynwn/sekaischool/issues/43) |
 
 | **R44**     | **Añadir grupos**         |
 | --------------: | :------------------- |
@@ -395,7 +395,7 @@
 | **Tipo**        | Funcional                |
 | **Complejidad** | Fácil         |
 | **Entrega**     | v1             |
-
+| **Incidencia**  | [44](https://github.com/airynwn/sekaischool/issues/44) |
 
 | **R45**     | **Modificar grupos**         |
 | --------------: | :------------------- |
@@ -404,7 +404,7 @@
 | **Tipo**        | Funcional                |
 | **Complejidad** | Fácil         |
 | **Entrega**     | v1             |
-
+| **Incidencia**  | [45](https://github.com/airynwn/sekaischool/issues/45) |
 
 | **R46**     | **Eliminar grupos**         |
 | --------------: | :------------------- |
@@ -413,7 +413,7 @@
 | **Tipo**        | Funcional                |
 | **Complejidad** | Fácil         |
 | **Entrega**     | v1             |
-
+| **Incidencia**  | [46](https://github.com/airynwn/sekaischool/issues/46) |
 
 | **R47**     | **Validar usuario**         |
 | --------------: | :------------------- |
@@ -422,7 +422,7 @@
 | **Tipo**        | Funcional                |
 | **Complejidad** | Fácil         |
 | **Entrega**     | v1             |
-
+| **Incidencia**  | [47](https://github.com/airynwn/sekaischool/issues/47) |
 
 | **R48**     | **Bloquear usuario**         |
 | --------------: | :------------------- |
@@ -431,7 +431,7 @@
 | **Tipo**        | Funcional                |
 | **Complejidad** | Fácil         |
 | **Entrega**     | v1             |
-
+| **Incidencia**  | [48](https://github.com/airynwn/sekaischool/issues/48) |
 
 | **R49**     | **Añadir carta al perfil**         |
 | --------------: | :------------------- |
@@ -440,7 +440,7 @@
 | **Tipo**        | Funcional                |
 | **Complejidad** | Fácil         |
 | **Entrega**     | v1             |
-
+| **Incidencia**  | [49](https://github.com/airynwn/sekaischool/issues/49) |
 
 | **R50**     | **Eliminar carta del perfil**         |
 | --------------: | :------------------- |
@@ -449,7 +449,7 @@
 | **Tipo**        | Funcional                |
 | **Complejidad** | Fácil         |
 | **Entrega**     | v1             |
-
+| **Incidencia**  | [50](https://github.com/airynwn/sekaischool/issues/50) |
 
 | **R51**     | **Modificar datos personales**         |
 | --------------: | :------------------- |
@@ -458,7 +458,7 @@
 | **Tipo**        | Funcional                |
 | **Complejidad** | Fácil         |
 | **Entrega**     | v2             |
-
+| **Incidencia**  | [51](https://github.com/airynwn/sekaischool/issues/51) |
 
 | **R52**     | **Personalizar perfil**         |
 | --------------: | :------------------- |
@@ -467,7 +467,7 @@
 | **Tipo**        | Funcional                |
 | **Complejidad** | Fácil         |
 | **Entrega**     | v2             |
-
+| **Incidencia**  | [52](https://github.com/airynwn/sekaischool/issues/52) |
 
 | **R53**     | **Obtener PDF del perfil**         |
 | --------------: | :------------------- |
@@ -476,7 +476,7 @@
 | **Tipo**        | Funcional                |
 | **Complejidad** | Media         |
 | **Entrega**     | v3             |
-
+| **Incidencia**  | [53](https://github.com/airynwn/sekaischool/issues/53) |
 
 | **R54**     | **Crear publicaciones**         |
 | --------------: | :------------------- |
@@ -485,7 +485,7 @@
 | **Tipo**        | Funcional                |
 | **Complejidad** | Fácil         |
 | **Entrega**     | v1             |
-
+| **Incidencia**  | [54](https://github.com/airynwn/sekaischool/issues/54) |
 
 | **R55**     | **Eliminar publicaciones**         |
 | --------------: | :------------------- |
@@ -494,7 +494,7 @@
 | **Tipo**        | Funcional                |
 | **Complejidad** | Fácil         |
 | **Entrega**     | v1             |
-
+| **Incidencia**  | [55](https://github.com/airynwn/sekaischool/issues/55) |
 
 | **R56**     | **Valorar publicaciones**         |
 | --------------: | :------------------- |
@@ -503,7 +503,7 @@
 | **Tipo**        | Funcional                |
 | **Complejidad** | Fácil         |
 | **Entrega**     | v1             |
-
+| **Incidencia**  | [56](https://github.com/airynwn/sekaischool/issues/56) |
 
 | **R57**     | **Filtro de búsqueda de publicaciones**         |
 | --------------: | :------------------- |
@@ -512,7 +512,7 @@
 | **Tipo**        | Funcional                |
 | **Complejidad** | Media         |
 | **Entrega**     | v1             |
-
+| **Incidencia**  | [57](https://github.com/airynwn/sekaischool/issues/57) |
 
 | **R58**     | **Clasificación de usuarios**         |
 | --------------: | :------------------- |
@@ -521,7 +521,7 @@
 | **Tipo**        | Funcional                |
 | **Complejidad** | Fácil         |
 | **Entrega**     | v2             |
-
+| **Incidencia**  | [58](https://github.com/airynwn/sekaischool/issues/58) |
 
 | **R59**     | **Grupos**         |
 | --------------: | :------------------- |
@@ -530,7 +530,7 @@
 | **Tipo**        | Funcional                |
 | **Complejidad** | Difícil         |
 | **Entrega**     | v2             |
-
+| **Incidencia**  | [59](https://github.com/airynwn/sekaischool/issues/59) |
 
 | **R60**     | **Personajes**         |
 | --------------: | :------------------- |
@@ -539,7 +539,7 @@
 | **Tipo**        | Funcional                |
 | **Complejidad** | Difícil         |
 | **Entrega**     | v2             |
-
+| **Incidencia**  | [60](https://github.com/airynwn/sekaischool/issues/60) |
 
 | **R61**     | **Relaciones entre personajes**         |
 | --------------: | :------------------- |
@@ -548,7 +548,7 @@
 | **Tipo**        | Funcional                |
 | **Complejidad** | Media         |
 | **Entrega**     | v2             |
-
+| **Incidencia**  | [61](https://github.com/airynwn/sekaischool/issues/61) |
 
 | **R62**     | **Carrusel de viñetas**         |
 | --------------: | :------------------- |
@@ -557,7 +557,7 @@
 | **Tipo**        | Funcional                |
 | **Complejidad** | Media         |
 | **Entrega**     | v2             |
-
+| **Incidencia**  | [62](https://github.com/airynwn/sekaischool/issues/62) |
 
 | **R63**     | **Lista de cartas**         |
 | --------------: | :------------------- |
@@ -566,7 +566,7 @@
 | **Tipo**        | Funcional                |
 | **Complejidad** | Fácil         |
 | **Entrega**     | v1             |
-
+| **Incidencia**  | [63](https://github.com/airynwn/sekaischool/issues/63) |
 
 | **R64**     | **Filtro de búsqueda de cartas**         |
 | --------------: | :------------------- |
@@ -575,7 +575,7 @@
 | **Tipo**        | Funcional                |
 | **Complejidad** | Media         |
 | **Entrega**     | v2             |
-
+| **Incidencia**  | [64](https://github.com/airynwn/sekaischool/issues/64) |
 
 | **R65**     | **Calendario**         |
 | --------------: | :------------------- |
@@ -584,7 +584,7 @@
 | **Tipo**        | Funcional                |
 | **Complejidad** | Difícil         |
 | **Entrega**     | v3             |
-
+| **Incidencia**  | [65](https://github.com/airynwn/sekaischool/issues/65) |
 
 | **R66**     | **Logo**         |
 | --------------: | :------------------- |
@@ -593,7 +593,7 @@
 | **Tipo**        | Técnico                |
 | **Complejidad** | Fácil         |
 | **Entrega**     | v3             |
-
+| **Incidencia**  | [66](https://github.com/airynwn/sekaischool/issues/66) |
 
 | **R67**     | **Base de datos**         |
 | --------------: | :------------------- |
@@ -602,7 +602,7 @@
 | **Tipo**        | Técnico                |
 | **Complejidad** | Fácil         |
 | **Entrega**     | v1             |
-
+| **Incidencia**  | [67](https://github.com/airynwn/sekaischool/issues/67) |
 
 | **R68**     | **Modelo entidad-relación**         |
 | --------------: | :------------------- |
@@ -611,7 +611,7 @@
 | **Tipo**        | Técnico                |
 | **Complejidad** | Fácil         |
 | **Entrega**     | v1             |
-
+| **Incidencia**  | [68](https://github.com/airynwn/sekaischool/issues/68) |
 
 | **R69**     | **Rutas**         |
 | --------------: | :------------------- |
@@ -620,7 +620,7 @@
 | **Tipo**        | Técnico                |
 | **Complejidad** | Fácil         |
 | **Entrega**     | v1             |
-
+| **Incidencia**  | [69](https://github.com/airynwn/sekaischool/issues/69) |
 
 | **R70**     | **Carrusel de noticias**         |
 | --------------: | :------------------- |
@@ -629,7 +629,7 @@
 | **Tipo**        | Funcional                |
 | **Complejidad** | Fácil         |
 | **Entrega**     | v2             |
-
+| **Incidencia**  | [70](https://github.com/airynwn/sekaischool/issues/70) |
 
 | **R71**     | **Integración con Google Calendar**         |
 | --------------: | :------------------- |
@@ -638,7 +638,7 @@
 | **Tipo**        | Funcional                |
 | **Complejidad** | Difícil         |
 | **Entrega**     | v3             |
-
+| **Incidencia**  | [71](https://github.com/airynwn/sekaischool/issues/71) |
 
 | **R72**     | **Adivinar la canción**         |
 | --------------: | :------------------- |
@@ -647,7 +647,7 @@
 | **Tipo**        | Funcional                |
 | **Complejidad** | Difícil         |
 | **Entrega**     | v3             |
-
+| **Incidencia**  | [72](https://github.com/airynwn/sekaischool/issues/72) |
 
 | **R73**     | **Simulador de gacha**         |
 | --------------: | :------------------- |
@@ -656,83 +656,83 @@
 | **Tipo**        | Funcional                |
 | **Complejidad** | Difícil         |
 | **Entrega**     | v3             |
-
+| **Incidencia**  | [73](https://github.com/airynwn/sekaischool/issues/73) |
 
 
 ## Cuadro resumen
 
-| **Requisito** | **Prioridad** | **Tipo** | **Complejidad** | **Entrega** |
-| :------------ | :-----------: | :------: | :-------------: | :---------: |
-| (**R1**) Requisitos como incidencias | Mínimo | Técnico | Fácil | v1 | 
-| (**R2**) Código fuente | Mínimo | Técnico | Fácil | v1 | 
-| (**R3**) Estilo del código | Mínimo | Técnico | Fácil | v1 | 
-| (**R4**) Tres lanzamientos | Mínimo | Técnico | Fácil | v1 | 
-| (**R5**) README.md | Mínimo | Técnico | Fácil | v1 | 
-| (**R6**) Documentación | Mínimo | Técnico | Fácil | v1 | 
-| (**R7**) Incidencias en GitHub | Mínimo | Técnico | Fácil | v1 | 
-| (**R8**) Etiquetas e hitos | Mínimo | Técnico | Fácil | v1 | 
-| (**R9**) Rama master | Mínimo | Técnico | Fácil | v1 | 
-| (**R10**) Gestión del proyecto | Mínimo | Técnico | Fácil | v1 | 
-| (**R11**) Final de cada iteración | Mínimo | Técnico | Fácil | v1 | 
-| (**R12**) Validación de formularios | Mínimo | Técnico | Fácil | v1 | 
-| (**R13**) Gestión de ventanas | Mínimo | Técnico | Fácil | v1 | 
-| (**R14**) Manejo de eventos | Mínimo | Técnico | Fácil | v1 | 
-| (**R15**) DOM | Mínimo | Técnico | Fácil | v1 | 
-| (**R16**) Almacenamiento en el lado del cliente | Mínimo | Técnico | Fácil | v1 | 
-| (**R17**) Alpine.js | Mínimo | Técnico | Fácil | v1 | 
-| (**R18**) Utilización de AJAX | Mínimo | Técnico | Fácil | v1 | 
-| (**R19**) ECMAScript2015 (ES6) | Mínimo | Técnico | Fácil | v1 | 
-| (**R20**) PHP | Mínimo | Técnico | Fácil | v1 | 
-| (**R21**) Laravel Framework | Mínimo | Técnico | Fácil | v1 | 
-| (**R22**) PostgreSQL | Mínimo | Técnico | Fácil | v1 | 
-| (**R23**) Cloud computing | Mínimo | Técnico | Fácil | v1 | 
-| (**R24**) Pruebas funcionales | Mínimo | Técnico | Fácil | v1 | 
-| (**R25**) Aplicación escalable | Mínimo | Técnico | Fácil | v1 | 
-| (**R26**) Etiquetas semánticas de HTML5 | Mínimo | Técnico | Fácil | v1 | 
-| (**R27**) Presentación mediante CSS | Mínimo | Técnico | Fácil | v1 | 
-| (**R28**) Diseño flexible | Mínimo | Técnico | Fácil | v1 | 
-| (**R29**) Transiciones, transformaciones, animaciones y contenido multimedia | Mínimo | Técnico | Fácil | v1 | 
-| (**R30**) Validación HTML5, CSS3 y accesibilidad | Mínimo | Técnico | Fácil | v1 | 
-| (**R31**) Diseño para varias resoluciones | Mínimo | Técnico | Fácil | v1 | 
-| (**R32**) Varios navegadores | Mínimo | Técnico | Fácil | v1 | 
-| (**R33**) Despliegue en un servidor local | Mínimo | Técnico | Fácil | v1 | 
-| (**R34**) Acceso desde Cliente Virtual | Mínimo | Técnico | Fácil | v1 | 
-| (**R35**) Registro | Importante | Funcional | Fácil | v1 | 
-| (**R36**) Iniciar sesión | Importante | Funcional | Fácil | v1 | 
-| (**R37**) Portal de administración | Importante | Funcional | Fácil | v1 | 
-| (**R38**) Añadir cartas | Importante | Funcional | Fácil | v1 | 
-| (**R39**) Modificar cartas | Importante | Funcional | Fácil | v1 | 
-| (**R40**) Eliminar cartas | Importante | Funcional | Fácil | v1 | 
-| (**R41**) Añadir personajes | Importante | Funcional | Fácil | v1 | 
-| (**R42**) Modificar personajes | Importante | Funcional | Fácil | v1 | 
-| (**R43**) Eliminar personajes | Importante | Funcional | Fácil | v1 | 
-| (**R44**) Añadir grupos | Importante | Funcional | Fácil | v1 | 
-| (**R45**) Modificar grupos | Importante | Funcional | Fácil | v1 | 
-| (**R46**) Eliminar grupos | Importante | Funcional | Fácil | v1 | 
-| (**R47**) Validar usuario | Importante | Funcional | Fácil | v1 | 
-| (**R48**) Bloquear usuario | Importante | Funcional | Fácil | v1 | 
-| (**R49**) Añadir carta al perfil | Importante | Funcional | Fácil | v1 | 
-| (**R50**) Eliminar carta del perfil | Importante | Funcional | Fácil | v1 | 
-| (**R51**) Modificar datos personales | Importante | Funcional | Fácil | v2 | 
-| (**R52**) Personalizar perfil | Importante | Funcional | Fácil | v2 | 
-| (**R53**) Obtener PDF del perfil | Importante | Funcional | Media | v3 | 
-| (**R54**) Crear publicaciones | Importante | Funcional | Fácil | v1 | 
-| (**R55**) Eliminar publicaciones | Importante | Funcional | Fácil | v1 | 
-| (**R56**) Valorar publicaciones | Importante | Funcional | Fácil | v1 | 
-| (**R57**) Filtro de búsqueda de publicaciones | Importante | Funcional | Media | v1 | 
-| (**R58**) Clasificación de usuarios | Importante | Funcional | Fácil | v2 | 
-| (**R59**) Grupos | Importante | Funcional | Difícil | v2 | 
-| (**R60**) Personajes | Importante | Funcional | Difícil | v2 | 
-| (**R61**) Relaciones entre personajes | Importante | Funcional | Media | v2 | 
-| (**R62**) Carrusel de viñetas | Opcional | Funcional | Media | v2 | 
-| (**R63**) Lista de cartas | Importante | Funcional | Fácil | v1 | 
-| (**R64**) Filtro de búsqueda de cartas | Importante | Funcional | Media | v2 | 
-| (**R65**) Calendario | Importante | Funcional | Difícil | v3 | 
-| (**R66**) Logo | Importante | Técnico | Fácil | v3 | 
-| (**R67**) Base de datos | Importante | Técnico | Fácil | v1 | 
-| (**R68**) Modelo entidad-relación | Importante | Técnico | Fácil | v1 | 
-| (**R69**) Rutas | Importante | Técnico | Fácil | v1 | 
-| (**R70**) Carrusel de noticias | Opcional | Funcional | Fácil | v2 | 
-| (**R71**) Integración con Google Calendar | Opcional | Funcional | Difícil | v3 | 
-| (**R72**) Adivinar la canción | Importante | Funcional | Difícil | v3 | 
-| (**R73**) Simulador de gacha | Importante | Funcional | Difícil | v3 | 
+| **Requisito** | **Prioridad** | **Tipo** | **Complejidad** | **Entrega** | **Incidencia** |
+| :------------ | :-----------: | :------: | :-------------: | :---------: | :------------: |
+| (**R1**) Requisitos como incidencias | Mínimo | Técnico | Fácil | v1 | | **Incidencia**  | [1](https://github.com/airynwn/sekaischool/issues/1) |
+| (**R2**) Código fuente | Mínimo | Técnico | Fácil | v1 | | **Incidencia**  | [2](https://github.com/airynwn/sekaischool/issues/2) |
+| (**R3**) Estilo del código | Mínimo | Técnico | Fácil | v1 | | **Incidencia**  | [3](https://github.com/airynwn/sekaischool/issues/3) |
+| (**R4**) Tres lanzamientos | Mínimo | Técnico | Fácil | v1 | | **Incidencia**  | [4](https://github.com/airynwn/sekaischool/issues/4) |
+| (**R5**) README.md | Mínimo | Técnico | Fácil | v1 | | **Incidencia**  | [5](https://github.com/airynwn/sekaischool/issues/5) |
+| (**R6**) Documentación | Mínimo | Técnico | Fácil | v1 | | **Incidencia**  | [6](https://github.com/airynwn/sekaischool/issues/6) |
+| (**R7**) Incidencias en GitHub | Mínimo | Técnico | Fácil | v1 | | **Incidencia**  | [7](https://github.com/airynwn/sekaischool/issues/7) |
+| (**R8**) Etiquetas e hitos | Mínimo | Técnico | Fácil | v1 | | **Incidencia**  | [8](https://github.com/airynwn/sekaischool/issues/8) |
+| (**R9**) Rama master | Mínimo | Técnico | Fácil | v1 | | **Incidencia**  | [9](https://github.com/airynwn/sekaischool/issues/9) |
+| (**R10**) Gestión del proyecto | Mínimo | Técnico | Fácil | v1 | | **Incidencia**  | [10](https://github.com/airynwn/sekaischool/issues/10) |
+| (**R11**) Final de cada iteración | Mínimo | Técnico | Fácil | v1 | | **Incidencia**  | [11](https://github.com/airynwn/sekaischool/issues/11) |
+| (**R12**) Validación de formularios | Mínimo | Técnico | Fácil | v1 | | **Incidencia**  | [12](https://github.com/airynwn/sekaischool/issues/12) |
+| (**R13**) Gestión de ventanas | Mínimo | Técnico | Fácil | v1 | | **Incidencia**  | [13](https://github.com/airynwn/sekaischool/issues/13) |
+| (**R14**) Manejo de eventos | Mínimo | Técnico | Fácil | v1 | | **Incidencia**  | [14](https://github.com/airynwn/sekaischool/issues/14) |
+| (**R15**) DOM | Mínimo | Técnico | Fácil | v1 | | **Incidencia**  | [15](https://github.com/airynwn/sekaischool/issues/15) |
+| (**R16**) Almacenamiento en el lado del cliente | Mínimo | Técnico | Fácil | v1 | | **Incidencia**  | [16](https://github.com/airynwn/sekaischool/issues/16) |
+| (**R17**) Alpine.js | Mínimo | Técnico | Fácil | v1 | | **Incidencia**  | [17](https://github.com/airynwn/sekaischool/issues/17) |
+| (**R18**) Utilización de AJAX | Mínimo | Técnico | Fácil | v1 | | **Incidencia**  | [18](https://github.com/airynwn/sekaischool/issues/18) |
+| (**R19**) ECMAScript2015 (ES6) | Mínimo | Técnico | Fácil | v1 | | **Incidencia**  | [19](https://github.com/airynwn/sekaischool/issues/19) |
+| (**R20**) PHP | Mínimo | Técnico | Fácil | v1 | | **Incidencia**  | [20](https://github.com/airynwn/sekaischool/issues/20) |
+| (**R21**) Laravel Framework | Mínimo | Técnico | Fácil | v1 | | **Incidencia**  | [21](https://github.com/airynwn/sekaischool/issues/21) |
+| (**R22**) PostgreSQL | Mínimo | Técnico | Fácil | v1 | | **Incidencia**  | [22](https://github.com/airynwn/sekaischool/issues/22) |
+| (**R23**) Cloud computing | Mínimo | Técnico | Fácil | v1 | | **Incidencia**  | [23](https://github.com/airynwn/sekaischool/issues/23) |
+| (**R24**) Pruebas funcionales | Mínimo | Técnico | Fácil | v1 | | **Incidencia**  | [24](https://github.com/airynwn/sekaischool/issues/24) |
+| (**R25**) Aplicación escalable | Mínimo | Técnico | Fácil | v1 | | **Incidencia**  | [25](https://github.com/airynwn/sekaischool/issues/25) |
+| (**R26**) Etiquetas semánticas de HTML5 | Mínimo | Técnico | Fácil | v1 | | **Incidencia**  | [26](https://github.com/airynwn/sekaischool/issues/26) |
+| (**R27**) Presentación mediante CSS | Mínimo | Técnico | Fácil | v1 | | **Incidencia**  | [27](https://github.com/airynwn/sekaischool/issues/27) |
+| (**R28**) Diseño flexible | Mínimo | Técnico | Fácil | v1 | | **Incidencia**  | [28](https://github.com/airynwn/sekaischool/issues/28) |
+| (**R29**) Transiciones, transformaciones, animaciones y contenido multimedia | Mínimo | Técnico | Fácil | v1 | | **Incidencia**  | [29](https://github.com/airynwn/sekaischool/issues/29) |
+| (**R30**) Validación HTML5, CSS3 y accesibilidad | Mínimo | Técnico | Fácil | v1 | | **Incidencia**  | [30](https://github.com/airynwn/sekaischool/issues/30) |
+| (**R31**) Diseño para varias resoluciones | Mínimo | Técnico | Fácil | v1 | | **Incidencia**  | [31](https://github.com/airynwn/sekaischool/issues/31) |
+| (**R32**) Varios navegadores | Mínimo | Técnico | Fácil | v1 | | **Incidencia**  | [32](https://github.com/airynwn/sekaischool/issues/32) |
+| (**R33**) Despliegue en un servidor local | Mínimo | Técnico | Fácil | v1 | | **Incidencia**  | [33](https://github.com/airynwn/sekaischool/issues/33) |
+| (**R34**) Acceso desde Cliente Virtual | Mínimo | Técnico | Fácil | v1 | | **Incidencia**  | [34](https://github.com/airynwn/sekaischool/issues/34) |
+| (**R35**) Registro | Importante | Funcional | Fácil | v1 | | **Incidencia**  | [35](https://github.com/airynwn/sekaischool/issues/35) |
+| (**R36**) Iniciar sesión | Importante | Funcional | Fácil | v1 | | **Incidencia**  | [36](https://github.com/airynwn/sekaischool/issues/36) |
+| (**R37**) Portal de administración | Importante | Funcional | Fácil | v1 | | **Incidencia**  | [37](https://github.com/airynwn/sekaischool/issues/37) |
+| (**R38**) Añadir cartas | Importante | Funcional | Fácil | v1 | | **Incidencia**  | [38](https://github.com/airynwn/sekaischool/issues/38) |
+| (**R39**) Modificar cartas | Importante | Funcional | Fácil | v1 | | **Incidencia**  | [39](https://github.com/airynwn/sekaischool/issues/39) |
+| (**R40**) Eliminar cartas | Importante | Funcional | Fácil | v1 | | **Incidencia**  | [40](https://github.com/airynwn/sekaischool/issues/40) |
+| (**R41**) Añadir personajes | Importante | Funcional | Fácil | v1 | | **Incidencia**  | [41](https://github.com/airynwn/sekaischool/issues/41) |
+| (**R42**) Modificar personajes | Importante | Funcional | Fácil | v1 | | **Incidencia**  | [42](https://github.com/airynwn/sekaischool/issues/42) |
+| (**R43**) Eliminar personajes | Importante | Funcional | Fácil | v1 | | **Incidencia**  | [43](https://github.com/airynwn/sekaischool/issues/43) |
+| (**R44**) Añadir grupos | Importante | Funcional | Fácil | v1 | | **Incidencia**  | [44](https://github.com/airynwn/sekaischool/issues/44) |
+| (**R45**) Modificar grupos | Importante | Funcional | Fácil | v1 | | **Incidencia**  | [45](https://github.com/airynwn/sekaischool/issues/45) |
+| (**R46**) Eliminar grupos | Importante | Funcional | Fácil | v1 | | **Incidencia**  | [46](https://github.com/airynwn/sekaischool/issues/46) |
+| (**R47**) Validar usuario | Importante | Funcional | Fácil | v1 | | **Incidencia**  | [47](https://github.com/airynwn/sekaischool/issues/47) |
+| (**R48**) Bloquear usuario | Importante | Funcional | Fácil | v1 | | **Incidencia**  | [48](https://github.com/airynwn/sekaischool/issues/48) |
+| (**R49**) Añadir carta al perfil | Importante | Funcional | Fácil | v1 | | **Incidencia**  | [49](https://github.com/airynwn/sekaischool/issues/49) |
+| (**R50**) Eliminar carta del perfil | Importante | Funcional | Fácil | v1 | | **Incidencia**  | [50](https://github.com/airynwn/sekaischool/issues/50) |
+| (**R51**) Modificar datos personales | Importante | Funcional | Fácil | v2 | | **Incidencia**  | [51](https://github.com/airynwn/sekaischool/issues/51) |
+| (**R52**) Personalizar perfil | Importante | Funcional | Fácil | v2 | | **Incidencia**  | [52](https://github.com/airynwn/sekaischool/issues/52) |
+| (**R53**) Obtener PDF del perfil | Importante | Funcional | Media | v3 | | **Incidencia**  | [53](https://github.com/airynwn/sekaischool/issues/53) |
+| (**R54**) Crear publicaciones | Importante | Funcional | Fácil | v1 | | **Incidencia**  | [54](https://github.com/airynwn/sekaischool/issues/54) |
+| (**R55**) Eliminar publicaciones | Importante | Funcional | Fácil | v1 | | **Incidencia**  | [55](https://github.com/airynwn/sekaischool/issues/55) |
+| (**R56**) Valorar publicaciones | Importante | Funcional | Fácil | v1 | | **Incidencia**  | [56](https://github.com/airynwn/sekaischool/issues/56) |
+| (**R57**) Filtro de búsqueda de publicaciones | Importante | Funcional | Media | v1 | | **Incidencia**  | [57](https://github.com/airynwn/sekaischool/issues/57) |
+| (**R58**) Clasificación de usuarios | Importante | Funcional | Fácil | v2 | | **Incidencia**  | [58](https://github.com/airynwn/sekaischool/issues/58) |
+| (**R59**) Grupos | Importante | Funcional | Difícil | v2 | | **Incidencia**  | [59](https://github.com/airynwn/sekaischool/issues/59) |
+| (**R60**) Personajes | Importante | Funcional | Difícil | v2 | | **Incidencia**  | [60](https://github.com/airynwn/sekaischool/issues/60) |
+| (**R61**) Relaciones entre personajes | Importante | Funcional | Media | v2 | | **Incidencia**  | [61](https://github.com/airynwn/sekaischool/issues/61) |
+| (**R62**) Carrusel de viñetas | Opcional | Funcional | Media | v2 | | **Incidencia**  | [62](https://github.com/airynwn/sekaischool/issues/62) |
+| (**R63**) Lista de cartas | Importante | Funcional | Fácil | v1 | | **Incidencia**  | [63](https://github.com/airynwn/sekaischool/issues/63) |
+| (**R64**) Filtro de búsqueda de cartas | Importante | Funcional | Media | v2 | | **Incidencia**  | [64](https://github.com/airynwn/sekaischool/issues/64) |
+| (**R65**) Calendario | Importante | Funcional | Difícil | v3 | | **Incidencia**  | [65](https://github.com/airynwn/sekaischool/issues/65) |
+| (**R66**) Logo | Importante | Técnico | Fácil | v3 | | **Incidencia**  | [66](https://github.com/airynwn/sekaischool/issues/66) |
+| (**R67**) Base de datos | Importante | Técnico | Fácil | v1 | | **Incidencia**  | [67](https://github.com/airynwn/sekaischool/issues/67) |
+| (**R68**) Modelo entidad-relación | Importante | Técnico | Fácil | v1 | | **Incidencia**  | [68](https://github.com/airynwn/sekaischool/issues/68) |
+| (**R69**) Rutas | Importante | Técnico | Fácil | v1 | | **Incidencia**  | [69](https://github.com/airynwn/sekaischool/issues/69) |
+| (**R70**) Carrusel de noticias | Opcional | Funcional | Fácil | v2 | | **Incidencia**  | [70](https://github.com/airynwn/sekaischool/issues/70) |
+| (**R71**) Integración con Google Calendar | Opcional | Funcional | Difícil | v3 | | **Incidencia**  | [71](https://github.com/airynwn/sekaischool/issues/71) |
+| (**R72**) Adivinar la canción | Importante | Funcional | Difícil | v3 | | **Incidencia**  | [72](https://github.com/airynwn/sekaischool/issues/72) |
+| (**R73**) Simulador de gacha | Importante | Funcional | Difícil | v3 | | **Incidencia**  | [73](https://github.com/airynwn/sekaischool/issues/73) |
