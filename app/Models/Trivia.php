@@ -5,10 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Carta extends Model
+class Trivia extends Model
 {
     use HasFactory;
-    protected $fillable = ['rareza', 'atributo', 'imagen', 'pj_id'];
+
+    protected $fillable = ['dato', 'pj_id'];
 
     public function personaje()
     {

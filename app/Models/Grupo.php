@@ -5,13 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Carta extends Model
+class Grupo extends Model
 {
     use HasFactory;
-    protected $fillable = ['rareza', 'atributo', 'imagen', 'pj_id'];
+    protected $fillable = ['nombre', 'logo', 'imagen', 'historia'];
 
     public function personaje()
     {
-        return $this->belongsTo(Personaje::class, 'pj_id');
+        return $this->hasMany(Personaje::class, 'grupo_id');
     }
 }
