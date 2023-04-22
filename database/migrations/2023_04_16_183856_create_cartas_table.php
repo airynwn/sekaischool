@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->integer('rareza');
             $table->string('atributo');
+            $table->text('imagen');
             $table->integer('pj_id');
             // [FK] PJ
             $table->foreign('pj_id')->references('id')->on('personajes');
