@@ -21,16 +21,16 @@ return new class extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
-            $table->boolean('admin')->default(0);
-            $table->boolean('valido')->default(0);
+            $table->boolean('admin')->default(false);
+            $table->boolean('valido')->default(false);
             // Datos de comunidad
             $table->text('avatar')->nullable();
             $table->string('biografia', 300)->nullable();
             $table->timestamp('cumple')->nullable();
             $table->string('twitter')->nullable();
             $table->string('discord')->nullable();
-            $table->integer('grupo_fav_id');
-            $table->integer('pj_fav_id');
+            $table->integer('grupo_fav_id')->nullable();
+            $table->integer('pj_fav_id')->nullable();
             // [FK] PJ fav + Grupo fav
             $table->foreign('grupo_fav_id')->references('id')->on('grupos');
             $table->foreign('pj_fav_id')->references('id')->on('grupos');
