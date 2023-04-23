@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <a class="navbar-brand" href="#">
             <picture>
-                <img id="logo" class="brillo" src="img/logotipo.svg" alt="Logo SekaiSchool">
+                <img id="logo" class="brillo" src={{  asset('img/logotipo.svg') }} alt="Logo SekaiSchool">
             </picture>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

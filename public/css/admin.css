@@ -111,14 +111,14 @@ h3 {
 /********************* INDEX  *********************/
 
 main {
-    color: white;
-    padding: 1em;
+    /* padding: 1em; */
 }
 
 body {
     /* background: url("../img/background.png") round fixed;
     background-size: contain; */
     background-image: linear-gradient(315deg, #713387, #3e2388, #1e3b97);
+    color: white;
 }
 
 @media only screen and (max-width:576px) {
