@@ -15,12 +15,12 @@ return new class extends Migration
     {
         Schema::create('relaciones', function (Blueprint $table) {
             $table->id();
+            $table->integer('pj1_id');
+            $table->integer('pj2_id');
             $table->text('descripcion');
-            $table->integer('pj_a');
-            $table->integer('pj_b');
-            // [FK] PJ 1 + PJ 2
-            $table->foreign('pj_a')->references('id')->on('personajes');
-            $table->foreign('pj_b')->references('id')->on('personajes');
+            $table->foreign('pj1_id')->references('id')->on('personajes');
+            $table->foreign('pj2_id')->references('id')->on('personajes');
+            $table->unique(['pj1_id', 'pj2_id']);
         });
     }
 
