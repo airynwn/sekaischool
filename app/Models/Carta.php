@@ -14,4 +14,12 @@ class Carta extends Model
     {
         return $this->belongsTo(Personaje::class, 'pj_id');
     }
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class, 'carta_id')
+                    ->as('inventario')
+                    ->withPivot('estado')
+                    ->withTimestamps();
+    }
 }

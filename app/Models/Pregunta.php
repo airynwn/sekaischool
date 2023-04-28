@@ -10,7 +10,7 @@ class Pregunta extends Model
     use HasFactory;
     protected $fillable = ['pregunta'];
 
-    public function respuesta()
+    public function respuestas()
     {
         return $this->hasMany(Respuesta::class, 'pregunta_id');
     }

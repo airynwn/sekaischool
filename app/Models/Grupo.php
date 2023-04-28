@@ -10,8 +10,13 @@ class Grupo extends Model
     use HasFactory;
     protected $fillable = ['nombre', 'logo', 'imagen', 'historia'];
 
-    public function personaje()
+    public function personajes()
     {
         return $this->hasMany(Personaje::class, 'grupo_id');
+    }
+
+    public function fans()
+    {
+        return $this->hasMany(User::class, 'grupo_fav_id');
     }
 }
