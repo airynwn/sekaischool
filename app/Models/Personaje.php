@@ -10,7 +10,8 @@ class Personaje extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nombre', 'historia', 'personalidad', 'imagen', 'comic', 'grupo_id'];
+    protected $fillable = ['nombre', 'historia', 'personalidad', 'imagen', 'comic',
+    'chibi', 'icon', 'stamp', 'sticker', 'grupo_id'];
 
     /**
      * Cartas del personaje

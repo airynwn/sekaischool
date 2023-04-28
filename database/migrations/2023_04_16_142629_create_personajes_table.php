@@ -19,7 +19,12 @@ return new class extends Migration
             $table->integer('grupo_id');
             $table->text('historia');
             $table->text('personalidad');
+            // Imágenes
             $table->text('imagen');
+            $table->text('chibi');
+            $table->text('icon');
+            $table->text('stamp');
+            $table->text('sticker');
             // TODO (?) Opcional: Varias imágenes de comic
             $table->text('comic');
             // [FK] Grupo
