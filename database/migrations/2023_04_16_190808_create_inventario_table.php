@@ -17,6 +17,7 @@ return new class extends Migration
             $table->integer('user_id');
             $table->integer('carta_id');
             $table->enum('estado', ['coleccion', 'deseo']);
+            $table->timestamps();
         });
     }
 
