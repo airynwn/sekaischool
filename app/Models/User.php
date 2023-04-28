@@ -41,4 +41,32 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function cartas()
+    {
+        return $this->belongsToMany(Carta::class, 'user_id')
+                    ->as('inventario')
+                    ->withPivot('estado')
+                    ->withTimestamps();
+    }
+
+    public function favs()
+    {
+        return $this->belongsToMany(Post::class, 'user_id')->as('valoraciones');
+    }
+
+    public function posts()
+    {
+        return $this->hasMany(Post::class, 'user_id');
+    }
+
+    public function pj_fav()
+    {
+        return $this->belongsTo(Personaje::class, 'pj_fav_id');
+    }
+
+    public function grupo_fav()
+    {
+        return $this->belongsTo(User::class, 'grupo_fav_id');
+    }
 }
