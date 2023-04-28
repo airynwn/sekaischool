@@ -20,6 +20,11 @@ class Post extends Model
         return $this->belongsToMany(User::class, 'post_id')->as('valoraciones');
     }
 
+    /**
+     * Usuario al que pertenece el post
+     *
+     * @return void
+     */
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id');

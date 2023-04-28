@@ -11,6 +11,11 @@ class Trivia extends Model
 
     protected $fillable = ['dato', 'pj_id'];
 
+    /**
+     * Personaje al que pertenece el dato
+     *
+     * @return void
+     */
     public function personaje()
     {
         return $this->belongsTo(Personaje::class, 'pj_id');

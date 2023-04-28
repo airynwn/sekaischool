@@ -9,23 +9,44 @@ use Illuminate\Support\Facades\DB;
 class Personaje extends Model
 {
     use HasFactory;
+
     protected $fillable = ['nombre', 'historia', 'personalidad', 'imagen', 'comic', 'grupo_id'];
 
+    /**
+     * Cartas del personaje
+     *
+     * @return void
+     */
     public function cartas()
     {
         return $this->hasMany(Carta::class, 'pj_id');
     }
 
+    /**
+     * Respuestas que responde un personaje
+     *
+     * @return void
+     */
     public function respuestas()
     {
         return $this->hasMany(Respuesta::class, 'pj_id');
     }
 
+    /**
+     * Datos del personaje
+     *
+     * @return void
+     */
     public function trivias()
     {
         return $this->hasMany(Trivia::class, 'pj_id');
     }
 
+    /**
+     * Grupo al que pertenece el personaje
+     *
+     * @return void
+     */
     public function grupo()
     {
         return $this->belongsTo(Grupo::class, 'grupo_id');
@@ -42,7 +63,7 @@ class Personaje extends Model
     }
 
     /**
-     * A partir de un personaje, devuelve todos los personajes con los que está relacionado.
+     * A partir de un personaje, devuelve todos los personajes con los que está relacionado
      *
      * @return void
      * Devuelve filas con los siguientes campos:

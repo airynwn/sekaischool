@@ -8,5 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Relacion extends Model
 {
     use HasFactory;
+
     protected $fillable = ['pj1_id', 'pj2_id', 'descripcion'];
 }
