@@ -28,7 +28,7 @@ class GrupoController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.grupos.create');
     }
 
     /**
@@ -39,7 +39,16 @@ class GrupoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $grupo = $request->validate([
+            'nombre' => 'required|string',
+            'logo' => 'required|string',
+            'imagen' => 'required|string',
+            'historia' => 'required|string',
+        ]);
+
+        Grupo::create($grupo);
+
+        return redirect()->route('admin.grupos.index')->with('success', 'Se ha creado el grupo con éxito.');
     }
 
     /**

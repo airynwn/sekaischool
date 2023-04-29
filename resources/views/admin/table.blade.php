@@ -2,7 +2,7 @@
     <thead>
         <tr>
             @foreach($columnas as $columna)
-            <th>{{ $columna }}</th>
+            <th>{{ ucfirst($columna) }}</th>
             @endforeach
             <th>Acciones</th>
         </tr>
@@ -27,3 +27,7 @@
         </tr>
     </tbody>
 </table>
+<a href={{ route(str_replace('index', 'create', Route::current()->getName())) }}
+    class="btn btn-outline-success">
+    Create
+</a>
