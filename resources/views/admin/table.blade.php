@@ -22,7 +22,11 @@
                     class="btn btn-outline-info">Update</a>
                 <br>
                 <br>
-                <button type="button" class="btn btn-outline-danger">Delete</button>
+                <form action={{ route(str_replace('index', 'destroy', Route::current()->getName()), $fila) }} method="POST">
+                    @method('DELETE')
+                    @csrf
+                    <button type="submit" class="btn btn-outline-danger">Delete</button>
+                </form>
             </td>
         </tr>
         @endforeach
