@@ -11,6 +11,8 @@ class Grupo extends Model
 
     protected $fillable = ['nombre', 'logo', 'imagen', 'historia'];
 
+    public $timestamps = false;
+
     /**
      * Personajes que son miembros del grupo
      *
