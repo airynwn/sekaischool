@@ -18,7 +18,8 @@
                 @endif
             @endforeach
             <td>
-                <button type="button" class="btn btn-outline-info">Update</button>
+                <a href={{ route(str_replace('index', 'edit', Route::current()->getName()), $fila->id) }}
+                    class="btn btn-outline-info">Update</a>
                 <br>
                 <br>
                 <button type="button" class="btn btn-outline-danger">Delete</button>

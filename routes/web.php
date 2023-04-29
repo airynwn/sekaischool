@@ -31,6 +31,8 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
     Route::get('/grupos', [GrupoController::class, 'index'])->name('admin.grupos.index');
     Route::get('/grupos/create', [GrupoController::class, 'create'])->name('admin.grupos.create');
     Route::post('/grupos/create', [GrupoController::class, 'store'])->name('admin.grupos.store');
+    Route::get('/grupos/{grupo}/edit', [GrupoController::class, 'edit'])->name('admin.grupos.edit');
+    Route::put('/grupos/{grupo}/edit', [GrupoController::class, 'update'])->name('admin.grupos.update');
 });
 
 Route::middleware('auth')->group(function () {
