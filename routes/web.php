@@ -33,6 +33,7 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
     Route::post('/grupos/create', [GrupoController::class, 'store'])->name('admin.grupos.store');
     Route::get('/grupos/{grupo}/edit', [GrupoController::class, 'edit'])->name('admin.grupos.edit');
     Route::put('/grupos/{grupo}/edit', [GrupoController::class, 'update'])->name('admin.grupos.update');
+    Route::delete('/grupos/{grupo}/delete', [GrupoController::class, 'destroy'])->name('admin.grupos.destroy');
 });
 
 Route::middleware('auth')->group(function () {
