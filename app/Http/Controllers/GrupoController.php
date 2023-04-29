@@ -71,7 +71,8 @@ class GrupoController extends Controller
      */
     public function edit(Grupo $grupo)
     {
-        //
+        $tabla = 'grupos';
+        return view('admin.grupos.edit', ['tabla' => $tabla, 'grupo' => $grupo]);
     }
 
     /**
@@ -83,7 +84,16 @@ class GrupoController extends Controller
      */
     public function update(Request $request, Grupo $grupo)
     {
-        //
+        $request->validate([
+            'nombre' => 'required|string',
+            'logo' => 'required|string',
+            'imagen' => 'required|string',
+            'historia' => 'required|string',
+        ]);
+
+        $grupo->update($request->all());
+
+        return redirect()->route('admin.grupos.index')->with('success', 'Se ha modificado el grupo con éxito.');
     }
 
     /**
