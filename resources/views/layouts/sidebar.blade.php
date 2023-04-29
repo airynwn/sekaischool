@@ -16,7 +16,7 @@
                             <span class="ms-1 d-none d-sm-inline">Grupos</span> </a>
                         <ul class="collapse show nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
                             <li class="w-100">
-                                <a href="#" class="nav-link px-0"><span class="d-none d-sm-inline">Wonderlands x Showtime</span></a>
+                                <a href="/admin/grupos" class="nav-link px-0"><span class="d-none d-sm-inline">Wonderlands x Showtime</span></a>
                             </li>
                             <li>
                                 <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 2 </a>
