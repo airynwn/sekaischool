@@ -8,15 +8,14 @@
         </tr>
     </thead>
     <tbody>
+        @foreach($datos as $fila)
         <tr>
-            @foreach($datos as $fila)
-                @foreach($columnas as $columna)
-                    @if ($columna == 'imagen' || $columna == 'logo')
-                        <td><img src={{ asset($fila->$columna) }} width=100 alt={{ $columna }}></td>
-                    @else
-                        <td>{{ $fila->$columna }}</td>
-                    @endif
-                @endforeach
+            @foreach($columnas as $columna)
+                @if ($columna == 'imagen' || $columna == 'logo')
+                    <td><img src={{ asset($fila->$columna) }} width=100 alt={{ $columna }}></td>
+                @else
+                    <td>{{ $fila->$columna }}</td>
+                @endif
             @endforeach
             <td>
                 <button type="button" class="btn btn-outline-info">Update</button>
@@ -25,9 +24,11 @@
                 <button type="button" class="btn btn-outline-danger">Delete</button>
             </td>
         </tr>
+        @endforeach
+
     </tbody>
 </table>
-<a href={{ route(str_replace('index', 'create', Route::current()->getName())) }}
-    class="btn btn-outline-success">
-    Create
-</a>
+<form action={{ route(str_replace('index', 'create', Route::current()->getName())) }} method="GET">
+    @csrf
+    <button type="submit" class="btn btn-outline-success">Create</button>
+</form>

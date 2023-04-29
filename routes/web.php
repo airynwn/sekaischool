@@ -30,6 +30,7 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
     /************* Grupos *************/
     Route::get('/grupos', [GrupoController::class, 'index'])->name('admin.grupos.index');
     Route::get('/grupos/create', [GrupoController::class, 'create'])->name('admin.grupos.create');
+    Route::post('/grupos/create', [GrupoController::class, 'store'])->name('admin.grupos.store');
 });
 
 Route::middleware('auth')->group(function () {
