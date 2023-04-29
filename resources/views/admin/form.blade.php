@@ -14,9 +14,9 @@
         <div class="form-group">
             <label for={{ $columna }}>{{ ucfirst($columna) }}</label>
             @if (Schema::getColumnType($tabla, $columna) == 'string')
-                <input type="text" class="form-control" id={{ $columna }} name={{ $columna }}>
+                <input type="text" class="form-control"name={{ $columna }}>
             @elseif (Schema::getColumnType($tabla, $columna) == 'text')
-                <textarea class="form-control" id={{ $columna }} name={{ $columna }} rows="3"></textarea>
+                <textarea class="form-control" name={{ $columna }} rows="3"></textarea>
             @endif
         </div>
     @endforeach
