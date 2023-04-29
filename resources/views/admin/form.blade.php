@@ -1,13 +1,18 @@
-{{-- nombre: string, logo-img-historia: text --}}
+{{-- validar con js? --}}
 <form>
     @foreach($columnas as $columna)
         <div class="form-group">
-            <label for={{ $columna }}>{{ $columna }}</label>
-            <input type="text" class="form-control" id={{ $columna . '-input' }}>
+            <label for={{ $columna }}>{{ ucfirst($columna) }}</label>
+            @if (Schema::getColumnType($tabla, $columna) == 'string')
+                <input type="text" class="form-control" id={{ $columna . '-input' }}>
+            @if (Schema::getColumnType($tabla, $columna) == 'text')
+                <textarea class="form-control" id="{{ $columna . '-input' }}" rows="3"></textarea>
+            @endif
         </div>
     @endforeach
-    {{-- <div class="form-group">
-      <label for="exampleFormControlTextarea1">Example textarea</label>
-      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-    </div> --}}
+    <br>
+    <div>
+        <button type="button" class="btn btn-outline-success">Create</button>
+    </div>
+
   </form>

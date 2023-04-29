@@ -28,7 +28,8 @@ class GrupoController extends Controller
      */
     public function create()
     {
-        return view('admin.grupos.create');
+        $tabla = 'grupos';
+        return view('admin.grupos.create', ['tabla' => $tabla]);
     }
 
     /**
