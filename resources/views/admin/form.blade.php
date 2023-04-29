@@ -22,7 +22,7 @@
     @endforeach
     <br>
     <div>
-        <button type="submit" class="btn btn-outline-success">Create</button>
+        <button type="submit" class="btn btn-outline-success">Enviar</button>
     </div>
 
   </form>
