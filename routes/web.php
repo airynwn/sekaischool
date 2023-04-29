@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\GrupoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,6 +23,15 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+/************* Admin *************/
+Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
+    Route::get('/', [AdminController::class, 'index'])->name('admin.index');
+    /************* Grupos *************/
+    Route::get('/grupos', [GrupoController::class, 'index'])->name('admin.grupos.index');
+    Route::get('/grupos/create', [GrupoController::class, 'create'])->name('admin.grupos.create');
+    Route::post('/grupos/create', [GrupoController::class, 'store'])->name('admin.grupos.store');
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
