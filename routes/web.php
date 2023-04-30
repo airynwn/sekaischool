@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\GrupoController;
+use App\Http\Controllers\PersonajeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,6 +35,10 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
     Route::get('/grupos/{grupo}/edit', [GrupoController::class, 'edit'])->name('admin.grupos.edit');
     Route::put('/grupos/{grupo}/edit', [GrupoController::class, 'update'])->name('admin.grupos.update');
     Route::delete('/grupos/{grupo}/delete', [GrupoController::class, 'destroy'])->name('admin.grupos.destroy');
+    /************* Personajes *************/
+    Route::get('/personajes', [PersonajeController::class, 'index'])->name('admin.personajes.index');
+    Route::get('/personajes/create', [PersonajeController::class, 'create'])->name('admin.personajes.create');
+    Route::post('/personajes/create', [PersonajeController::class, 'store'])->name('admin.personajes.store');
 });
 
 Route::middleware('auth')->group(function () {

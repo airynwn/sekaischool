@@ -13,11 +13,25 @@
     @foreach($columnas as $columna)
         <div class="form-group">
             <label for={{ $columna }}>{{ ucfirst($columna) }}</label>
+            {{-- STRING --}}
             @if (Schema::getColumnType($tabla, $columna) == 'string')
                 <input type="text" class="form-control"name={{ $columna }}>
+            {{-- TEXT --}}
             @elseif (Schema::getColumnType($tabla, $columna) == 'text')
                 <textarea class="form-control" name={{ $columna }} rows="3"></textarea>
+            {{-- FOREIGN KEY --}}
+            @elseif ($columna === $fk)
+                @switch($columna)
+                    @case('grupo_id')
+                    <select name={{ $columna }} id={{ $columna }}>
+                        @foreach ($tablafk as $fila)
+                            <option value={{ $fila->id }}>{{ $fila->nombre }}</option>
+                        @endforeach
+                    </select>
+                        @break
+                @endswitch
             @endif
+
         </div>
     @endforeach
     <br>

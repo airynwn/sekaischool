@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Grupo;
 use App\Models\Personaje;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,11 @@ class PersonajeController extends Controller
      */
     public function index()
     {
-        //
+        $personajes = Personaje::all();
+
+        if (auth()->user()->admin) {
+            return view('admin.personajes.index', ['personajes' => $personajes]);
+        }
     }
 
     /**
@@ -24,7 +29,15 @@ class PersonajeController extends Controller
      */
     public function create()
     {
-        //
+        $tabla = 'personajes';
+        $tablafk = Grupo::all();
+        $fk = 'grupo_id';
+
+        return view('admin.personajes.create', [
+            'tabla' => $tabla,
+            'tablafk' => $tablafk,
+            'fk' => $fk
+        ]);
     }
 
     /**
@@ -35,7 +48,20 @@ class PersonajeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Personaje::create([
+            'nombre' => $request->nombre,
+            'historia' => $request->historia,
+            'personalidad' => $request->personalidad,
+            'imagen' => $request->imagen,
+            'comic' => $request->comic,
+            'chibi' => $request->chibi,
+            'icon' => $request->icon,
+            'stamp' => $request->stamp,
+            'sticker' => $request->sticker,
+            'grupo_id' => $request->grupo_id,
+        ]);
+
+        return redirect()->route('admin.personajes.index')->with('success', 'Se ha creado el personaje con éxito.');
     }
 
     /**
