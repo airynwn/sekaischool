@@ -12,7 +12,11 @@
     @csrf
     @foreach($columnas as $columna)
         <div class="form-group">
-            <label for={{ $columna }}>{{ ucfirst($columna) }}</label>
+            @if ($columna !== $fk)
+                <label for={{ $columna }}>{{ ucfirst($columna) }}</label>
+            @else
+                <label for={{ $columna }}>{{ ucfirst(substr($columna, 0, -3)) }}</label>
+            @endif
             {{-- STRING --}}
             @if (Schema::getColumnType($tabla, $columna) == 'string')
                 <input type="text" class="form-control"name={{ $columna }}>
