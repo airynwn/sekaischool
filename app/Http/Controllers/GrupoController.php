@@ -124,6 +124,11 @@ class GrupoController extends Controller
      */
     public function destroy(Grupo $grupo)
     {
+        if ($grupo->personajes->count() > 0) {
+            return redirect()->route('admin.grupos.index')
+            ->with('error', 'El grupo no se puede eliminar mientras tenga personajes.');
+        }
+
         $grupo->delete();
 
         return redirect()->route('admin.grupos.index')->with('success', 'Se ha eliminado el grupo con éxito.');
