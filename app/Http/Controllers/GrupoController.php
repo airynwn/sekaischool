@@ -15,9 +15,15 @@ class GrupoController extends Controller
     public function index()
     {
         $grupos = Grupo::all();
+        $tablafk = null;
+        $fk = null;
 
         if (auth()->user()->admin) {
-            return view('admin.grupos.index', ['grupos' => $grupos]);
+            return view('admin.grupos.index', [
+                'grupos' => $grupos,
+                'tablafk' => $tablafk,
+                'fk' => $fk
+            ]);
         }
     }
 
@@ -29,7 +35,13 @@ class GrupoController extends Controller
     public function create()
     {
         $tabla = 'grupos';
-        return view('admin.grupos.create', ['tabla' => $tabla]);
+        $tablafk = null;
+        $fk = null;
+        return view('admin.grupos.create', [
+            'tabla' => $tabla,
+            'tablafk' => $tablafk,
+            'fk' => $fk
+        ]);
     }
 
     /**
