@@ -89,7 +89,16 @@ class PersonajeController extends Controller
      */
     public function edit(Personaje $personaje)
     {
-        //
+        $tabla = 'personajes';
+        $tablafk = Grupo::all();
+        $fk = 'grupo_id';
+
+        return view('admin.personajes.edit', [
+            'tabla' => $tabla,
+            'tablafk' => $tablafk,
+            'fk' => $fk,
+            'dato' => $personaje
+        ]);
     }
 
     /**
@@ -101,7 +110,20 @@ class PersonajeController extends Controller
      */
     public function update(Request $request, Personaje $personaje)
     {
-        //
+        $personaje->update([
+            'nombre' => $request->nombre,
+            'historia' => $request->historia,
+            'personalidad' => $request->personalidad,
+            'imagen' => $request->imagen,
+            'comic' => $request->comic,
+            'chibi' => $request->chibi,
+            'icon' => $request->icon,
+            'stamp' => $request->stamp,
+            'sticker' => $request->sticker,
+            'grupo_id' => $request->grupo_id,
+        ]);
+
+        return redirect()->route('admin.personajes.index')->with('success', 'Se ha modificado el personaje con éxito.');
     }
 
     /**

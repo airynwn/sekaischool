@@ -13,23 +13,23 @@
     @foreach($columnas as $columna)
         <div class="form-group">
             @if ($columna !== $fk)
-                <label for={{ $columna }}>{{ ucfirst($columna) }}</label>
+                <label for="{{ $columna }}">{{ ucfirst($columna) }}</label>
             @else
-                <label for={{ $columna }}>{{ ucfirst(substr($columna, 0, -3)) }}</label>
+                <label for="{{ $columna }}">{{ ucfirst(substr($columna, 0, -3)) }}</label>
             @endif
             {{-- STRING --}}
             @if (Schema::getColumnType($tabla, $columna) == 'string')
-                <input type="text" class="form-control"name={{ $columna }}>
+                <input type="text" class="form-control" name="{{ $columna }}">
             {{-- TEXT --}}
             @elseif (Schema::getColumnType($tabla, $columna) == 'text')
-                <textarea class="form-control" name={{ $columna }} rows="3"></textarea>
+                <textarea class="form-control" name="{{ $columna }}" rows="3"></textarea>
             {{-- FOREIGN KEY --}}
             @elseif ($columna === $fk)
                 @switch($columna)
                     @case('grupo_id')
-                    <select name={{ $columna }} id={{ $columna }}>
+                    <select name="{{ $columna }}" id="{{ $columna }}">
                         @foreach ($tablafk as $fila)
-                            <option value={{ $fila->id }}>{{ $fila->nombre }}</option>
+                            <option value="{{ $fila->id }}">{{ $fila->nombre }}</option>
                         @endforeach
                     </select>
                         @break

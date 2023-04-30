@@ -14,11 +14,34 @@
     @csrf
     @foreach($columnas as $columna)
         <div class="form-group">
-            <label for={{ $columna }}>{{ ucfirst($columna) }}</label>
+            @if ($columna !== $fk)
+                <label for={{ $columna }}>{{ ucfirst($columna) }}</label>
+            @else
+                <label for={{ $columna }}>{{ ucfirst(substr($columna, 0, -3)) }}</label>
+            @endif
+            {{-- STRING --}}
             @if (Schema::getColumnType($tabla, $columna) == 'string')
-                <input type="text" class="form-control" name={{ $columna }} value={{ $grupo->$columna }}>
+                <input type="text" class="form-control" name="{{ $columna }}" value="{{ $dato->$columna }}">
+            {{-- TEXT --}}
             @elseif (Schema::getColumnType($tabla, $columna) == 'text')
-                <textarea class="form-control" name={{ $columna }} rows="3">{{ $grupo->$columna }}</textarea>
+                <textarea class="form-control" name="{{ $columna }}" rows="3">{{ $dato->$columna }}</textarea>
+            {{-- FOREIGN KEY --}}
+            @elseif ($columna === $fk)
+                @php
+                    $fkcol = substr($fk, 0, -3);
+                @endphp
+                @switch($columna)
+                    @case('grupo_id')
+                    <select name="{{ $columna }}" id="{{ $columna }}">
+                        @foreach ($tablafk as $fila)
+                            <option {{$dato->$fkcol->id === $fila->id ? 'selected' : ''}}
+                                    value="{{ $fila->id }}">
+                                {{ $fila->nombre }}
+                            </option>
+                        @endforeach
+                    </select>
+                        @break
+                @endswitch
             @endif
         </div>
     @endforeach
