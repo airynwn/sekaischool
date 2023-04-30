@@ -17,7 +17,7 @@
                     <td><img src={{ asset($fila->$columna) }} width=100 alt={{ $columna }}></td>
                 @elseif ($columna == $fk)
                     @php
-                        $fkcol = substr($fk, 0, -3);
+                        $fkcol = substr($fk, 0, -3) == 'pj' ? 'personaje' : substr($fk, 0, -3);
                     @endphp
                     <td>{{ $fila->$fkcol->descripcion ?? $fila->$fkcol->nombre }}</td>
                 @else
