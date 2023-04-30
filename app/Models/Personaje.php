@@ -13,6 +13,8 @@ class Personaje extends Model
     protected $fillable = ['nombre', 'historia', 'personalidad', 'imagen', 'comic',
     'chibi', 'icon', 'stamp', 'sticker', 'grupo_id'];
 
+    public $timestamps = false;
+
     /**
      * Cartas del personaje
      *
