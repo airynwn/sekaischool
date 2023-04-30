@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CartaController;
 use App\Http\Controllers\GrupoController;
 use App\Http\Controllers\PersonajeController;
 use Illuminate\Support\Facades\Route;
@@ -42,6 +43,13 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
     Route::get('/personajes/{personaje}/edit', [PersonajeController::class, 'edit'])->name('admin.personajes.edit');
     Route::put('/personajes/{personaje}/edit', [PersonajeController::class, 'update'])->name('admin.personajes.update');
     Route::delete('/personajes/{personaje}/delete', [PersonajeController::class, 'destroy'])->name('admin.personajes.destroy');
+    /************* Cartas *************/
+    Route::get('/cartas', [CartaController::class, 'index'])->name('admin.cartas.index');
+    Route::get('/cartas/create', [CartaController::class, 'create'])->name('admin.cartas.create');
+    Route::post('/cartas/create', [CartaController::class, 'store'])->name('admin.cartas.store');
+    Route::get('/cartas/{carta}/edit', [CartaController::class, 'edit'])->name('admin.cartas.edit');
+    Route::put('/cartas/{carta}/edit', [CartaController::class, 'update'])->name('admin.cartas.update');
+    Route::delete('/cartas/{carta}/delete', [CartaController::class, 'destroy'])->name('admin.cartas.destroy');
 });
 
 Route::middleware('auth')->group(function () {

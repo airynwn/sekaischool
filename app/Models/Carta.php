@@ -11,6 +11,8 @@ class Carta extends Model
 
     protected $fillable = ['rareza', 'atributo', 'imagen', 'pj_id'];
 
+    public $timestamps = false;
+
     /**
      * Personaje al que pertenece la carta
      *

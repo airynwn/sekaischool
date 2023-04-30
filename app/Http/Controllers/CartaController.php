@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Carta;
+use App\Models\Personaje;
 use Illuminate\Http\Request;
 
 class CartaController extends Controller
@@ -14,7 +15,17 @@ class CartaController extends Controller
      */
     public function index()
     {
-        //
+        $cartas = Carta::all();
+        $tablafk = Personaje::all();
+        $fk = 'pj_id';
+
+        if (auth()->user()->admin) {
+            return view('admin.cartas.index', [
+                'cartas' => $cartas,
+                'tablafk' => $tablafk,
+                'fk' => $fk
+            ]);
+        }
     }
 
     /**
@@ -24,7 +35,15 @@ class CartaController extends Controller
      */
     public function create()
     {
-        //
+        $tabla = 'cartas';
+        $tablafk = Personaje::all();
+        $fk = 'pj_id';
+
+        return view('admin.cartas.create', [
+            'tabla' => $tabla,
+            'tablafk' => $tablafk,
+            'fk' => $fk
+        ]);
     }
 
     /**
@@ -35,7 +54,14 @@ class CartaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Carta::create([
+            'rareza' => $request->rareza,
+            'atributo' => $request->atributo,
+            'imagen' => $request->imagen,
+            'pj_id' => $request->pj_id,
+        ]);
+
+        return redirect()->route('admin.cartas.index')->with('success', 'Se ha creado la carta con éxito.');
     }
 
     /**
