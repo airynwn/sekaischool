@@ -134,6 +134,8 @@ class PersonajeController extends Controller
      */
     public function destroy(Personaje $personaje)
     {
-        //
+        $personaje->delete();
+
+        return redirect()->route('admin.personajes.index')->with('success', 'Se ha eliminado el personaje con éxito.');
     }
 }
