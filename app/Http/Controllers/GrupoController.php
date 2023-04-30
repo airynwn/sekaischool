@@ -84,7 +84,15 @@ class GrupoController extends Controller
     public function edit(Grupo $grupo)
     {
         $tabla = 'grupos';
-        return view('admin.grupos.edit', ['tabla' => $tabla, 'grupo' => $grupo]);
+        $tablafk = null;
+        $fk = null;
+
+        return view('admin.grupos.edit', [
+            'tabla' => $tabla,
+            'tablafk' => $tablafk,
+            'fk' => $fk,
+            'dato' => $grupo
+        ]);
     }
 
     /**
