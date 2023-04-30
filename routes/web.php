@@ -39,6 +39,9 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
     Route::get('/personajes', [PersonajeController::class, 'index'])->name('admin.personajes.index');
     Route::get('/personajes/create', [PersonajeController::class, 'create'])->name('admin.personajes.create');
     Route::post('/personajes/create', [PersonajeController::class, 'store'])->name('admin.personajes.store');
+    Route::get('/personajes/{personaje}/edit', [PersonajeController::class, 'edit'])->name('admin.personajes.edit');
+    Route::put('/personajes/{personaje}/edit', [PersonajeController::class, 'update'])->name('admin.personajes.update');
+    Route::delete('/personajes/{personaje}/delete', [PersonajeController::class, 'destroy'])->name('admin.personajes.destroy');
 });
 
 Route::middleware('auth')->group(function () {

@@ -16,9 +16,15 @@ class PersonajeController extends Controller
     public function index()
     {
         $personajes = Personaje::all();
+        $tablafk = Grupo::all();
+        $fk = 'grupo_id';
 
         if (auth()->user()->admin) {
-            return view('admin.personajes.index', ['personajes' => $personajes]);
+            return view('admin.personajes.index', [
+                'personajes' => $personajes,
+                'tablafk' => $tablafk,
+                'fk' => $fk
+            ]);
         }
     }
 
