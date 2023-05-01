@@ -14,34 +14,39 @@
     @csrf
     @foreach($columnas as $columna)
         <div class="form-group">
+            {{-- LABEL --}}
             @if ($columna !== $fk)
                 <label for={{ $columna }}>{{ ucfirst($columna) }}</label>
             @else
                 <label for={{ $columna }}>{{ ucfirst(substr($columna, 0, -3)) }}</label>
             @endif
+            {{-- FOREIGN KEY --}}
+            @if ($columna === $fk)
+                @php
+                    $fkcol = substr($fk, 0, -3) == 'pj' ? 'personaje' : substr($fk, 0, -3);
+                @endphp
+                @switch($columna)
+                    @case('grupo_id')
+                    @case('pj_id')
+                        <select name="{{ $columna }}" id="{{ $columna }}">
+                            @foreach ($tablafk as $fila)
+                                <option {{ $dato->$fkcol->id === $fila->id ? 'selected' : '' }}
+                                        value="{{ $fila->id }}">
+                                    {{ $fila->nombre }}
+                                </option>
+                            @endforeach
+                        </select>
+                        @break
+                @endswitch
             {{-- STRING --}}
-            @if (Schema::getColumnType($tabla, $columna) == 'string')
+            @elseif (Schema::getColumnType($tabla, $columna) == 'string')
                 <input type="text" class="form-control" name="{{ $columna }}" value="{{ $dato->$columna }}">
             {{-- TEXT --}}
             @elseif (Schema::getColumnType($tabla, $columna) == 'text')
                 <textarea class="form-control" name="{{ $columna }}" rows="3">{{ $dato->$columna }}</textarea>
-            {{-- FOREIGN KEY --}}
-            @elseif ($columna === $fk)
-                @php
-                    $fkcol = substr($fk, 0, -3);
-                @endphp
-                @switch($columna)
-                    @case('grupo_id')
-                    <select name="{{ $columna }}" id="{{ $columna }}">
-                        @foreach ($tablafk as $fila)
-                            <option {{$dato->$fkcol->id === $fila->id ? 'selected' : ''}}
-                                    value="{{ $fila->id }}">
-                                {{ $fila->nombre }}
-                            </option>
-                        @endforeach
-                    </select>
-                        @break
-                @endswitch
+            {{-- INT --}}
+            @elseif (Schema::getColumnType($tabla, $columna) == 'integer')
+                <input type="number" class="form-control" name="{{ $columna }}">
             @endif
         </div>
     @endforeach
