@@ -134,6 +134,11 @@ class PersonajeController extends Controller
      */
     public function destroy(Personaje $personaje)
     {
+        if ($personaje->cartas->count() > 0) {
+            return redirect()->route('admin.personajes.index')
+            ->with('error', 'El personaje no se puede eliminar mientras tenga cartas.');
+        }
+
         $personaje->delete();
 
         return redirect()->route('admin.personajes.index')->with('success', 'Se ha eliminado el personaje con éxito.');
