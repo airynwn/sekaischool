@@ -122,6 +122,8 @@ class CartaController extends Controller
      */
     public function destroy(Carta $carta)
     {
-        //
+        $carta->delete();
+
+        return redirect()->route('admin.cartas.index')->with('success', 'Se ha eliminado la carta con éxito.');
     }
 }
