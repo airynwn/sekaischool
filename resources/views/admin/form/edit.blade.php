@@ -46,7 +46,7 @@
                 <textarea class="form-control" name="{{ $columna }}" rows="3">{{ $dato->$columna }}</textarea>
             {{-- INT --}}
             @elseif (Schema::getColumnType($tabla, $columna) == 'integer')
-                <input type="number" class="form-control" name="{{ $columna }}">
+                <input type="number" class="form-control" name="{{ $columna }}" value="{{ $dato->$columna }}">
             @endif
         </div>
     @endforeach
