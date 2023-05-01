@@ -83,7 +83,16 @@ class CartaController extends Controller
      */
     public function edit(Carta $carta)
     {
-        //
+        $tabla = 'cartas';
+        $tablafk = Personaje::all();
+        $fk = 'pj_id';
+
+        return view('admin.cartas.edit', [
+            'tabla' => $tabla,
+            'tablafk' => $tablafk,
+            'fk' => $fk,
+            'dato' => $carta
+        ]);
     }
 
     /**
@@ -95,7 +104,14 @@ class CartaController extends Controller
      */
     public function update(Request $request, Carta $carta)
     {
-        //
+        $carta->update([
+            'rareza' => $request->rareza,
+            'atributo' => $request->atributo,
+            'imagen' => $request->imagen,
+            'pj_id' => $request->pj_id,
+        ]);
+
+        return redirect()->route('admin.cartas.index')->with('success', 'Se ha modificado la carta con éxito.');
     }
 
     /**
