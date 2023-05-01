@@ -28,8 +28,8 @@
                                 <option value="{{ $fila->id }}">{{ $fila->nombre }}</option>
                             @endforeach
                         </select>
-                @break
-            @endswitch
+                        @break
+                @endswitch
             {{-- STRING --}}
             @elseif (Schema::getColumnType($tabla, $columna) == 'string')
                 <input type="text" class="form-control" name="{{ $columna }}">
@@ -40,7 +40,6 @@
             @elseif (Schema::getColumnType($tabla, $columna) == 'integer')
                 <input type="number" class="form-control" name="{{ $columna }}">
             @endif
-
         </div>
     @endforeach
     <br>
