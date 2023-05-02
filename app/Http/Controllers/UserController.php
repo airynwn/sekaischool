@@ -16,14 +16,10 @@ class UserController extends Controller
     public function index()
     {
         $users = User::all();
-        $tablafk = null;
-        $fk = null;
 
         if (auth()->user()->admin) {
             return view('admin.users.index', [
                 'users' => $users,
-                'tablafk' => $tablafk,
-                'fk' => $fk
             ]);
         }
     }
@@ -92,5 +88,19 @@ class UserController extends Controller
     public function destroy(User $user)
     {
         //
+    }
+
+    /**
+     * Valida a un usuario
+     *
+     * @param  \App\Models\User  $user
+     * @return \Illuminate\Http\Response
+     */
+    public function validar(User $user)
+    {
+        $user->valido = true;
+        $user->save();
+
+        return redirect()->route('admin.users.index')->with('success', 'Se ha validado el usuario con éxito.');
     }
 }
