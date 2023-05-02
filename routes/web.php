@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CartaController;
 use App\Http\Controllers\GrupoController;
 use App\Http\Controllers\PersonajeController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -50,6 +51,11 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
     Route::get('/cartas/{carta}/edit', [CartaController::class, 'edit'])->name('admin.cartas.edit');
     Route::put('/cartas/{carta}/edit', [CartaController::class, 'update'])->name('admin.cartas.update');
     Route::delete('/cartas/{carta}/delete', [CartaController::class, 'destroy'])->name('admin.cartas.destroy');
+    /************* Users *************/
+    Route::get('/users', [UserController::class, 'index'])->name('admin.users.index');
+    Route::get('/users/create', [UserController::class, 'create'])->name('admin.users.create');
+    Route::get('/users/{user}/edit', [UserController::class, 'edit'])->name('admin.users.edit');
+    Route::delete('/users/{user}/delete', [UserController::class, 'destroy'])->name('admin.users.destroy');
 });
 
 Route::middleware('auth')->group(function () {
