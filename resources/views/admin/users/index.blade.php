@@ -21,7 +21,12 @@
                                 @method('PUT')
                                 <button type="submit" class="btn btn-success">Validar</button>
                             </form>
-
+                        @else
+                            <form action={{ route(str_replace('index', 'bloquear', Route::current()->getName()), $u) }} method="POST">
+                                @csrf
+                                @method('PUT')
+                                <button type="submit" class="btn btn-danger">Bloquear</button>
+                            </form>
                         @endif
                     </td>
                 </tr>

@@ -103,4 +103,18 @@ class UserController extends Controller
 
         return redirect()->route('admin.users.index')->with('success', 'Se ha validado el usuario con éxito.');
     }
+
+    /**
+     * Bloquea a un usuario para impedir que pueda acceder a todo el sitio web
+     *
+     * @param  \App\Models\User  $user
+     * @return \Illuminate\Http\Response
+     */
+    public function bloquear(User $user)
+    {
+        $user->valido = false;
+        $user->save();
+
+        return redirect()->route('admin.users.index')->with('success', 'Se ha bloqueado el usuario con éxito.');
+    }
 }
