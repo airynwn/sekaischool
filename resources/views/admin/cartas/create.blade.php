@@ -3,7 +3,7 @@
     <h1>Crear carta</h1>
     @include('admin.form', [
         'columnas' => [
-            'rareza', 'atributo', 'imagen', 'pj_id'
+            'nombre', 'rareza', 'atributo', 'unidolized', 'idolized', 'pj_id'
         ],
     ])
 @endsection
