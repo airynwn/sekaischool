@@ -6,6 +6,7 @@ use App\Models\Carta;
 use App\Models\Grupo;
 use App\Models\Personaje;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 class CartaController extends Controller
 {
@@ -21,7 +22,7 @@ class CartaController extends Controller
         $tablafk = Personaje::all();
         $fk = 'pj_id';
 
-        if (auth()->check() && auth()->user()->admin) {
+        if (auth()->check() && auth()->user()->admin && strpos(Route::current()->getName(), 'admin') === 0) {
             return view('admin.cartas.index', [
                 'cartas' => $cartas,
                 'tablafk' => $tablafk,
