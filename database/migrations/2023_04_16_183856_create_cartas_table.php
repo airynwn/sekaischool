@@ -15,9 +15,11 @@ return new class extends Migration
     {
         Schema::create('cartas', function (Blueprint $table) {
             $table->id();
+            $table->string('nombre');
             $table->integer('rareza');
             $table->string('atributo');
-            $table->text('imagen');
+            $table->text('unidolized');
+            $table->text('idolized');
             $table->integer('pj_id');
             // [FK] PJ
             $table->foreign('pj_id')->references('id')->on('personajes');
