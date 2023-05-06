@@ -56,10 +56,8 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
     Route::delete('/cartas/{carta}/delete', [CartaController::class, 'destroy'])->name('admin.cartas.destroy');
     /************* Users *************/
     Route::get('/users', [UserController::class, 'index'])->name('admin.users.index');
-    Route::get('/users/create', [UserController::class, 'create'])->name('admin.users.create');
-    Route::get('/users/{user}/edit', [UserController::class, 'edit'])->name('admin.users.edit');
-    Route::delete('/users/{user}/delete', [UserController::class, 'destroy'])->name('admin.users.destroy');
     Route::put('/users/{user}/validar', [UserController::class, 'validar'])->name('admin.users.validar');
+    Route::put('/users/{user}/bloquear', [UserController::class, 'bloquear'])->name('admin.users.bloquear');
 });
 
 Route::middleware('auth')->group(function () {
