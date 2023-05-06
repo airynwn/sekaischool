@@ -1,4 +1,5 @@
-<table class="table table-dark table-striped table-bordered">
+<div class="table-responsive">
+<table class="table table-admin mx-3 my-3">
     <thead>
         <tr>
             @foreach($columnas as $columna)
@@ -40,6 +41,7 @@
 
     </tbody>
 </table>
+</div>
 <form action={{ route(str_replace('index', 'create', Route::current()->getName())) }} method="GET">
     @csrf
     <button type="submit" class="btn btn-outline-success">Create</button>

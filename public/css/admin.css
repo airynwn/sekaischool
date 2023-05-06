@@ -1,5 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Source+Sans+Pro&display=swap');
 
+.table-admin {
+    border-radius: 20px;
+    background-color: #2F2957;
+    color: white;
+    border: hidden;
+    text-align: center;
+}
+
+thead {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+
+tr:not(:last-child) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+
+tbody > tr:nth-child(odd) {
+    background-color: #3A3460;
+}
+
+tr:last-child {
+    border-radius: 20px;
+}
+
 a,
 span {
     color: white;
