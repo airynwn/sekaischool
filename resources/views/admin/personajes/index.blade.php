@@ -1,6 +1,7 @@
 @extends('admin.index')
 @section('content')
-    <h1>Personajes</h1>
+    <h1>Lista de Personajes</h1>
+    <br>
     @include('admin.table', [
         'columnas' => [
             'nombre', 'historia', 'personalidad', 'imagen', 'comic',

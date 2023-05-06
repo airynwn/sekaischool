@@ -1,6 +1,7 @@
 @extends('admin.index')
 @section('content')
-    <h1>Users</h1>
+    <h1>Lista de Users</h1>
+    <br>
     <table class="table table-dark table-striped table-bordered">
         <thead>
             <tr>
