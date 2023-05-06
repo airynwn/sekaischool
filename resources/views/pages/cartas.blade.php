@@ -113,6 +113,7 @@
                             </picture>
                         </figure>
                         @if (auth()->check())
+                        {{-- onclick: $carta->id + $user->id + estado --> inventario --}}
                             <div class="tabs">
                                 <div class="tab">
                                     <i class="fa-solid fa-bookmark"></i>
