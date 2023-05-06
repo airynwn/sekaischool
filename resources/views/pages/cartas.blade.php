@@ -85,7 +85,7 @@
             </div>
             <div class="caja">
                 {{-- TODO Botón que abre un modal Personaje --}}
-                <span class="opcion">Personaje</span>
+                <a class="opcion" href="#modal-personajes">Personaje</a>
                 <p>Aquí va el nombre del personaje seleccionado</p>
             </div>
             <div class="caja-icons">
@@ -129,4 +129,5 @@
     </div>
 </div>
 </div>
+@include('layouts.modal', ['personajes' => $tablafk])
 @endsection
