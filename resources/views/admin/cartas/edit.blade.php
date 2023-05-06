@@ -3,7 +3,7 @@
     <h1>Modificar cartas</h1>
     @include('admin.form.edit', [
         'columnas' => [
-            'rareza', 'atributo', 'imagen', 'pj_id'
+            'nombre', 'rareza', 'atributo', 'unidolized', 'idolized', 'pj_id'
         ],
     ])
 @endsection

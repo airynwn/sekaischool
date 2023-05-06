@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Carta;
+use App\Models\Grupo;
 use App\Models\Personaje;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 class CartaController extends Controller
 {
@@ -16,12 +18,20 @@ class CartaController extends Controller
     public function index()
     {
         $cartas = Carta::all();
+        $grupos = Grupo::all();
         $tablafk = Personaje::all();
         $fk = 'pj_id';
 
-        if (auth()->user()->admin) {
+        if (auth()->check() && auth()->user()->admin && strpos(Route::current()->getName(), 'admin') === 0) {
             return view('admin.cartas.index', [
                 'cartas' => $cartas,
+                'tablafk' => $tablafk,
+                'fk' => $fk
+            ]);
+        } else {
+            return view('pages.cartas', [
+                'cartas' => $cartas,
+                'grupos' => $grupos,
                 'tablafk' => $tablafk,
                 'fk' => $fk
             ]);

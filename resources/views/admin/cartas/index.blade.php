@@ -3,7 +3,7 @@
     <h1>Cartas</h1>
     @include('admin.table', [
         'columnas' => [
-            'rareza', 'atributo', 'imagen', 'pj_id'
+            'nombre', 'rareza', 'atributo', 'unidolized', 'idolized', 'pj_id'
         ],
         'datos' => $cartas,
     ])

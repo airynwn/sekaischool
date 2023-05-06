@@ -35,7 +35,7 @@
                 <input type="text" class="form-control" name="{{ $columna }}">
             {{-- TEXT --}}
             @elseif (Schema::getColumnType($tabla, $columna) == 'text')
-                <textarea class="form-control" name="{{ $columna }}" rows="3"></textarea>
+                <textarea class="form-control" name="{{ $columna }}" rows="1"></textarea>
             {{-- INT --}}
             @elseif (Schema::getColumnType($tabla, $columna) == 'integer')
                 <input type="number" class="form-control" name="{{ $columna }}">

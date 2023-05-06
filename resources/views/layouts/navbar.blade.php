@@ -10,7 +10,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mb-2 mb-lg-0 mx-auto">
-                @if (auth()->user()->admin)
+                @if (auth()->check() && auth()->user()->admin)
                     <li class="nav-item">
                         <a class="nav-link active brillo" href="{{ route('admin.index' )}}">Admin</a>
                     </li>
@@ -19,7 +19,7 @@
                     <a class="nav-link active brillo" href="{{ route('dashboard') }}">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active brillo" href="cartas.html">Cartas</a>
+                    <a class="nav-link active brillo" href="{{ route('pages.cartas') }}">Cartas</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active brillo" href="#modal-personajes">Personajes</a>
@@ -40,7 +40,7 @@
                     </ul>
                 </li>
             </ul>
-            @if (auth())
+            @if (auth()->check())
             <ul class="navbar-nav">
                 <li class="nav-item dropdown">
                     <a class="nav-link active dropdown-toggle brillo" role="button" data-bs-toggle="dropdown" aria-expanded="false">
