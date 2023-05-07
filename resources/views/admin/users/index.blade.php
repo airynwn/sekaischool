@@ -2,7 +2,8 @@
 @section('content')
     <h1>Lista de Users</h1>
     <br>
-    <table class="table table-dark table-striped table-bordered">
+    <div class="table-responsive">
+    <table class="table table-admin mx-5 my-5">
         <thead>
             <tr>
                 <th>Nombre</th>
@@ -34,4 +35,5 @@
             @endforeach
         </tbody>
     </table>
+</div>
 @endsection

@@ -1,5 +1,5 @@
 <div class="table-responsive">
-<table class="table table-admin mx-3 my-3">
+<table class="table table-admin mx-5 my-5">
     <thead>
         <tr>
             @foreach($columnas as $columna)
