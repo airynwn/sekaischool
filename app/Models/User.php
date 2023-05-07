@@ -54,7 +54,7 @@ class User extends Authenticatable
      */
     public function cartas()
     {
-        return $this->belongsToMany(Carta::class, 'user_id')
+        return $this->belongsToMany(Carta::class, 'inventario')
                     ->as('inventario')
                     ->withPivot('estado')
                     ->withTimestamps();
