@@ -47,7 +47,7 @@
                         {{ auth()->user()->name }}
                     </a>
                     <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end">
-                        <li><a class="dropdown-item" href="{{ route('profile.edit') }}">Perfil</a></li>
+                        <li><a class="dropdown-item" href="{{ route('profile.index') }}">Perfil</a></li>
                         <li><a class="dropdown-item" href="{{ route('dashboard') }}">Dashboard</a></li>
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
