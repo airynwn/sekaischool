@@ -106,20 +106,22 @@
                     <div class="col">
                         <figure class="card-box">
                             <picture>
-                                <img src="{{ asset($carta->unidolized) }}" alt="{{ $carta->nombre }} Unidolized" class="img-fluid card">
+                                <img src="{{ asset($carta->unidolized) }}"
+                                alt="{{ $carta->nombre }} Unidolized" class="img-fluid card">
                             </picture>
                             <picture>
-                                <img src="{{ asset($carta->idolized) }}" alt="{{ $carta->nombre }} Idolized" class="img-fluid card-idolized">
+                                <img src="{{ asset($carta->idolized) }}"
+                                alt="{{ $carta->nombre }} Idolized" class="img-fluid card-idolized">
                             </picture>
                         </figure>
                         @if (auth()->check())
                         {{-- onclick: $carta->id + $user->id + estado --> inventario --}}
                             <div class="tabs">
                                 <div class="tab">
-                                    <i class="fa-solid fa-bookmark"></i>
+                                    <i class="fa-solid fa-bookmark brillo"></i>
                                 </div>
                                 <div class="tab">
-                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star brillo"></i>
                                 </div>
                             </div>
                         @endif
