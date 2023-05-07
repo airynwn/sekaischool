@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Source+Sans+Pro&display=swap');
+
+h3 {
+    margin: 0;
+    color: white;
+    font-family: 'Fredoka One', sans-serif;
+    font-weight: 400;
+    text-align: center;
+}
+
+.header {
+    background: linear-gradient(90deg, #3AA89B 0%, #9D44FF 100%);
+}
+
+#logo {
+    height: 35px;
+    animation: logo-progresivo 2s;
+}
+
+@keyframes logo-progresivo {
+    0% {
+        filter: opacity(0);
+    }
+
+    100% {
+        filter: opacity(1);
+    }
+}
+
+.dropdown-item:focus, .dropdown-item:hover {
+    background-color: #ffffff30 !important; /*Sobreescribe bootstrap*/
+}
+
+.login {
+    text-decoration: none;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.18);
+}
+
+.noborder {
+    border: none !important;
+}
+
+/********************* MODAL  *********************/
+
+.flexbox-cerrar {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 0.5em;
+}
+
+.boton-cerrar {
+    background-color: #b83131;
+    padding: 0 0.5em 0 0.5em;
+    border-radius: 10px;
+    border: none;
+}
+
+        /****** Contenido Modal ******/
+
+#modal-personajes .caja {
+    background-image: none;
+}
+
+.modal-personajes-content {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    transition: all .4s;
+    overflow: auto;
+}
+
+.modal-personajes-content:target {
+    visibility: visible;
+    opacity: 1;
+  }
+
+
+/***********************************************/
+
+.caja {
+    background-color: rgba(0, 0, 0, 0.38);
+    border: solid 1px transparent;
+    border-radius: 20px;
+    background-image: linear-gradient(#0d071d, #09021b),
+    linear-gradient(180deg, #EC64F5 0%, #4DF6C6 100%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(12.5px);
+    display: flex;
+    flex-direction: column;
+}
+
+.caja-content {
+    margin: 0.5em 0.5em 0em 0.5em;
+    display: flex;
+    flex-direction: column;
+    text-align: initial;
+}
+
+.caja-content span {
+    margin-bottom: 0.5em;
+}
+
+/************************** PARTE DE LOGIN **************************/
+
+body {
+    background: url("../img/background.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: white;
+}
+
+@media only screen and (max-width:576px) {
+    body {
+        background-size: cover;
+    }
+}
+
+hr {
+    border: 1px solid #FFFFFF;
+    opacity: 0.5;
+    margin: 0.5em;
+}
+
+.campo {
+    margin: 0.5em;
+}
+
+#login-box {
+    background: linear-gradient(125.92deg, rgba(236, 100, 245, 0.5) 0%, rgba(66, 84, 245, 0.23) 34.6%, rgba(77, 246, 198, 0.335) 66.8%),
+        linear-gradient(51.69deg, rgba(66, 84, 245, 0.85) 0%, rgba(236, 100, 245, 0.85) 100%);
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    padding: 1em;
+}
+
+#registro-box {
+    background: linear-gradient(322.33deg, rgba(77, 246, 198, 0.45) 0%, rgba(77, 246, 198, 0) 74.48%),
+        linear-gradient(51.69deg, rgba(236, 100, 245, 0.85) 0%, rgba(66, 84, 245, 0.85) 100%);
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    padding: 1em;
+}
+
+.input-form {
+    background: #F5F5F5;
+    border-radius: 10px;
+    padding: 0.35em;
+    margin: 0.25em 0em 0.25em 0em;
+}
+
+.button-form {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 5px;
+    padding: 0.5em 2em 0.5em 2em;
+    width: 75%;
+    border: none;
+    color: white;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+/* Login: input azul + botón lila */
+#login-box .input-form {
+    border: 1px solid #4254F5;
+}
+
+#login-box .button-form {
+    background: #A022A8;
+}
+
+/* Registro: input lila + botón azul */
+#registro-box .input-form {
+    border: 1px solid #A022A8;
+}
+
+#registro-box .button-form {
+    background: #4254F5;
+}
+
+/* Chibi */
+#figure-box {
+    display: block;
+    margin: 0 auto;
+}
+
+#chibi-login {
+    margin: 2.5em;
+    height: 150px;
+}
+
+/* ? Para que el espacio que sobra de columna en las cajas de una fila no se rellene */
+.row {
+    align-items: flex-start;
+}
+
+.espacio {
+    margin: 10px 0 10px 0;
+}
+
+.brillo:hover {
+    filter: drop-shadow(0 0 0.5em white);
+    transition: all 0.5s;
+}
+
+/* Details y dialog*/
+
+details,
+dialog {
+    border: solid 1px transparent;
+    border-radius: 20px;
+    background-image: linear-gradient(#27165D, #2F1B58),
+    linear-gradient(180deg, #EC64F5 0%, #4DF6C6 100%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(12.5px);
+    padding: 1em;
+}
+
+summary::marker {
+    font-size: 1.5em;
+    color: #EC64F5;
+}
+
+.details-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+summary {
+    text-shadow: 1px 0 5px #EC64F5;
+}
+
+details h3,
+dialog h3 {
+    text-shadow: 1px 0 10px #3AA89B;
+}
+
+/* Dialog */
+
+.boton-dialog {
+    text-align: center;
+    border-radius: 10px;
+    border: none;
+    padding: 0.5em 2em 0.5em 2em;
+    color: white;
+}
+
+#mostrar {
+    background: linear-gradient(90.86deg, #4254F5 0%, #3AA89B 49.48%, #EC64F5 100%);
+}
+
+#cerrar {
+    background-color: #b83131;
+}
+
+dialog {
+    color: white;
+}
+
+dialog strong {
+    color: #4DF6C6;
+}
+
+dialog a {
+    color: #EC64F5;
+}
+
+video::-webkit-media-controls-timeline {
+    background: linear-gradient(90.86deg, #4254F5 0%, #3AA89B 49.48%, #EC64F5 100%);
+    padding-bottom: 0;
+    margin-bottom: 10px;
+  }

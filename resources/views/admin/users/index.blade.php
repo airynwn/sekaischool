@@ -1,7 +1,9 @@
 @extends('admin.index')
 @section('content')
-    <h1>Users</h1>
-    <table class="table table-dark table-striped table-bordered">
+    <h1>Lista de Users</h1>
+    <br>
+    <div class="table-responsive">
+    <table class="table table-admin mx-5 my-5">
         <thead>
             <tr>
                 <th>Nombre</th>
@@ -33,4 +35,5 @@
             @endforeach
         </tbody>
     </table>
+</div>
 @endsection

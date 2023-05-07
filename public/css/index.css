@@ -1,47 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Source+Sans+Pro&display=swap');
 
-.table-admin {
-    border-radius: 20px;
-    background-color: #2F2957;
-    color: white;
-    border: hidden;
-    text-align: center;
-}
-
-thead {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
-}
-
-
-tr:not(:last-child) {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
-}
-
-
-tbody > tr:nth-child(odd) {
-    background-color: #3A3460;
-}
-
-tr:last-child {
-    border-radius: 20px;
-}
-
-a,
-span {
+a {
     color: white;
     box-sizing: border-box;
     text-decoration-line: none;
 }
 
-h1,
-h4 {
+h3 {
+    color: white;
     font-family: 'Fredoka One', sans-serif;
     text-align: center;
-    background-image: linear-gradient(70deg, #66BDFF 25.82%, #EC64F5 77.72%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    /* ? Para que el degradado se vea bien */
-    display: inline;
 }
 
 .header {
@@ -143,42 +111,13 @@ h4 {
 /********************* INDEX  *********************/
 
 main {
-    /* padding: 1em; */
+    color: white;
+    padding: 1em;
 }
 
 body {
-    /* background: url("../img/background.png") round fixed;
-    background-size: contain; */
-    /* background-image: linear-gradient(315deg, #713387, #3e2388, #1e3b97); */
-    /* background: url("../img/background.png"); */
-    background-color: #1C1834;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    font-family: 'Source Sans Pro', sans-serif;
-    color: white;
-    /* background: linear-gradient(
-        178.7deg,
-        rgba(45, 37, 142, 0.93) 1.11%,
-        rgba(31, 52, 162, 0.829063) 53.07%,
-        rgba(93, 26, 179, 0.74) 98.91%
-    );
-    color: white; */
-}
-
-.ruta-actual {
-    background-color: rgba(0, 0, 0, 0.25);
-}
-
-.sidebar {
-    background-color: #2F2957;
-    /* background: linear-gradient(90.88deg, rgba(0, 0, 0, 0.28) 0.62%, rgba(0, 0, 0, 0.34) 99.1%); */
-    /* background: linear-gradient(90.88deg, rgba(0, 0, 0, 0.28) 0.62%, rgba(0, 0, 0, 0.34) 99.1%),
-linear-gradient(180deg, rgba(0, 66, 165, 0.11) 0%, rgba(189, 0, 255, 0.2) 100%); */
-    /* background: linear-gradient(180deg, rgba(69, 110, 255, 0.62) 0%, rgba(152, 71, 255, 0.6) 100%); */
-
-
+    background: url("../img/background.png") round fixed;
+    background-size: contain;
 }
 
 @media only screen and (max-width:576px) {
@@ -198,10 +137,12 @@ Antiguo fondo pre-vídeo
     background: url("../img/bg-pc.png") center no-repeat;
     background-size: cover;
 }
+
 @media only screen and (max-width:991px) {
     .home {
         background: url("../img/bg-movil.png") right;
     }
+
     main {
         background-image: none;
     }
@@ -227,6 +168,12 @@ Antiguo fondo pre-vídeo
 
 .logo-asset {
     height: 200px;
+}
+
+h1 {
+    font-family: 'Fredoka One', sans-serif;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    -webkit-text-stroke: 3px transparent;
 }
 
 #gacha-actual h1,
@@ -266,3 +213,4 @@ Antiguo fondo pre-vídeo
     filter: drop-shadow(0 0 0.5em white);
     transition: all 0.5s;
 }
+
