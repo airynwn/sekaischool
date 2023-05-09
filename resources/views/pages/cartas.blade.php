@@ -101,6 +101,9 @@
     </div>
     <div class="col" id="cartas">
         <div class="container">
+            @if (session('success'))
+                <div class="alert alert-success">{{ session('success') }}</div>
+            @endif
             <div class="row row-cols-sm-2 row-cols-1">
                 @foreach ($cartas as $carta)
                     <div class="col">
@@ -117,9 +120,15 @@
                         @if (auth()->check())
                         {{-- onclick: $carta->id + $user->id + estado --> inventario --}}
                             <div class="tabs">
-                                <div class="tab">
-                                    <i class="fa-solid fa-bookmark brillo"></i>
-                                </div>
+                                {{-- <div class="tab"> --}}
+                                <form method="POST" action="{{ route('pages.cartas.add') }}" class="tab">
+                                    @csrf
+                                    <input type="hidden" name="carta" value="{{ $carta->id }}">
+                                    <input type="hidden" name="estado" value="coleccion">
+                                    <button type="submit"><i class="fa-solid fa-bookmark brillo"></i></button>
+                                    {{-- <i class="fa-solid fa-bookmark brillo"></i> --}}
+                                </form>
+                                {{-- </div> --}}
                                 <div class="tab">
                                     <i class="fa-solid fa-star brillo"></i>
                                 </div>

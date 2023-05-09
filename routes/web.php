@@ -30,6 +30,9 @@ Route::get('/dashboard', function () {
 /************* Guest *************/
 Route::get('/cartas', [CartaController::class, 'index'])->name('pages.cartas');
 
+/************* User *************/
+Route::post('/cartas/add', [UserController::class, 'guardarCarta'])->name('pages.cartas.add');
+
 /************* Admin *************/
 Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin.index');

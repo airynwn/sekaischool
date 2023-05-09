@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Carta;
 use App\Models\Personaje;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -117,4 +118,28 @@ class UserController extends Controller
 
         return redirect()->route('admin.users.index')->with('success', 'Se ha bloqueado el usuario con éxito.');
     }
+
+    /**
+     * Guarda una carta en el inventario del usuario
+     *
+     * @param  \App\Models\User  $user
+     * @param  mixed $carta ID de la carta a guardar
+     * @param  mixed $estado Estado de la carta ('colección' o 'deseo')
+     * @return void
+     */
+    public function guardarCarta(Request $request)
+    {
+        $user = User::find(auth()->id());
+        $carta = Carta::find($request->carta);
+        $estado = $request->input('estado');
+
+        $user->cartas()->attach($carta, ['estado' => $estado]);
+        $user->save();
+
+        $lista = $estado == 'coleccion' ? 'colección' : 'lista de deseos';
+        // TODO AJAX
+        return redirect()->route('pages.cartas')->with('success', 'Se ha añadido la carta ' . $carta->nombre . ' a la ' . $lista . ' con éxito.');
+    }
+
+
 }
