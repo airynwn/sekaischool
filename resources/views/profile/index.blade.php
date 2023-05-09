@@ -85,15 +85,15 @@
                 <!-- g-3 (gutter-3) da separación horizontal y vertical entre columnas según pantalla -->
                 @if ($user->cartas !== null)
                 {{-- DESEOS: Hacer una variable según el botón onclick --}}
-                @foreach ($user->cartas()->where('estado', 'coleccion')->get() as $carta)
-                    <div class="row row-cols-3 row-cols-md-4 row-cols-lg-5 g-3">
+                <div class="row row-cols-3 row-cols-md-4 row-cols-lg-5 g-3">
+                        @foreach ($user->cartas()->where('estado', 'coleccion')->get() as $carta)
                         <div class="col">
                             <picture>
                                 <img src="{{ asset($carta->unidolized) }}" alt="{{ $carta->nombre . ' Icon' }}" class="img-fluid brillo">
                             </picture>
                         </div>
+                        @endforeach
                     </div>
-                @endforeach
                 @endif
             </div>
         </div>
