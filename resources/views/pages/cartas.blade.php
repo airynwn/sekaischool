@@ -120,18 +120,18 @@
                         @if (auth()->check())
                         {{-- onclick: $carta->id + $user->id + estado --> inventario --}}
                             <div class="tabs">
-                                {{-- <div class="tab"> --}}
                                 <form method="POST" action="{{ route('pages.cartas.add') }}" class="tab">
                                     @csrf
                                     <input type="hidden" name="carta" value="{{ $carta->id }}">
                                     <input type="hidden" name="estado" value="coleccion">
-                                    <button type="submit"><i class="fa-solid fa-bookmark brillo"></i></button>
-                                    {{-- <i class="fa-solid fa-bookmark brillo"></i> --}}
+                                    <button type="submit" class="vacio"><i class="fa-solid fa-bookmark brillo"></i></button>
                                 </form>
-                                {{-- </div> --}}
-                                <div class="tab">
-                                    <i class="fa-solid fa-star brillo"></i>
-                                </div>
+                                <form method="POST" action="{{ route('pages.cartas.add') }}" class="tab">
+                                    @csrf
+                                    <input type="hidden" name="carta" value="{{ $carta->id }}">
+                                    <input type="hidden" name="estado" value="deseo">
+                                    <button type="submit" class="vacio"><i class="fa-solid fa-star brillo"></i></button>
+                                </form>
                             </div>
                         @endif
                     </div>
