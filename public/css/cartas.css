@@ -95,6 +95,14 @@ figure {
 
 /***********************************************/
 
+.modal-dark {
+    background-color: #2F2957;
+    border-bottom-color: #584E9c;
+    border-top: none;
+}
+
+/***********************************************/
+
 /********************* CARTAS  *********************/
 
 * {
@@ -274,6 +282,13 @@ i {
 
 .tab:nth-child(even) {
     border-radius: 0 0 20px 0;
+}
+
+button.vacio {
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 0;
 }
 
 /** El icono de bookmark tiene un tamaño distinto. Con padding se centra y se ven bien */

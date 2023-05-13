@@ -4,6 +4,7 @@
 @endsection
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/cartas.css') }}">
+    <script type="text/javascript" src="{{ asset('js/cartas.js') }}"></script>
 @endsection
 {{-- Main --}}
 @section('content')
@@ -101,26 +102,40 @@
     </div>
     <div class="col" id="cartas">
         <div class="container">
+            @if (session('success'))
+                <div class="alert alert-success">{{ session('success') }}</div>
+            @endif
             <div class="row row-cols-sm-2 row-cols-1">
                 @foreach ($cartas as $carta)
                     <div class="col">
                         <figure class="card-box">
                             <picture>
-                                <img src="{{ asset($carta->unidolized) }}" alt="{{ $carta->nombre }} Unidolized" class="img-fluid card">
+                                <img src="{{ asset($carta->unidolized) }}"
+                                alt="{{ $carta->nombre }} Unidolized" class="img-fluid card">
                             </picture>
                             <picture>
-                                <img src="{{ asset($carta->idolized) }}" alt="{{ $carta->nombre }} Idolized" class="img-fluid card-idolized">
+                                <img src="{{ asset($carta->idolized) }}"
+                                alt="{{ $carta->nombre }} Idolized" class="img-fluid card-idolized">
                             </picture>
                         </figure>
                         @if (auth()->check())
-                        {{-- onclick: $carta->id + $user->id + estado --> inventario --}}
                             <div class="tabs">
-                                <div class="tab">
-                                    <i class="fa-solid fa-bookmark"></i>
-                                </div>
-                                <div class="tab">
-                                    <i class="fa-solid fa-star"></i>
-                                </div>
+                                <form onsubmit="anadirCarta(event)" class="tab form-coleccion">
+                                    @csrf
+                                    <input type="hidden" name="carta" value="{{ $carta->id }}">
+                                    <input type="hidden" name="estado" value="coleccion">
+                                    <button type="submit" class="vacio" id="hola">
+                                        <i class="fa-solid fa-bookmark brillo"></i>
+                                    </button>
+                                </form>
+                                <form onsubmit="anadirCarta(event)" class="tab form-deseo">
+                                    @csrf
+                                    <input type="hidden" name="carta" value="{{ $carta->id }}">
+                                    <input type="hidden" name="estado" value="deseo">
+                                    <button type="submit" class="vacio">
+                                        <i class="fa-solid fa-star brillo"></i>
+                                    </button>
+                                </form>
                             </div>
                         @endif
                     </div>
@@ -130,5 +145,19 @@
     </div>
 </div>
 </div>
+{{-- Modal Añadir Carta --}}
+<div class="modal fade" id="anadirCartaModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header modal-dark">
+            <h5 class="modal-title">Añadir carta</h5>
+            <button type="button"  class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body modal-dark" id="anadir-body"></div>
+        <div class="modal-footer modal-dark"></div>
+      </div>
+    </div>
+  </div>
+{{-- ------------------ --}}
 @include('layouts.modal', ['personajes' => $tablafk])
 @endsection

@@ -1,0 +1,369 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Source+Sans+Pro&display=swap');
+
+:root {
+    --usercolor: #DF0;
+    --vbs: #E16;
+}
+
+h2 {
+    font-family: 'Fredoka One', sans-serif;
+    font-weight: 400;
+    text-align: center;
+    background-image: linear-gradient(70deg, #EC64F5 25%, #4DF6C6 75%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* ? Para que el degradado se vea bien */
+    display: inline;
+}
+
+.header {
+    background: linear-gradient(90deg, #3AA89B 0%, #9D44FF 100%);
+}
+
+#logo {
+    height: 35px;
+    animation: logo-progresivo 2s;
+}
+
+@keyframes logo-progresivo {
+    0% {
+        filter: opacity(0);
+    }
+
+    100% {
+        filter: opacity(1);
+    }
+}
+
+.dropdown-item:focus, .dropdown-item:hover {
+    background-color: #ffffff30 !important; /*Sobreescribe bootstrap*/
+}
+
+.header-avatar {
+    border-radius: 20px;
+    border: solid 2px rgba(255, 255, 255, 0.5);
+}
+
+.noborder {
+    border: none !important;
+}
+
+/********************* MODAL  *********************/
+
+.flexbox-cerrar {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 0.5em;
+}
+
+.boton-cerrar {
+    background-color: #b83131;
+    padding: 0 0.5em 0 0.5em;
+    border-radius: 10px;
+}
+
+        /****** Contenido Modal ******/
+
+#modal-personajes .caja {
+    background-image: none;
+    outline: none;
+}
+
+.modal-personajes-content {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    transition: all .4s;
+    overflow: auto;
+}
+
+.modal-personajes-content:target {
+    visibility: visible;
+    opacity: 1;
+  }
+
+
+/***********************************************/
+
+.opcion {
+    padding: 0.25em;
+    color: white;
+    text-align: center;
+    font-size: medium;
+    background: #2F2957;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    border: solid 1px transparent;
+    background-image: linear-gradient(#2F2957, #2F2957),
+        linear-gradient(180deg, #EC64F5 0%, #4DF6C6 100%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+}
+
+.caja {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(12.5px);
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    border: solid 1px transparent;
+    background-image: linear-gradient(#0d071d, #09021b),
+        linear-gradient(180deg, #EC64F5 0%, #4DF6C6 100%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+}
+
+.caja-content {
+    margin: 0.5em 0.5em 0em 0.5em;
+    display: flex;
+    flex-direction: column;
+    text-align: initial;
+}
+
+.caja-content span {
+    margin-bottom: 0.5em;
+}
+
+/********************* PERFIL  *********************/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: url("../img/background.png") round fixed;
+    background-size: contain;
+}
+
+main {
+    font-family: 'Source Sans Pro', sans-serif;
+    text-align: center;
+    padding: 1em;
+    color: white;
+}
+
+nav {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+@media only screen and (max-width:576px) {
+    body {
+        background-size: cover;
+    }
+}
+
+.contenedor {
+    margin: 0.5em;
+    padding-bottom: 0.5em;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(12.5px);
+    border: solid 2px transparent;
+    border-radius: 20px;
+    background-image: linear-gradient(#27165D, #2F1B58),
+        linear-gradient(180deg, #EC64F5 0%, #4DF6C6 100%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.glassmorphism {
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(12.5px);
+    background: linear-gradient(214.91deg, rgba(0, 0, 0, 0.56) 14.51%, rgba(0, 0, 0, 0.38) 114.51%);
+    border: 1px solid;
+    border-image: linear-gradient(180deg, #EC64F5 0%, #4DF6C6 100%) 1;
+
+}
+
+.contenedor-padding {
+    padding: 1.5em;
+}
+
+/* ? El primer contenedor tiene el borde del color elegido por el usuario */
+div.container:nth-child(1) {
+    border: 1px solid;
+    animation: border-color 10s infinite;
+}
+
+@keyframes border-color {
+    0% {
+        border-color: var(--usercolor);
+    }
+
+    25% {
+        border-color: #4DF6C6
+    }
+
+    50% {
+        border-color: #EC64F5;
+    }
+
+    75% {
+        border-color: #4254F5;
+    }
+
+    100% {
+        border-color: var(--usercolor);
+    }
+}
+
+div.caja:nth-child(1) {
+    border: none;
+    outline: var(--usercolor) 2px solid;
+}
+
+#personaje {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    text-align: initial;
+}
+
+.panel {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.36) 0%, rgba(0, 0, 0, 0.32) 100%);
+    border: 1px solid #E4A8CA;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(12.5px);
+    border-radius: 20px;
+}
+
+.titulo {
+    padding: 0.25em;
+    color: white;
+    text-align: center;
+    font-size: medium;
+    background: #2F2957;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px 20px 0px 0px;
+    border: solid 1px transparent;
+    background-image: linear-gradient(#2F2957, #2F2957),
+        linear-gradient(180deg, #EC64F5 0%, #4DF6C6 100%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+}
+
+/***TABS***/
+
+.tabs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.tab {
+    background: linear-gradient(90.86deg, #4254F5 0%, #3AA89B 49.48%, #EC64F5 100%);
+    border-radius: 20px;
+}
+
+.tabs:nth-child(1) .tab {
+    background: linear-gradient(90.86deg, #4254F5 0%, #EC64F5 100%);
+}
+
+.tabs:nth-child(2) .tab {
+    background: linear-gradient(89.14deg, #EC64F5 0%, #4254F5 100%);
+}
+
+/******/
+
+button {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(15px);
+    border: none;
+    color: white;
+    padding: 5px 10px 5px 10px;
+}
+
+#cumple {
+    background: linear-gradient(93.58deg, #A022A8 0%, #4254F5 100%); 
+    border-radius: 30px;
+}
+
+#grupo {
+    background: var(--vbs);
+    border-radius: 30px;
+}
+
+.fa-circle {
+    color: #3AA89B;
+}
+
+span a {
+    color: #4DF6C6;
+    text-decoration: none;
+}
+
+.espacio {
+    margin-top: 10px;
+}
+
+.botones {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.avatar-bg {
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    padding: 10px;
+    animation: bg-color 10s infinite;
+}
+
+@keyframes bg-color {
+    0% {
+        background-color: var(--usercolor);
+    }
+
+    25% {
+        background-color: #4DF6C6
+    }
+
+    50% {
+        background-color: #EC64F5;
+    }
+
+    75% {
+        background-color: #4254F5;
+    }
+
+    100% {
+        background-color: var(--usercolor);
+    }
+}
+
+.avatar {
+    border-radius: 20px;
+    padding: 5px;
+    background: #2F2957;
+}
+
+.row>* {
+    /* Sobreescribir bootstrap */
+    flex-shrink: initial !important;
+}
+
+.titulos {
+    display: flex;
+    justify-content: center;
+}
+
+.boton-titulo {
+    background: #2F2957;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(12.5px);
+    border-radius: 0 20px 20px 0;
+    border: solid 2px white;
+    padding: 0 0.5em 0 0.5em;
+    color: white;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.brillo:hover {
+    filter: drop-shadow(0 0 0.5em white);
+    transition: all 0.5s;
+}
