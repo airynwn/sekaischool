@@ -144,8 +144,28 @@ class UserController extends Controller
 
 
         return response()->json(['info' => 'Se ha añadido la carta ' . $carta->nombre . ' a la ' . $lista . ' con éxito.'], 200);
-
     }
 
+    /**
+     * Guarda una carta en el inventario del usuario
+     *
+     * @param  \App\Models\User  $user
+     * @param  mixed $carta ID de la carta a guardar
+     * @param  mixed $estado Estado de la carta ('colección' o 'deseo')
+     * @return void
+     */
+    public function eliminarCarta(Request $request)
+    {
+        $user = User::find(auth()->id());
+        $carta = Carta::find($request->carta);
 
+        if (!$user->cartas()->where('carta_id', $carta->id)->exists()) {
+            return response()->json(['info' => 'La carta ' . $carta->nombre . ' no está en el inventario.'], 422);
+        }
+
+        $user->cartas()->detach($carta);
+        $user->save();
+
+        return response()->json(['info' => 'Se ha eliminado la carta ' . $carta->nombre . ' del inventario.'], 200);
+    }
 }

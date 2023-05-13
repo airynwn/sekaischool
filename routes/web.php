@@ -32,6 +32,7 @@ Route::get('/cartas', [CartaController::class, 'index'])->name('pages.cartas');
 
 /************* User *************/
 Route::post('/cartas/add', [UserController::class, 'guardarCarta'])->name('pages.cartas.add');
+Route::post('/cartas/delete', [UserController::class, 'eliminarCarta'])->name('pages.cartas.delete');
 
 /************* Admin *************/
 Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
