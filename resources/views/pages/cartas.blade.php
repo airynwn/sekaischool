@@ -150,7 +150,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header modal-dark">
-            <h5 class="modal-title">Carta añadida</h5>
+            <h5 class="modal-title">Añadir carta</h5>
             <button type="button"  class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body modal-dark" id="anadir-body"></div>
