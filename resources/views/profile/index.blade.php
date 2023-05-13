@@ -4,6 +4,7 @@
 @endsection
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/perfil.css') }}">
+    <script type="text/javascript" src="{{ asset('js/perfil.js') }}"></script>
 @endsection
 {{-- Main --}}
 @section('content')
@@ -88,8 +89,13 @@
                 <div class="row row-cols-3 row-cols-md-4 row-cols-lg-5 g-3">
                         @foreach ($user->cartas()->where('estado', 'coleccion')->get() as $carta)
                         <div class="col">
-                            <picture>
-                                <img src="{{ asset($carta->unidolized) }}" alt="{{ $carta->nombre . ' Icon' }}" class="img-fluid brillo">
+                            <picture class="col-carta position-relative">
+                                <form onsubmit="eliminarCarta(event)">
+                                    @csrf
+                                    <input type="hidden" name="carta" value="{{ $carta->id }}">
+                                    <button type="submit" class="btn-close position-absolute"></button>
+                                </form>
+                                <img src="{{ asset($carta->unidolized) }}" alt="{{ $carta->nombre . ' Icon' }}" class="img-fluid">
                             </picture>
                         </div>
                         @endforeach
@@ -100,4 +106,18 @@
     </div>
 </div>
 {{--  --}}
+{{-- Modal Eliminar Carta --}}
+<div class="modal fade" id="eliminarCartaModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header modal-dark">
+            <h5 class="modal-title">Eliminar carta</h5>
+            <button type="button"  class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body modal-dark" id="eliminar-body"></div>
+        <div class="modal-footer modal-dark"></div>
+      </div>
+    </div>
+  </div>
+{{-- ------------------ --}}
 @endsection

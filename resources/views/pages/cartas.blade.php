@@ -120,15 +120,15 @@
                         </figure>
                         @if (auth()->check())
                             <div class="tabs">
-                                <form onsubmit="anadirCarta(event)" class="tab form-coleccion">
+                                <form onsubmit="anadirCarta(event)" class="tab">
                                     @csrf
                                     <input type="hidden" name="carta" value="{{ $carta->id }}">
                                     <input type="hidden" name="estado" value="coleccion">
-                                    <button type="submit" class="vacio" id="hola">
+                                    <button type="submit" class="vacio">
                                         <i class="fa-solid fa-bookmark brillo"></i>
                                     </button>
                                 </form>
-                                <form onsubmit="anadirCarta(event)" class="tab form-deseo">
+                                <form onsubmit="anadirCarta(event)" class="tab">
                                     @csrf
                                     <input type="hidden" name="carta" value="{{ $carta->id }}">
                                     <input type="hidden" name="estado" value="deseo">
