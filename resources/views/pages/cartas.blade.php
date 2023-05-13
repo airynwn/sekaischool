@@ -4,6 +4,7 @@
 @endsection
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/cartas.css') }}">
+    <script type="text/javascript" src="{{ asset('js/cartas.js') }}"></script>
 @endsection
 {{-- Main --}}
 @section('content')
@@ -118,19 +119,22 @@
                             </picture>
                         </figure>
                         @if (auth()->check())
-                        {{-- onclick: $carta->id + $user->id + estado --> inventario --}}
                             <div class="tabs">
-                                <form method="POST" action="{{ route('pages.cartas.add') }}" class="tab">
+                                <form onsubmit="anadirCarta(event)" class="tab form-coleccion">
                                     @csrf
                                     <input type="hidden" name="carta" value="{{ $carta->id }}">
                                     <input type="hidden" name="estado" value="coleccion">
-                                    <button type="submit" class="vacio"><i class="fa-solid fa-bookmark brillo"></i></button>
+                                    <button type="submit" class="vacio" id="hola">
+                                        <i class="fa-solid fa-bookmark brillo"></i>
+                                    </button>
                                 </form>
-                                <form method="POST" action="{{ route('pages.cartas.add') }}" class="tab">
+                                <form onsubmit="anadirCarta(event)" class="tab form-deseo">
                                     @csrf
                                     <input type="hidden" name="carta" value="{{ $carta->id }}">
                                     <input type="hidden" name="estado" value="deseo">
-                                    <button type="submit" class="vacio"><i class="fa-solid fa-star brillo"></i></button>
+                                    <button type="submit" class="vacio">
+                                        <i class="fa-solid fa-star brillo"></i>
+                                    </button>
                                 </form>
                             </div>
                         @endif
@@ -141,5 +145,19 @@
     </div>
 </div>
 </div>
+{{-- Modal Añadir Carta --}}
+<div class="modal fade" id="anadirCartaModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header modal-dark">
+            <h5 class="modal-title">Carta añadida</h5>
+            <button type="button"  class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body modal-dark" id="anadir-body"></div>
+        <div class="modal-footer modal-dark"></div>
+      </div>
+    </div>
+  </div>
+{{-- ------------------ --}}
 @include('layouts.modal', ['personajes' => $tablafk])
 @endsection
