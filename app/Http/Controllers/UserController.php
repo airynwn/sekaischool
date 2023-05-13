@@ -133,12 +133,18 @@ class UserController extends Controller
         $carta = Carta::find($request->carta);
         $estado = $request->input('estado');
 
+        if ($user->cartas()->where('carta_id', $carta->id)->exists()) {
+            return response()->json(['info' => 'La carta ' . $carta->nombre . ' ya está en el inventario.'], 422);
+        }
+
         $user->cartas()->attach($carta, ['estado' => $estado]);
         $user->save();
 
         $lista = $estado == 'coleccion' ? 'colección' : 'lista de deseos';
-        // TODO AJAX
-        return redirect()->route('pages.cartas')->with('success', 'Se ha añadido la carta ' . $carta->nombre . ' a la ' . $lista . ' con éxito.');
+
+
+        return response()->json(['info' => 'Se ha añadido la carta ' . $carta->nombre . ' a la ' . $lista . ' con éxito.'], 200);
+
     }
 
 
