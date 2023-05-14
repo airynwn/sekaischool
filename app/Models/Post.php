@@ -4,11 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class Post extends Model
 {
     use HasFactory;
-    protected $fillable = ['contenido'];
+    protected $fillable = ['contenido', 'user_id'];
+    protected $dates = ['created_at', 'updated_at'];
 
     /**
      * Usuarios que han valorado positivamente un post
@@ -28,5 +30,10 @@ class Post extends Model
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public function tiempo()
+    {
+        return Carbon::parse($this->created_at)->diffForHumans();
     }
 }
