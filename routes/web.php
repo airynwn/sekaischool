@@ -38,6 +38,7 @@ Route::post('/cartas/add', [UserController::class, 'guardarCarta'])->name('pages
 Route::post('/cartas/delete', [UserController::class, 'eliminarCarta'])->name('pages.cartas.delete');
         /**** Comunidad ****/
 Route::get('/comunidad', [PostController::class, 'index'])->name('pages.comunidad');
+Route::post('/comunidad/post', [PostController::class, 'store'])->name('pages.comunidad.post');
 
 
 /************* Admin *************/
