@@ -25,7 +25,7 @@
                     <a class="nav-link active brillo" href="#modal-personajes">Personajes</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active brillo" href="comunidad.html">Comunidad</a>
+                    <a class="nav-link active brillo" href="{{ route('pages.comunidad') }}">Comunidad</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link active dropdown-toggle brillo" role="button" data-bs-toggle="dropdown" aria-expanded="false">

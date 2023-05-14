@@ -1,0 +1,372 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Source+Sans+Pro&display=swap');
+
+
+:root {
+    /*** PJs ***/
+    --shizuku: #9AEEDE;
+    /*** VSs ***/
+    --rin: #FC1;
+    --len: #FFEE12;
+}
+
+h2 {
+    font-family: 'Fredoka One', sans-serif;
+    text-align: center;
+    background-image: linear-gradient(70deg, #EC64F5 25%, #4DF6C6 75%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.header {
+    background: linear-gradient(90deg, #3AA89B 0%, #9D44FF 100%);
+}
+
+#logo {
+    height: 35px;
+    animation: logo-progresivo 2s;
+}
+
+@keyframes logo-progresivo {
+    0% {
+        filter: opacity(0);
+    }
+
+    100% {
+        filter: opacity(1);
+    }
+}
+
+.header-avatar {
+    border-radius: 20px;
+    border: solid 2px rgba(255, 255, 255, 0.5);
+}
+
+.dropdown-item:focus, .dropdown-item:hover {
+    background-color: #ffffff30 !important; /*Sobreescribe bootstrap*/
+}
+
+.navbar-text a {
+    text-decoration: none;
+}
+
+.noborder {
+    border: none !important;
+}
+
+/********************* MODAL  *********************/
+
+.flexbox-cerrar {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 0.5em;
+}
+
+.boton-cerrar {
+    background-color: #b83131;
+    padding: 0 0.5em 0 0.5em;
+}
+
+        /****** Contenido Modal ******/
+
+
+#modal-personajes .caja,
+#modal-calendario .caja {
+    background-image: none;
+}
+
+.modal-personajes-content,
+.modal-calendario-content {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    transition: all .4s;
+    overflow: auto;
+}
+
+.modal-personajes-content:target,
+.modal-calendario-content:target {
+    visibility: visible;
+    opacity: 1;
+  }
+
+.lista-cumples {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+}
+
+/***********************************************/
+
+.modal-dark {
+    background-color: #2F2957;
+    border-bottom-color: #584E9c;
+    border-top: none;
+}
+/***********************************************/
+
+.opcion {
+    padding: 0.25em;
+    color: white;
+    background: #2F2957;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px 20px 0px 0px;
+    border: solid 1px transparent;
+    background-image: linear-gradient(#2F2957, #2F2957),
+        linear-gradient(180deg, #EC64F5 0%, #4DF6C6 100%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+}
+
+.caja {
+    background-color: rgba(0, 0, 0, 0.38);
+    border: solid 1px transparent;
+    border-radius: 20px;
+    background-image: linear-gradient(#0d071d, #09021b),
+    linear-gradient(180deg, #4254F5 0%, #EC64F5 100%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(12.5px);
+    display: flex;
+    flex-direction: column;
+}
+
+.caja-content {
+    margin: 0.5em 0.5em 0em 0.5em;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.caja-content span {
+    margin-bottom: 0.5em;
+}
+
+/********************* COMUNIDAD  *********************/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    background: url("../img/background.png") round fixed;
+    background-size: contain;
+}
+
+main {
+    text-align: center;
+    padding: 1em;
+    color: white;
+}
+
+nav {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+@media only screen and (max-width:576px) {
+    body {
+        background-size: cover;
+    }
+}
+
+.contenedor {
+    margin: 0 0.5em 0.5em 0.5em;
+    padding: 1.5em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(12.5px);
+    border: solid 2px transparent;
+    border-radius: 20px;
+    background-image: linear-gradient(#27165D, #2F1B58),
+        linear-gradient(180deg, #EC64F5 0%, #4DF6C6 100%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+}
+
+li {
+    text-align: initial;
+}
+
+.caja-icons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5em;
+}
+
+button {
+    padding: 0.5em;
+    width: fit-content;
+    color: white;
+    text-align: initial;
+    border: none;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+}
+
+.buscar {
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(12.5px);
+    border-radius: 20px;
+    border: solid 1px transparent;
+    background-image: linear-gradient(#2F2957, #2F2957),
+    linear-gradient(180deg, #EC64F5 0%, #4DF6C6 100%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    width: 100%;
+    color: white;
+}
+
+button.vacio {
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+}
+
+i {
+    color: white;
+    -webkit-text-stroke: 0.75px #A022A8;
+}
+
+/****** CENTRO ******/
+
+.tabs {
+    display: flex;
+    justify-content: space-around;
+}
+
+.tab {
+    background: linear-gradient(89deg, #e754c0 0%, #408ee3 100%);
+    border-radius: 20px;
+    padding: 0.2em 1.2em;
+    margin-bottom: 1.5em;
+}
+
+/****** Columna de iconos de flechas (volver arriba / abajo) ******/
+/* Ajusta la altura de la columna de iconos y permite colocarlos en los extremos de la fila */
+.alinear-altura {
+    display: flex !important;
+    align-items: inherit !important;
+}
+
+.columna {
+    display: flex;
+    flex-direction: column;
+}
+
+.abajo {
+    position: absolute;
+    bottom: 0;
+}
+
+/****** Foro ******/
+
+.foro-avatar {
+    border-radius: 25px;
+    border: solid 2px rgba(213, 107, 255, 0.5);
+    width: 50px;
+    height: 50px;
+}
+
+.foro-foto {
+    border-radius: 20px;
+    margin-top: 0.5em;
+}
+
+.post-contenedor {
+    display: flex;
+}
+
+@media only screen and (max-width:576px) {
+    .post-contenedor {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.post-box {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25em;
+}
+
+.post {
+    text-align: initial;
+}
+
+.escribir-post {
+    background-color: transparent;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    margin-bottom: 1em;
+    padding: 1em;
+    text-align: initial;
+    outline: #40325a dashed 1px;
+    transition: outline-color 0.3s ease-in-out;
+}
+
+.escribir-post:focus-visible {
+    outline-color: #c07bc4;
+}
+
+.post-info {
+    color: #c07bc4;
+}
+
+/****** DERECHA ******/
+
+button[type=button] {
+    border-radius: 10px;
+}
+
+#navidad {
+    background: linear-gradient(90deg, #C41414 0%, #22B831 100%);
+}
+
+.tema {
+    background: linear-gradient(81.48deg, #4DF6C6 0%, #4254F5 100%);
+}
+
+.tema:last-child {
+    background: linear-gradient(261.48deg, #4DF6C6 0%, #4254F5 100%);
+}
+
+.cumple {
+    background: linear-gradient(90deg, #EC64F5 0%, #4254F5 100%);
+}
+
+.off-topic {
+    background: linear-gradient(81.48deg, #4DF6C6 0%, #4254F5 48.24%, #EC64F5 100%);
+}
+
+.espacio {
+    margin: 10px 0 10px 0;
+}
+
+.shizuku {
+    color: var(--shizuku);
+}
+
+.rin {
+    color: var(--rin);
+}
+
+.len {
+    color: var(--len);
+}
+
+/* ? Para que el espacio que sobra de columna en las cajas de una fila no se rellene */
+.row {
+    align-items: flex-start;
+}
+
+.brillo:hover {
+    filter: drop-shadow(0 0 0.5em white);
+    transition: all 0.5s;
+}
