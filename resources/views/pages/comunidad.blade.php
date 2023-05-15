@@ -9,6 +9,12 @@
 {{-- Main --}}
 @section('content')
 <div class="container-fluid">
+    @if (session('error'))
+    <div class="alert alert-danger">{{ session('error') }}</div>
+@endif
+@if (session('success'))
+    <div class="alert alert-success">{{ session('success') }}</div>
+@endif
     <div class="row">
     <div class="col-lg-3 col-sm-5 order-0 contenedor">
         <h2>Tendencias</h2>
@@ -139,6 +145,17 @@
                                         <div>
                                             <i class="fa-solid fa-heart"></i> 1
                                         </div>
+                                        {{-- Eliminar --}}
+                                        @if ($post->user_id == auth()->user()->id)
+                                        <form onsubmit="return confirm('test')"
+                                        action="{{ route('pages.comunidad.delete', $post) }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger">
+                                                &times;
+                                            </button>
+                                        </form>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
@@ -203,8 +220,8 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header modal-dark">
-            <h5 class="modal-title">Añadir carta</h5>
-            <button type="button"  class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            <h5 class="modal-title">Enviar post</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body modal-dark" id="enviar-body"></div>
         <div class="modal-footer modal-dark"></div>
