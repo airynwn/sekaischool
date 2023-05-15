@@ -143,7 +143,19 @@
                                         </div>
                                         <!-- Likes -->
                                         <div>
-                                            <i class="fa-solid fa-heart"></i> 1
+                                            <form onsubmit="valorarPost(event)"
+                                            data-post-id="{{ $post->id }}">
+                                            @csrf
+                                                <button type="submit" class="vacio">
+                                                    @if ($post->fans()->where('user_id',
+                                                        auth()->user()->id)->exists())
+                                                    <i class="fa-solid fa-heart"></i>
+                                                    @else
+                                                    <i class="fa-regular fa-heart"></i>
+                                                    @endif
+                                                    {{ $post->fans()->count() }}
+                                                </button>
+                                            </form>
                                         </div>
                                         {{-- Eliminar --}}
                                         @if ($post->user_id == auth()->user()->id)
@@ -220,10 +232,10 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header modal-dark">
-            <h5 class="modal-title">Enviar post</h5>
+            <h5 class="modal-title" id="titulo"></h5>
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body modal-dark" id="enviar-body"></div>
+        <div class="modal-body modal-dark" id="mensaje"></div>
         <div class="modal-footer modal-dark"></div>
       </div>
     </div>
