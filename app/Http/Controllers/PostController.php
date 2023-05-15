@@ -87,6 +87,14 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        if ($post->user_id !== auth()->user()->id) {
+            // return response()->json(['info' => 'No puedes eliminar este post.'], 403);
+            return redirect()->route('pages.comunidad')->with('error', 'No puedes eliminar este post.');
+        }
+
+        $post->delete();
+
+        // return response()->json(['info' => 'Se ha eliminado el post con éxito.'], 200);
+        return redirect()->route('pages.comunidad')->with('success', 'Se ha eliminado el post con éxito.');
     }
 }
