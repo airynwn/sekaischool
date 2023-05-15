@@ -106,8 +106,14 @@
         <div class="container-fluid contenedor">
             <div class="row alinear-altura">
                 <div class="tabs">
-                    <span class="tab">Reciente</span>
-                    <span class="tab">Popular</span>
+                    <a href="{{ route('pages.comunidad', ['modo' => 'reciente']) }}"
+                        class="tab" id="tab-reciente">
+                        Reciente
+                    </a>
+                    <a href="{{ route('pages.comunidad', ['modo' => 'popular']) }}"
+                        class="tab" id="tab-popular">
+                        Popular
+                    </a>
                 </div>
                 <div class="col">
                     <div class="container-fluid">

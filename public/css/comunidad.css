@@ -251,6 +251,8 @@ i {
     border-radius: 20px;
     padding: 0.2em 1.2em;
     margin-bottom: 1.5em;
+    color: white;
+    text-decoration: none;
 }
 
 /****** Columna de iconos de flechas (volver arriba / abajo) ******/
