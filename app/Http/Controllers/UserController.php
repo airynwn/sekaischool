@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Carta;
 use App\Models\Personaje;
+use App\Models\Post;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -167,5 +168,20 @@ class UserController extends Controller
         $user->save();
 
         return response()->json(['info' => 'Se ha eliminado la carta ' . $carta->nombre . ' del inventario.'], 200);
+    }
+
+    public function valorarPost(Request $request)
+    {
+        $user = User::find(auth()->id());
+        $post = Post::find($request->post);
+
+        if ($user->favs()->where('post_id', $post->id)->exists()) {
+            return response()->json(['info' => 'Ya has valorado este post.'], 422);
+        }
+
+        $user->favs()->attach($post);
+        $user->save();
+
+        return response()->json(['info' => 'Has valorado positivamente el post.'], 200);
     }
 }
