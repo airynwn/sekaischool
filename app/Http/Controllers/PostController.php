@@ -12,9 +12,17 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $posts = Post::all();
+        $modo = $request->modo;
+
+        if ($modo === 'reciente') {
+            $posts = Post::orderBy('created_at', 'desc')->get();
+        } elseif ($modo === 'popular') {
+            $posts = Post::withCount('fans')->orderBy('fans_count', 'desc')->get();
+        } else {
+            $posts = Post::all();
+        }
 
         return view('pages.comunidad', ['posts' => $posts]);
     }
