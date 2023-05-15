@@ -67,7 +67,7 @@ class User extends Authenticatable
      */
     public function favs()
     {
-        return $this->belongsToMany(Post::class, 'user_id')->as('valoraciones');
+        return $this->belongsToMany(Post::class, 'valoraciones')->as('valoraciones');
     }
 
     /**

@@ -19,7 +19,7 @@ class Post extends Model
      */
     public function fans()
     {
-        return $this->belongsToMany(User::class, 'post_id')->as('valoraciones');
+        return $this->belongsToMany(User::class, 'valoraciones')->as('valoraciones');
     }
 
     /**
