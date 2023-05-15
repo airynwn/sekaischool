@@ -198,6 +198,12 @@ li {
     margin-bottom: 0.5em;
 }
 
+.caja-icons a {
+    border-radius: 5px;
+    background: #ff000030;
+    border: none;
+}
+
 button {
     padding: 0.5em;
     width: fit-content;
