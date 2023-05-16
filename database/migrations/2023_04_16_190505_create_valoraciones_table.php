@@ -17,7 +17,7 @@ return new class extends Migration
             $table->integer('post_id');
             $table->integer('user_id');
             // [FK] Post + User
-            $table->foreign('post_id')->references('id')->on('posts');
+            $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
             $table->foreign('user_id')->references('id')->on('users');
         });
     }
