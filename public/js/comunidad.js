@@ -46,7 +46,7 @@ async function enviarPost(event) {
 /**
  * Realiza una petición asíncrona al servidor
  * para valorar un post en la pestaña de comunidad
-  * y muestra un mensaje con información
+ * y muestra un mensaje con información
  *
  * Función no bloqueante: debe esperar a que responda el servidor (async/await)
  */
@@ -80,6 +80,77 @@ async function valorarPost(event) {
 
     const titulo = document.getElementById("titulo");
     titulo.innerHTML = "Valorar post";
+    const mensaje = document.getElementById("mensaje");
+    mensaje.innerHTML = msg;
+
+    const postsModal = new bootstrap.Modal(
+        document.getElementById("enviarPostModal")
+    );
+    postsModal.show();
+
+    form.reset();
+}
+
+/**
+ * Obtiene el ID del post actual y se lo pasa al
+ * modal de confirmación de borrado
+ * para tenerlo como hidden input
+ */
+function confirmarBorrado(event) {
+    event.preventDefault();
+
+    const form = event.target;
+    const postId = form.getAttribute("data-post-id");
+    document.getElementById("hidden-post-id").value = postId;
+
+    const postsModal = new bootstrap.Modal(
+        document.getElementById("eliminarPostModal")
+    );
+    postsModal.show();
+}
+
+/**
+ * Realiza una petición asíncrona al servidor
+ * para valorar un post en la pestaña de comunidad
+ * y muestra un mensaje con información
+ *
+ * Función no bloqueante: debe esperar a que responda el servidor (async/await)
+ */
+async function eliminarPost(event) {
+    event.preventDefault();
+
+    const form = event.target;
+    // Objeto con los datos del formulario (_token, post_id)
+    const formData = new FormData(form);
+    const postId = document.getElementById("hidden-post-id").value;
+
+    formData.forEach((value, key) => console.log(key,value));
+
+    const msg = await fetch(`/comunidad/${postId}/delete`, {
+        method: "POST",
+        body: formData,
+    })
+        .then((response) => {
+            if (response.ok) {
+                // Elimina el post
+
+                // contenedor.closest(".row.caja").remove();
+                // contenedor.closest(".espacio").remove();
+                return response.json();
+            } else if (response.status == 403) {
+                return response.json();
+            } else {
+                throw new Error(response.json());
+            }
+        })
+        .then((result) => result.info)
+        .catch((e) => {
+            console.log(e.info);
+            return "Se ha producido un error. Inténtelo más tarde.";
+        });
+
+    const titulo = document.getElementById("titulo");
+    titulo.innerHTML = "Eliminar post";
     const mensaje = document.getElementById("mensaje");
     mensaje.innerHTML = msg;
 
