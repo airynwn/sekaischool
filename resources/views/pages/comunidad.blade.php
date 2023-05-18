@@ -40,25 +40,6 @@
     </div>
         <!-- *** COMUNIDAD *** -->
     <div class="col-lg-6 col-12 order-1">
-        {{-- PRUEBA 1 PRIMERA CAJA --}}
-        {{-- <div class="caja espacio">
-            <span class="opcion">Escribir post</span>
-            <div class="caja-content">
-                <p>Escribe tu comentario aquí</p>
-                <div class="caja-icons">
-                    <div>
-                        <i class="fa-solid fa-square-poll-vertical"></i>
-                        <i class="fa-regular fa-file"></i>
-                    </div>
-                    <div>
-                        <i class="fa-solid fa-pen-to-square"></i>
-                        <i class="fa-solid fa-minimize"></i>
-                    </div>
-                </div>
-            </div>
-
-        </div> --}}
-        {{-- prueba 2 como los posts --}}
         <div class="container-fluid contenedor">
             <div class="row alinear-altura">
                 <div class="col">
@@ -76,7 +57,6 @@
                                     </picture>
                                 </div>
                                 <div class="col post-box">
-                                    <!-- @user, fecha -->
                                     <div>
                                         <p class="post post-info">
                                             <strong>Enviar post</strong>
@@ -118,7 +98,7 @@
                 <div class="col">
                     <div class="container-fluid">
                         @foreach ($posts as $post)
-                        <div class="row caja">
+                        <div class="row caja" id="post-{{ $post->id }}">
                             <!-- ? Comentario 1 -->
                             <div class="espacio"></div>
                             <!-- Avatar -->
@@ -129,7 +109,6 @@
                                     </picture>
                                 </div>
                                 <div class="col post-box">
-                                    <!-- @user, fecha -->
                                     <div>
                                         <p class="post post-info">
                                             <strong>{{ '@' . $post->user->name }}</strong>, <span>{{ $post->tiempo() }}</span>
@@ -165,10 +144,10 @@
                                         </div>
                                         {{-- Eliminar --}}
                                         @if ($post->user_id == auth()->user()->id)
-                                        <form onsubmit="return confirm('test')"
-                                        action="{{ route('pages.comunidad.delete', $post) }}" method="POST">
+                                        <form onsubmit="confirmarBorrado(event)"
+                                            id="confirmarBorradoForm"
+                                            data-post-id="{{ $post->id }}">
                                             @csrf
-                                            @method('DELETE')
                                             <button type="submit" class="btn btn-danger">
                                                 &times;
                                             </button>
@@ -243,6 +222,32 @@
         </div>
         <div class="modal-body modal-dark" id="mensaje"></div>
         <div class="modal-footer modal-dark"></div>
+      </div>
+    </div>
+  </div>
+{{-- ------------------ --}}
+{{-- Modal Eliminar Post --}}
+<div class="modal fade" id="eliminarPostModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header modal-dark">
+            <h5 class="modal-title">Eliminar post</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body modal-dark">¿Estás seguro de que deseas eliminar este post?</div>
+        <div class="modal-footer modal-dark">
+            <form onsubmit="eliminarPost(event)">
+                @csrf
+                @method('DELETE')
+                <input type="hidden" name="post_id" id="hidden-post-id">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                    No, volver
+                </button>
+                <button type="submit" class="btn btn-danger" data-bs-dismiss="modal">
+                    Sí, estoy seguro
+                </button>
+            </form>
+        </div>
       </div>
     </div>
   </div>
