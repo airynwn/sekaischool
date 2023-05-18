@@ -33,15 +33,16 @@ Route::get('/dashboard', function () {
 Route::get('/cartas', [CartaController::class, 'index'])->name('pages.cartas');
 
 /************* User *************/
-        /**** Cartas ****/
-Route::post('/cartas/add', [UserController::class, 'guardarCarta'])->name('pages.cartas.add');
-Route::post('/cartas/delete', [UserController::class, 'eliminarCarta'])->name('pages.cartas.delete');
-        /**** Comunidad ****/
-Route::get('/comunidad', [PostController::class, 'index'])->name('pages.comunidad');
-Route::post('/comunidad/post', [PostController::class, 'store'])->name('pages.comunidad.post');
-Route::delete('/comunidad/{post}/delete', [PostController::class, 'destroy'])->name('pages.comunidad.delete');
-Route::post('/comunidad/{post}/valorar', [UserController::class, 'valorarPost'])->name('pages.comunidad.valorar');
-
+Route::middleware('auth')->group(function () {
+            /**** Cartas ****/
+    Route::post('/cartas/add', [UserController::class, 'guardarCarta'])->name('pages.cartas.add');
+    Route::post('/cartas/delete', [UserController::class, 'eliminarCarta'])->name('pages.cartas.delete');
+            /**** Comunidad ****/
+    Route::get('/comunidad', [PostController::class, 'index'])->name('pages.comunidad');
+    Route::post('/comunidad/post', [PostController::class, 'store'])->name('pages.comunidad.post');
+    Route::delete('/comunidad/{post}/delete', [PostController::class, 'destroy'])->name('pages.comunidad.delete');
+    Route::post('/comunidad/{post}/valorar', [UserController::class, 'valorarPost'])->name('pages.comunidad.valorar');
+});
 
 /************* Admin *************/
 Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
