@@ -98,7 +98,7 @@
                 <div class="col">
                     <div class="container-fluid">
                         @foreach ($posts as $post)
-                        <div class="row caja">
+                        <div class="row caja" id="post-{{ $post->id }}">
                             <!-- ? Comentario 1 -->
                             <div class="espacio"></div>
                             <!-- Avatar -->

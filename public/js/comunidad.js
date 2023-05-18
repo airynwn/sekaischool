@@ -133,9 +133,7 @@ async function eliminarPost(event) {
         .then((response) => {
             if (response.ok) {
                 // Elimina el post
-
-                // contenedor.closest(".row.caja").remove();
-                // contenedor.closest(".espacio").remove();
+                document.getElementById(`post-${postId}`).remove();
                 return response.json();
             } else if (response.status == 403) {
                 return response.json();
