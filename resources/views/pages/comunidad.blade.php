@@ -181,11 +181,13 @@
                     <div class="caja">
                         <div class="espacio"></div>
                         <ol>
-                            <li>Navidad</li>
-                            <li>Gacha</li>
-                            <li>Tier 1</li>
-                            <li>Aniversario</li>
-                            <li>Collab</li>
+                            @foreach (\App\Models\User::ranking() as $user)
+                            <li>
+                                {{ $user->name }}
+                                <i class="fa-regular fa-heart"></i>
+                                {{ $user->likes_totales }}
+                            </li>
+                            @endforeach
                         </ol>
                     </div>
                 {{-- </div>

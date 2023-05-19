@@ -6,6 +6,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\DB;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
@@ -98,5 +99,23 @@ class User extends Authenticatable
     public function grupo_fav()
     {
         return $this->belongsTo(User::class, 'grupo_fav_id');
+    }
+
+    /**
+     * Devuelve los diez primeros usuarios que más favs han recibido
+     * y el número total de estos
+     *
+     * @return void
+     */
+    public static function ranking()
+    {
+        return DB::table('users')
+            ->select('users.name', DB::raw('COUNT(valoraciones.user_id) AS likes_totales'))
+            ->join('posts', 'users.id', '=', 'posts.user_id')
+            ->join('valoraciones', 'posts.id', '=', 'valoraciones.post_id')
+            ->groupBy('users.id', 'users.name')
+            ->orderByDesc(DB::raw('likes_totales'))
+            ->limit(10)
+            ->get();
     }
 }
