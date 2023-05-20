@@ -31,6 +31,7 @@ Route::get('/dashboard', function () {
 /************* Guest *************/
         /**** Cartas ****/
 Route::get('/cartas', [CartaController::class, 'index'])->name('pages.cartas');
+Route::post('/cartas/buscar', [CartaController::class, 'buscar'])->name('pages.cartas.buscar');
 
 /************* User *************/
 Route::middleware('auth')->group(function () {

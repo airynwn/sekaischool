@@ -136,4 +136,47 @@ class CartaController extends Controller
 
         return redirect()->route('admin.cartas.index')->with('success', 'Se ha eliminado la carta con éxito.');
     }
+
+    /**
+     * Realiza una búsqueda de cartas filtrando por los
+     * datos pasados a través del formulario y devuelve
+     * la vista actualizada de forma asíncrona.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function buscar(Request $request)
+    {
+        $grupos = Grupo::all();
+        $tablafk = Personaje::all();
+        $fk = 'pj_id';
+
+        $buscarGrupos = json_decode($request->input('grupos'));
+        $buscarRareza = json_decode($request->input('rareza'));
+        $buscarAtributos = json_decode($request->input('atributos'));
+        $buscarPjs = json_decode($request->input('pjs'));
+
+        $cartas = Carta::when($buscarGrupos, function ($query) use ($buscarGrupos) {
+            return $query->whereHas('personaje', function ($query) use ($buscarGrupos) {
+                $query->whereIn('grupo_id', $buscarGrupos);
+            });
+        })
+        ->when($buscarRareza, function ($query) use ($buscarRareza) {
+            return $query->whereIn('rareza', $buscarRareza);
+        })
+        ->when($buscarAtributos, function ($query) use ($buscarAtributos) {
+            return $query->whereIn('atributo', $buscarAtributos);
+        })
+        ->when($buscarPjs, function ($query) use ($buscarPjs) {
+            return $query->whereIn('pj_id', $buscarPjs);
+        })
+        ->get();
+
+        return view('pages.listaCartas', [
+            'cartas' => $cartas,
+            'grupos' => $grupos,
+            'tablafk' => $tablafk,
+            'fk' => $fk,
+        ])->render();
+    }
 }
