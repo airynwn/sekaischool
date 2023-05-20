@@ -5,20 +5,25 @@
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/cartas.css') }}">
     <script type="text/javascript" src="{{ asset('js/cartas.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/sekaischool.js') }}"></script>
 @endsection
 {{-- Main --}}
 @section('content')
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-3 col-md-4 col-sm-12" id="filter-nav">
-        <form id="filter-wrapper">
+        <form id="filter-wrapper" onsubmit="buscarCartas(event)">
+            @csrf
             <h2>Opciones de búsqueda</h2>
             <div class="caja">
                 <!-- Grupos -->
                 <span class="opcion">Grupo</span>
                 <div class="caja-content">
                     @foreach ($grupos as $grupo)
-                        <span>{{ $grupo->nombre }}</span>
+                        <span data-id="{{ $grupo->id }}"  class="select-grupo"
+                            onclick="seleccionar(this)">
+                            {{ $grupo->nombre }}
+                        </span>
                     @endforeach
                 </div>
             </div>
@@ -28,67 +33,73 @@
                 <div class="caja-icons">
                     <span>
                         <picture>
-                            <img src="img/icons/rainbow_star.png" alt="Estrella">
+                            <img src="img/icons/rainbow_star.png" alt="Estrella"
+                            data-id="1" onclick="seleccionar(this)" class="select-rareza">
                         </picture>
                     </span>
                     <span>
                         <picture>
-                            <img src="img/icons/rainbow_star.png" alt="Estrella">
+                            <img src="img/icons/rainbow_star.png" alt="Estrella"
+                            data-id="2" onclick="seleccionar(this)" class="select-rareza">
                         </picture>
                     </span>
                     <span>
                         <picture>
-                            <img src="img/icons/rainbow_star.png" alt="Estrella">
+                            <img src="img/icons/rainbow_star.png" alt="Estrella"
+                            data-id="3" onclick="seleccionar(this)" class="select-rareza">
                         </picture>
                     </span>
                     <span>
                         <picture>
-                            <img src="img/icons/rainbow_star.png" alt="Estrella">
+                            <img src="img/icons/rainbow_star.png" alt="Estrella"
+                            data-id="4" onclick="seleccionar(this)" class="select-rareza">
                         </picture>
                     </span>
                     <span>
                         <picture>
-                            <img src="img/icons/birthday.png" alt="Cumpleaños/Aniversario">
+                            <img src="img/icons/birthday.png" alt="Cumpleaños/Aniversario"
+                            data-id="5" onclick="seleccionar(this)" class="select-rareza">
                         </picture>
                     </span>
                 </div>
             </div>
             <div class="caja">
-                <!-- Atributo -->
-                <span class="opcion">Atributo</span>
+            <!-- Atributo -->
+            <span class="opcion">Atributo</span>
                 <div class="caja-icons">
                     <span>
                         <picture>
-                            <img src="img/icons/cute.png" alt="Cute">
+                            <img src="img/icons/cute.png" alt="Cute" class="select-atributo"
+                            data-id="cute" onclick="seleccionar(this)">
                         </picture>
                     </span>
                     <span>
                         <picture>
-                            <img src="img/icons/mysterious.png" alt="Mysterious">
+                            <img src="img/icons/mysterious.png" alt="Mysterious" class="select-atributo"
+                            data-id="mysterious" onclick="seleccionar(this)">
                         </picture>
                     </span>
                     <span>
                         <picture>
-                            <img src="img/icons/cool.png" alt="Cool">
+                            <img src="img/icons/cool.png" alt="Cool" class="select-atributo"
+                            data-id="cool" onclick="seleccionar(this)">
                         </picture>
                     </span>
                     <span>
                         <picture>
-                            <img src="img/icons/happy.png" alt="Happy">
+                            <img src="img/icons/happy.png" alt="Happy" class="select-atributo"
+                            data-id="happy" onclick="seleccionar(this)">
                         </picture>
                     </span>
                     <span>
                         <picture>
-                            <img src="img/icons/pure.png" alt="Pure">
+                            <img src="img/icons/pure.png" alt="Pure" class="select-atributo"
+                            data-id="pure" onclick="seleccionar(this)">
                         </picture>
                     </span>
                 </div>
             </div>
-            <div class="caja">
-                {{-- TODO Botón que abre un modal Personaje --}}
-                <a class="opcion" href="#modal-personajes">Personaje</a>
-                <p>Aquí va el nombre del personaje seleccionado</p>
-            </div>
+            <a class="opcion opcion-redondeado" href="#modal-personajes">Personaje</a>
             <div class="caja-icons">
                 <button type="submit" class="buscar">
                     <span class="fa-stack">
@@ -105,41 +116,8 @@
             @if (session('success'))
                 <div class="alert alert-success">{{ session('success') }}</div>
             @endif
-            <div class="row row-cols-sm-2 row-cols-1">
-                @foreach ($cartas as $carta)
-                    <div class="col">
-                        <figure class="card-box">
-                            <picture>
-                                <img src="{{ asset($carta->unidolized) }}"
-                                alt="{{ $carta->nombre }} Unidolized" class="img-fluid card">
-                            </picture>
-                            <picture>
-                                <img src="{{ asset($carta->idolized) }}"
-                                alt="{{ $carta->nombre }} Idolized" class="img-fluid card-idolized">
-                            </picture>
-                        </figure>
-                        @if (auth()->check())
-                            <div class="tabs">
-                                <form onsubmit="anadirCarta(event)" class="tab">
-                                    @csrf
-                                    <input type="hidden" name="carta" value="{{ $carta->id }}">
-                                    <input type="hidden" name="estado" value="coleccion">
-                                    <button type="submit" class="vacio">
-                                        <i class="fa-solid fa-bookmark brillo"></i>
-                                    </button>
-                                </form>
-                                <form onsubmit="anadirCarta(event)" class="tab">
-                                    @csrf
-                                    <input type="hidden" name="carta" value="{{ $carta->id }}">
-                                    <input type="hidden" name="estado" value="deseo">
-                                    <button type="submit" class="vacio">
-                                        <i class="fa-solid fa-star brillo"></i>
-                                    </button>
-                                </form>
-                            </div>
-                        @endif
-                    </div>
-                @endforeach
+            <div class="row row-cols-sm-2 row-cols-1" id="cartas-container">
+                @include('pages.listaCartas', ['cartas' => $cartas])
             </div>
         </div>
     </div>
