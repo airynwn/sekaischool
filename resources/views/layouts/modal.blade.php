@@ -11,7 +11,9 @@
                     @foreach ($personajes as $pj)
                         <div class="col">
                             <picture>
-                                <img src="{{ $pj->chibi }}" alt="Chibi {{ $pj->nombre }}" class="img-fluid">
+                                <img src="{{ $pj->chibi }}" alt="Chibi {{ $pj->nombre }}"
+                                class="img-fluid select-personaje"
+                                data-id="{{ $pj->id }}" onclick="seleccionar(this)">
                             </picture>
                         </div>
                   @endforeach
