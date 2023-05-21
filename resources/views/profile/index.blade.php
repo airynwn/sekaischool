@@ -42,7 +42,9 @@
             <div class="botones">
                 <div class="espacio">
                     <button id="cumple"><i class="fa-solid fa-cake-candles"></i> {{ $user->cumple ?? '01/01/1970'}}</button>
-                    <button id="grupo">{{ $user->grupo_fav->nombre ?? 'Grupo favorito' }}</button>
+                    <button id="grupo" data-color="{{ $user->grupo_fav->nombre ?? 'generico' }}">
+                        {{ $user->grupo_fav->nombre ?? 'Grupo favorito' }}
+                    </button>
                 </div>
                 <div class="espacio">
                     <span class="fa-stack fa-lg">
