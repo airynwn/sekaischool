@@ -5,12 +5,17 @@
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/editperfil.css') }}">
     <script type="text/javascript" src="{{ asset('js/sekaischool.js') }}" defer></script>
+    <script type="text/javascript" src="{{ asset('js/editarPerfil.js') }}" defer></script>
 @endsection
 {{-- Main --}}
 @section('content')
 {{-- @include('profile.index') --}}
 <div class="container my-5">
-    <form action="{{ route('profile.update') }}" method="POST">
+    <form
+    action="{{ route('profile.update') }}"
+    method="POST"
+    onsubmit="validarEditarPerfil(event)"
+    >
         @method('patch')
         @csrf
         <div class="row">
@@ -18,7 +23,7 @@
                 <details>
                     <summary>Biografía</summary>
                     <div class="details-flex"></div>
-                    <textarea name="biografia" rows="3">{{ auth()->user()->biografia }}</textarea>
+                    <textarea name="biografia" rows="3" id="bio">{{ auth()->user()->biografia }}</textarea>
                 </details>
             </div>
         </div>
@@ -28,18 +33,18 @@
                 <details>
                     <summary>Discord</summary>
                     <div class="details-flex"></div>
-                    <input type="text" name="discord" value="{{ auth()->user()->discord }}">
+                    <input type="text" name="discord" id="dc" placeholder="User#1234"
+                    value="{{ auth()->user()->discord }}">
                 </details>
             </div>
         </div>
         <div class="espacio"></div>
         <div class="row">
             <div class="col">
-                {{-- <div class="espacio"></div> --}}
                 <details>
                     <summary>Twitter</summary>
                     <div class="details-flex"></div>
-                    <input type="text" name="twitter" value="{{ auth()->user()->twitter }}">
+                    <input type="text" name="twitter" id="tw" placeholder="@user" value="{{ auth()->user()->twitter }}">
                 </details>
             </div>
         </div>
@@ -56,15 +61,9 @@
                                 <div class="col">
                                     <label>
                                         <input type="radio" name="pj_fav_id" value="{{ $pj->id }}"
-                                        {{ $pj->id == auth()->user()->pj_fav_id ? 'checked' : '' }}
-                                        {{-- TODO estilar radio --}}
-                                        {{-- style="appearance: none;" --}}
-                                        >
+                                        {{ $pj->id == auth()->user()->pj_fav_id ? 'checked' : '' }}>
                                         <img src="{{ asset($pj->chibi) }}" alt="Chibi {{ $pj->nombre }}"
-                                        class="img-fluid"
-                                        {{-- TODO funcion que solo permita 1 selected --}}
-                                        {{-- onclick="seleccionarUnico(this)" --}}
-                                        >
+                                        class="img-fluid">
                                     </label>
                                 </div>
                           @endforeach
@@ -86,15 +85,9 @@
                                 <div class="col">
                                     <label>
                                         <input type="radio" name="grupo_fav_id" value="{{ $grupo->id }}"
-                                        {{ $grupo->id == auth()->user()->grupo_fav_id ? 'checked' : '' }}
-                                        {{-- TODO estilar radio --}}
-                                        {{-- style="appearance: none;" --}}
-                                        >
+                                        {{ $grupo->id == auth()->user()->grupo_fav_id ? 'checked' : '' }}>
                                         <img src="{{ asset($grupo->imagen) }}" alt="Imagen {{ $grupo->nombre }}"
-                                        class="img-fluid"
-                                        {{-- TODO funcion que solo permita 1 selected --}}
-                                        {{-- onclick="seleccionarUnico(this)" --}}
-                                        >
+                                        class="img-fluid">
                                     </label>
                                 </div>
                           @endforeach
