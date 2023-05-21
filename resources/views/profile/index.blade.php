@@ -33,7 +33,7 @@
                 @if (isset($user->pj_fav))
                     <div class="flex-shrink-0 align-self-end align-self-center">
                         <picture>
-                            <img src="{{ asset($user->pj_fav_id->imagen) }}" alt="{{ $user->pj_fav_id->nombre . 'Chibi' }}">
+                            <img src="{{ asset($user->pj_fav->chibi) }}" alt="{{ $user->pj_fav->nombre . 'Chibi' }}">
                         </picture>
                     </div>
                 @endif
@@ -42,7 +42,7 @@
             <div class="botones">
                 <div class="espacio">
                     <button id="cumple"><i class="fa-solid fa-cake-candles"></i> {{ $user->cumple ?? '01/01/1970'}}</button>
-                    <button id="grupo">{{ $user->grupo_fav_id->nombre ?? 'Grupo favorito' }}</button>
+                    <button id="grupo">{{ $user->grupo_fav->nombre ?? 'Grupo favorito' }}</button>
                 </div>
                 <div class="espacio">
                     <span class="fa-stack fa-lg">
