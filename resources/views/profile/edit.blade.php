@@ -1,29 +1,48 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Profile') }}
-        </h2>
-    </x-slot>
-
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
-            <div class="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
-                <div class="max-w-xl">
-                    @include('profile.partials.update-profile-information-form')
-                </div>
-            </div>
-
-            <div class="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
-                <div class="max-w-xl">
-                    @include('profile.partials.update-password-form')
-                </div>
-            </div>
-
-            <div class="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
-                <div class="max-w-xl">
-                    @include('profile.partials.delete-user-form')
-                </div>
+@extends('layouts.guest')
+@section('title')
+    Editar perfil ♪ SekaiSchool
+@endsection
+@section('css')
+    <link rel="stylesheet" href="{{ asset('css/perfil.css') }}">
+    <script type="text/javascript" src="{{ asset('js/editarPerfil.js') }}" defer></script>
+@endsection
+{{-- Main --}}
+@section('content')
+{{-- @include('profile.index') --}}
+<div class="container">
+    <form action="{{ route('profile.update') }}" method="POST">
+        @method('patch')
+        @csrf
+        <div class="row">
+            <div class="col">
+                <label for="biografia">Biografía</label>
+                <textarea class="form-control" name="biografia" rows="3">{{ auth()->user()->biografia }}</textarea>
             </div>
         </div>
-    </div>
-</x-app-layout>
+        <div class="row">
+            <div class="col">
+                <label for="discord">Discord</label>
+                <input type="text" name="discord" class="form-control"
+                value="{{ auth()->user()->discord }}">
+            </div>
+            <div class="col">
+                <label for="twitter">Twitter</label>
+                <input type="text" name="twitter" class="form-control"
+                value="{{ auth()->user()->twitter }}">
+            </div>
+        </div>
+        <div class="row espacio">
+            <div class="col">
+                <button type="submit">Enviar</button>
+            </div>
+        </div>
+    </form>
+</div>
+{{-- TODO email + password
+<div>
+    @include('profile.partials.update-profile-information-form')
+</div>
+<div>
+    @include('profile.partials.update-password-form')
+</div> --}}
+@endsection

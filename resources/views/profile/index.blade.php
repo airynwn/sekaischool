@@ -49,12 +49,26 @@
                         <i class="fa fa-circle fa-stack-2x"></i>
                         <i class="fa fa-brands fa-twitter fa-stack-1x fa-inverse"></i>
                     </span>
-                    <span><a href="https://twitter.com/airynwn" target="_blank">{{ $user->twitter ?? 'Twitter' }}</a></span>
+                    <span>
+                        <a href="https://twitter.com/airynwn" target="_blank">
+                            {{ $user->twitter ?? 'Twitter' }}
+                        </a>
+                    </span>
                     <span class="fa-stack fa-lg">
                         <i class="fa fa-circle fa-stack-2x"></i>
                         <i class="fa fa-brands fa-discord fa-stack-1x fa-inverse"></i>
                     </span>
-                    <span><a href="https://discord.com" target="_blank">{{ $user->discord ?? 'Discord' }}</a></span>
+                    <span>
+                        <a href="https://discord.com" target="_blank">
+                        {{ $user->discord ?? 'Discord' }}
+                        </a>
+                    </span>
+                </div>
+                <div class="espacio">
+                    <button class="btn btn-info"
+                    onclick="location.href='{{ route('profile.edit') }}'">
+                        Editar perfil
+                    </button>
                 </div>
             </div>
         </div>
@@ -120,4 +134,5 @@
     </div>
   </div>
 {{-- ------------------ --}}
+@include('layouts.modal', ['personajes' => $personajes])
 @endsection
