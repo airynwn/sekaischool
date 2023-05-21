@@ -2,7 +2,11 @@
 
 :root {
     --usercolor: #DF0;
+    --ln: #45D;
+    --mmj: #6CCB20;
     --vbs: #E16;
+    --wxs: #F90;
+    --n25: #849;
 }
 
 h2 {
@@ -288,10 +292,36 @@ button {
     border-radius: 30px;
 }
 
+/** GRUPO FAVORITO */
 #grupo {
-    background: var(--vbs);
     border-radius: 30px;
 }
+
+#grupo[data-color='Leo/need'] {
+    background: var(--ln);
+}
+
+#grupo[data-color='MORE MORE JUMP!'] {
+    background: var(--mmj);
+}
+
+#grupo[data-color='Vivid BAD SQUAD'] {
+    background: var(--vbs);
+}
+
+#grupo[data-color='Wonderlands x Showtime'] {
+    background: var(--wxs);
+}
+
+#grupo[data-color='Nightcord at 25:00'] {
+    background: var(--n25);
+}
+
+#grupo[data-color='generico'] {
+    background: #2F2957;
+}
+
+/*******************/
 
 .fa-circle {
     color: #3AA89B;
