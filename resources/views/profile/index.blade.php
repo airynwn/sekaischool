@@ -65,7 +65,7 @@
                     </span>
                 </div>
                 <div class="espacio">
-                    <button class="btn btn-info"
+                    <button class="editar-perfil"
                     onclick="location.href='{{ route('profile.edit') }}'">
                         Editar perfil
                     </button>
@@ -74,16 +74,26 @@
         </div>
     </div>
 </div>
+@if (session('error'))
+    <div class="alert alert-danger">{{ session('error') }}</div>
+@endif
+@if (session('success'))
+    <div class="alert alert-success">{{ session('success') }}</div>
+@endif
 <div class="container-fluid">
     <div class="row">
         <div class="col contenedor contenedor-padding">
             <span class="tab">Publicaciones</span>
+            {{-- <div style="overflow-y: auto;"> --}}
+            @foreach ($user->posts as $post)
             <div class="caja">
-                <span class="titulo">Post</span>
+                <span class="titulo">{{ $post->tiempo() }}</span>
                 <div class="caja-content">
-                    <span>post content</span>
+                    <span>{{ $post->contenido }}</span>
                 </div>
             </div>
+            @endforeach
+            {{-- </div> --}}
         </div>
         <!--  -->
         <div class="col-md-9 order-1 order-sm-last order-md-last contenedor contenedor-padding">
