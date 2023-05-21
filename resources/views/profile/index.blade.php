@@ -12,7 +12,7 @@
 @php
     $user = auth()->user();
 @endphp
-<div class="container px-0 contenedor glassmorphism">
+<div class="container px-0 contenedor glassmorphism mx-auto">
     <div class="row gx-0">
         <div class="col-lg-3 col-md-6">
             <picture class="avatar-bg">
