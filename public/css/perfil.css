@@ -379,3 +379,10 @@ span a {
 .col-carta:hover .btn-close {
     opacity: 1;
 }
+
+
+.selected,
+.brillo:hover {
+    filter: drop-shadow(0 0 0.5em white);
+    transition: all 0.5s;
+}
