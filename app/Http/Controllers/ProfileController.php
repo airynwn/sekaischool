@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProfileUpdateRequest;
+use App\Models\Grupo;
 use App\Models\Personaje;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -32,10 +33,12 @@ class ProfileController extends Controller
     public function edit(Request $request): View
     {
         $personajes = Personaje::all();
+        $grupos = Grupo::all();
 
         return view('profile.edit', [
             'user' => $request->user(),
             'personajes' => $personajes,
+            'grupos' => $grupos,
         ]);
     }
 
@@ -48,6 +51,8 @@ class ProfileController extends Controller
             'biografia' => $request->biografia,
             'discord' => $request->discord,
             'twitter' => $request->twitter,
+            'pj_fav_id' => $request->pj_fav_id,
+            'grupo_fav_id' => $request->grupo_fav_id,
         ]);
 
         return redirect()->route('profile.index')->with('success', 'Se ha modificado el perfil con éxito.');
