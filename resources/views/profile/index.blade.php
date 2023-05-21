@@ -134,4 +134,5 @@
     </div>
   </div>
 {{-- ------------------ --}}
+@include('layouts.modal', ['personajes' => $personajes])
 @endsection

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProfileUpdateRequest;
+use App\Models\Personaje;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -16,8 +17,11 @@ class ProfileController extends Controller
      */
     public function index(Request $request): View
     {
+        $personajes = Personaje::all();
+
         return view('profile.index', [
             'user' => $request->user(),
+            'personajes' => $personajes,
         ]);
     }
 
