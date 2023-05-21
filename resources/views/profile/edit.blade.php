@@ -3,50 +3,48 @@
     Editar perfil ♪ SekaiSchool
 @endsection
 @section('css')
-    <link rel="stylesheet" href="{{ asset('css/perfil.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/editperfil.css') }}">
     <script type="text/javascript" src="{{ asset('js/sekaischool.js') }}" defer></script>
 @endsection
 {{-- Main --}}
 @section('content')
 {{-- @include('profile.index') --}}
-<div class="container">
+<div class="container my-5">
     <form action="{{ route('profile.update') }}" method="POST">
         @method('patch')
         @csrf
         <div class="row">
             <div class="col">
-                <label for="biografia">Biografía</label>
-                <textarea class="form-control" name="biografia" rows="3">{{ auth()->user()->biografia }}</textarea>
+                <details>
+                    <summary>Biografía</summary>
+                    <div class="details-flex"></div>
+                    <textarea name="biografia" rows="3">{{ auth()->user()->biografia }}</textarea>
+                </details>
             </div>
         </div>
+        <div class="espacio"></div>
         <div class="row">
             <div class="col">
-                <label for="discord">Discord</label>
-                <input type="text" name="discord" class="form-control"
-                value="{{ auth()->user()->discord }}">
-            </div>
-            <div class="col">
-                <label for="twitter">Twitter</label>
-                <input type="text" name="twitter" class="form-control"
-                value="{{ auth()->user()->twitter }}">
+                <details>
+                    <summary>Discord</summary>
+                    <div class="details-flex"></div>
+                    <input type="text" name="discord" value="{{ auth()->user()->discord }}">
+                </details>
             </div>
         </div>
-        {{-- <div class="row espacio">
+        <div class="espacio"></div>
+        <div class="row">
             <div class="col">
-                <a class="opcion opcion-redondeado" href="#modal-personajes">Personaje</a>
-                <img src="{{ auth()->user()->pj_fav->chibi ?? '' }}"
-                alt="{{ auth()->user()->name . ' Personaje Fav' }}">
+                {{-- <div class="espacio"></div> --}}
+                <details>
+                    <summary>Twitter</summary>
+                    <div class="details-flex"></div>
+                    <input type="text" name="twitter" value="{{ auth()->user()->twitter }}">
+                </details>
             </div>
-            {{-- aquilo s grpos --}}
-            {{-- TODO details? --}}
-            <div class="col">
-                <a class="opcion opcion-redondeado" href="#modal-personajes">Grupo</a>
-                <img src="{{ auth()->user()->grupo_fav->imagen ?? '' }}"
-                alt="{{ auth()->user()->name . ' Grupo Fav' }}">
-            </div>
-        </div> --}}
-        {{-- TESTESTEST --}}
-        <div class="row espacio">
+        </div>
+        <div class="espacio"></div>
+        <div class="row">
             <div class="col">
                 <details>
                     <summary>Personajes</summary>
@@ -75,15 +73,15 @@
                 </details>
             </div>
         </div>
-        {{-- TESTESTEST --}}
-        <div class="row espacio">
+        <div class="espacio"></div>
+        <div class="row">
             <div class="col">
                 <details>
                     <summary>Grupo</summary>
                     <div class="details-flex">
                     </div>
                     <div class="container caja-content">
-                        <div class="row row-cols-3 row-cols-md-5 row-cols-lg-6 g-3">
+                        <div class="row row-cols-2 row-cols-md-5 g-3 justify-content-center">
                             @foreach ($grupos as $grupo)
                                 <div class="col">
                                     <label>
@@ -105,10 +103,10 @@
                 </details>
             </div>
         </div>
-        {{--  --}}
-        <div class="row espacio">
-            <div class="col">
-                <button type="submit">Enviar</button>
+        <div class="espacio"></div>
+        <div class="row">
+            <div class="col d-flex justify-content-center">
+                <button type="submit">Editar perfil</button>
             </div>
         </div>
     </form>
