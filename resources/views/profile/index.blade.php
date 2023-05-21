@@ -12,7 +12,7 @@
 @php
     $user = auth()->user();
 @endphp
-<div class="container px-0 contenedor glassmorphism">
+<div class="container px-0 contenedor glassmorphism mx-auto">
     <div class="row gx-0">
         <div class="col-lg-3 col-md-6">
             <picture class="avatar-bg">
@@ -33,7 +33,7 @@
                 @if (isset($user->pj_fav))
                     <div class="flex-shrink-0 align-self-end align-self-center">
                         <picture>
-                            <img src="{{ asset($user->pj_fav_id->imagen) }}" alt="{{ $user->pj_fav_id->nombre . 'Chibi' }}">
+                            <img src="{{ asset($user->pj_fav->chibi) }}" alt="{{ $user->pj_fav->nombre . 'Chibi' }}">
                         </picture>
                     </div>
                 @endif
@@ -42,7 +42,7 @@
             <div class="botones">
                 <div class="espacio">
                     <button id="cumple"><i class="fa-solid fa-cake-candles"></i> {{ $user->cumple ?? '01/01/1970'}}</button>
-                    <button id="grupo">{{ $user->grupo_fav_id->nombre ?? 'Grupo favorito' }}</button>
+                    <button id="grupo">{{ $user->grupo_fav->nombre ?? 'Grupo favorito' }}</button>
                 </div>
                 <div class="espacio">
                     <span class="fa-stack fa-lg">
@@ -65,7 +65,7 @@
                     </span>
                 </div>
                 <div class="espacio">
-                    <button class="btn btn-info"
+                    <button class="editar-perfil"
                     onclick="location.href='{{ route('profile.edit') }}'">
                         Editar perfil
                     </button>
@@ -74,16 +74,26 @@
         </div>
     </div>
 </div>
+@if (session('error'))
+    <div class="alert alert-danger">{{ session('error') }}</div>
+@endif
+@if (session('success'))
+    <div class="alert alert-success">{{ session('success') }}</div>
+@endif
 <div class="container-fluid">
     <div class="row">
         <div class="col contenedor contenedor-padding">
             <span class="tab">Publicaciones</span>
+            {{-- <div style="overflow-y: auto;"> --}}
+            @foreach ($user->posts as $post)
             <div class="caja">
-                <span class="titulo">Post</span>
+                <span class="titulo">{{ $post->tiempo() }}</span>
                 <div class="caja-content">
-                    <span>post content</span>
+                    <span>{{ $post->contenido }}</span>
                 </div>
             </div>
+            @endforeach
+            {{-- </div> --}}
         </div>
         <!--  -->
         <div class="col-md-9 order-1 order-sm-last order-md-last contenedor contenedor-padding">

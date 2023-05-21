@@ -26,7 +26,9 @@ class User extends Authenticatable
         'biografia',
         'cumple',
         'twitter',
-        'discord'
+        'discord',
+        'pj_fav_id',
+        'grupo_fav_id',
     ];
 
     /**
@@ -98,7 +100,7 @@ class User extends Authenticatable
      */
     public function grupo_fav()
     {
-        return $this->belongsTo(User::class, 'grupo_fav_id');
+        return $this->belongsTo(Grupo::class, 'grupo_fav_id');
     }
 
     /**

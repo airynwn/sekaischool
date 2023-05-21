@@ -379,3 +379,23 @@ span a {
 .col-carta:hover .btn-close {
     opacity: 1;
 }
+
+
+.selected,
+.brillo:hover {
+    filter: drop-shadow(0 0 0.5em white);
+    transition: all 0.5s;
+}
+
+.editar-perfil {
+    background: #2F2957;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(12.5px);
+    border-radius: 30px;
+    border: solid 2px transparent;
+    background-image: linear-gradient(#292361, #281f5f), linear-gradient(145deg, #EC64F5 0%, #4DF6C6 100%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    padding: 0.5em 2em;
+    color: white;
+}
