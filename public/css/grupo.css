@@ -1,0 +1,448 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Source+Sans+Pro&display=swap');
+/*** Variables ***/
+
+:root {
+        /*** L/N ***/
+    --ln: #45D;
+    --ichika: #3AE;
+    --saki: #FD4;
+    --honami: #E66;
+    --shiho: #BD2;
+        /*** MMJ ***/
+    --wxs: #F90;
+    --tsukasa: #FB0;
+    --emu: #FF66BC;
+    --nene: #34DD9A;
+    --rui: #BB88ED;
+        /*** VBS ***/
+    --wxs: #F90;
+    --tsukasa: #FB0;
+    --emu: #FF66BC;
+    --nene: #34DD9A;
+    --rui: #BB88ED;
+        /*** WxS ***/
+    --wxs: #F90;
+    --tsukasa: #FB0;
+    --emu: #FF66BC;
+    --nene: #34DD9A;
+    --rui: #BB88ED;
+        /*** N25 ***/
+    --wxs: #F90;
+    --tsukasa: #FB0;
+    --emu: #FF66BC;
+    --nene: #34DD9A;
+    --rui: #BB88ED;
+        /*** VSs  ***/
+    --miku: #33CCBA;
+    --rin: #FC1;
+    --len: #FFEE12;
+    --luka: #FFBACC;
+    --meiko: #DE4444;
+    --kaito: #3367CD;
+}
+
+/**************************/
+
+a {
+    color: white;
+    box-sizing: border-box;
+    text-decoration-line: none;
+}
+
+h2 {
+    font-family: 'Fredoka One', sans-serif;
+    text-align: center;
+    color: var(--ln);
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.header {
+    background: linear-gradient(90deg, #3AA89B 0%, #9D44FF 100%);
+}
+
+#logo {
+    height: 35px;
+    animation: logo-progresivo 2s;
+}
+
+@keyframes logo-progresivo {
+    0% {
+        filter: opacity(0);
+    }
+
+    100% {
+        filter: opacity(1);
+    }
+}
+
+.header-avatar {
+    border-radius: 20px;
+    border: solid 2px rgba(255, 255, 255, 0.5);
+}
+
+.dropdown-item:focus, .dropdown-item:hover {
+    background-color: #ffffff30 !important; /*Sobreescribe bootstrap*/
+}
+
+.navbar-text a {
+    text-decoration: none;
+}
+
+.noborder {
+    border: none !important;
+}
+
+/********************* MODAL  *********************/
+
+.flexbox-cerrar {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 0.5em;
+}
+
+.boton-cerrar {
+    background-color: #b83131;
+    padding: 0 0.5em 0 0.5em;
+    border-radius: 10px;
+    border: none;
+    color: white;
+}
+
+        /****** Contenido Modal ******/
+
+#modal-personajes .caja {
+    background-image: none;
+}
+
+.modal-personajes-content {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    transition: all .4s;
+    overflow: auto;
+}
+
+.modal-personajes-content:target {
+    visibility: visible;
+    opacity: 1;
+  }
+
+
+/***********************************************/
+
+/********************* WxS  *********************/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    background: url("../img/background.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+main {
+    text-align: center;
+    padding: 1em;
+    color: white;
+}
+
+nav {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+@media only screen and (max-width:576px) {
+    body {
+        background-size: cover;
+    }
+}
+
+.panel {
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 20px;
+    background: linear-gradient(214.91deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.38) 100%);
+    /* border: 1px solid var(--ln); */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(12.5px);
+    display: flex;
+    flex-direction: column;
+}
+
+.titulo {
+    font-family: 'Fredoka One', sans-serif;
+    font-weight: 100;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    padding: 0.25em;
+    border: solid 1px var(--ln);
+    border-radius: 20px 20px 0 0;
+    background: var(--ln);
+}
+
+.panel-content {
+    margin: 0.5em 0.5em 0em 0.5em;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.panel-content span {
+    margin-bottom: 0.5em;
+}
+
+ul {
+    list-style: none;
+    padding: 0 1em 0 1em;
+}
+
+/****** SecciÃ³n de foro ******/
+
+#foro {
+    margin: 0.5em;
+    padding: 1.5em;
+    background: linear-gradient(214.91deg, rgba(0, 0, 0, 0.56) 14.51%, rgba(0, 0, 0, 0.38) 114.51%);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(12.5px);
+    border: 1px solid;
+    border-image: linear-gradient(180deg, #EC64F5 0%, #4DF6C6 100%) 1;
+}
+
+.opcion {
+    padding: 0.25em;
+    color: white;
+    text-align: center;
+    font-size: medium;
+    background: #2F2957;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    border: solid 1px transparent;
+    background-image: linear-gradient(#2F2957, #2F2957),
+        linear-gradient(180deg, #EC64F5 0%, #4DF6C6 100%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+}
+
+.caja {
+    background-color: rgba(0, 0, 0, 0.38);
+    border: solid 1px transparent;
+    border-radius: 20px;
+    background-image: linear-gradient(#0d071d, #09021b),
+    linear-gradient(180deg, #EC64F5 0%, #4DF6C6 100%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(12.5px);
+}
+
+.columna {
+    display: flex;
+    flex-direction: column;
+}
+
+.abajo {
+    position: absolute;
+    bottom: 0;
+}
+
+.caja-content {
+    margin: 0.5em 0.5em 0em 0.5em;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+}
+
+.caja-content img {
+    border-radius: 20px;
+}
+
+.avatar .caja-content {
+    margin: 0;
+}
+
+.caja-content span {
+    margin-bottom: 0.5em;
+}
+
+.espacio {
+    margin-top: 10px;
+}
+
+.caja-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    text-align: justify;
+}
+
+.icon-bajo {
+    height: 100%;
+}
+
+i:hover {
+    color: var(--wxs);
+}
+
+.center {
+    justify-content: center;
+}
+
+.icons {
+    align-self: flex-end;
+    margin: 0.5em;
+}
+
+.caja-relleno {
+    display: flex;
+}
+
+.caja-relleno .columna {
+    width: 100%;
+}
+
+.avatar-foro {
+    max-width: 100%;
+    height: auto;
+}
+
+.comment {
+    text-align: justify;
+}
+
+@media only screen and (min-width: 450px) {
+    .avatar-foro {
+        width: 150px;
+        height: auto;
+    }
+}
+
+.container {
+    color: white;
+    /* -webkit-text-stroke: 0.25px var(--ln); */
+}
+
+/****** Colores con variables ******/
+
+/** LEO/NEED  */
+
+[data-color='ichika'] {
+    color: var(--ichika)
+}
+
+[data-color='saki'] {
+    color: var(--saki)
+}
+
+[data-color='honami'] {
+    color: var(--honami)
+}
+
+[data-color='shiho'] {
+    color: var(--shiho)
+}
+
+/** MORE MORE JUMP!  */
+
+[data-color='minori'] {
+    color: var(--minori)
+}
+
+[data-color='haruka'] {
+    color: var(--haruka)
+}
+
+[data-color='airi'] {
+    color: var(--airi)
+}
+
+[data-color='shizuku'] {
+    color: var(--shizuku)
+}
+
+/** VIVID BAD SQUAD  */
+
+[data-color='kohane'] {
+    color: var(--kohane)
+}
+
+[data-color='an'] {
+    color: var(--an)
+}
+
+[data-color='akito'] {
+    color: var(--akito)
+}
+
+[data-color='toya'] {
+    color: var(--toya)
+}
+
+/** WONDERLANDS X SHOWTIME  */
+
+[data-color='tsukasa'] {
+    color: var(--tsukasa)
+}
+
+[data-color='emu'] {
+    color: var(--emu)
+}
+
+[data-color='nene'] {
+    color: var(--nene)
+}
+
+[data-color='rui'] {
+    color: var(--rui)
+}
+
+/** NIGHTCORD AT 25:00  */
+
+[data-color='kanade'] {
+    color: var(--kanade)
+}
+
+[data-color='mafuyu'] {
+    color: var(--mafuyu)
+}
+
+[data-color='ena'] {
+    color: var(--ena)
+}
+
+[data-color='mizuki'] {
+    color: var(--mizuki)
+}
+
+/** VIRTUAL SINGERS  */
+
+[data-color='miku'] {
+    color: var(--miku)
+}
+
+[data-color='rin'] {
+    color: var(--rin)
+}
+
+[data-color='len'] {
+    color: var(--len)
+}
+
+[data-color='luka'] {
+    color: var(--luka)
+}
+[data-color='meiko'] {
+    color: var(--meiko)
+}
+
+[data-color='kaito'] {
+    color: var(--kaito)
+}
+
+.brillo:hover {
+    filter: drop-shadow(0 0 0.5em white);
+    transition: all 0.5s;
+}
