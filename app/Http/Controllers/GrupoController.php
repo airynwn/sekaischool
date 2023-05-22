@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Grupo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 class GrupoController extends Controller
 {
@@ -18,7 +19,7 @@ class GrupoController extends Controller
         $tablafk = null;
         $fk = null;
 
-        if (auth()->user()->admin) {
+        if (auth()->check() && auth()->user()->admin && strpos(Route::current()->getName(), 'admin') === 0) {
             return view('admin.grupos.index', [
                 'grupos' => $grupos,
                 'tablafk' => $tablafk,
@@ -70,9 +71,13 @@ class GrupoController extends Controller
      * @param  \App\Models\Grupo  $grupo
      * @return \Illuminate\Http\Response
      */
-    public function show(Grupo $grupo)
+    public function show(Request $request)
     {
-        //
+        $grupo = Grupo::find(1);
+
+        return view('pages.grupos', [
+            'grupo' => $grupo,
+        ]);
     }
 
     /**
