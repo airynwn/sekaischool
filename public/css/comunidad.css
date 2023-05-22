@@ -152,8 +152,11 @@ h2 {
 
 body {
     font-family: 'Source Sans Pro', sans-serif;
-    background: url("../img/background.png") round fixed;
-    background-size: contain;
+    background: url("../img/background.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 main {
