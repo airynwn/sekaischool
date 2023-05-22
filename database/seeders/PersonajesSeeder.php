@@ -217,8 +217,12 @@ class PersonajesSeeder extends Seeder
             [
                 'nombre' => 'Tsukasa Tenma',
                 'grupo_id' => 4,
-                'historia' => 'aaa',
-                'personalidad' => 'bbb',
+                'historia' => 'De pequeño, Tsukasa era menos egocéntrico y más inseguro, preocupándose con frecuencia por su hermana Saki y su estado enfermizo. Debido a su enfermedad, tiene años de experiencia tocando "Twinkle Twinkle Little Star", y lo practicaba a menudo con la esperanza de que Saki volviera pronto a casa y jugara con él.
+                Desde que Tsukasa vio de niño un espectáculo de su compañía de teatro favorita, ha soñado con convertirse en la estrella de un espectáculo mundialmente famoso y hacer sonreír al mundo. Tras fracasar en su audición para convertirse en artista del parque temático Phoenix Wonderland, Tsukasa es contratado por Emu para devolver al deteriorado Wonder Stage a su antigua gloria con increíbles actuaciones.
+                Aunque no lo recuerda, Tsukasa fue motivado a convertirse en estrella por su deseo de hacer sonreír a su hermana pequeña y a sus padres. Con el paso de los años, olvidó su motivación original y la sustituyó por el objetivo más egoísta de hacerse famoso. A lo largo de la historia principal, y con la ayuda de Miku y KAITO, recuerda la verdadera razón de su pasión.',
+                'personalidad' => 'Tsukasa es una persona muy segura de sí misma y carismática, que se define como una futura "estrella". Tiene un notable hábito de presumir, junto con una tendencia a dejarse llevar por el momento. También se muestra como un hermano mayor cariñoso y fiable con su hermana pequeña Saki, a menudo preocupándose y cuidando de ella.
+                Desgraciadamente, a medida que crece olvida su motivación original para convertirse en una estrella, y en su lugar se deja llevar por la idea de que la gente le preste atención y se sienta impresionada por él. Su nuevo ensimismamiento le causa problemas, culpando a Nene del fracaso de su primera actuación, lo que lleva a Rui a criticarle duramente.
+                Aunque es conocido por su comportamiento excéntrico y su personalidad ruidosa, Tsukasa también ha destacado por ser una persona especialmente fiable y responsable. Es trabajador y decidido, y afirma que si quiere convertirse en una "estrella", no puede relajarse. Sin embargo, también es bastante testarudo y tiene la costumbre de dar prioridad a sus responsabilidades por encima de su propio bienestar.',
                 'imagen' => 'img/personajes/img-tsukasa.png',
                 'chibi' => 'img/personajes/chibi-tsukasa.png',
                 'icon' => 'img/personajes/icon-tsukasa.png',
@@ -229,8 +233,13 @@ class PersonajesSeeder extends Seeder
             [
                 'nombre' => 'Emu Otori',
                 'grupo_id' => 4,
-                'historia' => 'aaa',
-                'personalidad' => 'bbb',
+                'historia' => 'Emu es la hija del propietario de Phoenix Wonderland, y creció viendo espectáculos en el parque. Tras ver que Tsukasa había fracasado en su audición, le contrata, junto con Nene y Rui, para devolver al descuidado Wonder Stage su antiguo esplendor.
+                Emu quiere actuar en el pequeño Wonder Stage y mantenerlo vivo, ya que era el escenario favorito de su difunto abuelo. Su abuelo, a quien admira mucho, le inspiró la idea de hacer sonreír a los demás.
+                Forma parte del Comité Ejecutivo del Festival Deportivo con Saki y Haruka. Es compañera de clase de  Honami en la Academia de Chicas Miyamasuzaka.',
+                'personalidad' => 'Con una personalidad alegre y algo ingenua, Emu es muy impulsiva y pone en práctica todas las ideas que se le ocurren, con tendencia a involucrar en sus planes a las personas que la rodean. Emu ha creado su propio eslogan, "Wonderhoy!", que utiliza para motivarse. Lo utiliza con frecuencia, casi siempre gritándolo después de la mayoría de sus frases. Cuando está con otros, les anima y a veces les empuja a gritarlo junto a ella, posiblemente para intentar motivarles con él.
+                Cuando Emu está en presencia de sus hermanos, parece bajar el tono de su personalidad optimista, volviéndose mucho más tranquila, lo que probablemente sea un efecto del desánimo de sus hermanos hacia ella. Su habitación es un reflejo de su actitud optimista, un revoltijo de colores y estampados que Emu considera que representan la felicidad.
+                Aunque al principio se apresura a ignorar sus propias inseguridades en favor de intentar poner una sonrisa en todo momento, a medida que se acerca a sus compañeros de banda, empieza a sentirse más cómoda con ellos. Tras encontrar un grupo de personas que comparten su objetivo de devolver al parque su antiguo esplendor, Emu se muestra muy agradecida a sus amigos y a su apoyo.
+                Al final, afirma que el grupo es una de las cosas más importantes para ella, y confía en ellos lo suficiente como para abrirse por fin sobre el impacto que ha tenido la negatividad de sus hermanos, llorando ante sus amigos mientras desahoga sus sentimientos. Emu tiene una intuición aguda cuando se trata de la sinceridad de las expresiones de una persona, aunque no parece ser plenamente consciente de ello.',
                 'imagen' => 'img/personajes/img-emu.png',
                 'chibi' => 'img/personajes/chibi-emu.png',
                 'icon' => 'img/personajes/icon-emu.png',
@@ -241,8 +250,12 @@ class PersonajesSeeder extends Seeder
             [
                 'nombre' => 'Nene Kusanagi',
                 'grupo_id' => 4,
-                'historia' => 'aaa',
-                'personalidad' => 'bbb',
+                'historia' => 'Nene y Rui son vecinos y amigos de la infancia. Solían hacer espectáculos juntos cuando eran niños. Le gustaría dedicarse a la actuación. Cuando era pequeña, Nene se sintió inspirada para ser actriz después de ver a una actriz mundialmente famosa interpretar a La Sirenita.
+                En la secundaria, Nene se apuntó a un grupo de teatro y consiguió el papel protagonista. Ensayó con entusiasmo para no defraudar a los demás miembros. Desgraciadamente, el día de la representación se olvidó de su guión y no pudo decir nada. Este incidente le hizo perder la confianza en sí misma y, desde entonces, es incapaz de actuar sobre el escenario.
+                Nene se une al grupo a petición de Rui. Es una gran cantante, pero al principio no aparece en escena. En su lugar, maneja un robot llamado NeneRobo que Rui le ha hecho y actúa a través de él. Esto se debe a su ansiedad y miedo escénico. Al principio, Tsukasa la anima a subir de nuevo al escenario. Con la ayuda de los miembros de su grupo, supera su miedo escénico y se sube sola al escenario.
+                Es compañera de clase de Toya.',
+                'personalidad' => 'Nene es tímida y le cuesta hablar con los demás. No obstante, es muy tajante con la gente con la que se siente cómoda. Es de lengua afilada, y una vez llamó a Tsukasa "idiota que quiere ser la mayor estrella", a Emu "chica con una energía desbordante que siempre está gritando "Wonderhoy!", y a Rui "director que tiene la mente en las nubes".
+                A pesar de su carácter cortante, se preocupa mucho por sus amigos y hace todo lo posible por apoyarlos. También es muy trabajadora, y a menudo se queda hasta tarde después de los entrenamientos para ensayar sus propios papeles en los espectáculos.',
                 'imagen' => 'img/personajes/img-nene.png',
                 'chibi' => 'img/personajes/chibi-nene.png',
                 'icon' => 'img/personajes/icon-nene.png',
@@ -253,8 +266,12 @@ class PersonajesSeeder extends Seeder
             [
                 'nombre' => 'Rui Kamishiro',
                 'grupo_id' => 4,
-                'historia' => 'aaa',
-                'personalidad' => 'bbb',
+                'historia' => 'Rui y Nene son vecinos y amigos de la infancia. Rui fue quien la recomendó para unirse al grupo. Dirige las representaciones escénicas de los grupos y es a su vez actor y director de escena de Wonderlands x Showtime. Rui es muy hábil inventando maquinaria y crea animatrónicos para los espectáculos.
+                Cuando Rui era pequeño, le encantaba crear espectáculos e intentaba incluir a sus compañeros en ellos. Sin embargo, debido a su excentricidad y a sus arriesgadas ideas, a sus compañeros no les gustaba hacer shows con él y lo rechazaban. Finalmente, Rui decidió que actuaría por su cuenta, utilizando robots como actores en lugar de personas reales. A menudo se le puede ver realizando espectáculos de guerrilla en la calle y/o en Phoenix Wonderland, lo que provoca que el personal de seguridad le persiga.
+                A pesar de su carácter independiente, en el fondo Rui desea volver a actuar con otras personas. Se le da esta oportunidad cuando se une a Wonderlands x Showtime, y aprecia enormemente cómo Tsukasa está dispuesto a probar sus inventos y direcciones escénicas.',
+                'personalidad' => 'Rui vive bajo sus propias reglas, lo que hace que la gente lo considere un bicho raro. Casi siempre está sonriendo y a veces se deja llevar por sus ideas excéntricas. Esto incluye utilizar a personas como maniquíes de prueba para sus ideas y someterlas a torturas en piscinas, como afirma Nene. A pesar del aparente riesgo de sus ideas, Rui hace todo lo posible por tener en cuenta la seguridad.
+                Rui también tiene un nivel de curiosidad que roza la obsesión, ya que le encanta desmontar juguetes y electrodomésticos para ver cómo funcionan. Ha expresado abiertamente su deseo de desmontar los peluches del Wonderland SEKAI, a lo que Tsukasa se opone.
+                Se preocupa mucho por sus amigos, como demostró cuando defendió a Emu y sus sueños de sus hermanos, así como cuando construyó a NeneRobo para ayudar a Nene con su miedo a hablar con los demás. También es una persona bromista y juguetona, y un ejemplo de ello son sus constantes ideas para actuaciones que a menudo implican poner en peligro la vida de Tsukasa.',
                 'imagen' => 'img/personajes/img-rui.png',
                 'chibi' => 'img/personajes/chibi-rui.png',
                 'icon' => 'img/personajes/icon-rui.png',
