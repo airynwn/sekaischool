@@ -44,7 +44,8 @@
                 <details>
                     <summary>Twitter</summary>
                     <div class="details-flex"></div>
-                    <input type="text" name="twitter" id="tw" placeholder="@user" value="{{ auth()->user()->twitter }}">
+                    <input type="text" name="twitter" id="tw" placeholder="@user"
+                    value="{{ auth()->user()->twitter }}">
                 </details>
             </div>
         </div>
