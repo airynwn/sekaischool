@@ -71,9 +71,13 @@ class GrupoController extends Controller
      * @param  \App\Models\Grupo  $grupo
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request)
+    public function show($id)
     {
-        $grupo = Grupo::find(1);
+        $grupo = Grupo::find($id);
+
+        if (!$grupo) {
+            abort(404);
+        }
 
         return view('pages.grupos', [
             'grupo' => $grupo,
