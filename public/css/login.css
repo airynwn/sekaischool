@@ -256,7 +256,8 @@ details h3 {
 textarea,
 input[type=text],
 input[type=password],
-input[type=date] {
+input[type=date],
+input[type=email] {
     /* background-color: #00000070; */
     background-color: #ffffff2f;
     border: none;
@@ -273,6 +274,10 @@ textarea:focus-visible,
 input[type=text]:focus-visible {
     /* outline-color: #c07bc4; */
 
+}
+
+.center {
+    text-align: center;
 }
 
 /********/
