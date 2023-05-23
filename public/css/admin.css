@@ -26,6 +26,11 @@ tr:last-child {
     border-radius: 20px;
 }
 
+td > div {
+    max-height: 220px;
+    overflow-y: scroll;
+}
+
 a,
 span {
     color: white;
