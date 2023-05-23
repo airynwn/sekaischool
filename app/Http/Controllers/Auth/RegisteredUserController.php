@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Grupo;
+use App\Models\Personaje;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
@@ -20,7 +22,13 @@ class RegisteredUserController extends Controller
      */
     public function create(): View
     {
-        return view('auth.register');
+        $personajes = Personaje::all();
+        $grupos = Grupo::all();
+
+        return view('auth.register', [
+            'personajes' => $personajes,
+            'grupos' => $grupos,
+        ]);
     }
 
     /**

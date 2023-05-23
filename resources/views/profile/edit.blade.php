@@ -5,7 +5,7 @@
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/editperfil.css') }}">
     <script type="text/javascript" src="{{ asset('js/sekaischool.js') }}" defer></script>
-    <script type="text/javascript" src="{{ asset('js/editarPerfil.js') }}" defer></script>
+    <script type="text/javascript" src="{{ asset('js/validaciones.js') }}" defer></script>
 @endsection
 {{-- Main --}}
 @section('content')
@@ -44,7 +44,8 @@
                 <details>
                     <summary>Twitter</summary>
                     <div class="details-flex"></div>
-                    <input type="text" name="twitter" id="tw" placeholder="@user" value="{{ auth()->user()->twitter }}">
+                    <input type="text" name="twitter" id="tw" placeholder="@user"
+                    value="{{ auth()->user()->twitter }}">
                 </details>
             </div>
         </div>
