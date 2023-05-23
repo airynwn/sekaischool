@@ -15,14 +15,22 @@
                 @if (in_array($columna, [
                     'imagen', 'logo', 'comic', 'stamp', 'chibi', 'icon', 'sticker', 'unidolized', 'idolized'
                 ]))
-                    <td><img src={{ asset($fila->$columna) }} width=100 alt={{ $columna }}></td>
+                    <td>
+                        <div>
+                            <img src={{ asset($fila->$columna) }} width=100 alt={{ $columna }}>
+                        </div>
+                    </td>
                 @elseif ($columna == $fk)
                     @php
                         $fkcol = substr($fk, 0, -3) == 'pj' ? 'personaje' : substr($fk, 0, -3);
                     @endphp
                     <td>{{ $fila->$fkcol->descripcion ?? $fila->$fkcol->nombre }}</td>
                 @else
-                    <td>{{ $fila->$columna }}</td>
+                    <td>
+                        <div>
+                            {{ $fila->$columna }}
+                        </div>
+                    </td>
                 @endif
             @endforeach
             <td>

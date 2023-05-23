@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Personaje;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -16,7 +17,7 @@ class PersonajesSeeder extends Seeder
     public function run()
     {
         // php artisan db:seed --class=PersonajesSeeder
-        DB::table('personajes')->insert([
+        $personajes = [
             // *********************** Leo/need ***********************
             [
                 'nombre' => 'Ichika Hoshino',
@@ -347,6 +348,10 @@ class PersonajesSeeder extends Seeder
                 'sticker' => 'img/personajes/sticker-mizuki.png',
                 'comic' => 'img/personajes/comic-mizuki.png',
             ],
-        ]);
+        ];
+
+        foreach ($personajes as $pj) {
+            Personaje::updateOrCreate(['nombre' => $pj['nombre']], $pj);
+        }
     }
 }

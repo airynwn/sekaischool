@@ -77,7 +77,7 @@
                     <summary>Elige tu personaje favorito</summary>
                     <div class="details-flex"></div>
                     <div class="container caja-content">
-                        <div class="row row-cols-3 row-cols-md-5 row-cols-lg-6 g-3">
+                        <div class="row row-cols-2 row-cols-md-4 row-cols-lg-6 g-3 justify-content-center">
                             @foreach ($personajes as $pj)
                                 <div class="col">
                                     <label>
