@@ -4,16 +4,17 @@
 @endsection
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
+    <script type="text/javascript" src="{{ asset('js/validaciones.js') }}" defer></script>
 @endsection
 @section('content')
-<form method="POST" action="{{ route('register') }}">
-    @csrf
-    <div class="container my-5">
+<form method="POST" action="{{ route('register') }}" onsubmit="validarRegistro(event)">
+@csrf
+<div class="container my-5">
     <details open>
         <summary>Registro</summary>
-    <div class="row">
-                <div class="col">
-                {{-- ---------- DATOS DE LA CUENTA ---------- --}}
+        <div class="row">
+            <div class="col">
+            {{-- ---------- DATOS DE LA CUENTA ---------- --}}
                 <h3>Datos de la cuenta</h3>
                 <hr>
                 <div class="campo espacio">
@@ -35,10 +36,9 @@
                     <label for="password-confirm" class="mx-4">Confirmar contraseña</label>
                     <input type="password" name="password-confirm" id="password-confirm" class="mx-3">
                 </div>
-                {{--  --}}
             </div>
             <div class="col">
-                {{-- ---------- DATOS PERSONALES ---------- --}}
+            {{-- ---------- DATOS PERSONALES ---------- --}}
                 <h3>Datos personales</h3>
                 <hr>
                 <div class="campo espacio">
@@ -61,62 +61,60 @@
                     <label for="name" class="mx-4">Biografía</label>
                     <textarea name="biografia" rows="5" id="bio" class="mx-3"></textarea>
                 </div>
-                {{--  --}}
             </div>
-    </div>
-    <div class="espacio"></div>
-    <div class="row">
-        <div class="col details-flex">
-            <h3>Personalizar perfil</h3>
-            <small>Puedes cambiar tu elección más adelante</small>
         </div>
-    </div>
-    <hr>
-    <div class="row">
-        <div class="col">
-            <details>
-                <summary>Elige tu personaje favorito</summary>
-                <div class="details-flex">
-                </div>
-                <div class="container caja-content">
-                    <div class="row row-cols-3 row-cols-md-5 row-cols-lg-6 g-3">
-                        @foreach ($personajes as $pj)
-                            <div class="col">
-                                <label>
-                                    <input type="radio" name="pj_fav_id" value="{{ $pj->id }}">
-                                    <img src="{{ asset($pj->chibi) }}" alt="Chibi {{ $pj->nombre }}"
-                                    class="img-fluid">
-                                </label>
-                            </div>
-                      @endforeach
+        <div class="espacio"></div>
+        <div class="row">
+            <div class="col details-flex">
+                <h3>Personalizar perfil</h3>
+                <small>Puedes cambiar tu elección más adelante</small>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col">
+                <details>
+                    <summary>Elige tu personaje favorito</summary>
+                    <div class="details-flex"></div>
+                    <div class="container caja-content">
+                        <div class="row row-cols-3 row-cols-md-5 row-cols-lg-6 g-3">
+                            @foreach ($personajes as $pj)
+                                <div class="col">
+                                    <label>
+                                        <input type="radio" name="pj_fav_id" value="{{ $pj->id }}">
+                                        <img src="{{ asset($pj->chibi) }}" alt="Chibi {{ $pj->nombre }}"
+                                        class="img-fluid">
+                                    </label>
+                                </div>
+                        @endforeach
+                        </div>
                     </div>
-                </div>
-            </details>
+                </details>
+            </div>
         </div>
-    </div>
-    <div class="espacio"></div>
-    <div class="row">
-        <div class="col">
-            <details>
-                <summary>Elige tu grupo favorito</summary>
-                <div class="details-flex">
-                </div>
-                <div class="container caja-content">
-                    <div class="row row-cols-2 row-cols-md-5 g-3 justify-content-center">
-                        @foreach ($grupos as $grupo)
-                            <div class="col">
-                                <label>
-                                    <input type="radio" name="grupo_fav_id" value="{{ $grupo->id }}">
-                                    <img src="{{ asset($grupo->imagen) }}" alt="Imagen {{ $grupo->nombre }}"
-                                    class="img-fluid">
-                                </label>
-                            </div>
-                      @endforeach
+        <div class="espacio"></div>
+        <div class="row">
+            <div class="col">
+                <details>
+                    <summary>Elige tu grupo favorito</summary>
+                    <div class="details-flex">
                     </div>
-                </div>
-            </details>
+                    <div class="container caja-content">
+                        <div class="row row-cols-2 row-cols-md-5 g-3 justify-content-center">
+                            @foreach ($grupos as $grupo)
+                                <div class="col">
+                                    <label>
+                                        <input type="radio" name="grupo_fav_id" value="{{ $grupo->id }}">
+                                        <img src="{{ asset($grupo->imagen) }}" alt="Imagen {{ $grupo->nombre }}"
+                                        class="img-fluid">
+                                    </label>
+                                </div>
+                        @endforeach
+                        </div>
+                    </div>
+                </details>
+            </div>
         </div>
-    </div>
         <div class="row">
             {{--  --}}
             <div class="campo espacio">
@@ -128,8 +126,8 @@
                 <button type="submit">Registrarse</button>
             </div>
         </div>
-    </div>
-</details>
+        </div>
+    </details>
 </div>
 </form>
 

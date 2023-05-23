@@ -5,7 +5,7 @@
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/editperfil.css') }}">
     <script type="text/javascript" src="{{ asset('js/sekaischool.js') }}" defer></script>
-    <script type="text/javascript" src="{{ asset('js/editarPerfil.js') }}" defer></script>
+    <script type="text/javascript" src="{{ asset('js/validaciones.js') }}" defer></script>
 @endsection
 {{-- Main --}}
 @section('content')
