@@ -33,7 +33,7 @@ Route::get('/dashboard', function () {
 Route::get('/cartas', [CartaController::class, 'index'])->name('pages.cartas');
 Route::post('/cartas/buscar', [CartaController::class, 'buscar'])->name('pages.cartas.buscar');
         /**** Grupo ****/
-Route::get('/grupos', [GrupoController::class, 'show'])->name('pages.grupos');
+Route::get('/grupos/{grupo}', [GrupoController::class, 'show'])->name('pages.grupos');
 
 /************* User *************/
 Route::middleware('auth')->group(function () {

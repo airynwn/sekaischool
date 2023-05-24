@@ -20,10 +20,10 @@
       <img src="{{ asset($grupo->imagen) }}" alt="Imagen {{ $grupo->nombre }}" class="img-fluid" width="75%">
     </div>
   <!--  -->
-    <div class="col order-last order-md-first order-lg-first align-self-center">
+    <div class="col order-last order-md-first order-lg-first align-self-end align-self-md-center">
     <!--  -->
       <div class="panel espacio">
-        <span class="titulo">Miembros</span>
+        <span class="titulo" data-color="bg-grupo-{{ $grupo->id }}">Miembros</span>
         <div class="panel-content">
           @foreach ($grupo->personajes()->get() as $pj)
           <span data-color="{{ strtolower(explode(' ', $pj->nombre)[0]) }}">{{ $pj->nombre }}</span>
@@ -34,7 +34,7 @@
   <!--  -->
     <div class="col align-self-center">
       <div class="panel espacio">
-        <span class="titulo">Virtual Singers</span>
+        <span class="titulo" data-color="bg-grupo-{{ $grupo->id }}">Virtual Singers</span>
         <div class="panel-content">
           <span data-color="miku">Miku Hatsune</span>
           <span data-color="rin">Rin Kagamine</span>
@@ -49,7 +49,7 @@
   <div class="row">
     <div class="col">
       <div class="panel espacio">
-        <h2>Historia</h2>
+        <h2 data-color="grupo-{{ $grupo->id }}">Historia</h2>
         <div class="panel-content">
           {{-- antes caja-content --}}
           <p>{{ $grupo->historia }}</p>

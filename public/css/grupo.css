@@ -3,35 +3,35 @@
 
 :root {
         /*** L/N ***/
-    --ln: #45D;
+    --grupo-1: #45D;
     --ichika: #3AE;
     --saki: #FD4;
     --honami: #E66;
     --shiho: #BD2;
         /*** MMJ ***/
-    --wxs: #F90;
-    --tsukasa: #FB0;
-    --emu: #FF66BC;
-    --nene: #34DD9A;
-    --rui: #BB88ED;
+    --grupo-2: #6CCB20;
+    --minori: #FFCDAC;
+    --haruka: #99CDFF;
+    --airi: #FFA9CC;
+    --shizuku: #9AEEDE;
         /*** VBS ***/
-    --wxs: #F90;
-    --tsukasa: #FB0;
-    --emu: #FF66BC;
-    --nene: #34DD9A;
-    --rui: #BB88ED;
+    --grupo-3: #E16;
+    --kohane: #FF679A;
+    --an: #00BBDC;
+    --akito: #FF7721;
+    --toya: #07D;
         /*** WxS ***/
-    --wxs: #F90;
+    --grupo-4: #F90;
     --tsukasa: #FB0;
     --emu: #FF66BC;
     --nene: #34DD9A;
     --rui: #BB88ED;
         /*** N25 ***/
-    --wxs: #F90;
-    --tsukasa: #FB0;
-    --emu: #FF66BC;
-    --nene: #34DD9A;
-    --rui: #BB88ED;
+    --grupo-5: #849;
+    --kanade: #BB6588;
+    --mafuyu: #8889CC;
+    --ena: #CCAA87;
+    --mizuki: #E4A8CA;
         /*** VSs  ***/
     --miku: #33CCBA;
     --rin: #FC1;
@@ -52,7 +52,6 @@ a {
 h2 {
     font-family: 'Fredoka One', sans-serif;
     text-align: center;
-    color: var(--ln);
     text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
 }
 
@@ -167,7 +166,6 @@ nav {
     text-align: center;
     border-radius: 20px;
     background: linear-gradient(214.91deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.38) 100%);
-    /* border: 1px solid var(--ln); */
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(12.5px);
     display: flex;
@@ -179,9 +177,7 @@ nav {
     font-weight: 100;
     text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
     padding: 0.25em;
-    border: solid 1px var(--ln);
     border-radius: 20px 20px 0 0;
-    background: var(--ln);
 }
 
 .panel-content {
@@ -329,6 +325,14 @@ i:hover {
 
 /** LEO/NEED  */
 
+[data-color='grupo-1'] {
+    color: var(--grupo-1)
+}
+
+[data-color='bg-grupo-1'] {
+    background: var(--grupo-1);
+}
+
 [data-color='ichika'] {
     color: var(--ichika)
 }
@@ -346,6 +350,14 @@ i:hover {
 }
 
 /** MORE MORE JUMP!  */
+
+[data-color='grupo-2'] {
+    color: var(--grupo-2)
+}
+
+[data-color='bg-grupo-2'] {
+    background: var(--grupo-2);
+}
 
 [data-color='minori'] {
     color: var(--minori)
@@ -365,6 +377,14 @@ i:hover {
 
 /** VIVID BAD SQUAD  */
 
+[data-color='grupo-3'] {
+    color: var(--grupo-3)
+}
+
+[data-color='bg-grupo-3'] {
+    background: var(--grupo-3);
+}
+
 [data-color='kohane'] {
     color: var(--kohane)
 }
@@ -383,6 +403,14 @@ i:hover {
 
 /** WONDERLANDS X SHOWTIME  */
 
+[data-color='grupo-4'] {
+    color: var(--grupo-4)
+}
+
+[data-color='bg-grupo-4'] {
+    background: var(--grupo-4);
+}
+
 [data-color='tsukasa'] {
     color: var(--tsukasa)
 }
@@ -400,6 +428,14 @@ i:hover {
 }
 
 /** NIGHTCORD AT 25:00  */
+
+[data-color='grupo-5'] {
+    color: var(--grupo-5)
+}
+
+[data-color='bg-grupo-5'] {
+    background: var(--grupo-5);
+}
 
 [data-color='kanade'] {
     color: var(--kanade)

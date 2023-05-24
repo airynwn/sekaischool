@@ -1,3 +1,6 @@
+@php
+    $grupos = \App\Models\Grupo::all();
+@endphp
 <nav class="navbar navbar-expand-lg navbar-dark header">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">
@@ -32,11 +35,13 @@
                     Grupos
                     </a>
                     <ul class="dropdown-menu header noborder">
-                    <li><a class="dropdown-item text-white brillo" href="ln.html">Leo/need</a></li>
-                    <li><a class="dropdown-item text-white brillo" href="mmj.html">MORE MORE JUMP!</a></li>
-                    <li><a class="dropdown-item text-white brillo" href="vbs.html">Vivid BAD SQUAD</a></li>
-                    <li><a class="dropdown-item text-white brillo" href="wxs.html">Wonderlands x Showtime</a></li>
-                    <li><a class="dropdown-item text-white brillo" href="25ji.html">25-ji, Nightcord de.</a></li>
+                    @foreach ($grupos->sortBy('id') as $grupo)
+                    <li>
+                        <a class="dropdown-item text-white brillo" href="{{ route('pages.grupos', $grupo->id) }}">
+                            {{ $grupo->nombre }}
+                        </a>
+                    </li>
+                    @endforeach
                     </ul>
                 </li>
             </ul>
