@@ -30,19 +30,8 @@
                 <li class="nav-item">
                     <a class="nav-link active brillo" href="{{ route('pages.comunidad') }}">Comunidad</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link active dropdown-toggle brillo" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Grupos
-                    </a>
-                    <ul class="dropdown-menu header noborder">
-                    @foreach ($grupos->sortBy('id') as $grupo)
-                    <li>
-                        <a class="dropdown-item text-white brillo" href="{{ route('pages.grupos', $grupo->id) }}">
-                            {{ $grupo->nombre }}
-                        </a>
-                    </li>
-                    @endforeach
-                    </ul>
+                <li class="nav-item">
+                    <a class="nav-link active brillo" href="{{ route('pages.grupos') }}">Grupos</a>
                 </li>
             </ul>
             @if (auth()->check())
