@@ -15,12 +15,18 @@ class GrupoController extends Controller
      */
     public function index()
     {
-        $grupos = Grupo::all();
+        $grupos = Grupo::all()->sortBy('id');
         $tablafk = null;
         $fk = null;
 
         if (auth()->check() && auth()->user()->admin && strpos(Route::current()->getName(), 'admin') === 0) {
             return view('admin.grupos.index', [
+                'grupos' => $grupos,
+                'tablafk' => $tablafk,
+                'fk' => $fk
+            ]);
+        } else {
+            return view('pages.grupos', [
                 'grupos' => $grupos,
                 'tablafk' => $tablafk,
                 'fk' => $fk
@@ -71,17 +77,15 @@ class GrupoController extends Controller
      * @param  \App\Models\Grupo  $grupo
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request)
     {
+        $id = $request->input('grupo');
         $grupo = Grupo::find($id);
 
-        if (!$grupo) {
-            abort(404);
-        }
-
-        return view('pages.grupos', [
+        return view('pages.grupo', [
             'grupo' => $grupo,
-        ]);
+            'post' => true,
+        ])->render();
     }
 
     /**
