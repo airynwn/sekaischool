@@ -4,6 +4,7 @@
 @endsection
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/grupo.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/colores.css') }}">
     <script type="text/javascript" src="{{ asset('js/sekaischool.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/grupos.js') }}"></script>
 @endsection
