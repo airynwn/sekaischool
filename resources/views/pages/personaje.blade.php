@@ -2,8 +2,8 @@
     <div class="row">
     <!-- ! Por defecto último (para que salga en móvil), en el resto primero -->
     <div class="col-lg-4 col-md-auto order-last order-lg-first">
-        <div id="trivia-nav">
-        <h2>Trivia</h2>
+        <div class="trivia-nav" data-color="border-{{ strtolower(explode(' ', $personaje->nombre)[0]) }}">
+        <h2 data-color="{{ strtolower(explode(' ', $personaje->nombre)[0]) }}">Trivia</h2>
         <div class="caja">
             <div class="caja-content">
                 <ul>
@@ -57,7 +57,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-lg-4">
-                    <h2>{{ $personaje->nombre }}</h2>
+                    <h2 data-color="{{ strtolower(explode(' ', $personaje->nombre)[0]) }}">
+                        {{ $personaje->nombre }}
+                    </h2>
                     <figure class="caja-icons">
                         <picture>
                             <source media="(max-width: 576px)" srcset="{{ asset($personaje->chibi) }}">
@@ -70,11 +72,13 @@
                 <!--  -->
                 <div class="col">
                     <div class="espacio">
-                        <h2>Datos básicos</h2>
-                        <div class="panel">
+                        <h2 data-color="{{ strtolower(explode(' ', $personaje->nombre)[0]) }}">
+                            Datos básicos
+                        </h2>
+                        <div class="panel" data-color="border-{{ strtolower(explode(' ', $personaje->nombre)[0]) }}">
                             {{-- TODO Preguntas y Respuestas --}}
                             <div class="caja-content">
-                                <span><strong>Género</strong>: Desconocido</span>
+                                <span><strong data-color="{{ strtolower(explode(' ', $personaje->nombre)[0]) }}">Género</strong>: Desconocido</span>
                                 <span><strong>Grupo</strong>: 25-ji, Nightcord de.</span>
                                 <span><strong>Cumpleaños</strong>: 27 de Agosto</span>
                                 <span><strong>Colegio</strong>: Kamiyama High School (1-A)</span>
@@ -88,8 +92,10 @@
                     </div>
                     <!--  -->
                     <div class="espacio">
-                        <h2>Historia</h2>
-                        <div class="panel">
+                        <h2 data-color="{{ strtolower(explode(' ', $personaje->nombre)[0]) }}">
+                            Historia
+                        </h2>
+                        <div class="panel" data-color="border-{{ strtolower(explode(' ', $personaje->nombre)[0]) }}">
                             <div class="caja-content">
                                 <p>
                                     {{ $personaje->historia }}
@@ -102,7 +108,9 @@
             <div class="row centrar-fila">
                 <div class="col-auto">
                     <div class="espacio">
-                        <h2>Personalidad</h2>
+                        <h2 data-color="{{ strtolower(explode(' ', $personaje->nombre)[0]) }}">
+                            Personalidad
+                        </h2>
                         <div class="caja-content">
                             <p>
                                 {{ $personaje->personalidad }}
