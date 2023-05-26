@@ -54,20 +54,40 @@
     background: var(--grupo-1);
 }
 
+[data-color='border-grupo-1'] {
+    border-color: var(--grupo-1)
+}
+
 [data-color='ichika'] {
     color: var(--ichika)
+}
+
+[data-color='border-ichika'] {
+    border-color: var(--ichika)
 }
 
 [data-color='saki'] {
     color: var(--saki)
 }
 
+[data-color='border-saki'] {
+    border-color: var(--saki)
+}
+
 [data-color='honami'] {
     color: var(--honami)
 }
 
+[data-color='border-honami'] {
+    border-color: var(--honami)
+}
+
 [data-color='shiho'] {
     color: var(--shiho)
+}
+
+[data-color='border-shiho'] {
+    border-color: var(--shiho)
 }
 
 /** MORE MORE JUMP!  */
@@ -80,20 +100,40 @@
     background: var(--grupo-2);
 }
 
+[data-color='border-grupo-2'] {
+    border-color: var(--grupo-2)
+}
+
 [data-color='minori'] {
     color: var(--minori)
+}
+
+[data-color='border-minori'] {
+    border-color: var(--minori)
 }
 
 [data-color='haruka'] {
     color: var(--haruka)
 }
 
+[data-color='border-haruka'] {
+    border-color: var(--haruka)
+}
+
 [data-color='airi'] {
     color: var(--airi)
 }
 
+[data-color='border-airi'] {
+    border-color: var(--airi)
+}
+
 [data-color='shizuku'] {
     color: var(--shizuku)
+}
+
+[data-color='border-shizuku'] {
+    border-color: var(--shizuku)
 }
 
 /** VIVID BAD SQUAD  */
@@ -106,20 +146,40 @@
     background: var(--grupo-3);
 }
 
+[data-color='border-grupo-3'] {
+    border-color: var(--grupo-3)
+}
+
 [data-color='kohane'] {
     color: var(--kohane)
+}
+
+[data-color='border-kohane'] {
+    border-color: var(--kohane)
 }
 
 [data-color='an'] {
     color: var(--an)
 }
 
+[data-color='border-an'] {
+    border-color: var(--an)
+}
+
 [data-color='akito'] {
     color: var(--akito)
 }
 
+[data-color='border-akito'] {
+    border-color: var(--akito)
+}
+
 [data-color='toya'] {
     color: var(--toya)
+}
+
+[data-color='border-toya'] {
+    border-color: var(--toya)
 }
 
 /** WONDERLANDS X SHOWTIME  */
@@ -132,20 +192,40 @@
     background: var(--grupo-4);
 }
 
+[data-color='border-grupo-4'] {
+    border-color: var(--grupo-4)
+}
+
 [data-color='tsukasa'] {
     color: var(--tsukasa)
+}
+
+[data-color='border-tsukasa'] {
+    border-color: var(--tsukasa)
 }
 
 [data-color='emu'] {
     color: var(--emu)
 }
 
+[data-color='border-emu'] {
+    border-color: var(--emu)
+}
+
 [data-color='nene'] {
     color: var(--nene)
 }
 
+[data-color='border-nene'] {
+    border-color: var(--nene)
+}
+
 [data-color='rui'] {
     color: var(--rui)
+}
+
+[data-color='border-rui'] {
+    border-color: var(--rui)
 }
 
 /** NIGHTCORD AT 25:00  */
@@ -158,20 +238,40 @@
     background: var(--grupo-5);
 }
 
+[data-color='border-grupo-5'] {
+    border-color: var(--grupo-5)
+}
+
 [data-color='kanade'] {
     color: var(--kanade)
+}
+
+[data-color='border-kanade'] {
+    border-color: var(--kanade)
 }
 
 [data-color='mafuyu'] {
     color: var(--mafuyu)
 }
 
+[data-color='border-mafuyu'] {
+    border-color: var(--mafuyu)
+}
+
 [data-color='ena'] {
     color: var(--ena)
 }
 
+[data-color='border-ena'] {
+    border-color: var(--ena)
+}
+
 [data-color='mizuki'] {
     color: var(--mizuki)
+}
+
+[data-color='border-mizuki'] {
+    border-color: var(--mizuki)
 }
 
 /** VIRTUAL SINGERS  */
