@@ -4,7 +4,7 @@
     <div class="col-lg-4 col-md-auto order-last order-lg-first">
         <div class="trivia-nav" data-color="border-{{ strtolower(explode(' ', $personaje->nombre)[0]) }}">
         <h2 data-color="{{ strtolower(explode(' ', $personaje->nombre)[0]) }}">Trivia</h2>
-        <div class="caja">
+        <div class="panel" data-color="border-{{ strtolower(explode(' ', $personaje->nombre)[0]) }}">
             <div class="caja-content">
                 <ul>
                     {{-- <li> por cada trivia (TODO) --}}
@@ -17,8 +17,8 @@
                 <img src="{{ asset($personaje->stamp) }}" alt="{{ explode(' ', $personaje->nombre)[0] }} Stamp" width="148" height="128">
             </picture>
         </div>
-        <h2>Relaciones</h2>
-        <div class="caja">
+        <h2 data-color="{{ strtolower(explode(' ', $personaje->nombre)[0]) }}">Relaciones</h2>
+        <div class="panel" data-color="border-{{ strtolower(explode(' ', $personaje->nombre)[0]) }}">
             <div class="caja-content">
             <div class="container-fluid">
                 {{-- Relación seleccionada --}}
