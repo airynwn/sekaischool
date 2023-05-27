@@ -35,6 +35,9 @@ Route::post('/cartas/buscar', [CartaController::class, 'buscar'])->name('pages.c
         /**** Grupo ****/
 Route::get('/grupos', [GrupoController::class, 'index'])->name('pages.grupos');
 Route::post('/grupos/grupo', [GrupoController::class, 'show'])->name('pages.grupo');
+        /**** Personaje ****/
+Route::get('/personajes', [PersonajeController::class, 'index'])->name('pages.personajes');
+Route::post('/personajes/personaje', [PersonajeController::class, 'show'])->name('pages.personaje');
 
 /************* User *************/
 Route::middleware('auth')->group(function () {

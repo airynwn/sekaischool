@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Grupo;
 use App\Models\Personaje;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 class PersonajeController extends Controller
 {
@@ -15,12 +16,18 @@ class PersonajeController extends Controller
      */
     public function index()
     {
-        $personajes = Personaje::all();
+        $personajes = Personaje::all()->sortBy('id');
         $tablafk = Grupo::all();
         $fk = 'grupo_id';
 
-        if (auth()->user()->admin) {
+        if (auth()->check() && auth()->user()->admin && strpos(Route::current()->getName(), 'admin') === 0) {
             return view('admin.personajes.index', [
+                'personajes' => $personajes,
+                'tablafk' => $tablafk,
+                'fk' => $fk
+            ]);
+        } else {
+            return view('pages.personajes', [
                 'personajes' => $personajes,
                 'tablafk' => $tablafk,
                 'fk' => $fk
@@ -76,9 +83,15 @@ class PersonajeController extends Controller
      * @param  \App\Models\Personaje  $personaje
      * @return \Illuminate\Http\Response
      */
-    public function show(Personaje $personaje)
+    public function show(Request $request)
     {
-        //
+        $id = $request->input('personaje');
+        $personaje = Personaje::find($id);
+
+        return view('pages.personaje', [
+            'personaje' => $personaje,
+            'post' => true,
+        ])->render();
     }
 
     /**

@@ -1,0 +1,300 @@
+/*** Variables ***/
+
+:root {
+    /*** L/N ***/
+--grupo-1: #45D;
+--ichika: #3AE;
+--saki: #FD4;
+--honami: #E66;
+--shiho: #BD2;
+    /*** MMJ ***/
+--grupo-2: #6CCB20;
+--minori: #FFCDAC;
+--haruka: #99CDFF;
+--airi: #FFA9CC;
+--shizuku: #9AEEDE;
+    /*** VBS ***/
+--grupo-3: #E16;
+--kohane: #FF679A;
+--an: #00BBDC;
+--akito: #FF7721;
+--toya: #07D;
+    /*** WxS ***/
+--grupo-4: #F90;
+--tsukasa: #FB0;
+--emu: #FF66BC;
+--nene: #34DD9A;
+--rui: #BB88ED;
+    /*** N25 ***/
+--grupo-5: #849;
+--kanade: #BB6588;
+--mafuyu: #8889CC;
+--ena: #CCAA87;
+--mizuki: #E4A8CA;
+    /*** VSs  ***/
+--miku: #33CCBA;
+--rin: #FC1;
+--len: #FFEE12;
+--luka: #FFBACC;
+--meiko: #DE4444;
+--kaito: #3367CD;
+}
+
+/**************************/
+
+/****** Colores con variables ******/
+
+/** LEO/NEED  */
+
+[data-color='grupo-1'] {
+    color: var(--grupo-1)
+}
+
+[data-color='bg-grupo-1'] {
+    background: var(--grupo-1);
+}
+
+[data-color='border-grupo-1'] {
+    border-color: var(--grupo-1)
+}
+
+[data-color='ichika'] {
+    color: var(--ichika)
+}
+
+[data-color='border-ichika'] {
+    border-color: var(--ichika)
+}
+
+[data-color='saki'] {
+    color: var(--saki)
+}
+
+[data-color='border-saki'] {
+    border-color: var(--saki)
+}
+
+[data-color='honami'] {
+    color: var(--honami)
+}
+
+[data-color='border-honami'] {
+    border-color: var(--honami)
+}
+
+[data-color='shiho'] {
+    color: var(--shiho)
+}
+
+[data-color='border-shiho'] {
+    border-color: var(--shiho)
+}
+
+/** MORE MORE JUMP!  */
+
+[data-color='grupo-2'] {
+    color: var(--grupo-2)
+}
+
+[data-color='bg-grupo-2'] {
+    background: var(--grupo-2);
+}
+
+[data-color='border-grupo-2'] {
+    border-color: var(--grupo-2)
+}
+
+[data-color='minori'] {
+    color: var(--minori)
+}
+
+[data-color='border-minori'] {
+    border-color: var(--minori)
+}
+
+[data-color='haruka'] {
+    color: var(--haruka)
+}
+
+[data-color='border-haruka'] {
+    border-color: var(--haruka)
+}
+
+[data-color='airi'] {
+    color: var(--airi)
+}
+
+[data-color='border-airi'] {
+    border-color: var(--airi)
+}
+
+[data-color='shizuku'] {
+    color: var(--shizuku)
+}
+
+[data-color='border-shizuku'] {
+    border-color: var(--shizuku)
+}
+
+/** VIVID BAD SQUAD  */
+
+[data-color='grupo-3'] {
+    color: var(--grupo-3)
+}
+
+[data-color='bg-grupo-3'] {
+    background: var(--grupo-3);
+}
+
+[data-color='border-grupo-3'] {
+    border-color: var(--grupo-3)
+}
+
+[data-color='kohane'] {
+    color: var(--kohane)
+}
+
+[data-color='border-kohane'] {
+    border-color: var(--kohane)
+}
+
+[data-color='an'] {
+    color: var(--an)
+}
+
+[data-color='border-an'] {
+    border-color: var(--an)
+}
+
+[data-color='akito'] {
+    color: var(--akito)
+}
+
+[data-color='border-akito'] {
+    border-color: var(--akito)
+}
+
+[data-color='toya'] {
+    color: var(--toya)
+}
+
+[data-color='border-toya'] {
+    border-color: var(--toya)
+}
+
+/** WONDERLANDS X SHOWTIME  */
+
+[data-color='grupo-4'] {
+    color: var(--grupo-4)
+}
+
+[data-color='bg-grupo-4'] {
+    background: var(--grupo-4);
+}
+
+[data-color='border-grupo-4'] {
+    border-color: var(--grupo-4)
+}
+
+[data-color='tsukasa'] {
+    color: var(--tsukasa)
+}
+
+[data-color='border-tsukasa'] {
+    border-color: var(--tsukasa)
+}
+
+[data-color='emu'] {
+    color: var(--emu)
+}
+
+[data-color='border-emu'] {
+    border-color: var(--emu)
+}
+
+[data-color='nene'] {
+    color: var(--nene)
+}
+
+[data-color='border-nene'] {
+    border-color: var(--nene)
+}
+
+[data-color='rui'] {
+    color: var(--rui)
+}
+
+[data-color='border-rui'] {
+    border-color: var(--rui)
+}
+
+/** NIGHTCORD AT 25:00  */
+
+[data-color='grupo-5'] {
+    color: var(--grupo-5)
+}
+
+[data-color='bg-grupo-5'] {
+    background: var(--grupo-5);
+}
+
+[data-color='border-grupo-5'] {
+    border-color: var(--grupo-5)
+}
+
+[data-color='kanade'] {
+    color: var(--kanade)
+}
+
+[data-color='border-kanade'] {
+    border-color: var(--kanade)
+}
+
+[data-color='mafuyu'] {
+    color: var(--mafuyu)
+}
+
+[data-color='border-mafuyu'] {
+    border-color: var(--mafuyu)
+}
+
+[data-color='ena'] {
+    color: var(--ena)
+}
+
+[data-color='border-ena'] {
+    border-color: var(--ena)
+}
+
+[data-color='mizuki'] {
+    color: var(--mizuki)
+}
+
+[data-color='border-mizuki'] {
+    border-color: var(--mizuki)
+}
+
+/** VIRTUAL SINGERS  */
+
+[data-color='miku'] {
+    color: var(--miku)
+}
+
+[data-color='rin'] {
+    color: var(--rin)
+}
+
+[data-color='len'] {
+    color: var(--len)
+}
+
+[data-color='luka'] {
+    color: var(--luka)
+}
+[data-color='meiko'] {
+    color: var(--meiko)
+}
+
+[data-color='kaito'] {
+    color: var(--kaito)
+}

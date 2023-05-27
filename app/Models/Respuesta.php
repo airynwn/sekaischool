@@ -28,6 +28,6 @@ class Respuesta extends Model
      */
     public function pregunta()
     {
-        return $this->belongsTo(Personaje::class, 'pregunta_id');
+        return $this->belongsTo(Pregunta::class, 'pregunta_id');
     }
 }

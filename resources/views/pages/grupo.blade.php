@@ -7,12 +7,12 @@
   <div class="row">
   <!--  -->
     <div class="col-12 col-md-6">
-      <img src="{{ asset($grupo->imagen) }}" alt="Imagen {{ $grupo->nombre }}" class="img-fluid" width="75%">
+      <img src="{{ asset($grupo->imagen) }}" alt="Imagen {{ $grupo->nombre }}" class="img-fluid">
     </div>
   <!--  -->
     <div class="col order-last order-md-first order-lg-first align-self-end align-self-md-center">
     <!--  -->
-      <div class="panel espacio">
+      <div class="panel espacio" data-color="border-grupo-{{ $grupo->id }}">
         <span class="titulo" data-color="bg-grupo-{{ $grupo->id }}">Miembros</span>
         <div class="panel-content">
           @foreach ($grupo->personajes()->get() as $pj)
@@ -23,7 +23,7 @@
     </div>
   <!--  -->
     <div class="col align-self-center">
-      <div class="panel espacio">
+      <div class="panel espacio" data-color="border-grupo-{{ $grupo->id }}">
         <span class="titulo" data-color="bg-grupo-{{ $grupo->id }}">Virtual Singers</span>
         <div class="panel-content">
           <span data-color="miku">Miku Hatsune</span>
@@ -38,11 +38,11 @@
   </div>
   <div class="row">
     <div class="col">
-      <div class="panel espacio">
+      <div class="panel espacio" data-color="border-grupo-{{ $grupo->id }}">
         <h2 data-color="grupo-{{ $grupo->id }}">Historia</h2>
         <div class="panel-content">
           {{-- antes caja-content --}}
-          <p>{{ $grupo->historia }}</p>
+          <p class="justify">{{ $grupo->historia }}</p>
       </div>
     </div>
   </div>
