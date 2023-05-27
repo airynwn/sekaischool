@@ -15,8 +15,9 @@
             <div class="panel" data-color="border-{{ strtolower(explode(' ', $personaje->nombre)[0]) }}">
                 <div class="caja-content">
                     <ul>
-                        {{-- li por cada trivia (TODO) --}}
-                        <li>{{ $personaje->nombre }}</li>
+                        @foreach ($personaje->trivias()->get() as $trivia)
+                        <li>{{ $trivia->dato }}</li>
+                        @endforeach
                     </ul>
                 </div>
             </div>
