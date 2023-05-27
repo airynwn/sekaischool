@@ -86,15 +86,12 @@
                         <div class="panel" data-color="border-{{ strtolower(explode(' ', $personaje->nombre)[0]) }}">
                             {{-- TODO Preguntas y Respuestas --}}
                             <div class="caja-content">
-                                <span><strong data-color="{{ strtolower(explode(' ', $personaje->nombre)[0]) }}">Género</strong>: Desconocido</span>
-                                <span><strong>Grupo</strong>: 25-ji, Nightcord de.</span>
-                                <span><strong>Cumpleaños</strong>: 27 de Agosto</span>
-                                <span><strong>Colegio</strong>: Kamiyama High School (1-A)</span>
-                                <span><strong>Hobbies</strong>: Creación de vídeos</span>
-                                <span><strong>Especialidad</strong>: Rediseñar ropa</span>
-                                <span><strong>Comida favorita</strong>: Arroz al curry y patatas fritas</span>
-                                <span><strong>Comida menos favorita</strong>: Setas</span>
-                                <span><strong>No le gusta</strong>: La comida muy caliente</span>
+                                <span><strong data-color="{{ strtolower(explode(' ', $personaje->nombre)[0]) }}">
+                                    Grupo</strong>: {{ $personaje->grupo->nombre }}</span>
+                                @foreach ($personaje->respuestas()->get() as $respuesta)
+                                <span><strong data-color="{{ strtolower(explode(' ', $personaje->nombre)[0]) }}">
+                                    {{ $respuesta->pregunta->pregunta }}</strong>: {{ $respuesta->respuesta }}</span>
+                                @endforeach
                             </div>
                         </div>
                     </div>
