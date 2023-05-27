@@ -35,14 +35,14 @@
                             @foreach ($personaje->relaciones() as $relacion)
                             <div class="col">
                                 {{-- Pantallas grandes --}}
-                                <button aria-label="{{ $relacion->descripcion }}" class="vacio d-none d-md-block"
+                                <button aria-label="{{ $relacion->descripcion }}" class="vacio d-none d-lg-block"
                                 data-cooltipz-dir="right" data-cooltipz-size="large"
                                 data-color="tt-{{ strtolower(explode(' ', $relacion->nombre)[0]) }}">
                                     <img src="{{ asset($relacion->icon) }}"
                                     alt="{{ $relacion->nombre }} Icon" class="img-fluid">
                                 </button>
                                 {{-- Pantallas pequeñas --}}
-                                <button aria-label="{{ $relacion->descripcion }}" class="vacio d-block d-md-none"
+                                <button aria-label="{{ $relacion->descripcion }}" class="vacio d-block d-lg-none"
                                     data-cooltipz-dir="top" data-cooltipz-size="medium"
                                     data-color="tt-{{ strtolower(explode(' ', $relacion->nombre)[0]) }}">
                                         <img src="{{ asset($relacion->icon) }}"
@@ -123,7 +123,7 @@
                         <picture>
                             <img src="{{ asset($personaje->comic) }}"
                             alt="{{ explode(' ', $personaje->nombre)[0] }} 1koma"
-                            class="img-fluid" style="max-width: 404px">
+                            class="img-fluid">
                         </picture>
                     </div>
                     <div class="tabs">
