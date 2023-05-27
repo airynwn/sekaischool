@@ -1,10 +1,9 @@
 @if (isset($post))
 <div class="row">
-    <div class="col">
-        <a class="text-white"
-        onclick="volverInicio()"
-        >
-            Volver
+    <div class="col text-right">
+        <a class="text-white" onclick="volverInicio()">
+            <i class="fa-solid fa-angles-left"
+            data-color="{{ strtolower(explode(' ', $personaje->nombre)[0]) }}"></i>Elegir personaje
         </a>
     </div>
 </div>

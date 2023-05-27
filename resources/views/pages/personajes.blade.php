@@ -15,11 +15,12 @@
     <div class="row">
         <div class="col">
             <h2>Elige un personaje para mostrar su información</h2>
+            <div class="espacio"></div>
             <div class="container justify-content-center d-flex">
                 <div class="row">
-                    <div class="col caja">
-                        <div class="container caja-content">
-                            <div class="row row-cols-3 row-cols-md-5 row-cols-lg-6 g-3">
+                    <div class="col panel">
+                        <div class="container">
+                            <div class="row row-cols-2 row-cols-md-4 g-3">
                                 @foreach ($personajes as $pj)
                                 <div class="col">
                                     <button class="vacio btn-pj" data-pj-id="{{ $pj->id }}"

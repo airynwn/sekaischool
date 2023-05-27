@@ -160,6 +160,14 @@ main {
     margin: 0;
 }
 
+.text-right {
+    text-align: end;
+}
+
+.text-left {
+    text-align: start;
+}
+
 .trivia-nav {
     margin: 0.5em;
     padding: 1.5em;
