@@ -31,3 +31,20 @@ async function mostrarPj(event) {
         return "Se ha producido un error. Inténtelo más tarde.";
     });
 }
+
+async function volverInicio() {
+    try {
+      const response = await fetch('/personajes', {
+        method: "GET",
+      });
+      if (response.ok) {
+        const result = await response.text();
+        document.body.innerHTML = result;
+      } else {
+        throw new Error(response.text());
+      }
+    } catch (e) {
+      console.log(e);
+      return "Se ha producido un error. Inténtelo más tarde.";
+    }
+  }
