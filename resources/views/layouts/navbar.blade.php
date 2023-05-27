@@ -25,7 +25,7 @@
                     <a class="nav-link active brillo" href="{{ route('pages.cartas') }}">Cartas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active brillo" href="#modal-personajes">Personajes</a>
+                    <a class="nav-link active brillo" href="{{ route('pages.personajes') }}">Personajes</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active brillo" href="{{ route('pages.comunidad') }}">Comunidad</a>
