@@ -1,57 +1,66 @@
 @if (isset($post))
-    <div class="row">
+<div class="row">
+    <div class="col">
+        <a class="text-white"
+        onclick="volverInicio()"
+        >
+            Volver
+        </a>
+    </div>
+</div>
+<div class="row">
     <!-- ! Por defecto último (para que salga en móvil), en el resto primero -->
     <div class="col-lg-4 col-md-auto order-last order-lg-first">
         <div class="trivia-nav" data-color="border-{{ strtolower(explode(' ', $personaje->nombre)[0]) }}">
-        <h2 data-color="{{ strtolower(explode(' ', $personaje->nombre)[0]) }}">Trivia</h2>
-        <div class="panel" data-color="border-{{ strtolower(explode(' ', $personaje->nombre)[0]) }}">
-            <div class="caja-content">
-                <ul>
-                    {{-- <li> por cada trivia (TODO) --}}
-                    <li>{{ $personaje->nombre }}</li>
-                </ul>
+            <h2 data-color="{{ strtolower(explode(' ', $personaje->nombre)[0]) }}">Trivia</h2>
+            <div class="panel" data-color="border-{{ strtolower(explode(' ', $personaje->nombre)[0]) }}">
+                <div class="caja-content">
+                    <ul>
+                        {{-- li por cada trivia (TODO) --}}
+                        <li>{{ $personaje->nombre }}</li>
+                    </ul>
+                </div>
             </div>
-        </div>
-        <div class="container-fluid">
-            <picture>
-                <img src="{{ asset($personaje->stamp) }}" alt="{{ explode(' ', $personaje->nombre)[0] }} Stamp" width="148" height="128">
-            </picture>
-        </div>
-        <h2 data-color="{{ strtolower(explode(' ', $personaje->nombre)[0]) }}">Relaciones</h2>
-        <div class="panel" data-color="border-{{ strtolower(explode(' ', $personaje->nombre)[0]) }}">
-            <div class="caja-content">
             <div class="container-fluid">
+                <picture>
+                    <img src="{{ asset($personaje->stamp) }}" alt="{{ explode(' ', $personaje->nombre)[0] }} Stamp" width="148" height="128">
+                </picture>
+            </div>
+            <h2 data-color="{{ strtolower(explode(' ', $personaje->nombre)[0]) }}">Relaciones</h2>
+            <div class="panel" data-color="border-{{ strtolower(explode(' ', $personaje->nombre)[0]) }}">
+                <div class="caja-content">
+                    <div class="container-fluid">
                 {{-- Relación seleccionada --}}
-                <div class="row centrar-fila">
-                    <div class="col-4">
-                        <picture>
-                            <img src="img/ena-circle.png" alt="Ena Circle" class="img-fluid">
-                        </picture>
-                    </div>
-                    <div class="col-auto">
-                        <div class="caja-content">
-                            <span>
-                                <span class="ena">Ena</span>: A Mizuki le gusta molestar a Ena
-                                y la sigue en redes sociales. La mayoría
-                                de las conversaciones de Nightcord son
-                                bromas entre Mizuki y Ena.
-                            </span>
+                        <div class="row centrar-fila">
+                            <div class="col-4">
+                                <picture>
+                                    <img src="img/ena-circle.png" alt="Ena Circle" class="img-fluid">
+                                </picture>
+                            </div>
+                            <div class="col-auto">
+                                <div class="caja-content">
+                                    <span>
+                                        <span class="ena">Ena</span>: A Mizuki le gusta molestar a Ena
+                                        y la sigue en redes sociales. La mayoría
+                                        de las conversaciones de Nightcord son
+                                        bromas entre Mizuki y Ena.
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                {{-- Relaciones --}}
+                <!-- g-3 (gutter-3) da separación horizontal y vertical entre columnas según pantalla -->
+                        <div class="row row-cols-4 row-cols-sm-6 row-cols-md-6 row-cols-lg-5 g-1 centrar-fila">
+                            <div class="col">
+                                <picture>
+                                    <img src="img/kanade-circle.png" alt="Kanade Circle" class="img-fluid">
+                                </picture>
+                            </div>
                         </div>
                     </div>
                 </div>
-                {{-- Relaciones --}}
-                <!-- g-3 (gutter-3) da separación horizontal y vertical entre columnas según pantalla -->
-                <div class="row row-cols-4 row-cols-sm-6 row-cols-md-6 row-cols-lg-5 g-1 centrar-fila">
-                    <div class="col">
-                        <picture>
-                            <img src="img/kanade-circle.png" alt="Kanade Circle" class="img-fluid">
-                        </picture>
-                    </div>
-                </div>
             </div>
         </div>
-    </div>
-</div>
     </div>
     <div class="col">
         <div class="container">
@@ -122,7 +131,8 @@
                     <div class="caja cuadrado">
                         <picture>
                             <img src="{{ asset($personaje->comic) }}"
-                            alt="Mizuki 1koma" class="img-fluid" style="max-width: 404px">
+                            alt="{{ explode(' ', $personaje->nombre)[0] }} 1koma"
+                            class="img-fluid" style="max-width: 404px">
                         </picture>
                     </div>
                     <div class="tabs">
@@ -136,12 +146,6 @@
                 </div>
             </div>
         </div>
-    </div>
-</div>
-@else
-<div class="row">
-    <div class="col">
-        <h2>Elige un personaje para mostrar su información</h2>
     </div>
 </div>
 @endif
