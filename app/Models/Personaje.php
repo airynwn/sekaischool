@@ -74,15 +74,27 @@ class Personaje extends Model
      */
     public function relaciones()
     {
+        // $first = DB::table('relaciones')
+        //     ->select('pj1_id as id', 'descripcion')
+        //     ->where('pj2_id', '=', $this->id)
+        //     ->join('personajes', 'relaciones.id', '=', 'personajes.id');
+
+        // $second = DB::table('relaciones')
+        //     ->select('pj2_id as id', 'descripcion')
+        //     ->where('pj1_id', '=', $this->id)
+        //     ->join('personajes', 'relaciones.id', '=', 'personajes.id');
+
+        // return $first->unionAll($second)->get();
+
         $first = DB::table('relaciones')
-            ->select('pj1_id as id', 'descripcion')
-            ->where('pj2_id', '=', $this->id)
-            ->join('personajes', 'relaciones.id', '=', 'personajes.id');
+            ->join('personajes as p', 'relaciones.pj1_id', '=', 'p.id')
+            ->where('relaciones.pj2_id', '=', $this->id)
+            ->select('p.id', 'relaciones.descripcion', 'p.nombre', 'p.icon');
 
         $second = DB::table('relaciones')
-            ->select('pj2_id as id', 'descripcion')
-            ->where('pj1_id', '=', $this->id)
-            ->join('personajes', 'relaciones.id', '=', 'personajes.id');
+            ->join('personajes as p', 'relaciones.pj2_id', '=', 'p.id')
+            ->where('relaciones.pj1_id', '=', $this->id)
+            ->select('p.id', 'relaciones.descripcion', 'p.nombre', 'p.icon');
 
         return $first->unionAll($second)->get();
     }

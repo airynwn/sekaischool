@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{{ asset('css/colores.css') }}">
     <script type="text/javascript" src="{{ asset('js/sekaischool.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/personajes.js') }}"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cooltipz-css@2.2.2/cooltipz.min.css">
 @endsection
 {{-- Main --}}
 @section('content')

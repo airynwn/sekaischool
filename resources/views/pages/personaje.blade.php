@@ -30,32 +30,26 @@
             <div class="panel" data-color="border-{{ strtolower(explode(' ', $personaje->nombre)[0]) }}">
                 <div class="caja-content">
                     <div class="container-fluid">
-                {{-- Relación seleccionada --}}
-                        <div class="row centrar-fila">
-                            <div class="col-4">
-                                <picture>
-                                    <img src="img/ena-circle.png" alt="Ena Circle" class="img-fluid">
-                                </picture>
-                            </div>
-                            <div class="col-auto">
-                                <div class="caja-content">
-                                    <span>
-                                        <span class="ena">Ena</span>: A Mizuki le gusta molestar a Ena
-                                        y la sigue en redes sociales. La mayoría
-                                        de las conversaciones de Nightcord son
-                                        bromas entre Mizuki y Ena.
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                {{-- Relaciones --}}
-                <!-- g-3 (gutter-3) da separación horizontal y vertical entre columnas según pantalla -->
+                        {{-- Relaciones --}}
                         <div class="row row-cols-4 row-cols-sm-6 row-cols-md-6 row-cols-lg-5 g-1 centrar-fila">
+                            @foreach ($personaje->relaciones() as $relacion)
                             <div class="col">
-                                <picture>
-                                    <img src="img/kanade-circle.png" alt="Kanade Circle" class="img-fluid">
-                                </picture>
+                                {{-- Pantallas grandes --}}
+                                <button aria-label="{{ $relacion->descripcion }}" class="vacio d-none d-lg-block"
+                                data-cooltipz-dir="right" data-cooltipz-size="large"
+                                data-color="tt-{{ strtolower(explode(' ', $relacion->nombre)[0]) }}">
+                                    <img src="{{ asset($relacion->icon) }}"
+                                    alt="{{ $relacion->nombre }} Icon" class="img-fluid">
+                                </button>
+                                {{-- Pantallas pequeñas --}}
+                                <button aria-label="{{ $relacion->descripcion }}" class="vacio d-block d-lg-none"
+                                    data-cooltipz-dir="top" data-cooltipz-size="medium"
+                                    data-color="tt-{{ strtolower(explode(' ', $relacion->nombre)[0]) }}">
+                                        <img src="{{ asset($relacion->icon) }}"
+                                        alt="{{ $relacion->nombre }} Icon" class="img-fluid">
+                                </button>
                             </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -74,7 +68,7 @@
                             <source media="(max-width: 576px)" srcset="{{ asset($personaje->chibi) }}">
                             <img src="{{ asset($personaje->imagen) }}"
                             alt="{{ $personaje->nombre }}"
-                            class="img-fluid" width="318" height="670">
+                            class="img-fluid">
                         </picture>
                     </figure>
                 </div>
@@ -129,7 +123,7 @@
                         <picture>
                             <img src="{{ asset($personaje->comic) }}"
                             alt="{{ explode(' ', $personaje->nombre)[0] }} 1koma"
-                            class="img-fluid" style="max-width: 404px">
+                            class="img-fluid">
                         </picture>
                     </div>
                     <div class="tabs">
