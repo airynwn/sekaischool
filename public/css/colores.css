@@ -38,6 +38,8 @@
 --luka: #FFBACC;
 --meiko: #DE4444;
 --kaito: #3367CD;
+
+--cooltipz-text-color: #0C0C0C !important;
 }
 
 /**************************/
@@ -62,12 +64,22 @@
     color: var(--ichika)
 }
 
+[data-color='tt-ichika'] {
+    --cooltipz-bg-color: var(--ichika);
+    --cooltipz-border-color: var(--ichika);
+}
+
 [data-color='border-ichika'] {
     border-color: var(--ichika)
 }
 
 [data-color='saki'] {
     color: var(--saki)
+}
+
+[data-color='tt-saki'] {
+    --cooltipz-bg-color: var(--saki);
+    --cooltipz-border-color: var(--saki);
 }
 
 [data-color='border-saki'] {
@@ -78,12 +90,22 @@
     color: var(--honami)
 }
 
+[data-color='tt-honami'] {
+    --cooltipz-bg-color: var(--honami);
+    --cooltipz-border-color: var(--honami);
+}
+
 [data-color='border-honami'] {
     border-color: var(--honami)
 }
 
 [data-color='shiho'] {
     color: var(--shiho)
+}
+
+[data-color='tt-shiho'] {
+    --cooltipz-bg-color: var(--shiho);
+    --cooltipz-border-color: var(--shiho);
 }
 
 [data-color='border-shiho'] {
@@ -108,12 +130,22 @@
     color: var(--minori)
 }
 
+[data-color='tt-minori'] {
+    --cooltipz-bg-color: var(--minori);
+    --cooltipz-border-color: var(--minori);
+}
+
 [data-color='border-minori'] {
     border-color: var(--minori)
 }
 
 [data-color='haruka'] {
     color: var(--haruka)
+}
+
+[data-color='tt-haruka'] {
+    --cooltipz-bg-color: var(--haruka);
+    --cooltipz-border-color: var(--haruka);
 }
 
 [data-color='border-haruka'] {
@@ -124,12 +156,22 @@
     color: var(--airi)
 }
 
+[data-color='tt-airi'] {
+    --cooltipz-bg-color: var(--airi);
+    --cooltipz-border-color: var(--airi);
+}
+
 [data-color='border-airi'] {
     border-color: var(--airi)
 }
 
 [data-color='shizuku'] {
     color: var(--shizuku)
+}
+
+[data-color='tt-shizuku'] {
+    --cooltipz-bg-color: var(--shizuku);
+    --cooltipz-border-color: var(--shizuku);
 }
 
 [data-color='border-shizuku'] {
@@ -154,12 +196,22 @@
     color: var(--kohane)
 }
 
+[data-color='tt-kohane'] {
+    --cooltipz-bg-color: var(--kohane);
+    --cooltipz-border-color: var(--kohane);
+}
+
 [data-color='border-kohane'] {
     border-color: var(--kohane)
 }
 
 [data-color='an'] {
     color: var(--an)
+}
+
+[data-color='tt-an'] {
+    --cooltipz-bg-color: var(--an);
+    --cooltipz-border-color: var(--an);
 }
 
 [data-color='border-an'] {
@@ -170,12 +222,22 @@
     color: var(--akito)
 }
 
+[data-color='tt-akito'] {
+    --cooltipz-bg-color: var(--akito);
+    --cooltipz-border-color: var(--akito);
+}
+
 [data-color='border-akito'] {
     border-color: var(--akito)
 }
 
 [data-color='toya'] {
     color: var(--toya)
+}
+
+[data-color='tt-toya'] {
+    --cooltipz-bg-color: var(--toya);
+    --cooltipz-border-color: var(--toya);
 }
 
 [data-color='border-toya'] {
@@ -200,12 +262,22 @@
     color: var(--tsukasa)
 }
 
+[data-color='tt-tsukasa'] {
+    --cooltipz-bg-color: var(--tsukasa);
+    --cooltipz-border-color: var(--tsukasa);
+}
+
 [data-color='border-tsukasa'] {
     border-color: var(--tsukasa)
 }
 
 [data-color='emu'] {
     color: var(--emu)
+}
+
+[data-color='tt-emu'] {
+    --cooltipz-bg-color: var(--emu);
+    --cooltipz-border-color: var(--emu);
 }
 
 [data-color='border-emu'] {
@@ -216,12 +288,22 @@
     color: var(--nene)
 }
 
+[data-color='tt-nene'] {
+    --cooltipz-bg-color: var(--nene);
+    --cooltipz-border-color: var(--nene);
+}
+
 [data-color='border-nene'] {
     border-color: var(--nene)
 }
 
 [data-color='rui'] {
     color: var(--rui)
+}
+
+[data-color='tt-rui'] {
+    --cooltipz-bg-color: var(--rui);
+    --cooltipz-border-color: var(--rui);
 }
 
 [data-color='border-rui'] {
@@ -246,12 +328,22 @@
     color: var(--kanade)
 }
 
+[data-color='tt-kanade'] {
+    --cooltipz-bg-color: var(--kanade);
+    --cooltipz-border-color: var(--kanade);
+}
+
 [data-color='border-kanade'] {
     border-color: var(--kanade)
 }
 
 [data-color='mafuyu'] {
     color: var(--mafuyu)
+}
+
+[data-color='tt-mafuyu'] {
+    --cooltipz-bg-color: var(--mafuyu);
+    --cooltipz-border-color: var(--mafuyu);
 }
 
 [data-color='border-mafuyu'] {
@@ -262,12 +354,22 @@
     color: var(--ena)
 }
 
+[data-color='tt-ena'] {
+    --cooltipz-bg-color: var(--ena);
+    --cooltipz-border-color: var(--ena);
+}
+
 [data-color='border-ena'] {
     border-color: var(--ena)
 }
 
 [data-color='mizuki'] {
     color: var(--mizuki)
+}
+
+[data-color='tt-mizuki'] {
+    --cooltipz-bg-color: var(--mizuki);
+    --cooltipz-border-color: var(--mizuki);
 }
 
 [data-color='border-mizuki'] {
