@@ -47,6 +47,7 @@ Route::middleware('auth')->group(function () {
             /**** Comunidad ****/
     Route::get('/comunidad', [PostController::class, 'index'])->name('pages.comunidad');
     Route::post('/comunidad/post', [PostController::class, 'store'])->name('pages.comunidad.post');
+    Route::post('/comunidad/posts', [PostController::class, 'show'])->name('pages.posts');
     Route::delete('/comunidad/{post}/delete', [PostController::class, 'destroy'])->name('pages.comunidad.delete');
     Route::post('/comunidad/{post}/valorar', [UserController::class, 'valorarPost'])->name('pages.comunidad.valorar');
 });

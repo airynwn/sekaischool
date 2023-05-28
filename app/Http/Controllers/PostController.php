@@ -12,17 +12,9 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        $modo = $request->modo;
-
-        if ($modo === 'reciente') {
-            $posts = Post::orderBy('created_at', 'desc')->get();
-        } elseif ($modo === 'popular') {
-            $posts = Post::withCount('fans')->orderBy('fans_count', 'desc')->get();
-        } else {
-            $posts = Post::all();
-        }
+        $posts = Post::orderBy('created_at', 'desc')->get();
 
         return view('pages.comunidad', ['posts' => $posts]);
     }
@@ -59,9 +51,17 @@ class PostController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function show(Post $post)
+    public function show(Request $request)
     {
-        //
+        $modo = $request->modo;
+
+        if ($modo === 'popular' && Post::whereHas('fans')->count() > 0) {
+            $posts = Post::withCount('fans')->orderBy('fans_count', 'desc')->get();
+        } else {
+            $posts = Post::orderBy('created_at', 'desc')->get();
+        }
+
+        return view('pages.posts', ['posts' => $posts])->render();
     }
 
     /**
@@ -95,14 +95,12 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        if ($post->user_id !== auth()->user()->id) {
+        if (($post->user_id !== auth()->user()->id) && !auth()->user()->admin) {
             return response()->json(['info' => 'No puedes eliminar este post.'], 403);
-            // return redirect()->route('pages.comunidad')->with('error', 'No puedes eliminar este post.');
         }
 
         $post->delete();
 
         return response()->json(['info' => 'Se ha eliminado el post con éxito.'], 200);
-        // return redirect()->route('pages.comunidad')->with('success', 'Se ha eliminado el post con éxito.');
     }
 }
