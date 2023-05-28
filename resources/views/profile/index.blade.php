@@ -102,30 +102,25 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col tabs">
-                        <span class="tab">Lista de cartas</span>
+                        <button class="tab" data-modo="coleccion"
+                        onclick="mostrarCartas(event)">
+                            Lista de cartas
+                        </button>
                     </div>
                     <div class="col tabs">
-                        <span class="tab">Lista de deseos</span>
+                        <button class="tab" data-modo="deseo"
+                        onclick="mostrarCartas(event)">
+                            Lista de deseos
+                        </button>
                     </div>
                 </div>
                 <div class="espacio"></div>
                 <!-- g-3 (gutter-3) da separación horizontal y vertical entre columnas según pantalla -->
-                @if ($user->cartas !== null)
+                @if (!$user->cartas->isEmpty())
                 {{-- DESEOS: Hacer una variable según el botón onclick --}}
-                <div class="row row-cols-3 row-cols-md-4 row-cols-lg-5 g-3">
-                        @foreach ($user->cartas()->where('estado', 'coleccion')->get() as $carta)
-                        <div class="col">
-                            <picture class="col-carta position-relative">
-                                <form onsubmit="eliminarCarta(event)">
-                                    @csrf
-                                    <input type="hidden" name="carta" value="{{ $carta->id }}">
-                                    <button type="submit" class="btn-close position-absolute"></button>
-                                </form>
-                                <img src="{{ asset($carta->unidolized) }}" alt="{{ $carta->nombre . ' Icon' }}" class="img-fluid">
-                            </picture>
-                        </div>
-                        @endforeach
-                    </div>
+                <div class="row row-cols-3 row-cols-md-4 row-cols-lg-5 g-3" id="cartas-container">
+                    @include('profile.inventario', ['cartas'  => $cartas])
+                </div>
                 @endif
             </div>
         </div>
