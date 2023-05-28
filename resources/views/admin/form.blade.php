@@ -32,13 +32,13 @@
                 @endswitch
             {{-- STRING --}}
             @elseif (Schema::getColumnType($tabla, $columna) == 'string')
-                <input type="text" class="form-control" name="{{ $columna }}">
+                <input type="text" name="{{ $columna }}">
             {{-- TEXT --}}
             @elseif (Schema::getColumnType($tabla, $columna) == 'text')
-                <textarea class="form-control" name="{{ $columna }}" rows="1"></textarea>
+                <textarea name="{{ $columna }}" rows="1"></textarea>
             {{-- INT --}}
             @elseif (Schema::getColumnType($tabla, $columna) == 'integer')
-                <input type="number" class="form-control" name="{{ $columna }}">
+                <input type="number" name="{{ $columna }}">
             @endif
         </div>
     @endforeach
