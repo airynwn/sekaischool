@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ProfileUpdateRequest;
 use App\Models\Grupo;
 use App\Models\Personaje;
+use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -18,6 +19,7 @@ class ProfileController extends Controller
      */
     public function index(Request $request): View
     {
+
         $personajes = Personaje::all();
         $cartas = $request->user()->cartas()->where('estado', 'coleccion')->get();
 
@@ -29,9 +31,25 @@ class ProfileController extends Controller
     }
 
     /**
-     * Muestra el inventario del perfil del usuario.
+     * Muestra el perfil de otro usuario.
      */
     public function show(Request $request)
+    {
+        $personajes = Personaje::all();
+        $user = User::where('name', $request->user)->firstOrFail();
+        $cartas = $user->cartas()->where('estado', 'coleccion')->get();
+
+        return view('profile.index', [
+            'user' => $user,
+            'cartas' => $cartas,
+            'personajes' => $personajes,
+        ]);
+    }
+
+    /**
+     * Muestra el inventario del perfil del usuario.
+     */
+    public function inventario(Request $request)
     {
         $modo = $request->modo;
 
@@ -47,13 +65,13 @@ class ProfileController extends Controller
     /**
      * Display the user's profile form.
      */
-    public function edit(Request $request): View
+    public function edit(): View
     {
         $personajes = Personaje::all();
         $grupos = Grupo::all();
 
         return view('profile.edit', [
-            'user' => $request->user(),
+            'user' => auth()->user(),
             'personajes' => $personajes,
             'grupos' => $grupos,
         ]);
