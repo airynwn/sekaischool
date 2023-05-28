@@ -79,7 +79,7 @@
                   </li>
                 </ul>
             </div>
-            <div class="col py-3">
+            <div class="col py-3 overflow-y-scroll">
                 @if (session('error'))
                     <div class="alert alert-danger">{{ session('error') }}</div>
                 @endif

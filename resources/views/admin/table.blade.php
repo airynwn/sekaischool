@@ -17,7 +17,7 @@
                 ]))
                     <td>
                         <div>
-                            <img src={{ asset($fila->$columna) }} width=100 alt={{ $columna }}>
+                            <img src="{{ asset($fila->$columna) }}" width=100 alt="{{ $columna }}">
                         </div>
                     </td>
                 @elseif ($columna == $fk)
