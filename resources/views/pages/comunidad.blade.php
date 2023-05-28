@@ -103,6 +103,8 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
     <!-- *** TEMAS Y ESCRIBIR POST *** -->
     <div class="col order-0 order-lg-2 contenedor">
         {{-- <div class="container">
