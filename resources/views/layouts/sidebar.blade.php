@@ -46,8 +46,8 @@
     </div>
 </div> --}}
 <div class="container-fluid">
-    <div class="row flex-nowrap">
-            <div class="col-3 d-flex flex-column flex-shrink-0 p-3 sidebar" style="width: 280px;">
+    <div class="row flex-nowrap flex-column flex-lg-row">
+            <div class="col-3 d-flex flex-lg-column p-3 sidebar sidebar-width">
                 <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
                   <h4>Portal de administración</h4>
                 </a>

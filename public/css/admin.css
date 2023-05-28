@@ -212,6 +212,18 @@ Antiguo fondo pre-vídeo
     }
 } */
 
+@media only screen and (max-width:991px) {
+    .sidebar-width {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width:991px) {
+    .sidebar-width {
+        width: 280px;
+    }
+}
+
 #bg-video {
     filter: opacity(0.3);
     position: absolute;
