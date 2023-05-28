@@ -9,9 +9,6 @@
 {{-- Main --}}
 @section('content')
 {{--  --}}
-@php
-    $user = auth()->user();
-@endphp
 <div class="container px-0 contenedor glassmorphism mx-auto">
     <div class="row gx-0">
         <div class="col-lg-3 col-md-6 d-flex justify-content-center d-md-block col-avatar">
@@ -69,10 +66,12 @@
                     </span>
                 </div>
                 <div class="espacio">
+                    @if ($user->id === auth()->user()->id)
                     <button class="editar-perfil"
                     onclick="location.href='{{ route('profile.edit') }}'">
                         Editar perfil
                     </button>
+                    @endif
                 </div>
             </div>
         </div>
