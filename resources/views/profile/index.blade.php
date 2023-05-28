@@ -14,9 +14,10 @@
 @endphp
 <div class="container px-0 contenedor glassmorphism mx-auto">
     <div class="row gx-0">
-        <div class="col-lg-3 col-md-6">
+        <div class="col-lg-3 col-md-6 d-flex justify-content-center d-md-block col-avatar">
             <picture class="avatar-bg">
-                <img src="{{ asset($user->avatar) }}" alt="{{ 'Avatar de ' . $user->name }}" class="avatar">
+                <img src="{{ asset('storage/'.$user->avatar) }}"
+                alt="{{ 'Avatar de ' . $user->name }}">
             </picture>
         </div>
             <!--  -->
@@ -33,7 +34,8 @@
                 @if (isset($user->pj_fav))
                     <div class="flex-shrink-0 align-self-end align-self-center">
                         <picture>
-                            <img src="{{ asset($user->pj_fav->chibi) }}" alt="{{ $user->pj_fav->nombre . 'Chibi' }}">
+                            <img src="{{ asset($user->pj_fav->chibi) }}" class="img-fluid"
+                            alt="{{ $user->pj_fav->nombre . 'Chibi' }}">
                         </picture>
                     </div>
                 @endif
@@ -86,16 +88,16 @@
     <div class="row">
         <div class="col contenedor contenedor-padding">
             <span class="tab">Publicaciones</span>
-            {{-- <div style="overflow-y: auto;"> --}}
+            <div id="post-container">
             @foreach ($user->posts as $post)
-            <div class="caja">
+            <div class="caja espacio">
                 <span class="titulo">{{ $post->tiempo() }}</span>
                 <div class="caja-content">
                     <span>{{ $post->contenido }}</span>
                 </div>
             </div>
             @endforeach
-            {{-- </div> --}}
+            </div>
         </div>
         <!--  -->
         <div class="col-md-9 order-1 order-sm-last order-md-last contenedor contenedor-padding">

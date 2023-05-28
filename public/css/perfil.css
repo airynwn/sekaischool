@@ -1,14 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Source+Sans+Pro&display=swap');
 
-:root {
-    --usercolor: #DF0;
-    --ln: #45D;
-    --mmj: #6CCB20;
-    --vbs: #E16;
-    --wxs: #F90;
-    --n25: #849;
-}
-
 h2 {
     font-family: 'Fredoka One', sans-serif;
     font-weight: 400;
@@ -221,11 +212,6 @@ div.container:nth-child(1) {
     }
 }
 
-div.caja:nth-child(1) {
-    border: none;
-    outline: var(--usercolor) 2px solid;
-}
-
 #personaje {
     display: flex;
     flex-direction: column;
@@ -350,6 +336,7 @@ span a {
     border-radius: 20px;
     padding: 10px;
     animation: bg-color 10s infinite;
+    width: 275px;
 }
 
 .avatar-bg > img {
@@ -357,34 +344,22 @@ span a {
     height: 250px;
 }
 
-@keyframes bg-color {
-    0% {
-        background-color: var(--usercolor);
-    }
-
-    25% {
-        background-color: #4DF6C6
-    }
-
-    50% {
-        background-color: #EC64F5;
-    }
-
-    75% {
-        background-color: #4254F5;
-    }
-
-    100% {
-        background-color: var(--usercolor);
+@media only screen and (min-width:768px) {
+    .col-avatar {
+        width: auto;
     }
 }
 
-.avatar {
+textarea {
+    background-color: #00000070;
+    border: none;
     border-radius: 20px;
-    padding: 5px;
-    background: #2F2957;
+    color: white;
+    margin-top: 1em;
+    padding: 1em;
+    outline: #40325a dashed 2px;
+    width: 100%;
 }
-
 .row>* {
     /* Sobreescribir bootstrap */
     flex-shrink: initial !important;
@@ -434,4 +409,26 @@ span a {
     background-clip: padding-box, border-box;
     padding: 0.5em 2em;
     color: white;
+}
+
+#post-container {
+    overflow-y: scroll;
+    max-height: 490px;
+}
+
+/** Scrollbar **/
+#post-container::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Fondo */
+::-webkit-scrollbar-track {
+    background: #1c0f4286;
+    border-radius: 10px;
+}
+
+/* Coloreado */
+::-webkit-scrollbar-thumb {
+    background: #c07bc4a1;
+    border-radius: 10px;
 }
