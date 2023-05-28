@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Source+Sans+Pro&display=swap');
 
+:root {
+    --ln: #45D;
+    --mmj: #6CCB20;
+    --vbs: #E16;
+    --wxs: #F90;
+    --n25: #849;
+}
+
 h2 {
     font-family: 'Fredoka One', sans-serif;
     font-weight: 400;
@@ -133,8 +141,13 @@ h2 {
 }
 
 body {
-    background: url("../img/background.png") round fixed;
-    background-size: contain;
+    background: url("../img/background.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: white;
 }
 
 main {
@@ -146,12 +159,6 @@ main {
 
 nav {
     font-family: 'Source Sans Pro', sans-serif;
-}
-
-@media only screen and (max-width:576px) {
-    body {
-        background-size: cover;
-    }
 }
 
 .contenedor {
@@ -347,6 +354,12 @@ span a {
 @media only screen and (min-width:768px) {
     .col-avatar {
         width: auto;
+    }
+}
+
+@media only screen and (max-width:966px) {
+    .col-cartas {
+        width: 100%;
     }
 }
 

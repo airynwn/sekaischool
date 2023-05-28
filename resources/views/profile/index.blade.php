@@ -100,7 +100,7 @@
             </div>
         </div>
         <!--  -->
-        <div class="col-md-9 order-1 order-sm-last order-md-last contenedor contenedor-padding">
+        <div class="col-12 col-md-9 order-1 order-sm-last order-md-last contenedor contenedor-padding col-cartas">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col tabs">
