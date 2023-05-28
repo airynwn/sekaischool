@@ -14,9 +14,10 @@
 @endphp
 <div class="container px-0 contenedor glassmorphism mx-auto">
     <div class="row gx-0">
-        <div class="col-lg-3 col-md-6">
+        <div class="col-lg-3 col-md-6 d-flex justify-content-center d-md-block col-avatar">
             <picture class="avatar-bg">
-                <img src="{{ asset($user->avatar) }}" alt="{{ 'Avatar de ' . $user->name }}" class="avatar">
+                <img src="{{ asset('storage/'.$user->avatar) }}"
+                alt="{{ 'Avatar de ' . $user->name }}">
             </picture>
         </div>
             <!--  -->
@@ -25,15 +26,16 @@
             <!-- flex de media object bootstrap para colocar texto bio + chibi -->
             <div class="caja d-flex" style="flex-direction: initial;">
                 <div class="caja-content flex-grow-1 ms-3">
-                    <span>
+                    <p class="bio">
                         {{ $user->biografia ?? $user->name . ' todavía no ha escrito una biografía.'}}
-                    </span>
+                    </p>
                 </div>
                 <!-- chibi de personaje favorito -->
                 @if (isset($user->pj_fav))
                     <div class="flex-shrink-0 align-self-end align-self-center">
                         <picture>
-                            <img src="{{ asset($user->pj_fav->chibi) }}" alt="{{ $user->pj_fav->nombre . 'Chibi' }}">
+                            <img src="{{ asset($user->pj_fav->chibi) }}" class="img-fluid"
+                            alt="{{ $user->pj_fav->nombre . 'Chibi' }}">
                         </picture>
                     </div>
                 @endif
@@ -86,46 +88,41 @@
     <div class="row">
         <div class="col contenedor contenedor-padding">
             <span class="tab">Publicaciones</span>
-            {{-- <div style="overflow-y: auto;"> --}}
+            <div id="post-container">
             @foreach ($user->posts as $post)
-            <div class="caja">
+            <div class="caja espacio">
                 <span class="titulo">{{ $post->tiempo() }}</span>
                 <div class="caja-content">
                     <span>{{ $post->contenido }}</span>
                 </div>
             </div>
             @endforeach
-            {{-- </div> --}}
+            </div>
         </div>
         <!--  -->
-        <div class="col-md-9 order-1 order-sm-last order-md-last contenedor contenedor-padding">
+        <div class="col-12 col-md-9 order-1 order-sm-last order-md-last contenedor contenedor-padding col-cartas">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col tabs">
-                        <span class="tab">Lista de cartas</span>
+                        <button class="tab" data-modo="coleccion"
+                        onclick="mostrarCartas(event)">
+                            Lista de cartas
+                        </button>
                     </div>
                     <div class="col tabs">
-                        <span class="tab">Lista de deseos</span>
+                        <button class="tab" data-modo="deseo"
+                        onclick="mostrarCartas(event)">
+                            Lista de deseos
+                        </button>
                     </div>
                 </div>
                 <div class="espacio"></div>
                 <!-- g-3 (gutter-3) da separación horizontal y vertical entre columnas según pantalla -->
-                @if ($user->cartas !== null)
+                @if (!$user->cartas->isEmpty())
                 {{-- DESEOS: Hacer una variable según el botón onclick --}}
-                <div class="row row-cols-3 row-cols-md-4 row-cols-lg-5 g-3">
-                        @foreach ($user->cartas()->where('estado', 'coleccion')->get() as $carta)
-                        <div class="col">
-                            <picture class="col-carta position-relative">
-                                <form onsubmit="eliminarCarta(event)">
-                                    @csrf
-                                    <input type="hidden" name="carta" value="{{ $carta->id }}">
-                                    <button type="submit" class="btn-close position-absolute"></button>
-                                </form>
-                                <img src="{{ asset($carta->unidolized) }}" alt="{{ $carta->nombre . ' Icon' }}" class="img-fluid">
-                            </picture>
-                        </div>
-                        @endforeach
-                    </div>
+                <div class="row row-cols-3 row-cols-md-4 row-cols-lg-5 g-3" id="cartas-container">
+                    @include('profile.inventario', ['cartas'  => $cartas])
+                </div>
                 @endif
             </div>
         </div>

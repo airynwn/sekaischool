@@ -15,9 +15,20 @@
     action="{{ route('profile.update') }}"
     method="POST"
     onsubmit="validarEditarPerfil(event)"
+    enctype="multipart/form-data"
     >
         @method('patch')
         @csrf
+        <div class="row">
+            <div class="col">
+                <details>
+                    <summary>Avatar</summary>
+                    <div class="details-flex"></div>
+                    <input type="file" name="avatar" id="avatar">
+                </details>
+            </div>
+        </div>
+        <div class="espacio"></div>
         <div class="row">
             <div class="col">
                 <details>

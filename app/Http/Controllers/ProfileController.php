@@ -19,13 +19,30 @@ class ProfileController extends Controller
     public function index(Request $request): View
     {
         $personajes = Personaje::all();
+        $cartas = $request->user()->cartas()->where('estado', 'coleccion')->get();
 
         return view('profile.index', [
             'user' => $request->user(),
             'personajes' => $personajes,
+            'cartas' => $cartas,
         ]);
     }
 
+    /**
+     * Muestra el inventario del perfil del usuario.
+     */
+    public function show(Request $request)
+    {
+        $modo = $request->modo;
+
+        if (isset($modo)) {
+            $cartas = $request->user()->cartas()->where('estado', $modo)->get();
+        }
+
+        return view('profile.inventario', [
+            'cartas' => $cartas,
+        ])->render();
+    }
 
     /**
      * Display the user's profile form.
@@ -47,6 +64,18 @@ class ProfileController extends Controller
      */
     public function update(Request $request)
     {
+
+        if ($request->hasFile('avatar')) {
+            $destino = storage_path('app/public/avatars');
+            $avatar = $request->file('avatar');
+            $nombre = $avatar->getClientOriginalName();
+            $avatar->move($destino, $nombre);
+
+            $request->user()->update([
+                'avatar' => 'avatars/' . $nombre,
+            ]);
+        }
+
         $request->user()->update([
             'biografia' => $request->biografia,
             'discord' => $request->discord,

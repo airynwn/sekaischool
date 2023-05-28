@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Source+Sans+Pro&display=swap');
 
 :root {
-    --usercolor: #DF0;
     --ln: #45D;
     --mmj: #6CCB20;
     --vbs: #E16;
@@ -142,8 +141,13 @@ h2 {
 }
 
 body {
-    background: url("../img/background.png") round fixed;
-    background-size: contain;
+    background: url("../img/background.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: white;
 }
 
 main {
@@ -155,12 +159,6 @@ main {
 
 nav {
     font-family: 'Source Sans Pro', sans-serif;
-}
-
-@media only screen and (max-width:576px) {
-    body {
-        background-size: cover;
-    }
 }
 
 .contenedor {
@@ -219,11 +217,6 @@ div.container:nth-child(1) {
     100% {
         border-color: var(--usercolor);
     }
-}
-
-div.caja:nth-child(1) {
-    border: none;
-    outline: var(--usercolor) 2px solid;
 }
 
 #personaje {
@@ -346,37 +339,33 @@ span a {
 .avatar-bg {
     display: flex;
     flex-direction: column;
+    align-items: center;
     border-radius: 20px;
     padding: 10px;
     animation: bg-color 10s infinite;
+    width: 275px;
 }
 
-@keyframes bg-color {
-    0% {
-        background-color: var(--usercolor);
-    }
+.avatar-bg > img {
+    width: 250px;
+    height: 250px;
+}
 
-    25% {
-        background-color: #4DF6C6
-    }
-
-    50% {
-        background-color: #EC64F5;
-    }
-
-    75% {
-        background-color: #4254F5;
-    }
-
-    100% {
-        background-color: var(--usercolor);
+@media only screen and (min-width:768px) {
+    .col-avatar {
+        width: auto;
     }
 }
 
-.avatar {
-    border-radius: 20px;
-    padding: 5px;
-    background: #2F2957;
+@media only screen and (max-width:966px) {
+    .col-cartas {
+        width: 100%;
+    }
+}
+
+.bio {
+    width: 90%;
+    word-break: break-word;
 }
 
 .row>* {
@@ -428,4 +417,26 @@ span a {
     background-clip: padding-box, border-box;
     padding: 0.5em 2em;
     color: white;
+}
+
+#post-container {
+    overflow-y: scroll;
+    max-height: 490px;
+}
+
+/** Scrollbar **/
+#post-container::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Fondo */
+::-webkit-scrollbar-track {
+    background: #1c0f4286;
+    border-radius: 10px;
+}
+
+/* Coloreado */
+::-webkit-scrollbar-thumb {
+    background: #c07bc4a1;
+    border-radius: 10px;
 }
