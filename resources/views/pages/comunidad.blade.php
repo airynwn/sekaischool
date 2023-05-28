@@ -86,92 +86,23 @@
         <div class="container-fluid contenedor">
             <div class="row alinear-altura">
                 <div class="tabs">
-                    <a href="{{ route('pages.comunidad', ['modo' => 'reciente']) }}"
-                        class="tab" id="tab-reciente">
+                    <button data-modo="reciente"
+                        class="tab" id="tab-reciente"
+                        onclick="mostrarPosts(event)">
                         Reciente
-                    </a>
-                    <a href="{{ route('pages.comunidad', ['modo' => 'popular']) }}"
-                        class="tab" id="tab-popular">
+                    </button>
+                    <button data-modo="popular"
+                        class="tab" id="tab-popular"
+                        onclick="mostrarPosts(event)">
                         Popular
-                    </a>
+                </button>
                 </div>
                 <div class="col">
-                    <div class="container-fluid">
-                        @foreach ($posts as $post)
-                        <div class="row caja" id="post-{{ $post->id }}">
-                            <!-- ? Comentario 1 -->
-                            <div class="espacio"></div>
-                            <!-- Avatar -->
-                            <div class="post-contenedor">
-                                <div class="col-2 me-2">
-                                    <picture>
-                                        <img src="{{ $post->user->avatar; }}" alt="{{ $post->user->name . ' Avatar' }}" class="foro-avatar">
-                                    </picture>
-                                </div>
-                                <div class="col post-box">
-                                    <div>
-                                        <p class="post post-info">
-                                            <strong>{{ '@' . $post->user->name }}</strong>, <span>{{ $post->tiempo() }}</span>
-                                        </p>
-                                    </div>
-                                    <!-- Contenido del post -->
-                                    <div>
-                                        <p class="post">
-                                            {{ $post->contenido }}
-                                        </p>
-                                    </div>
-                                <!-- Iconos de interacción -->
-                                    <div class="caja-icons">
-                                        <!-- Compartir y comentar -->
-                                        <div>
-                                            <i class="fa-solid fa-share-nodes"></i>
-                                        </div>
-                                        <!-- Likes -->
-                                        <div>
-                                            <form onsubmit="valorarPost(event)"
-                                            data-post-id="{{ $post->id }}">
-                                            @csrf
-                                                <button type="submit" class="vacio">
-                                                    @if ($post->fans()->where('user_id',
-                                                        auth()->user()->id)->exists())
-                                                    <i class="fa-solid fa-heart"></i>
-                                                    @else
-                                                    <i class="fa-regular fa-heart"></i>
-                                                    @endif
-                                                    {{ $post->fans()->count() }}
-                                                </button>
-                                            </form>
-                                        </div>
-                                        {{-- Eliminar --}}
-                                        @if ($post->user_id == auth()->user()->id)
-                                        <form onsubmit="confirmarBorrado(event)"
-                                            id="confirmarBorradoForm"
-                                            data-post-id="{{ $post->id }}">
-                                            @csrf
-                                            <button type="submit" class="btn btn-danger">
-                                                &times;
-                                            </button>
-                                        </form>
-                                        @endif
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="espacio"></div>
-                        @endforeach
-                        <!-- ? Comentario 1 -->
-
-                    </div>
-                </div>
-                <div class="col-auto g-1 columna position-relative">
-                    <i class="fa-regular fa-circle-up"></i>
-                    <div class="abajo">
-                      <i class="fa-regular fa-circle-down"></i>
+                    <div class="container-fluid" id="post-container">
+                        @include('pages.posts', ['posts' => $posts])
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
     <!-- *** TEMAS Y ESCRIBIR POST *** -->
     <div class="col order-0 order-lg-2 contenedor">
         {{-- <div class="container">
