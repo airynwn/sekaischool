@@ -114,12 +114,15 @@ class CartaController extends Controller
      */
     public function update(Request $request, Carta $carta)
     {
-        $carta->update([
-            'rareza' => $request->rareza,
-            'atributo' => $request->atributo,
-            'imagen' => $request->imagen,
-            'pj_id' => $request->pj_id,
+        $request->validate([
+            'rareza' => 'required|int',
+            'atributo' => 'required|string',
+            'unidolized' => 'required|string',
+            'idolized' => 'required|string',
+            'pj_id' => 'required|int',
         ]);
+
+        $carta->update($request->all());
 
         return redirect()->route('admin.cartas.index')->with('success', 'Se ha modificado la carta con éxito.');
     }
