@@ -6,7 +6,7 @@
     <div class="post-contenedor">
         <div class="col-2 me-2">
             <picture>
-                <img src="{{ $post->user->avatar; }}"
+                <img src="{{ asset('storage/'.$post->user->avatar) }}"
                 alt="{{ $post->user->name . ' Avatar' }}"class="foro-avatar">
             </picture>
         </div>
