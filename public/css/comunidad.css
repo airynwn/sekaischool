@@ -381,3 +381,25 @@ button[type=button] {
     filter: drop-shadow(0 0 0.5em white);
     transition: all 0.5s;
 }
+
+#post-container {
+    overflow-y: scroll;
+    max-height: 490px;
+}
+
+/** Scrollbar **/
+#post-container::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  /* Fondo */
+  ::-webkit-scrollbar-track {
+    background: #1c0f4286;
+    border-radius: 10px;
+  }
+
+  /* Coloreado */
+  ::-webkit-scrollbar-thumb {
+    background: #c07bc4a1;
+    border-radius: 10px;
+  }
