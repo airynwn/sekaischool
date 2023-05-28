@@ -53,7 +53,8 @@
                             <div class="post-contenedor">
                                 <div class="col-2 me-2">
                                     <picture>
-                                        <img src="{{ auth()->user()->avatar }}" alt="{{ auth()->user()->name . ' Avatar' }}" class="foro-avatar">
+                                        <img src="{{ asset('storage/'.auth()->user()->avatar) }}"
+                                        alt="{{ auth()->user()->name . ' Avatar' }}" class="foro-avatar">
                                     </picture>
                                 </div>
                                 <div class="col post-box">
