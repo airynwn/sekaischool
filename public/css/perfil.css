@@ -363,16 +363,11 @@ span a {
     }
 }
 
-textarea {
-    background-color: #00000070;
-    border: none;
-    border-radius: 20px;
-    color: white;
-    margin-top: 1em;
-    padding: 1em;
-    outline: #40325a dashed 2px;
-    width: 100%;
+.bio {
+    width: 90%;
+    word-break: break-word;
 }
+
 .row>* {
     /* Sobreescribir bootstrap */
     flex-shrink: initial !important;

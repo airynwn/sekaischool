@@ -26,9 +26,9 @@
             <!-- flex de media object bootstrap para colocar texto bio + chibi -->
             <div class="caja d-flex" style="flex-direction: initial;">
                 <div class="caja-content flex-grow-1 ms-3">
-                    <span>
+                    <p class="bio">
                         {{ $user->biografia ?? $user->name . ' todavía no ha escrito una biografía.'}}
-                    </span>
+                    </p>
                 </div>
                 <!-- chibi de personaje favorito -->
                 @if (isset($user->pj_fav))
