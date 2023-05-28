@@ -120,4 +120,10 @@ class User extends Authenticatable
             ->limit(10)
             ->get();
     }
+
+    public function cambiarAvatar($ruta)
+    {
+        $this->avatar = str_replace('public', 'storage', $ruta);
+        $this->save();
+    }
 }
