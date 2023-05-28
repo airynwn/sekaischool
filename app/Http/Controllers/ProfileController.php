@@ -64,13 +64,19 @@ class ProfileController extends Controller
      */
     public function update(Request $request)
     {
+
         if ($request->hasFile('avatar')) {
-            $rutaAvatar = $request->file('avatar')->store('avatars');
-            $request->user()->cambiarAvatar($rutaAvatar);
+            $destino = storage_path('app/public/avatars');
+            $avatar = $request->file('avatar');
+            $nombre = $avatar->getClientOriginalName();
+            $avatar->move($destino, $nombre);
+
+            $request->user()->update([
+                'avatar' => 'avatars/' . $nombre,
+            ]);
         }
 
         $request->user()->update([
-            'avatar' => $rutaAvatar,
             'biografia' => $request->biografia,
             'discord' => $request->discord,
             'twitter' => $request->twitter,
