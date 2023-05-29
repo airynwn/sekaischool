@@ -46,12 +46,15 @@ async function mostrarCartas(event) {
     let formData = new FormData();
 
     let modo = event.target.getAttribute("data-modo");
+    let user = event.target.getAttribute("data-user");
     const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
     formData.append('_token', csrfToken);
     formData.append('modo', modo);
+    formData.append('user', user);
 
     console.log(modo);
+    console.log(user);
 
     await fetch('/profile/inventario', {
         method: "POST",

@@ -103,13 +103,13 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col tabs">
-                        <button class="tab" data-modo="coleccion"
+                        <button class="tab" data-modo="coleccion" data-user="{{ $user->name }}"
                         onclick="mostrarCartas(event)">
                             Lista de cartas
                         </button>
                     </div>
                     <div class="col tabs">
-                        <button class="tab" data-modo="deseo"
+                        <button class="tab" data-modo="deseo" data-user="{{ $user->name }}"
                         onclick="mostrarCartas(event)">
                             Lista de deseos
                         </button>
