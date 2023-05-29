@@ -66,7 +66,14 @@ async function valorarPost(event) {
         body: formData,
     })
         .then((response) => {
-            if (response.ok || response.status == 422) {
+            if (response.ok) {
+                let corazon = form.querySelector("i");
+                corazon.classList.remove("fa-regular");
+                corazon.classList.add("fa-solid");
+                let boton = form.querySelector("button").innerHTML.trim();
+                // TODO
+                return response.json();
+            } else if (response.status == 422) {
                 return response.json();
             } else {
                 throw new Error(response.json());
