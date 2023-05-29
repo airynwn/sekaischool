@@ -52,7 +52,7 @@ function validarPw() {
     // TODO
     const password = document.getElementById("password");
 
-    if (/.{8,}/.test(password.value)){
+    if (/.{8,}/.test(password.value)) {
         console.log('hola');
         return true;
     } else {
@@ -65,7 +65,7 @@ function validarPw() {
 function validarPwConfirm() {
     // TODO
     const password = document.getElementById("password");
-    const passwordconfirm = document.getElementById("password-confirm");
+    const passwordconfirm = document.getElementById("password_confirmation");
 
     if (passwordconfirm.value === password.value){
         return true;

@@ -33,8 +33,8 @@
                 </div>
                 {{--  --}}
                 <div class="campo espacio">
-                    <label for="password-confirm" class="mx-4">Confirmar contraseña</label>
-                    <input type="password" name="password-confirm" id="password-confirm" class="mx-3">
+                    <label for="password_confirmation" class="mx-4">Confirmar contraseña</label>
+                    <input type="password" name="password_confirmation" id="password_confirmation" class="mx-3">
                 </div>
             </div>
             <div class="col">
@@ -126,9 +126,8 @@
                 <button type="submit">Registrarse</button>
             </div>
         </div>
-        </div>
-    </details>
-</div>
+        </details>
+    </div>
 </form>
 
 {{-- <div class="container">
