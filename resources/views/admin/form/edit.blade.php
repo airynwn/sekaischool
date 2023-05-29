@@ -40,13 +40,13 @@
                 @endswitch
             {{-- STRING --}}
             @elseif (Schema::getColumnType($tabla, $columna) == 'string')
-                <input type="text" class="form-control" name="{{ $columna }}" value="{{ $dato->$columna }}">
+                <input type="text" name="{{ $columna }}" value="{{ $dato->$columna }}">
             {{-- TEXT --}}
             @elseif (Schema::getColumnType($tabla, $columna) == 'text')
-                <textarea class="form-control" name="{{ $columna }}" rows="3">{{ $dato->$columna }}</textarea>
+                <textarea name="{{ $columna }}" rows="3" value="{{ $dato->$columna }}">{{ $dato->$columna }}</textarea>
             {{-- INT --}}
             @elseif (Schema::getColumnType($tabla, $columna) == 'integer')
-                <input type="number" class="form-control" name="{{ $columna }}" value="{{ $dato->$columna }}">
+                <input type="number" name="{{ $columna }}" value="{{ $dato->$columna }}">
             @endif
         </div>
     @endforeach

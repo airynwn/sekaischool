@@ -52,13 +52,15 @@ class ProfileController extends Controller
     public function inventario(Request $request)
     {
         $modo = $request->modo;
+        $user = User::where('name', $request->user)->firstOrFail();
 
         if (isset($modo)) {
-            $cartas = $request->user()->cartas()->where('estado', $modo)->get();
+            $cartas = $user->cartas()->where('estado', $modo)->get();
         }
 
         return view('profile.inventario', [
             'cartas' => $cartas,
+            'user' => $user,
         ])->render();
     }
 
