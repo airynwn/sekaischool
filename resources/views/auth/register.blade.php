@@ -20,21 +20,33 @@
                 <div class="campo espacio">
                     <label for="name" class="mx-4">Nombre de usuario</label>
                     <input type="text" name="name" id="name" class="mx-3">
+                    <p class="error" id="name-error">
+                        El nombre de usuario sólo puede incluir letras y tener hasta 16 caracteres
+                    </p>
                 </div>
                 {{--  --}}
                 <div class="campo espacio">
                     <label for="email" class="mx-4">Correo electrónico</label>
                     <input type="text" name="email" id="email" class="mx-3">
+                    <p class="error" id="email-error">
+                        Debes introducir un formato email válido: ejemplo@dominio.com
+                    </p>
                 </div>
                 {{--  --}}
                 <div class="campo espacio">
                     <label for="password" class="mx-4">Contraseña</label>
                     <input type="password" name="password" id="password" class="mx-3">
+                    <p class="error" id="password-error">
+                        La contraseña debe tener al menos 8 caracteres, una letra y un número
+                    </p>
                 </div>
                 {{--  --}}
                 <div class="campo espacio">
-                    <label for="password-confirm" class="mx-4">Confirmar contraseña</label>
-                    <input type="password" name="password-confirm" id="password-confirm" class="mx-3">
+                    <label for="password_confirmation" class="mx-4">Confirmar contraseña</label>
+                    <input type="password" name="password_confirmation" id="password_confirmation" class="mx-3">
+                    <p class="error" id="password_confirmation-error">
+                        Las contraseñas deben ser iguales
+                    </p>
                 </div>
             </div>
             <div class="col">
@@ -44,11 +56,17 @@
                 <div class="campo espacio">
                     <label for="discord" class="mx-4">Discord</label>
                     <input type="text" name="discord" id="dc" class="mx-3" placeholder="User#1234">
+                    <p class="error" id="dc-error">
+                        El usuario de Discord debe ser mayor a 2 y menor a 32 caracteres e ir seguido de una almohadilla y 4 números
+                    </p>
                 </div>
                 {{--  --}}
                 <div class="campo espacio">
                     <label for="twitter" class="mx-4">Twitter</label>
                     <input type="text" name="twitter" id="tw" class="mx-3" placeholder="@user">
+                    <p class="error" id="tw-error">
+                        El usuario de Twitter sólo puede incluir letras, números y guión bajo hasta 15 caracteres y debe empezar por @
+                    </p>
                 </div>
                 {{--  --}}
                 <div class="campo espacio">
@@ -60,6 +78,9 @@
                 <div class="campo espacio">
                     <label for="name" class="mx-4">Biografía</label>
                     <textarea name="biografia" rows="5" id="bio" class="mx-3"></textarea>
+                    <p class="error" id="bio-error">
+                        La biografía no puede exceder los 200 caracteres
+                    </p>
                 </div>
             </div>
         </div>
@@ -126,9 +147,8 @@
                 <button type="submit">Registrarse</button>
             </div>
         </div>
-        </div>
-    </details>
-</div>
+        </details>
+    </div>
 </form>
 
 {{-- <div class="container">

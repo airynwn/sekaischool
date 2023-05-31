@@ -61,6 +61,19 @@ class PersonajeController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'nombre' => 'required|string',
+            'historia' => 'required|string',
+            'personalidad' => 'required|string',
+            'imagen' => 'required|string',
+            'comic' => 'required|string',
+            'chibi' => 'required|string',
+            'icon' => 'required|string',
+            'stamp' => 'required|string',
+            'sticker' => 'required|string',
+            'grupo_id' => ['required', 'exists:grupos,id'],
+        ]);
+
         Personaje::create([
             'nombre' => $request->nombre,
             'historia' => $request->historia,
@@ -123,6 +136,19 @@ class PersonajeController extends Controller
      */
     public function update(Request $request, Personaje $personaje)
     {
+        $request->validate([
+            'nombre' => 'required|string',
+            'historia' => 'required|string',
+            'personalidad' => 'required|string',
+            'imagen' => 'required|string',
+            'comic' => 'required|string',
+            'chibi' => 'required|string',
+            'icon' => 'required|string',
+            'stamp' => 'required|string',
+            'sticker' => 'required|string',
+            'grupo_id' => ['required', 'exists:grupos,id'],
+        ]);
+
         $personaje->update([
             'nombre' => $request->nombre,
             'historia' => $request->historia,
