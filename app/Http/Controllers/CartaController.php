@@ -64,10 +64,23 @@ class CartaController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'rareza' => ['required', 'int', 'between:1,5'],
+            'atributo' => ['required', 'string', 'in:cool,cute,happy,mysterious,pure'],
+            'unidolized' => 'required|string',
+            'idolized' => 'required|string',
+            'unidolized_icon' => 'required|string',
+            'idolized_icon' => 'required|string',
+            'pj_id' => ['required', 'exists:personajes,id'],
+        ]);
+
         Carta::create([
             'rareza' => $request->rareza,
             'atributo' => $request->atributo,
-            'imagen' => $request->imagen,
+            'unidolized' => $request->unidolized,
+            'idolized' => $request->idolized,
+            'unidolized_icon' => $request->unidolized_icon,
+            'idolized_icon' => $request->idolized_icon,
             'pj_id' => $request->pj_id,
         ]);
 
@@ -115,11 +128,13 @@ class CartaController extends Controller
     public function update(Request $request, Carta $carta)
     {
         $request->validate([
-            'rareza' => 'required|int',
-            'atributo' => 'required|string',
+            'rareza' => ['required', 'int', 'between:1,5'],
+            'atributo' => ['required', 'string', 'in:cool,cute,happy,mysterious,pure'],
             'unidolized' => 'required|string',
             'idolized' => 'required|string',
-            'pj_id' => 'required|int',
+            'unidolized_icon' => 'required|string',
+            'idolized_icon' => 'required|string',
+            'pj_id' => ['required', 'exists:personajes,id'],
         ]);
 
         $carta->update($request->all());

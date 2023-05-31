@@ -4,7 +4,7 @@
     <br>
     @include('admin.table', [
         'columnas' => [
-            'nombre', 'rareza', 'atributo', 'unidolized', 'idolized', 'pj_id'
+            'nombre', 'rareza', 'atributo', 'unidolized', 'idolized', 'unidolized_icon', 'idolized_icon', 'pj_id'
         ],
         'datos' => $cartas,
     ])
