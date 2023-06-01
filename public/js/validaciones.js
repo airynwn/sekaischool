@@ -146,11 +146,14 @@ function validarRegistro(event) {
 
 // Bio + Discord + Twitter
 function validarEditarPerfil(event) {
-    // event.preventDefault();
+    event.preventDefault();
+    let result = validarBio();
+    result = validarDc() && result;
+    result = validarTw() && result;
 
-    // if (validarBio() && validarDc() && validarTw()) {
-    //     console.log("Datos introducidos correctamente");
-    //     event.target.submit();
-    // }
+    if (result) {
+        console.log("Datos introducidos correctamente");
+        event.target.submit();
+    }
 }
 

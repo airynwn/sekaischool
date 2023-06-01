@@ -5,6 +5,7 @@
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/editperfil.css') }}">
     <script type="text/javascript" src="{{ asset('js/sekaischool.js') }}" defer></script>
+    <script type="text/javascript" src="{{ asset('js/editperfil.js') }}" defer></script>
     <script type="text/javascript" src="{{ asset('js/validaciones.js') }}" defer></script>
 @endsection
 {{-- Main --}}
@@ -21,42 +22,53 @@
         @csrf
         <div class="row">
             <div class="col">
-                <details>
+                <details open>
                     <summary>Avatar</summary>
                     <div class="details-flex"></div>
-                    <input type="file" name="avatar" id="avatar">
+                    <input type="file" name="avatar" id="avatar" onchange="previsualizar(event)">
+                    <br>
+                    <img src="" alt="" id="previsualizar-avatar">
                 </details>
             </div>
         </div>
         <div class="espacio"></div>
         <div class="row">
             <div class="col">
-                <details>
+                <details open>
                     <summary>Biografía</summary>
                     <div class="details-flex"></div>
                     <textarea name="biografia" rows="3" id="bio">{{ auth()->user()->biografia }}</textarea>
+                    <p class="error" id="bio-error">
+                        La biografía no puede exceder los 200 caracteres
+                    </p>
                 </details>
             </div>
         </div>
         <div class="espacio"></div>
         <div class="row">
             <div class="col">
-                <details>
+                <details open>
                     <summary>Discord</summary>
                     <div class="details-flex"></div>
                     <input type="text" name="discord" id="dc" placeholder="User#1234"
                     value="{{ auth()->user()->discord }}">
+                    <p class="error" id="dc-error">
+                        El usuario de Discord debe ser mayor a 2 y menor a 32 caracteres e ir seguido de una almohadilla y 4 números
+                    </p>
                 </details>
             </div>
         </div>
         <div class="espacio"></div>
         <div class="row">
             <div class="col">
-                <details>
+                <details open>
                     <summary>Twitter</summary>
                     <div class="details-flex"></div>
                     <input type="text" name="twitter" id="tw" placeholder="@user"
                     value="{{ auth()->user()->twitter }}">
+                    <p class="error" id="tw-error">
+                        El usuario de Twitter sólo puede incluir letras, números y guión bajo hasta 15 caracteres y debe empezar por @
+                    </p>
                 </details>
             </div>
         </div>
