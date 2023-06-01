@@ -12,9 +12,9 @@
 <div class="container px-0 contenedor glassmorphism mx-auto">
     <div class="row gx-0">
         <div class="col-lg-3 col-md-6 d-flex justify-content-center d-md-block col-avatar">
-            <picture class="avatar-bg">
-                <img src="{{ asset('storage/'.$user->avatar) }}"
-                alt="{{ 'Avatar de ' . $user->name }}">
+            <picture class="avatar-bg" style="background-image: url({{asset('storage/'.$user->avatar)}});">
+                {{-- <img src="{{ asset('storage/'.$user->avatar) }}"
+                alt="{{ 'Avatar de ' . $user->name }}"> --}}
             </picture>
         </div>
             <!--  -->
