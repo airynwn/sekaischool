@@ -104,7 +104,7 @@ h2 {
 }
 
 .caja-content {
-    margin: 0.5em;
+    padding: 1em;
     display: flex;
     flex-direction: column;
     text-align: initial;
@@ -168,7 +168,7 @@ main {
     text-align: start;
 }
 
-.trivia-nav {
+.panel-nav {
     margin: 0.5em;
     padding: 1.5em;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
@@ -179,6 +179,14 @@ main {
     border: solid 1px;
     border-radius: 20px;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.36) 0%, rgba(0, 0, 0, 0.32) 100%);
+}
+
+.scroll-y {
+    overflow-y: scroll;
+}
+
+.caja-scroll {
+    height: 300px;
 }
 
 #personaje {

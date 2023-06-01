@@ -8,58 +8,10 @@
     </div>
 </div>
 <div class="row">
-    <!-- ! Por defecto último (para que salga en móvil), en el resto primero -->
-    <div class="col-lg-4 col-md-auto order-last order-lg-first">
-        <div class="trivia-nav" data-color="border-{{ strtolower(explode(' ', $personaje->nombre)[0]) }}">
-            <h2 data-color="{{ strtolower(explode(' ', $personaje->nombre)[0]) }}">Trivia</h2>
-            <div class="panel" data-color="border-{{ strtolower(explode(' ', $personaje->nombre)[0]) }}">
-                <div class="caja-content">
-                    <ul>
-                        @foreach ($personaje->trivias()->get() as $trivia)
-                        <li>{{ $trivia->dato }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            </div>
-            <div class="container-fluid">
-                <picture>
-                    <img src="{{ asset($personaje->stamp) }}" alt="{{ explode(' ', $personaje->nombre)[0] }} Stamp" width="148" height="128">
-                </picture>
-            </div>
-            <h2 data-color="{{ strtolower(explode(' ', $personaje->nombre)[0]) }}">Relaciones</h2>
-            <div class="panel" data-color="border-{{ strtolower(explode(' ', $personaje->nombre)[0]) }}">
-                <div class="caja-content">
-                    <div class="container-fluid">
-                        {{-- Relaciones --}}
-                        <div class="row row-cols-4 row-cols-sm-6 row-cols-md-6 row-cols-lg-5 g-1 centrar-fila">
-                            @foreach ($personaje->relaciones() as $relacion)
-                            <div class="col">
-                                {{-- Pantallas grandes --}}
-                                <button aria-label="{{ $relacion->descripcion }}" class="vacio d-none d-lg-block"
-                                data-cooltipz-dir="right" data-cooltipz-size="large"
-                                data-color="tt-{{ strtolower(explode(' ', $relacion->nombre)[0]) }}">
-                                    <img src="{{ asset($relacion->icon) }}"
-                                    alt="{{ $relacion->nombre }} Icon" class="img-fluid">
-                                </button>
-                                {{-- Pantallas pequeñas --}}
-                                <button aria-label="{{ $relacion->descripcion }}" class="vacio d-block d-lg-none"
-                                    data-cooltipz-dir="top" data-cooltipz-size="medium"
-                                    data-color="tt-{{ strtolower(explode(' ', $relacion->nombre)[0]) }}">
-                                        <img src="{{ asset($relacion->icon) }}"
-                                        alt="{{ $relacion->nombre }} Icon" class="img-fluid">
-                                </button>
-                            </div>
-                            @endforeach
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="col">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 col-lg-4">
+                <div class="col-md-6">
                     <h2 data-color="{{ strtolower(explode(' ', $personaje->nombre)[0]) }}">
                         {{ $personaje->nombre }}
                     </h2>
@@ -74,12 +26,12 @@
                 </div>
                 <!--  -->
                 <div class="col">
-                    <div class="espacio">
+                    <div class="panel-nav" data-color="border-{{ strtolower(explode(' ', $personaje->nombre)[0]) }}">
+                        {{-- DATOS BÁSICOS --}}
                         <h2 data-color="{{ strtolower(explode(' ', $personaje->nombre)[0]) }}">
                             Datos básicos
                         </h2>
-                        <div class="panel" data-color="border-{{ strtolower(explode(' ', $personaje->nombre)[0]) }}">
-                            {{-- TODO Preguntas y Respuestas --}}
+                        <div class="panel scroll-y caja-scroll" data-color="border-{{ strtolower(explode(' ', $personaje->nombre)[0]) }}">
                             <div class="caja-content">
                                 <span><strong data-color="{{ strtolower(explode(' ', $personaje->nombre)[0]) }}">
                                     Grupo</strong>: {{ $personaje->grupo->nombre }}</span>
@@ -89,35 +41,89 @@
                                 @endforeach
                             </div>
                         </div>
+                        {{-- PERSONALIDAD --}}
+                        <div class="espacio">
+                            <h2 data-color="{{ strtolower(explode(' ', $personaje->nombre)[0]) }}">
+                                Personalidad
+                            </h2>
+                            <div class="panel scroll-y caja-scroll" data-color="border-{{ strtolower(explode(' ', $personaje->nombre)[0]) }}">
+                                <div class="caja-content">
+                                    <p>
+                                        {{ $personaje->personalidad }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        {{-- HISTORIA --}}
+                        <div class="espacio">
+                            <h2 data-color="{{ strtolower(explode(' ', $personaje->nombre)[0]) }}">
+                                Historia
+                            </h2>
+                            <div class="panel scroll-y caja-scroll" data-color="border-{{ strtolower(explode(' ', $personaje->nombre)[0]) }}">
+                                <div class="caja-content">
+                                    <p>
+                                        {{ $personaje->historia }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <!--  -->
-                    <div class="espacio">
-                        <h2 data-color="{{ strtolower(explode(' ', $personaje->nombre)[0]) }}">
-                            Historia
-                        </h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-md-auto">
+                    <div class="panel-nav" data-color="border-{{ strtolower(explode(' ', $personaje->nombre)[0]) }}">
+                        {{-- TRIVIA --}}
+                        <h2 data-color="{{ strtolower(explode(' ', $personaje->nombre)[0]) }}">Trivia</h2>
                         <div class="panel" data-color="border-{{ strtolower(explode(' ', $personaje->nombre)[0]) }}">
                             <div class="caja-content">
-                                <p>
-                                    {{ $personaje->historia }}
-                                </p>
+                                <ul>
+                                    @foreach ($personaje->trivias()->get() as $trivia)
+                                    <li>{{ $trivia->dato }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        </div>
+                        {{-- STAMP --}}
+                        <div class="container-fluid">
+                            <picture>
+                                <img src="{{ asset($personaje->stamp) }}" alt="{{ explode(' ', $personaje->nombre)[0] }} Stamp" width="148" height="128">
+                            </picture>
+                        </div>
+                        {{-- RELACIONES --}}
+                        <h2 data-color="{{ strtolower(explode(' ', $personaje->nombre)[0]) }}">Relaciones</h2>
+                        <div class="panel" data-color="border-{{ strtolower(explode(' ', $personaje->nombre)[0]) }}">
+                            <div class="caja-content">
+                                <div class="container-fluid">
+                                    {{-- Relaciones --}}
+                                    <div class="row row-cols-4 row-cols-sm-6 row-cols-md-6 row-cols-lg-5 g-1 centrar-fila">
+                                        @foreach ($personaje->relaciones() as $relacion)
+                                        <div class="col">
+                                            {{-- Pantallas grandes --}}
+                                            <button aria-label="{{ $relacion->descripcion }}" class="vacio d-none d-lg-block"
+                                            data-cooltipz-dir="right" data-cooltipz-size="large"
+                                            data-color="tt-{{ strtolower(explode(' ', $relacion->nombre)[0]) }}">
+                                                <img src="{{ asset($relacion->icon) }}"
+                                                alt="{{ $relacion->nombre }} Icon" class="img-fluid">
+                                            </button>
+                                            {{-- Pantallas pequeñas --}}
+                                            <button aria-label="{{ $relacion->descripcion }}" class="vacio d-block d-lg-none"
+                                                data-cooltipz-dir="top" data-cooltipz-size="medium"
+                                                data-color="tt-{{ strtolower(explode(' ', $relacion->nombre)[0]) }}">
+                                                    <img src="{{ asset($relacion->icon) }}"
+                                                    alt="{{ $relacion->nombre }} Icon" class="img-fluid">
+                                            </button>
+                                        </div>
+                                        @endforeach
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row centrar-fila">
-                <div class="col-auto">
-                    <div class="espacio">
-                        <h2 data-color="{{ strtolower(explode(' ', $personaje->nombre)[0]) }}">
-                            Personalidad
-                        </h2>
-                        <div class="caja-content">
-                            <p>
-                                {{ $personaje->personalidad }}
-                            </p>
-                        </div>
-                    </div>
-                </div>
                 <div class="col-auto">
                     <div class="caja cuadrado">
                         <picture>
