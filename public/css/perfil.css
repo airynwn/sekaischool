@@ -343,12 +343,11 @@ span a {
     border-radius: 20px;
     padding: 10px;
     animation: bg-color 10s infinite;
-    width: 275px;
-}
-
-.avatar-bg > img {
+    margin: 1em;
     width: 250px;
     height: 250px;
+    background-size: cover;
+    background-position: center;
 }
 
 @media only screen and (min-width:768px) {
