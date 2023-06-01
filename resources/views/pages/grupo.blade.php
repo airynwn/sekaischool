@@ -61,8 +61,14 @@
 @else
 <div class="row my-5">
     <div class="col">
-        {{-- TODO --}}
         <h2>Elige un grupo para mostrar información acerca de él</h2>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <video autoplay="" loop="" muted="" class="ratio ratio-16x9" id="bg-video">
+            <source src="{{ asset('img/journey.mp4') }}" type="video/mp4">
+        </video>
     </div>
 </div>
 @endif

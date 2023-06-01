@@ -12,18 +12,31 @@
 @section('content')
 <div class="container-fluid">
     {{-- Menú de grupos --}}
-    <div class="row">
-        <div class="col d-flex flex-column flex-md-row justify-content-between gap-3">
+    <div class="row row-cols-1 row-cols-lg-4 gap-3 justify-content-center">
         @foreach ($grupos as $grupo)
+            <div class="col justify-content-center">
+                <button class="opcion btn-grupo"
+            data-color="bg-grupo-{{ $grupo->id }}"
+            data-grupo-id="{{ $grupo->id }}"
+            onclick="mostrarGrupo(event)">
+                {{ $grupo->nombre }}
+            </button>
+            </div>
+        @endforeach
+    </div>
+    <hr>
+    {{-- <div class="row">
+        @foreach ($grupos as $grupo)
+        <div class="col d-flex flex-column justify-content-center gap-3">
             <button class="opcion btn-grupo"
             data-color="bg-grupo-{{ $grupo->id }}"
             data-grupo-id="{{ $grupo->id }}"
             onclick="mostrarGrupo(event)">
                 {{ $grupo->nombre }}
             </button>
-        @endforeach
         </div>
-    </div>
+        @endforeach
+    </div> --}}
 </div>
 <div class="espacio"></div>
     {{-- Contenido --}}
