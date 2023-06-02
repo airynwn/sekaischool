@@ -1,5 +1,3 @@
-{{-- validar con js? Errores de prueba de momento --}}
-{{-- validar error cuando un string es muy largo --}}
 @if ($errors->any())
     <div class="alert alert-danger">
         <ul>

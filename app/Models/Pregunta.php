@@ -11,6 +11,8 @@ class Pregunta extends Model
 
     protected $fillable = ['pregunta'];
 
+    public $timestamps = false;
+
     /**
      * Respuestas que tiene una pregunta
      *
