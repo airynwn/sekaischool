@@ -46,7 +46,7 @@ class RegisteredUserController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
             'password' => ['required', 'confirmed', Password::min(8)->letters()->numbers()],
             'biografia' => ['nullable', 'string', 'max:200'],
-            'cumple' => ['nullable', 'date'],
+            'cumple' => ['nullable', 'date', 'before_or_equal:today'],
             'discord' => ['nullable', 'string', 'min:2', 'max:32', 'regex:/^((.{2,32})#\d{4})$/'],
             'twitter' => ['nullable', 'string', 'max:15', 'regex:/^@(\w){1,15}$/'],
             'pj_fav_id' => ['nullable', 'exists:personajes,id'],
