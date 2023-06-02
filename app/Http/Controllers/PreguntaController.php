@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Pregunta;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 class PreguntaController extends Controller
 {
@@ -14,7 +15,17 @@ class PreguntaController extends Controller
      */
     public function index()
     {
-        //
+        $preguntas = Pregunta::orderBy('id')->paginate(10);
+        $tablafk = null;
+        $fk = null;
+
+        if (auth()->check() && auth()->user()->admin && strpos(Route::current()->getName(), 'admin') === 0) {
+            return view('admin.preguntas.index', [
+                'preguntas' => $preguntas,
+                'tablafk' => $tablafk,
+                'fk' => $fk
+            ]);
+        }
     }
 
     /**
@@ -24,7 +35,15 @@ class PreguntaController extends Controller
      */
     public function create()
     {
-        //
+        $tabla = 'preguntas';
+        $tablafk = null;
+        $fk = null;
+
+        return view('admin.preguntas.create', [
+            'tabla' => $tabla,
+            'tablafk' => $tablafk,
+            'fk' => $fk
+        ]);
     }
 
     /**
@@ -35,7 +54,13 @@ class PreguntaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'pregunta' => 'required|string',
+        ]);
+
+        Pregunta::create($request->all());
+
+        return redirect()->route('admin.preguntas.index')->with('success', 'Se ha creado la pregunta con éxito.');
     }
 
     /**
@@ -57,7 +82,16 @@ class PreguntaController extends Controller
      */
     public function edit(Pregunta $pregunta)
     {
-        //
+        $tabla = 'preguntas';
+        $tablafk = null;
+        $fk = null;
+
+        return view('admin.preguntas.edit', [
+            'tabla' => $tabla,
+            'tablafk' => $tablafk,
+            'fk' => $fk,
+            'dato' => $pregunta
+        ]);
     }
 
     /**
@@ -69,7 +103,13 @@ class PreguntaController extends Controller
      */
     public function update(Request $request, Pregunta $pregunta)
     {
-        //
+        $request->validate([
+            'pregunta' => 'required|string',
+        ]);
+
+        $pregunta->update($request->all());
+
+        return redirect()->route('admin.preguntas.index')->with('success', 'Se ha modificado la pregunta con éxito.');
     }
 
     /**
@@ -80,6 +120,8 @@ class PreguntaController extends Controller
      */
     public function destroy(Pregunta $pregunta)
     {
-        //
+        $pregunta->delete();
+
+        return redirect()->route('admin.preguntas.index')->with('success', 'Se ha eliminado la pregunta con éxito.');
     }
 }

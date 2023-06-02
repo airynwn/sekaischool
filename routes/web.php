@@ -6,6 +6,10 @@ use App\Http\Controllers\CartaController;
 use App\Http\Controllers\GrupoController;
 use App\Http\Controllers\PersonajeController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\PreguntaController;
+use App\Http\Controllers\RelacionController;
+use App\Http\Controllers\RespuestaController;
+use App\Http\Controllers\TriviaController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -76,6 +80,34 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
     Route::get('/cartas/{carta}/edit', [CartaController::class, 'edit'])->name('admin.cartas.edit');
     Route::put('/cartas/{carta}/edit', [CartaController::class, 'update'])->name('admin.cartas.update');
     Route::delete('/cartas/{carta}/delete', [CartaController::class, 'destroy'])->name('admin.cartas.destroy');
+    /************* Trivias *************/
+    Route::get('/trivias', [TriviaController::class, 'index'])->name('admin.trivias.index');
+    Route::get('/trivias/create', [TriviaController::class, 'create'])->name('admin.trivias.create');
+    Route::post('/trivias/create', [TriviaController::class, 'store'])->name('admin.trivias.store');
+    Route::get('/trivias/{trivia}/edit', [TriviaController::class, 'edit'])->name('admin.trivias.edit');
+    Route::put('/trivias/{trivia}/edit', [TriviaController::class, 'update'])->name('admin.trivias.update');
+    Route::delete('/trivias/{trivia}/delete', [TriviaController::class, 'destroy'])->name('admin.trivias.destroy');
+    /************* Preguntas *************/
+    Route::get('/preguntas', [PreguntaController::class, 'index'])->name('admin.preguntas.index');
+    Route::get('/preguntas/create', [PreguntaController::class, 'create'])->name('admin.preguntas.create');
+    Route::post('/preguntas/create', [PreguntaController::class, 'store'])->name('admin.preguntas.store');
+    Route::get('/preguntas/{pregunta}/edit', [PreguntaController::class, 'edit'])->name('admin.preguntas.edit');
+    Route::put('/preguntas/{pregunta}/edit', [PreguntaController::class, 'update'])->name('admin.preguntas.update');
+    Route::delete('/preguntas/{pregunta}/delete', [PreguntaController::class, 'destroy'])->name('admin.preguntas.destroy');
+    /************* Respuestas *************/
+    Route::get('/respuestas', [RespuestaController::class, 'index'])->name('admin.respuestas.index');
+    Route::get('/respuestas/create', [RespuestaController::class, 'create'])->name('admin.respuestas.create');
+    Route::post('/respuestas/create', [RespuestaController::class, 'store'])->name('admin.respuestas.store');
+    Route::get('/respuestas/{respuesta}/edit', [RespuestaController::class, 'edit'])->name('admin.respuestas.edit');
+    Route::put('/respuestas/{respuesta}/edit', [RespuestaController::class, 'update'])->name('admin.respuestas.update');
+    Route::delete('/respuestas/{respuesta}/delete', [RespuestaController::class, 'destroy'])->name('admin.respuestas.destroy');
+    /************* Relaciones *************/
+    Route::get('/relaciones', [RelacionController::class, 'index'])->name('admin.relaciones.index');
+    Route::get('/relaciones/create', [RelacionController::class, 'create'])->name('admin.relaciones.create');
+    Route::post('/relaciones/create', [RelacionController::class, 'store'])->name('admin.relaciones.store');
+    Route::get('/relaciones/{relacion}/edit', [RelacionController::class, 'edit'])->name('admin.relaciones.edit');
+    Route::put('/relaciones/{relacion}/edit', [RelacionController::class, 'update'])->name('admin.relaciones.update');
+    Route::delete('/relaciones/{relacion}/delete', [RelacionController::class, 'destroy'])->name('admin.relaciones.destroy');
     /************* Users *************/
     Route::get('/users', [UserController::class, 'index'])->name('admin.users.index');
     Route::put('/users/{user}/validar', [UserController::class, 'validar'])->name('admin.users.validar');

@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Personaje;
+use App\Models\Pregunta;
 use App\Models\Respuesta;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 class RespuestaController extends Controller
 {
@@ -14,7 +17,13 @@ class RespuestaController extends Controller
      */
     public function index()
     {
-        //
+        $respuestas = Respuesta::orderBy('id')->paginate(10);
+
+        if (auth()->check() && auth()->user()->admin && strpos(Route::current()->getName(), 'admin') === 0) {
+            return view('admin.respuestas.index', [
+                'respuestas' => $respuestas,
+            ]);
+        }
     }
 
     /**
@@ -24,7 +33,14 @@ class RespuestaController extends Controller
      */
     public function create()
     {
-        //
+        $preguntas = Pregunta::all();
+        $personajes = Personaje::all();
+
+
+        return view('admin.respuestas.create', [
+            'preguntas' => $preguntas,
+            'personajes' => $personajes,
+        ]);
     }
 
     /**
@@ -35,7 +51,15 @@ class RespuestaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'respuesta' => 'required|string',
+            'pregunta_id' => ['required', 'exists:preguntas,id'],
+            'pj_id' => ['required', 'exists:personajes,id'],
+        ]);
+
+        Respuesta::create($request->all());
+
+        return redirect()->route('admin.respuestas.index')->with('success', 'Se ha creado la respuesta con éxito.');
     }
 
     /**
@@ -57,7 +81,15 @@ class RespuestaController extends Controller
      */
     public function edit(Respuesta $respuesta)
     {
-        //
+        $preguntas = Pregunta::all();
+        $personajes = Personaje::all();
+
+
+        return view('admin.respuestas.edit', [
+            'preguntas' => $preguntas,
+            'personajes' => $personajes,
+            'respuesta' => $respuesta,
+        ]);
     }
 
     /**
@@ -69,7 +101,15 @@ class RespuestaController extends Controller
      */
     public function update(Request $request, Respuesta $respuesta)
     {
-        //
+        $request->validate([
+            'respuesta' => 'required|string',
+            'pregunta_id' => ['required', 'exists:preguntas,id'],
+            'pj_id' => ['required', 'exists:personajes,id'],
+        ]);
+
+        $respuesta->update($request->all());
+
+        return redirect()->route('admin.respuestas.index')->with('success', 'Se ha modificado la respuesta con éxito.');
     }
 
     /**
@@ -80,6 +120,8 @@ class RespuestaController extends Controller
      */
     public function destroy(Respuesta $respuesta)
     {
-        //
+        $respuesta->delete();
+
+        return redirect()->route('admin.respuestas.index')->with('success', 'Se ha eliminado la respuesta con éxito.');
     }
 }

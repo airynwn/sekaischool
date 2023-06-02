@@ -77,6 +77,30 @@
                       Cartas
                     </a>
                   </li>
+                  <li>
+                    <a href="{{ route('admin.trivias.index') }}" class="nav-link text-white
+                    {{ Route::current()->getName() === 'admin.trivias.index' ? 'ruta-actual' : '' }}">
+                      Trivias
+                    </a>
+                  </li>
+                  <li>
+                    <a href="{{ route('admin.preguntas.index') }}" class="nav-link text-white
+                    {{ Route::current()->getName() === 'admin.preguntas.index' ? 'ruta-actual' : '' }}">
+                      Preguntas
+                    </a>
+                  </li>
+                  <li>
+                    <a href="{{ route('admin.respuestas.index') }}" class="nav-link text-white
+                    {{ Route::current()->getName() === 'admin.respuestas.index' ? 'ruta-actual' : '' }}">
+                      Respuestas
+                    </a>
+                  </li>
+                  <li>
+                    <a href="{{ route('admin.relaciones.index') }}" class="nav-link text-white
+                    {{ Route::current()->getName() === 'admin.relaciones.index' ? 'ruta-actual' : '' }}">
+                      Relaciones
+                    </a>
+                  </li>
                 </ul>
             </div>
             <div class="col py-3 overflow-y-scroll" id="tabla-container">

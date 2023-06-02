@@ -1,4 +1,3 @@
-{{-- validar con js? Errores de prueba de momento --}}
 @if ($errors->any())
     <div class="alert alert-danger">
         <ul>
