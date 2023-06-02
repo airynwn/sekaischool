@@ -47,6 +47,12 @@ async function mostrarCartas(event) {
 
     let modo = event.target.getAttribute("data-modo");
     let user = event.target.getAttribute("data-user");
+    // Opacidad del botón
+    document.querySelectorAll('.selected-opacidad').forEach(function(e) {
+        e.classList.remove('selected-opacidad');
+    });
+    event.target.classList.toggle("selected-opacidad");
+
     const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
     formData.append('_token', csrfToken);
