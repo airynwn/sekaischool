@@ -15,7 +15,7 @@ class GrupoController extends Controller
      */
     public function index()
     {
-        $grupos = Grupo::all()->sortBy('id');
+        $grupos = Grupo::orderBy('id')->paginate(5);
         $tablafk = null;
         $fk = null;
 

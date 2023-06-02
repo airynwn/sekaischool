@@ -17,7 +17,7 @@ class CartaController extends Controller
      */
     public function index()
     {
-        $cartas = Carta::all();
+        $cartas = Carta::orderBy('id')->paginate(20);
         $grupos = Grupo::all();
         $tablafk = Personaje::all();
         $fk = 'pj_id';

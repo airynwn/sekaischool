@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cooltipz-css@2.2.2/cooltipz.min.css">
 @endsection
 {{-- Main --}}
+@php
+    $personajes = \App\Models\Personaje::all()->sortBy('id');
+@endphp
 @section('content')
     {{-- Contenido --}}
 <div class="container-fluid" id="pj-container">

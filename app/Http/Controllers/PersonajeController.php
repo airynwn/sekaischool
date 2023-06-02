@@ -16,7 +16,7 @@ class PersonajeController extends Controller
      */
     public function index()
     {
-        $personajes = Personaje::all()->sortBy('id');
+        $personajes = Personaje::orderBy('id')->paginate(10);
         $tablafk = Grupo::all();
         $fk = 'grupo_id';
 

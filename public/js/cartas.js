@@ -100,3 +100,36 @@ async function buscarCartas(event) {
     });
 
 }
+
+// Página inicial
+let page = 2;
+let cargando = false;
+
+window.addEventListener('scroll', function() {
+    // Al scrollear hacia abajo se cargan más cartas
+  if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+    cargarCartas();
+  }
+});
+
+function cargarCartas() {
+  if (cargando) {
+    return;
+  }
+
+  cargando = true;
+
+  const xhr = new XMLHttpRequest();
+  xhr.open('GET', '/cartas?page=' + page, true);
+  xhr.onload = () => {
+    if (xhr.status === 200) {
+      const parser = new DOMParser();
+      const responseHtml = parser.parseFromString(xhr.responseText, 'text/html');
+      const nuevasCartas = responseHtml.getElementById('cartas-container').innerHTML;
+      document.getElementById('cartas-container').insertAdjacentHTML('beforeend', nuevasCartas);
+      page++;
+      cargando = false;
+    }
+  };
+  xhr.send();
+}

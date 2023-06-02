@@ -36,4 +36,7 @@
         </tbody>
     </table>
 </div>
+<div class="pagination justify-content-center">
+    {{ $users->links('pagination::bootstrap-4') }}
+</div>
 @endsection

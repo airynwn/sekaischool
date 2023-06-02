@@ -1,4 +1,5 @@
-@foreach ($cartas as $carta)
+<div class="row row-cols-sm-2 row-cols-1">
+    @foreach ($cartas as $carta)
     <div class="col">
         <figure class="card-box">
             <picture>
@@ -32,3 +33,11 @@
         @endif
     </div>
 @endforeach
+</div>
+{{-- <div class="row">
+    <div class="col">
+        <div class="pagination justify-content-center">
+            {{ $cartas->links('pagination::bootstrap-4') }}
+        </div>
+    </div>
+</div> --}}
