@@ -95,6 +95,12 @@
                       Respuestas
                     </a>
                   </li>
+                  <li>
+                    <a href="{{ route('admin.relaciones.index') }}" class="nav-link text-white
+                    {{ Route::current()->getName() === 'admin.relaciones.index' ? 'ruta-actual' : '' }}">
+                      Relaciones
+                    </a>
+                  </li>
                 </ul>
             </div>
             <div class="col py-3 overflow-y-scroll" id="tabla-container">

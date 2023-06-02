@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Personaje;
 use App\Models\Relacion;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 class RelacionController extends Controller
 {
@@ -14,7 +16,13 @@ class RelacionController extends Controller
      */
     public function index()
     {
-        //
+        $relaciones = Relacion::orderBy('id')->paginate(10);
+
+        if (auth()->check() && auth()->user()->admin && strpos(Route::current()->getName(), 'admin') === 0) {
+            return view('admin.relaciones.index', [
+                'relaciones' => $relaciones,
+            ]);
+        }
     }
 
     /**
@@ -24,7 +32,12 @@ class RelacionController extends Controller
      */
     public function create()
     {
-        //
+        $personajes = Personaje::all();
+
+
+        return view('admin.relaciones.create', [
+            'personajes' => $personajes,
+        ]);
     }
 
     /**
@@ -35,7 +48,15 @@ class RelacionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'pj1_id' => ['required', 'exists:personajes,id'],
+            'pj2_id' => ['required', 'exists:personajes,id'],
+            'descripcion' => 'required|string',
+        ]);
+
+        Relacion::create($request->all());
+
+        return redirect()->route('admin.relaciones.index')->with('success', 'Se ha creado la relación con éxito.');
     }
 
     /**
@@ -57,7 +78,13 @@ class RelacionController extends Controller
      */
     public function edit(Relacion $relacion)
     {
-        //
+        $personajes = Personaje::all();
+
+
+        return view('admin.relaciones.edit', [
+            'personajes' => $personajes,
+            'relacion' => $relacion,
+        ]);
     }
 
     /**
@@ -69,7 +96,15 @@ class RelacionController extends Controller
      */
     public function update(Request $request, Relacion $relacion)
     {
-        //
+        $request->validate([
+            'pj1_id' => ['required', 'exists:personajes,id'],
+            'pj2_id' => ['required', 'exists:personajes,id'],
+            'descripcion' => 'required|string',
+        ]);
+
+        $relacion->update($request->all());
+
+        return redirect()->route('admin.relaciones.index')->with('success', 'Se ha modificado la relación con éxito.');
     }
 
     /**
@@ -80,6 +115,8 @@ class RelacionController extends Controller
      */
     public function destroy(Relacion $relacion)
     {
-        //
+        $relacion->delete();
+
+        return redirect()->route('admin.relaciones.index')->with('success', 'Se ha eliminado la relación con éxito.');
     }
 }

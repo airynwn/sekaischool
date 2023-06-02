@@ -7,6 +7,7 @@ use App\Http\Controllers\GrupoController;
 use App\Http\Controllers\PersonajeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\PreguntaController;
+use App\Http\Controllers\RelacionController;
 use App\Http\Controllers\RespuestaController;
 use App\Http\Controllers\TriviaController;
 use App\Http\Controllers\UserController;
@@ -100,6 +101,13 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
     Route::get('/respuestas/{respuesta}/edit', [RespuestaController::class, 'edit'])->name('admin.respuestas.edit');
     Route::put('/respuestas/{respuesta}/edit', [RespuestaController::class, 'update'])->name('admin.respuestas.update');
     Route::delete('/respuestas/{respuesta}/delete', [RespuestaController::class, 'destroy'])->name('admin.respuestas.destroy');
+    /************* Relaciones *************/
+    Route::get('/relaciones', [RelacionController::class, 'index'])->name('admin.relaciones.index');
+    Route::get('/relaciones/create', [RelacionController::class, 'create'])->name('admin.relaciones.create');
+    Route::post('/relaciones/create', [RelacionController::class, 'store'])->name('admin.relaciones.store');
+    Route::get('/relaciones/{relacion}/edit', [RelacionController::class, 'edit'])->name('admin.relaciones.edit');
+    Route::put('/relaciones/{relacion}/edit', [RelacionController::class, 'update'])->name('admin.relaciones.update');
+    Route::delete('/relaciones/{relacion}/delete', [RelacionController::class, 'destroy'])->name('admin.relaciones.destroy');
     /************* Users *************/
     Route::get('/users', [UserController::class, 'index'])->name('admin.users.index');
     Route::put('/users/{user}/validar', [UserController::class, 'validar'])->name('admin.users.validar');
