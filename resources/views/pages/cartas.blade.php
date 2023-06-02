@@ -9,6 +9,12 @@
 @endsection
 {{-- Main --}}
 @section('content')
+@if (session('error'))
+    <div class="alert alert-danger">{{ session('error') }}</div>
+@endif
+@if (session('success'))
+    <div class="alert alert-success">{{ session('success') }}</div>
+@endif
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-3 col-md-4 col-sm-12" id="filter-nav">
@@ -33,32 +39,32 @@
                 <div class="caja-icons">
                     <span>
                         <picture>
-                            <img src="img/icons/rainbow_star.png" alt="Estrella"
-                            data-id="1" onclick="seleccionar(this)" class="select-rareza">
+                            <img src="img/icons/1_star.png" alt="Estrella"
+                            data-id="1" onclick="seleccionar(this)" class="select-rareza rareza">
                         </picture>
                     </span>
                     <span>
                         <picture>
-                            <img src="img/icons/rainbow_star.png" alt="Estrella"
-                            data-id="2" onclick="seleccionar(this)" class="select-rareza">
+                            <img src="img/icons/2_star.png" alt="Estrella"
+                            data-id="2" onclick="seleccionar(this)" class="select-rareza rareza">
                         </picture>
                     </span>
                     <span>
                         <picture>
-                            <img src="img/icons/rainbow_star.png" alt="Estrella"
-                            data-id="3" onclick="seleccionar(this)" class="select-rareza">
+                            <img src="img/icons/3_star.png" alt="Estrella"
+                            data-id="3" onclick="seleccionar(this)" class="select-rareza rareza">
                         </picture>
                     </span>
                     <span>
                         <picture>
-                            <img src="img/icons/rainbow_star.png" alt="Estrella"
-                            data-id="4" onclick="seleccionar(this)" class="select-rareza">
+                            <img src="img/icons/4_star.png" alt="Estrella"
+                            data-id="4" onclick="seleccionar(this)" class="select-rareza rareza">
                         </picture>
                     </span>
                     <span>
                         <picture>
                             <img src="img/icons/birthday.png" alt="Cumpleaños/Aniversario"
-                            data-id="5" onclick="seleccionar(this)" class="select-rareza">
+                            data-id="5" onclick="seleccionar(this)" class="select-rareza rareza">
                         </picture>
                     </span>
                 </div>

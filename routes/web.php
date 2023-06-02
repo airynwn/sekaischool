@@ -40,7 +40,7 @@ Route::get('/personajes', [PersonajeController::class, 'index'])->name('pages.pe
 Route::post('/personajes/personaje', [PersonajeController::class, 'show'])->name('pages.personaje');
 
 /************* User *************/
-Route::middleware('auth')->group(function () {
+Route::middleware(['auth', 'valido'])->group(function () {
             /**** Cartas ****/
     Route::post('/cartas/add', [UserController::class, 'guardarCarta'])->name('pages.cartas.add');
     Route::post('/cartas/delete', [UserController::class, 'eliminarCarta'])->name('pages.cartas.delete');
@@ -82,7 +82,7 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
     Route::put('/users/{user}/bloquear', [UserController::class, 'bloquear'])->name('admin.users.bloquear');
 });
 
-Route::middleware('auth')->group(function () {
+Route::middleware(['auth', 'valido'])->group(function () {
     Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
     Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::get('/profile/{user}', [ProfileController::class, 'show'])->name('profile.show');

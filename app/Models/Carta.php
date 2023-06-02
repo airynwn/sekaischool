@@ -9,7 +9,7 @@ class Carta extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['rareza', 'atributo', 'imagen', 'pj_id'];
+    protected $fillable = ['nombre', 'rareza', 'atributo', 'unidolized', 'idolized', 'unidolized_icon', 'idolized_icon', 'pj_id'];
 
     public $timestamps = false;
 

@@ -11,6 +11,12 @@
 {{-- Main --}}
 @section('content')
 <div class="container-fluid">
+    @if (session('error'))
+        <div class="alert alert-danger">{{ session('error') }}</div>
+    @endif
+    @if (session('success'))
+        <div class="alert alert-success">{{ session('success') }}</div>
+    @endif
     {{-- Menú de grupos --}}
     <div class="row row-cols-1 row-cols-lg-4 gap-3 justify-content-center">
         @foreach ($grupos as $grupo)

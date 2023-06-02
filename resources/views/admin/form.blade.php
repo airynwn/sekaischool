@@ -8,7 +8,7 @@
         </ul>
     </div>
 @endif
-<form action="" method="POST">
+<form action="" method="POST" enctype="multipart/form-data">
     @csrf
     @foreach($columnas as $columna)
         <div class="form-group">
@@ -33,6 +33,11 @@
             {{-- STRING --}}
             @elseif (Schema::getColumnType($tabla, $columna) == 'string')
                 <input type="text" name="{{ $columna }}">
+            {{-- FILE --}}
+            @elseif ($columna == 'imagen' || $columna == 'logo' || $columna == 'comic' || $columna == 'chibi'
+            || $columna == 'icon' || $columna == 'stamp' || $columna == 'sticker' || $columna == 'unidolized' ||
+            $columna == 'idolized' || $columna == 'unidolized_icon' || $columna == 'idolized_icon')
+                <input type="file" name="{{ $columna }}" accept="image/*">
             {{-- TEXT --}}
             @elseif (Schema::getColumnType($tabla, $columna) == 'text')
                 <textarea name="{{ $columna }}" rows="1"></textarea>

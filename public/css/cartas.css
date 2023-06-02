@@ -310,3 +310,10 @@ button.vacio {
     filter: drop-shadow(0 0 0.5em white);
     transition: all 0.5s;
 }
+
+.rareza {
+    background-color: #ae83ff77;
+    padding: 0.5em;
+    margin: 0.25em;
+    border-radius: 30px;
+}

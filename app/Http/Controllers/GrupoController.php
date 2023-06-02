@@ -59,14 +59,29 @@ class GrupoController extends Controller
      */
     public function store(Request $request)
     {
-        $grupo = $request->validate([
+        $request->validate([
             'nombre' => 'required|string',
-            'logo' => 'required|string',
-            'imagen' => 'required|string',
+            'logo' => ['required', 'image', 'max:200'],
+            'imagen' => ['required', 'image', 'max:3000'],
             'historia' => 'required|string',
         ]);
 
-        Grupo::create($grupo);
+        $grupo = Grupo::create($request->all());
+        $logo = 'logo-' . $grupo->nombre . '.' . $request->file('logo')
+            ->getClientOriginalExtension();
+        $imagen = 'img-' . $grupo->nombre . '.' . $request->file('imagen')
+            ->getClientOriginalExtension();
+        $grupo->logo = str_replace(
+            'public',
+            'storage',
+            $request->file('logo')->storeAs('public/grupos', $logo)
+        );
+        $grupo->imagen = str_replace(
+            'public',
+            'storage',
+            $request->file('imagen')->storeAs('public/grupos', $imagen)
+        );
+        $grupo->save();
 
         return redirect()->route('admin.grupos.index')->with('success', 'Se ha creado el grupo con éxito.');
     }
@@ -119,12 +134,44 @@ class GrupoController extends Controller
     {
         $request->validate([
             'nombre' => 'required|string',
-            'logo' => 'required|string',
-            'imagen' => 'required|string',
+            'logo' => ['nullable', 'image', 'max:200'],
+            'imagen' => ['nullable', 'image', 'max:3000'],
             'historia' => 'required|string',
         ]);
 
+        $logo = $grupo->logo;
+        $imagen = $grupo->imagen;
+
         $grupo->update($request->all());
+
+        if ($request->hasFile('logo')) {
+            // Extensión (.png ...) de la imagen
+            $logo = 'logo-' . $grupo->nombre . '.' . $request->file('logo')
+            ->getClientOriginalExtension();
+            // Guarda la imagen como logo-nombregrupo.extension
+            $grupo->logo = str_replace(
+                'public',
+                'storage',
+                $request->file('logo')->storeAs('public/grupos', $logo)
+            );
+        } else {
+            $grupo->logo = $logo;
+        }
+
+        if ($request->hasFile('imagen')) {
+            $imagen = 'img-' . $grupo->nombre . '.' . $request->file('imagen')
+            ->getClientOriginalExtension();
+
+            $grupo->imagen = str_replace(
+                'public',
+                'storage',
+                $request->file('imagen')->storeAs('public/grupos', $imagen)
+            );
+        } else {
+            $grupo->imagen = $imagen;
+        }
+
+        $grupo->save();
 
         return redirect()->route('admin.grupos.index')->with('success', 'Se ha modificado el grupo con éxito.');
     }

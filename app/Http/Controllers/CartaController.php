@@ -65,24 +65,51 @@ class CartaController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'nombre' => 'required|string',
             'rareza' => ['required', 'int', 'between:1,5'],
             'atributo' => ['required', 'string', 'in:cool,cute,happy,mysterious,pure'],
-            'unidolized' => 'required|string',
-            'idolized' => 'required|string',
-            'unidolized_icon' => 'required|string',
-            'idolized_icon' => 'required|string',
+            'unidolized' => ['required', 'image', 'max:10000'],
+            'idolized' => ['required', 'image', 'max:10000'],
+            'unidolized_icon' => ['required', 'image', 'max:10000'],
+            'idolized_icon' => ['required', 'image', 'max:10000'],
             'pj_id' => ['required', 'exists:personajes,id'],
         ]);
 
-        Carta::create([
-            'rareza' => $request->rareza,
-            'atributo' => $request->atributo,
-            'unidolized' => $request->unidolized,
-            'idolized' => $request->idolized,
-            'unidolized_icon' => $request->unidolized_icon,
-            'idolized_icon' => $request->idolized_icon,
-            'pj_id' => $request->pj_id,
-        ]);
+        $carta = Carta::create($request->all());
+
+        $unidolized = $carta->id . '_1' . $request->file('unidolized')
+            ->getClientOriginalExtension();
+
+        $idolized = $carta->id . '_2' . $request->file('idolized')
+            ->getClientOriginalExtension();
+
+        $unidolized_icon = $carta->id . '_1_icon' . $request->file('unidolized_icon')
+            ->getClientOriginalExtension();
+
+        $idolized_icon = $carta->id . '_1_icon' . $request->file('unidolized_icon')
+            ->getClientOriginalExtension();
+
+        $carta->unidolized = str_replace(
+            'public',
+            'storage',
+            $request->file('unidolized')->storeAs('public/cartas', $unidolized)
+        );
+        $carta->idolized = str_replace(
+            'public',
+            'storage',
+            $request->file('idolized')->storeAs('public/cartas', $idolized)
+        );
+        $carta->unidolized_icon = str_replace(
+            'public',
+            'storage',
+            $request->file('unidolized_icon')->storeAs('public/cartas', $unidolized_icon)
+        );
+        $carta->idolized_icon = str_replace(
+            'public',
+            'storage',
+            $request->file('idolized_icon')->storeAs('public/cartas', $idolized_icon)
+        );
+        $carta->save();
 
         return redirect()->route('admin.cartas.index')->with('success', 'Se ha creado la carta con éxito.');
     }
@@ -128,16 +155,76 @@ class CartaController extends Controller
     public function update(Request $request, Carta $carta)
     {
         $request->validate([
+            'nombre' => 'required|string',
             'rareza' => ['required', 'int', 'between:1,5'],
             'atributo' => ['required', 'string', 'in:cool,cute,happy,mysterious,pure'],
-            'unidolized' => 'required|string',
-            'idolized' => 'required|string',
-            'unidolized_icon' => 'required|string',
-            'idolized_icon' => 'required|string',
+            'unidolized' => ['nullable', 'image', 'max:10000'],
+            'idolized' => ['nullable', 'image', 'max:10000'],
+            'unidolized_icon' => ['nullable', 'image', 'max:10000'],
+            'idolized_icon' => ['nullable', 'image', 'max:10000'],
             'pj_id' => ['required', 'exists:personajes,id'],
         ]);
 
+        $unidolized = $carta->unidolized;
+        $idolized = $carta->idolized;
+        $unidolized_icon = $carta->unidolized_icon;
+        $idolized_icon = $carta->idolized_icon;
+
         $carta->update($request->all());
+
+        if ($request->hasFile('unidolized')) {
+            $unidolized = $carta->id . '_1' . $request->file('unidolized')
+                ->getClientOriginalExtension();
+
+            $carta->unidolized = str_replace(
+                'public',
+                'storage',
+                $request->file('unidolized')->storeAs('public/cartas', $unidolized)
+            );
+        } else {
+            $carta->unidolized = $unidolized;
+        }
+
+        if ($request->hasFile('idolized')) {
+            $idolized = $carta->id . '_2' . $request->file('idolized')
+                ->getClientOriginalExtension();
+
+            $carta->idolized = str_replace(
+                'public',
+                'storage',
+                $request->file('idolized')->storeAs('public/cartas', $idolized)
+            );
+        } else {
+            $carta->idolized = $idolized;
+        }
+
+        if ($request->hasFile('unidolized_icon')) {
+            $unidolized_icon = $carta->id . '_1_icon' . $request->file('unidolized_icon')
+                ->getClientOriginalExtension();
+
+            $carta->unidolized_icon = str_replace(
+                'public',
+                'storage',
+                $request->file('unidolized_icon')->storeAs('public/cartas', $unidolized_icon)
+            );
+        } else {
+            $carta->unidolized_icon = $unidolized_icon;
+        }
+
+        if ($request->hasFile('idolized_icon')) {
+            $idolized_icon = $carta->id . '_2_icon' . $request->file('idolized_icon')
+                ->getClientOriginalExtension();
+
+            $carta->idolized_icon = str_replace(
+                'public',
+                'storage',
+                $request->file('idolized_icon')->storeAs('public/cartas', $idolized_icon)
+            );
+        } else {
+            $carta->idolized_icon = $idolized_icon;
+        }
+
+        $carta->save();
 
         return redirect()->route('admin.cartas.index')->with('success', 'Se ha modificado la carta con éxito.');
     }
