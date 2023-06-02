@@ -13,7 +13,7 @@
         <tr>
             @foreach($columnas as $columna)
                 @if (in_array($columna, [
-                    'imagen', 'logo', 'comic', 'stamp', 'chibi', 'icon', 'sticker', 'unidolized', 'idolized'
+                    'imagen', 'logo', 'comic', 'stamp', 'chibi', 'icon', 'sticker', 'unidolized', 'idolized', 'unidolized_icon', 'idolized_icon'
                 ]))
                     <td>
                         <div>
