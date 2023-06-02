@@ -52,6 +52,9 @@
     </tbody>
 </table>
 </div>
+<div class="pagination justify-content-center">
+    {{ $datos->links('pagination::bootstrap-4') }}
+</div>
 <br>
 <form action={{ route(str_replace('index', 'create', Route::current()->getName())) }} method="GET">
     @csrf

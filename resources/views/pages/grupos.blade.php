@@ -9,6 +9,9 @@
     <script type="text/javascript" src="{{ asset('js/grupos.js') }}"></script>
 @endsection
 {{-- Main --}}
+@php
+    $grupos = \App\Models\Grupo::all()->sortBy('id');
+@endphp
 @section('content')
 <div class="container-fluid">
     @if (session('error'))

@@ -118,13 +118,11 @@
         </form>
     </div>
     <div class="col" id="cartas">
-        <div class="container">
-            @if (session('success'))
-                <div class="alert alert-success">{{ session('success') }}</div>
-            @endif
-            <div class="row row-cols-sm-2 row-cols-1" id="cartas-container">
+        @if (session('success'))
+            <div class="alert alert-success">{{ session('success') }}</div>
+        @endif
+        <div class="container" id="cartas-container">
                 @include('pages.listaCartas', ['cartas' => $cartas])
-            </div>
         </div>
     </div>
 </div>

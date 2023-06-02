@@ -4,5 +4,6 @@
 @endsection
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
+    <script type="text/javascript" src="{{ asset('js/paginarAdmin.js') }}"></script>
 @endsection
 {{-- Main --}}
