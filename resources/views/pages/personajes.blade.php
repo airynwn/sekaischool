@@ -13,6 +13,12 @@
 @section('content')
     {{-- Contenido --}}
 <div class="container-fluid" id="pj-container">
+    @if (session('error'))
+        <div class="alert alert-danger">{{ session('error') }}</div>
+    @endif
+    @if (session('success'))
+        <div class="alert alert-success">{{ session('success') }}</div>
+    @endif
     <div class="row">
         <div class="col">
             <h2>Elige un personaje para mostrar su información</h2>
