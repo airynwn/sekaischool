@@ -11,6 +11,8 @@ class Respuesta extends Model
 
     protected $fillable = ['respuesta', 'pj_id', 'pregunta_id'];
 
+    public $timestamps = false;
+
     /**
      * Personaje al que pertenece la respuesta
      *
