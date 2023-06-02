@@ -77,6 +77,12 @@
                       Cartas
                     </a>
                   </li>
+                  <li>
+                    <a href="{{ route('admin.trivias.index') }}" class="nav-link text-white
+                    {{ Route::current()->getName() === 'admin.trivias.index' ? 'ruta-actual' : '' }}">
+                      Trivias
+                    </a>
+                  </li>
                 </ul>
             </div>
             <div class="col py-3 overflow-y-scroll" id="tabla-container">

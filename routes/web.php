@@ -6,6 +6,7 @@ use App\Http\Controllers\CartaController;
 use App\Http\Controllers\GrupoController;
 use App\Http\Controllers\PersonajeController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\TriviaController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -76,6 +77,13 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
     Route::get('/cartas/{carta}/edit', [CartaController::class, 'edit'])->name('admin.cartas.edit');
     Route::put('/cartas/{carta}/edit', [CartaController::class, 'update'])->name('admin.cartas.update');
     Route::delete('/cartas/{carta}/delete', [CartaController::class, 'destroy'])->name('admin.cartas.destroy');
+    /************* Trivias *************/
+    Route::get('/trivias', [TriviaController::class, 'index'])->name('admin.trivias.index');
+    Route::get('/trivias/create', [TriviaController::class, 'create'])->name('admin.trivias.create');
+    Route::post('/trivias/create', [TriviaController::class, 'store'])->name('admin.trivias.store');
+    Route::get('/trivias/{trivia}/edit', [TriviaController::class, 'edit'])->name('admin.trivias.edit');
+    Route::put('/trivias/{trivia}/edit', [TriviaController::class, 'update'])->name('admin.trivias.update');
+    Route::delete('/trivias/{trivia}/delete', [TriviaController::class, 'destroy'])->name('admin.trivias.destroy');
     /************* Users *************/
     Route::get('/users', [UserController::class, 'index'])->name('admin.users.index');
     Route::put('/users/{user}/validar', [UserController::class, 'validar'])->name('admin.users.validar');

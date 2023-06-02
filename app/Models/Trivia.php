@@ -11,6 +11,8 @@ class Trivia extends Model
 
     protected $fillable = ['dato', 'pj_id'];
 
+    public $timestamps = false;
+
     /**
      * Personaje al que pertenece el dato
      *
