@@ -81,6 +81,12 @@
                     </div>
                     <div class="container caja-content">
                         <div class="row row-cols-2 row-cols-md-4 row-cols-lg-6 g-3 justify-content-center">
+                            <div class="col">
+                                <label>
+                                    <input type="radio" name="pj_fav_id" value="">
+                                    <span>Ninguno</span>
+                                </label>
+                            </div>
                             @foreach ($personajes as $pj)
                                 <div class="col">
                                     <label>
@@ -105,6 +111,12 @@
                     </div>
                     <div class="container caja-content">
                         <div class="row row-cols-2 row-cols-md-5 g-3 justify-content-center">
+                            <div class="col">
+                                <label>
+                                    <input type="radio" name="grupo_fav_id" value="">
+                                    <span>Ninguno</span>
+                                </label>
+                            </div>
                             @foreach ($grupos as $grupo)
                                 <div class="col">
                                     <label>
