@@ -247,7 +247,8 @@ input[type=radio]:checked + img,
 }
 
 textarea,
-input[type=text] {
+input[type=text],
+input[type=password] {
     background-color: #00000070;
     border: none;
     border-radius: 20px;
