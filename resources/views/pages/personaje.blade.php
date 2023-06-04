@@ -11,7 +11,7 @@
     <div class="col">
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-12 col-md-6">
                     <h2 data-color="{{ strtolower(explode(' ', $personaje->nombre)[0]) }}">
                         {{ $personaje->nombre }}
                     </h2>
@@ -20,18 +20,19 @@
                             <source media="(max-width: 576px)" srcset="{{ asset($personaje->chibi) }}">
                             <img src="{{ asset($personaje->imagen) }}"
                             alt="{{ $personaje->nombre }}"
-                            class="img-fluid">
+                            class="img-fluid" id="img-pj">
                         </picture>
                     </figure>
                 </div>
                 <!--  -->
-                <div class="col">
+                <div class="col-12 col-md-6" id="col-mitad">
                     <div class="panel-nav" data-color="border-{{ strtolower(explode(' ', $personaje->nombre)[0]) }}">
+                    <div class="container-fluid overflow-auto" id="col-info">
                         {{-- DATOS BÁSICOS --}}
                         <h2 data-color="{{ strtolower(explode(' ', $personaje->nombre)[0]) }}">
                             Datos básicos
                         </h2>
-                        <div class="panel scroll-y caja-scroll" data-color="border-{{ strtolower(explode(' ', $personaje->nombre)[0]) }}">
+                        <div class="panel scroll-y " id="caja-datos" data-color="border-{{ strtolower(explode(' ', $personaje->nombre)[0]) }}">
                             <div class="caja-content">
                                 <span><strong data-color="{{ strtolower(explode(' ', $personaje->nombre)[0]) }}">
                                     Grupo</strong>: {{ $personaje->grupo->nombre }}</span>
@@ -46,7 +47,7 @@
                             <h2 data-color="{{ strtolower(explode(' ', $personaje->nombre)[0]) }}">
                                 Personalidad
                             </h2>
-                            <div class="panel scroll-y caja-scroll" data-color="border-{{ strtolower(explode(' ', $personaje->nombre)[0]) }}">
+                            <div class="panel scroll-y " id="caja-personalidad" data-color="border-{{ strtolower(explode(' ', $personaje->nombre)[0]) }}">
                                 <div class="caja-content">
                                     <p>
                                         {{ $personaje->personalidad }}
@@ -59,7 +60,7 @@
                             <h2 data-color="{{ strtolower(explode(' ', $personaje->nombre)[0]) }}">
                                 Historia
                             </h2>
-                            <div class="panel scroll-y caja-scroll" data-color="border-{{ strtolower(explode(' ', $personaje->nombre)[0]) }}">
+                            <div class="panel scroll-y " id="caja-historia" data-color="border-{{ strtolower(explode(' ', $personaje->nombre)[0]) }}">
                                 <div class="caja-content">
                                     <p>
                                         {{ $personaje->historia }}
@@ -67,6 +68,7 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
                     </div>
                     <!--  -->
                 </div>
@@ -102,7 +104,7 @@
                                         <div class="col">
                                             {{-- Pantallas grandes --}}
                                             <button aria-label="{{ $relacion->descripcion }}" class="vacio d-none d-lg-block"
-                                            data-cooltipz-dir="right" data-cooltipz-size="large"
+                                            data-cooltipz-dir="top" data-cooltipz-size="large"
                                             data-color="tt-{{ strtolower(explode(' ', $relacion->nombre)[0]) }}">
                                                 <img src="{{ asset($relacion->icon) }}"
                                                 alt="{{ $relacion->nombre }} Icon" class="img-fluid">

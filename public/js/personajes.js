@@ -25,6 +25,10 @@ async function mostrarPj(event) {
         console.log(result)
         let contenedor = document.getElementById("pj-container");
         contenedor.innerHTML = result;
+        // Cambia la altura de la columna con media query
+        const x = window.matchMedia("(max-width: 767px)");
+        cambiarColumna(x);
+        x.onchange = () => cambiarColumna(x);
     })
       .catch(e => {
         console.log(e);
@@ -47,4 +51,24 @@ async function volverInicio() {
       console.log(e);
       return "Se ha producido un error. Inténtelo más tarde.";
     }
+}
+
+function cambiarColumna(x) {
+    const col = document.getElementById("col-info");
+    if (x.matches) {
+        // Pantalla pequeña
+        document.getElementById("caja-datos").classList.add("caja-scroll");
+        document.getElementById("caja-historia").classList.add("caja-scroll");
+        document.getElementById("caja-personalidad").classList.add("caja-scroll");
+        col.style.maxHeight = null;
+    } else {
+        document.getElementById("caja-datos").classList.remove("caja-scroll");
+        document.getElementById("caja-historia").classList.remove("caja-scroll");
+        document.getElementById("caja-personalidad").classList.remove("caja-scroll");
+        const img = document.getElementById("img-pj")
+        img.onload = () => {
+            col.style.maxHeight = `calc(50vw * ${img.height / img.width})`;
+        };
+    }
+    console.log(col);
   }
