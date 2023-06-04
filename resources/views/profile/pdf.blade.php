@@ -218,6 +218,89 @@
             </tr>
         </tbody>
     </table>
+    <br>
+    <br>
+    <br>
+    <br>
+    <table>
+        <thead>
+            <tr>
+                <th colspan="2" class="titulo"><h2>Colección de cartas</h2></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>Cartas de cumpleaños</th>
+                <td>
+                    {{ $user->cartas()->where('rareza', 5)->wherePivot('estado', 'coleccion')->count() }}
+                </td>
+            </tr>
+            <tr>
+                <th>Cartas 4*</th>
+                <td>
+                    {{ $user->cartas()->where('rareza', 4)->wherePivot('estado', 'coleccion')->count() }}
+                </td>
+            </tr>
+            <tr>
+                <th>Cartas 3*</th>
+                <td>
+                    {{ $user->cartas()->where('rareza', 3)->wherePivot('estado', 'coleccion')->count() }}
+                </td>
+            </tr>
+            <tr>
+                <th>Cartas 2*</th>
+                <td>
+                    {{ $user->cartas()->where('rareza', 2)->wherePivot('estado', 'coleccion')->count() }}
+                </td>
+            </tr>
+            <tr>
+                <th>Cartas 1*</th>
+                <td>
+                    {{ $user->cartas()->where('rareza', 1)->wherePivot('estado', 'coleccion')->count() }}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <table>
+        <thead>
+            <tr>
+                <th colspan="2" class="titulo"><h2>Lista de deseos</h2></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>Cartas de cumpleaños</th>
+                <td>
+                    {{ $user->cartas()->where('rareza', 5)->wherePivot('estado', 'deseo')->count() }}
+                </td>
+            </tr>
+            <tr>
+                <th>Cartas 4*</th>
+                <td>
+                    {{ $user->cartas()->where('rareza', 4)->wherePivot('estado', 'deseo')->count() }}
+                </td>
+            </tr>
+            <tr>
+                <th>Cartas 3*</th>
+                <td>
+                    {{ $user->cartas()->where('rareza', 3)->wherePivot('estado', 'deseo')->count() }}
+                </td>
+            </tr>
+            <tr>
+                <th>Cartas 2*</th>
+                <td>
+                    {{ $user->cartas()->where('rareza', 2)->wherePivot('estado', 'deseo')->count() }}
+                </td>
+            </tr>
+            <tr>
+                <th>Cartas 1*</th>
+                <td>
+                    {{ $user->cartas()->where('rareza', 1)->wherePivot('estado', 'deseo')->count() }}
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 
 </html>
