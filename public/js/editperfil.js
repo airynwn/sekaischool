@@ -5,7 +5,7 @@
 function previsualizar(event) {
     const archivos = event.target.files;
     if (archivos.length > 0) {
-        const imagenUrl = URL.createObjectURL(imageFiles[0]);
+        const imagenUrl = URL.createObjectURL(archivos[0]);
         const avatar = document.querySelector("#previsualizar-avatar");
         avatar.src = imagenUrl;
         console.log(avatar);
@@ -14,4 +14,11 @@ function previsualizar(event) {
         avatar.style.height = '250px';
         avatar.style.width = '250px';
     }
+}
+
+/**
+ * Descarga el PDF en una nueva ventana
+ */
+function abrirPDF() {
+    window.open("pdf", "blank");
 }

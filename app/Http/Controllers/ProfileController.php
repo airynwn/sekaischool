@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
+use Barryvdh\DomPDF\Facade\Pdf as PDF;
 
 class ProfileController extends Controller
 {
@@ -138,5 +139,18 @@ class ProfileController extends Controller
         $request->session()->regenerateToken();
 
         return Redirect::to('/');
+    }
+
+    public function descargarPDF(Request $request)
+    {
+        $user = $request->user();
+        $data = [
+            'user' => $user,
+            'avatar' => public_path('storage/'.$user->avatar),
+        ];
+
+        $pdf = PDF::loadView('profile.pdf', $data);
+
+        return $pdf->stream('perfil.pdf');
     }
 }
