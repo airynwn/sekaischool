@@ -117,6 +117,7 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
 Route::middleware(['auth', 'valido'])->group(function () {
     Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
     Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::get('/profile/pdf', [ProfileController::class, 'descargarPDF'])->name('profile.pdf');
     Route::get('/profile/{user}', [ProfileController::class, 'show'])->name('profile.show');
     Route::post('/profile/inventario', [ProfileController::class, 'inventario'])->name('profile.inventario');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

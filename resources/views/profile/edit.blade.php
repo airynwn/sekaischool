@@ -12,6 +12,12 @@
 @section('content')
 {{-- @include('profile.index') --}}
 <div class="container my-5">
+    <div class="row">
+        <div class="col d-flex justify-content-center espacio">
+            <a
+            class="text-white" onclick="abrirPDF()">Descargar PDF del perfil</a>
+        </div>
+    </div>
     <form
     action="{{ route('profile.update') }}"
     method="POST"
