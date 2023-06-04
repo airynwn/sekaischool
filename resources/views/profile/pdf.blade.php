@@ -16,6 +16,10 @@
             text-align: center;
         }
 
+        .bio {
+            word-break: break-word;
+        }
+
         .portada {
             text-align: center;
         }
@@ -175,7 +179,7 @@
             <tbody>
                 <tr>
                     <th>Biografía</th>
-                    <td>{{ $user->biografia ?? '' }}</td>
+                    <td class="bio">{{ $user->biografia ?? '' }}</td>
                 </tr>
             </tbody>
         </table>
