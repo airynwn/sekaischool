@@ -251,3 +251,29 @@ i {
     filter: drop-shadow(0 0 0.5em white);
     transition: all 0.5s;
 }
+
+
+/** Carrusel */
+
+.comic-container {
+    backdrop-filter: blur(0);
+}
+
+@media only screen and (min-width:768px) {
+    .comic-container {
+        height: 300px;
+        width: 404px;
+    }
+}
+
+.comic {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.comic.active {
+    opacity: 1;
+}

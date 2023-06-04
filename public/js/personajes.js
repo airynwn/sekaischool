@@ -29,6 +29,7 @@ async function mostrarPj(event) {
         const x = window.matchMedia("(max-width: 767px)");
         cambiarColumna(x);
         x.onchange = () => cambiarColumna(x);
+        carruselComics();
     })
       .catch(e => {
         console.log(e);
@@ -71,4 +72,30 @@ function cambiarColumna(x) {
         };
     }
     console.log(col);
-  }
+}
+
+/**
+ * Carrusel de viñetas
+ * Muestra cómics del grupo del personaje calculando cuál es el actual
+ */
+function carruselComics() {
+    const anterior = document.getElementById('comic-anterior');
+    const siguiente = document.getElementById('comic-siguiente');
+    const comics = document.querySelectorAll('.comic-container picture img');
+
+    let actual = 0;
+    comics[actual].classList.add('active');
+
+    anterior.addEventListener('click', () => {
+        comics[actual].classList.remove('active');
+        actual = (actual - 1 + comics.length) % comics.length;
+        comics[actual].classList.add('active');
+    });
+
+    siguiente.addEventListener('click', () => {
+        comics[actual].classList.remove('active');
+        actual = (actual + 1) % comics.length;
+        comics[actual].classList.add('active');
+    });
+
+}

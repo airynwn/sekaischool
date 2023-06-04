@@ -127,19 +127,32 @@
             </div>
             <div class="row centrar-fila">
                 <div class="col-auto">
-                    <div class="caja cuadrado">
+                    <h2 data-color="{{ strtolower(explode(' ', $personaje->nombre)[0]) }}">
+                        Comics de {{ $personaje->grupo->nombre }}
+                    </h2>
+                    <div class="comic-container">
                         <picture>
                             <img src="{{ asset($personaje->comic) }}"
                             alt="{{ explode(' ', $personaje->nombre)[0] }} 1koma"
-                            class="img-fluid">
+                            class="img-fluid comic active">
                         </picture>
+                        @foreach ($personaje->grupo->personajes as $pj)
+                        @if ($personaje->comic == $pj->comic)
+                            @continue
+                        @endif
+                        <picture>
+                            <img src="{{ asset($pj->comic) }}"
+                            alt="{{ explode(' ', $pj->nombre)[0] }} 1koma"
+                            class="img-fluid comic">
+                        </picture>
+                        @endforeach
                     </div>
                     <div class="tabs">
                         <div class="tab">
-                            <i class="fa-solid fa-chevron-left"></i>
+                            <i class="fa-solid fa-chevron-left" id="comic-anterior"></i>
                         </div>
                         <div class="tab">
-                            <i class="fa-solid fa-chevron-right"></i>
+                            <i class="fa-solid fa-chevron-right" id="comic-siguiente"></i>
                         </div>
                     </div>
                 </div>
