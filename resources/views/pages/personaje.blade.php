@@ -126,7 +126,7 @@
                 </div>
             </div>
             <div class="row centrar-fila">
-                <div class="col-auto">
+                <div class="col-auto d-flex flex-column align-items-center">
                     <h2 data-color="{{ strtolower(explode(' ', $personaje->nombre)[0]) }}">
                         Comics de {{ $personaje->grupo->nombre }}
                     </h2>

@@ -266,6 +266,13 @@ i {
     }
 }
 
+@media only screen and (max-width:768px) {
+    .comic-container {
+        height: 200px;
+        width: 269px;
+    }
+}
+
 .comic {
     position: absolute;
     top: 0;
