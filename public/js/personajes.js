@@ -28,7 +28,9 @@ async function mostrarPj(event) {
         // Cambia la altura de la columna con media query
         const x = window.matchMedia("(max-width: 767px)");
         cambiarColumna(x);
-        x.onchange = () => cambiarColumna(x);
+        x.onchange = () => {
+            cambiarColumna(x);
+        }
         carruselComics();
     })
       .catch(e => {
@@ -54,6 +56,9 @@ async function volverInicio() {
     }
 }
 
+/**
+ * Ajusta el tamaño de la columna según la pantalla
+ */
 function cambiarColumna(x) {
     const col = document.getElementById("col-info");
     if (x.matches) {
