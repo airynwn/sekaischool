@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Respuesta;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -16,7 +17,7 @@ class RespuestasSeeder extends Seeder
     public function run()
     {
         // php artisan db:seed --class=RespuestasSeeder
-        DB::table('respuestas')->insert([
+        $respuestas = [
             // ? ****************** LEO/NEED  ****************** //
             // ********* ICHIKA  ********* //
             [
@@ -27,7 +28,7 @@ class RespuestasSeeder extends Seeder
             ],
             // ** CUMPLEAÑOS **
             [
-                'respuesta' => '11 de Agosto',
+                'respuesta' => '11-08',
                 'pj_id' => 1,
                 'pregunta_id' => 2,
             ],
@@ -94,7 +95,7 @@ class RespuestasSeeder extends Seeder
                 ],
                 // ** CUMPLEAÑOS **
                 [
-                    'respuesta' => '9 de Mayo',
+                    'respuesta' => '09-05',
                     'pj_id' => 2,
                     'pregunta_id' => 2,
                 ],
@@ -161,7 +162,7 @@ class RespuestasSeeder extends Seeder
                 ],
                 // ** CUMPLEAÑOS **
                 [
-                    'respuesta' => '27 de Octubre',
+                    'respuesta' => '27-10',
                     'pj_id' => 3,
                     'pregunta_id' => 2,
                 ],
@@ -228,7 +229,7 @@ class RespuestasSeeder extends Seeder
                 ],
                 // ** CUMPLEAÑOS **
                 [
-                    'respuesta' => '8 de Enero',
+                    'respuesta' => '08-01',
                     'pj_id' => 4,
                     'pregunta_id' => 2,
                 ],
@@ -290,7 +291,7 @@ class RespuestasSeeder extends Seeder
                 ],
                 // ** CUMPLEAÑOS **
                 [
-                    'respuesta' => '14 de Abril',
+                    'respuesta' => '14-04',
                     'pj_id' => 5,
                     'pregunta_id' => 2,
                 ],
@@ -357,7 +358,7 @@ class RespuestasSeeder extends Seeder
                 ],
                 // ** CUMPLEAÑOS **
                 [
-                    'respuesta' => '5 de Octubre',
+                    'respuesta' => '05-10',
                     'pj_id' => 6,
                     'pregunta_id' => 2,
                 ],
@@ -418,7 +419,7 @@ class RespuestasSeeder extends Seeder
                 ],
                 // ** CUMPLEAÑOS **
                 [
-                    'respuesta' => '19 de Marzo',
+                    'respuesta' => '19-03',
                     'pj_id' => 7,
                     'pregunta_id' => 2,
                 ],
@@ -473,7 +474,7 @@ class RespuestasSeeder extends Seeder
                 ],
                 // ** CUMPLEAÑOS **
                 [
-                    'respuesta' => '6 de Diciembre',
+                    'respuesta' => '06-12',
                     'pj_id' => 8,
                     'pregunta_id' => 2,
                 ],
@@ -535,7 +536,7 @@ class RespuestasSeeder extends Seeder
                 ],
                 // ** CUMPLEAÑOS **
                 [
-                    'respuesta' => '2 de Marzo',
+                    'respuesta' => '02-03',
                     'pj_id' => 9,
                     'pregunta_id' => 2,
                 ],
@@ -596,7 +597,7 @@ class RespuestasSeeder extends Seeder
                 ],
                 // ** CUMPLEAÑOS **
                 [
-                    'respuesta' => '26 de Julio',
+                    'respuesta' => '26-07',
                     'pj_id' => 10,
                     'pregunta_id' => 2,
                 ],
@@ -663,7 +664,7 @@ class RespuestasSeeder extends Seeder
                 ],
                 // ** CUMPLEAÑOS **
                 [
-                    'respuesta' => '12 de Noviembre',
+                    'respuesta' => '12-11',
                     'pj_id' => 11,
                     'pregunta_id' => 2,
                 ],
@@ -724,7 +725,7 @@ class RespuestasSeeder extends Seeder
                 ],
                 // ** CUMPLEAÑOS **
                 [
-                    'respuesta' => '25 de Mayo',
+                    'respuesta' => '25-05',
                     'pj_id' => 12,
                     'pregunta_id' => 2,
                 ],
@@ -786,7 +787,7 @@ class RespuestasSeeder extends Seeder
                 ],
                 // ** CUMPLEAÑOS **
                 [
-                    'respuesta' => '17 de Mayo',
+                    'respuesta' => '17-05',
                     'pj_id' => 13,
                     'pregunta_id' => 2,
                 ],
@@ -853,7 +854,7 @@ class RespuestasSeeder extends Seeder
                 ],
                 // ** CUMPLEAÑOS **
                 [
-                    'respuesta' => '9 de Septiembre',
+                    'respuesta' => '09-09',
                     'pj_id' => 14,
                     'pregunta_id' => 2,
                 ],
@@ -920,7 +921,7 @@ class RespuestasSeeder extends Seeder
                 ],
                 // ** CUMPLEAÑOS **
                 [
-                    'respuesta' => '20 de Julio',
+                    'respuesta' => '20-07',
                     'pj_id' => 15,
                     'pregunta_id' => 2,
                 ],
@@ -981,7 +982,7 @@ class RespuestasSeeder extends Seeder
                 ],
                 // ** CUMPLEAÑOS **
                 [
-                    'respuesta' => '24 de Junio',
+                    'respuesta' => '24-06',
                     'pj_id' => 16,
                     'pregunta_id' => 2,
                 ],
@@ -1049,7 +1050,7 @@ class RespuestasSeeder extends Seeder
                 ],
                 // ** CUMPLEAÑOS **
                 [
-                    'respuesta' => '10 de Febrero',
+                    'respuesta' => '10-02',
                     'pj_id' => 17,
                     'pregunta_id' => 2,
                 ],
@@ -1104,7 +1105,7 @@ class RespuestasSeeder extends Seeder
                 ],
                 // ** CUMPLEAÑOS **
                 [
-                    'respuesta' => '27 de Enero',
+                    'respuesta' => '27-01',
                     'pj_id' => 18,
                     'pregunta_id' => 2,
                 ],
@@ -1165,7 +1166,7 @@ class RespuestasSeeder extends Seeder
                 ],
                 // ** CUMPLEAÑOS **
                 [
-                    'respuesta' => '30 de Abril',
+                    'respuesta' => '30-04',
                     'pj_id' => 19,
                     'pregunta_id' => 2,
                 ],
@@ -1220,7 +1221,7 @@ class RespuestasSeeder extends Seeder
                 ],
                 // ** CUMPLEAÑOS **
                 [
-                    'respuesta' => '27 de Agosto',
+                    'respuesta' => '27-08',
                     'pj_id' => 20,
                     'pregunta_id' => 2,
                 ],
@@ -1272,6 +1273,16 @@ class RespuestasSeeder extends Seeder
                     'pj_id' => 20,
                     'pregunta_id' => 11,
                 ],
-        ]);
+        ];
+
+        foreach ($respuestas as $respuesta) {
+            Respuesta::updateOrCreate(
+                [
+                'pj_id' => $respuesta['pj_id'],
+                'pregunta_id' => $respuesta['pregunta_id']
+                ],
+                $respuesta
+            );
+        }
     }
 }
