@@ -74,17 +74,6 @@ class Personaje extends Model
      */
     public function relaciones()
     {
-        // $first = DB::table('relaciones')
-        //     ->select('pj1_id as id', 'descripcion')
-        //     ->where('pj2_id', '=', $this->id)
-        //     ->join('personajes', 'relaciones.id', '=', 'personajes.id');
-
-        // $second = DB::table('relaciones')
-        //     ->select('pj2_id as id', 'descripcion')
-        //     ->where('pj1_id', '=', $this->id)
-        //     ->join('personajes', 'relaciones.id', '=', 'personajes.id');
-
-        // return $first->unionAll($second)->get();
 
         $first = DB::table('relaciones')
             ->join('personajes as p', 'relaciones.pj1_id', '=', 'p.id')
@@ -97,5 +86,17 @@ class Personaje extends Model
             ->select('p.id', 'relaciones.descripcion', 'p.nombre', 'p.icon');
 
         return $first->unionAll($second)->get();
+    }
+
+    /**
+     * Devuelve una colección con todos los cumpleaños de los personajes.
+     */
+    public static function cumples()
+    {
+        return Personaje::join('respuestas as r', 'personajes.id', '=', 'r.pj_id')
+                ->join('preguntas as p', 'p.id', '=', 'r.pregunta_id')
+                ->where('p.id', 2)
+                ->select('r.respuesta', 'personajes.nombre')
+                ->get();
     }
 }
