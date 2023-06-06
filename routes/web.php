@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CartaController;
 use App\Http\Controllers\GrupoController;
+use App\Http\Controllers\IndexController;
 use App\Http\Controllers\PersonajeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\PreguntaController;
@@ -24,13 +25,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', [IndexController::class, 'index'])->name('index');
+Route::get('/cumples', [IndexController::class, 'mostrarCumples'])->name('cumples');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
 
 /************* Guest *************/
         /**** Cartas ****/
