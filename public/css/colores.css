@@ -400,3 +400,95 @@
 [data-color='kaito'] {
     color: var(--kaito)
 }
+
+/********* FULLCALENDAR */
+
+/*? LN */
+
+.ichika {
+    background-color: var(--ichika)
+}
+
+.saki {
+    background-color: var(--saki);
+}
+
+.honami {
+    background-color: var(--honami)
+}
+
+.shiho {
+    background-color: var(--shiho);
+}
+
+/*? MMJ */
+
+.minori {
+    background-color: var(--minori)
+}
+
+.haruka {
+    background-color: var(--haruka)
+}
+
+.airi {
+    background-color: var(--airi)
+}
+
+.shizuku {
+    background-color: var(--shizuku)
+}
+
+/*? VBS */
+
+.kohane {
+    background-color: var(--kohane)
+}
+
+.an {
+    background-color: var(--an)
+}
+
+.akito {
+    background-color: var(--akito)
+}
+
+.toya {
+    background-color: var(--toya)
+}
+
+/*? WXS */
+
+.tsukasa {
+    background-color: var(--tsukasa)
+}
+
+.emu {
+    background-color: var(--emu)
+}
+
+.nene {
+    background-color: var(--nene)
+}
+
+.rui {
+    background-color: var(--rui)
+}
+
+/*? N25 */
+
+.kanade {
+    background-color: var(--kanade)
+}
+
+.mafuyu {
+    background-color: var(--mafuyu)
+}
+
+.ena {
+    background-color: var(--ena)
+}
+
+.mizuki {
+    background-color: var(--mizuki)
+}
