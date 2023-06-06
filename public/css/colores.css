@@ -405,90 +405,90 @@
 
 /*? LN */
 
-.ichika {
-    background-color: var(--ichika)
+.fc-cumple-ichika {
+    background-color: var(--ichika) !important;
 }
 
-.saki {
-    background-color: var(--saki);
+.fc-cumple-saki {
+    background-color: var(--saki) !important;
 }
 
-.honami {
-    background-color: var(--honami)
+.fc-cumple-honami {
+    background-color: var(--honami) !important;
 }
 
-.shiho {
-    background-color: var(--shiho);
+.fc-cumple-shiho {
+    background-color: var(--shiho) !important;
 }
 
 /*? MMJ */
 
-.minori {
-    background-color: var(--minori)
+.fc-cumple-minori {
+    background-color: var(--minori) !important;
 }
 
-.haruka {
-    background-color: var(--haruka)
+.fc-cumple-haruka {
+    background-color: var(--haruka) !important;
 }
 
-.airi {
-    background-color: var(--airi)
+.fc-cumple-airi {
+    background-color: var(--airi) !important;
 }
 
-.shizuku {
-    background-color: var(--shizuku)
+.fc-cumple-shizuku {
+    background-color: var(--shizuku) !important;
 }
 
 /*? VBS */
 
-.kohane {
-    background-color: var(--kohane)
+.fc-cumple-kohane {
+    background-color: var(--kohane) !important;
 }
 
-.an {
-    background-color: var(--an)
+.fc-cumple-an {
+    background-color: var(--an) !important;
 }
 
-.akito {
-    background-color: var(--akito)
+.fc-cumple-akito {
+    background-color: var(--akito) !important;
 }
 
-.toya {
-    background-color: var(--toya)
+.fc-cumple-toya {
+    background-color: var(--toya) !important;
 }
 
 /*? WXS */
 
-.tsukasa {
-    background-color: var(--tsukasa)
+.fc-cumple-tsukasa {
+    background-color: var(--tsukasa) !important;
 }
 
-.emu {
-    background-color: var(--emu)
+.fc-cumple-emu {
+    background-color: var(--emu) !important;
 }
 
-.nene {
-    background-color: var(--nene)
+.fc-cumple-nene {
+    background-color: var(--nene) !important;
 }
 
-.rui {
-    background-color: var(--rui)
+.fc-cumple-rui {
+    background-color: var(--rui) !important;
 }
 
 /*? N25 */
 
-.kanade {
-    background-color: var(--kanade)
+.fc-cumple-kanade {
+    background-color: var(--kanade) !important;
 }
 
-.mafuyu {
-    background-color: var(--mafuyu)
+.fc-cumple-mafuyu {
+    background-color: var(--mafuyu) !important;
 }
 
-.ena {
-    background-color: var(--ena)
+.fc-cumple-ena {
+    background-color: var(--ena) !important;
 }
 
-.mizuki {
-    background-color: var(--mizuki)
+.fc-cumple-mizuki {
+    background-color: var(--mizuki) !important;
 }
