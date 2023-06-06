@@ -28,11 +28,15 @@ class IndexController extends Controller
 
         foreach ($cumples as $cumple) {
             $event = [
-                'title' => 'Cumpleaños de ' . explode(' ', $cumple->nombre)[0],
+                'title' => explode(' ', $cumple->nombre)[0],
                 'start' => Carbon::createFromFormat('d-m', $cumple->respuesta),
                 'allDay' => true,
-                'classNames' => strtolower(explode(' ', $cumple->nombre)[0]),
-                'textColor' => 'black',
+                'classNames' => [
+                    'fc-cumple-' . strtolower(explode(' ', $cumple->nombre)[0]),
+                    'fc-negro',
+                    'fc-centro'
+                ],
+                'display' => 'background',
             ];
 
             $events[] = $event;
