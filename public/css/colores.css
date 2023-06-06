@@ -400,3 +400,95 @@
 [data-color='kaito'] {
     color: var(--kaito)
 }
+
+/********* FULLCALENDAR */
+
+/*? LN */
+
+.fc-cumple-ichika {
+    background-color: var(--ichika) !important;
+}
+
+.fc-cumple-saki {
+    background-color: var(--saki) !important;
+}
+
+.fc-cumple-honami {
+    background-color: var(--honami) !important;
+}
+
+.fc-cumple-shiho {
+    background-color: var(--shiho) !important;
+}
+
+/*? MMJ */
+
+.fc-cumple-minori {
+    background-color: var(--minori) !important;
+}
+
+.fc-cumple-haruka {
+    background-color: var(--haruka) !important;
+}
+
+.fc-cumple-airi {
+    background-color: var(--airi) !important;
+}
+
+.fc-cumple-shizuku {
+    background-color: var(--shizuku) !important;
+}
+
+/*? VBS */
+
+.fc-cumple-kohane {
+    background-color: var(--kohane) !important;
+}
+
+.fc-cumple-an {
+    background-color: var(--an) !important;
+}
+
+.fc-cumple-akito {
+    background-color: var(--akito) !important;
+}
+
+.fc-cumple-toya {
+    background-color: var(--toya) !important;
+}
+
+/*? WXS */
+
+.fc-cumple-tsukasa {
+    background-color: var(--tsukasa) !important;
+}
+
+.fc-cumple-emu {
+    background-color: var(--emu) !important;
+}
+
+.fc-cumple-nene {
+    background-color: var(--nene) !important;
+}
+
+.fc-cumple-rui {
+    background-color: var(--rui) !important;
+}
+
+/*? N25 */
+
+.fc-cumple-kanade {
+    background-color: var(--kanade) !important;
+}
+
+.fc-cumple-mafuyu {
+    background-color: var(--mafuyu) !important;
+}
+
+.fc-cumple-ena {
+    background-color: var(--ena) !important;
+}
+
+.fc-cumple-mizuki {
+    background-color: var(--mizuki) !important;
+}

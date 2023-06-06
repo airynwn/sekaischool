@@ -19,7 +19,7 @@
                     </li>
                 @endif
                 <li class="nav-item">
-                    <a class="nav-link active brillo" href="{{ route('dashboard') }}">Inicio</a>
+                    <a class="nav-link active brillo" href="{{ route('index') }}">Inicio</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active brillo" href="{{ route('pages.cartas') }}">Cartas</a>
@@ -42,7 +42,6 @@
                     </a>
                     <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end">
                         <li><a class="dropdown-item" href="{{ route('profile.index') }}">Perfil</a></li>
-                        <li><a class="dropdown-item" href="{{ route('dashboard') }}">Dashboard</a></li>
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
                             <li><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();this.closest('form').submit();">Cerrar sesión</a></li>
