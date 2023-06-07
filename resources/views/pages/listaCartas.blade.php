@@ -10,6 +10,10 @@
                 <img src="{{ asset($carta->idolized) }}"
                 alt="{{ $carta->nombre }} Idolized" class="img-fluid card-idolized">
             </picture>
+            <img src="img/icons/{{ $carta->rareza }}_star.png" alt="Rareza {{ $carta->rareza}}"
+            class="carta-rareza">
+            <img src="img/icons/{{ $carta->atributo }}.png" alt="Atributo {{ $carta->atributo }}"
+            class="carta-atributo">
         </figure>
         @if (auth()->check())
             <div class="tabs">

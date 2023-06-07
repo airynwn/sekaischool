@@ -1,7 +1,7 @@
 @if (isset($post))
 <div class="row">
-    <div class="col">
-      <img src="{{ asset($grupo->logo) }}" alt="Logo {{ $grupo->nombre }}" class="img-fluid" width="150">
+    <div class="col" x-data="{ logo: '{{ asset($grupo->logo) }}' }">
+        <img :src="logo" :alt="'Logo ' + '{{ $grupo->nombre }}'" class="img-fluid" width="150">
     </div>
   </div>
   <div class="row">
@@ -47,16 +47,19 @@
     </div>
   </div>
   </div>
-  <div class="row row-cols-2 row-cols-md-4 espacio">
-    @foreach ($grupo->personajes()->get() as $pj)
-    <div class="col center">
-      <figure>
-        <picture>
-          <img src="{{ asset($pj->sticker) }}" alt="{{ $pj->nombre }} Sticker" class="img-fluid">
-        </picture>
-      </figure>
+  <div
+  x-data="{ personajes: {{ $grupo->personajes()->get()->toJson() }} }">
+    <div class="row row-cols-2 row-cols-md-4 espacio">
+      <template x-for="pj in personajes">
+        <div class="col center">
+          <figure>
+            <picture>
+              <img :src="pj.sticker" :alt="pj.nombre + ' Sticker'" class="img-fluid">
+            </picture>
+          </figure>
+        </div>
+      </template>
     </div>
-    @endforeach
   </div>
 @else
 <div class="row my-5">

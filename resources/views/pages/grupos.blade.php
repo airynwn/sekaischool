@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{{ asset('css/colores.css') }}">
     <script type="text/javascript" src="{{ asset('js/sekaischool.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/grupos.js') }}"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.1/dist/cdn.min.js"></script>
 @endsection
 {{-- Main --}}
 @php
@@ -34,18 +35,6 @@
         @endforeach
     </div>
     <hr>
-    {{-- <div class="row">
-        @foreach ($grupos as $grupo)
-        <div class="col d-flex flex-column justify-content-center gap-3">
-            <button class="opcion btn-grupo"
-            data-color="bg-grupo-{{ $grupo->id }}"
-            data-grupo-id="{{ $grupo->id }}"
-            onclick="mostrarGrupo(event)">
-                {{ $grupo->nombre }}
-            </button>
-        </div>
-        @endforeach
-    </div> --}}
 </div>
 <div class="espacio"></div>
     {{-- Contenido --}}

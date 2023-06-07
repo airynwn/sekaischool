@@ -20,5 +20,5 @@ function previsualizar(event) {
  * Descarga el PDF en una nueva ventana
  */
 function abrirPDF() {
-    window.open("pdf", "blank");
+    window.open("pdf", "_blank");
 }

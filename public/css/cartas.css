@@ -311,9 +311,28 @@ button.vacio {
     transition: all 0.5s;
 }
 
+[class^="select-"] {
+    cursor: pointer;
+}
+
 .rareza {
     background-color: #ae83ff77;
     padding: 0.5em;
     margin: 0.25em;
     border-radius: 30px;
+}
+
+.carta-rareza,
+.carta-atributo {
+    position: absolute;
+    top: 0;
+    opacity: 0.4;
+}
+
+.carta-rareza {
+    left: 0;
+}
+
+.carta-atributo {
+    right: 0;
 }

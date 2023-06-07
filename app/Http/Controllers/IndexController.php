@@ -36,8 +36,10 @@ class IndexController extends Controller
                     'fc-negro',
                     'fc-centro'
                 ],
-                'display' => 'background',
             ];
+            if ($cumples->where('respuesta', $cumple->respuesta)->count() == 1) {
+                 $event['display'] = 'background';
+            }
 
             $events[] = $event;
 
