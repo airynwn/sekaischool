@@ -14,7 +14,7 @@
     @yield('css')
 
     <!-- FontAwesome -->
-    <script src="https://kit.fontawesome.com/5b4a872535.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/56ace10afe.js" crossorigin="anonymous"></script>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">

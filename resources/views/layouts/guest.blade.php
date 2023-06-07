@@ -15,7 +15,7 @@
     @yield('css')
 
     <!-- Icons -->
-    <script src="https://kit.fontawesome.com/5b4a872535.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/56ace10afe.js" crossorigin="anonymous"></script>
 </head>
 <body>
     {{-- Navbar --}}
