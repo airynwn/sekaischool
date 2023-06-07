@@ -13,7 +13,7 @@
             initialView: 'dayGridMonth',
             themeSystem: 'bootstrap5',
             locale: 'es',
-            timeZone: 'local',
+            // timeZone: 'local',
             aspectRatio: 1.75,
             events: function(fetchInfo, successCallback, failureCallback) {
                 fetch('/cumples')
