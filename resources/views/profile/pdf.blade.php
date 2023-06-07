@@ -206,17 +206,17 @@
             </tr>
             <tr>
                 <th>Personaje favorito</th>
-                <td class="{{ strtolower(explode(' ', $user->pj_fav->nombre)[0]) }} color">
+                <td class="{{ isset($user->pj_fav) ? strtolower(explode(' ', $user->pj_fav->nombre)[0]) . ' color' : '' }}">
                     <strong>
-                        {{ $user->pj_fav->nombre ?? '' }}
+                        {{ $user->pj_fav->nombre ?? 'Ninguno' }}
                     </strong>
                 </td>
             </tr>
             <tr>
                 <th>Grupo favorito</th>
-                <td class="{{ 'grupo-'. $user->grupo_fav_id ?? '' }} color">
+                <td class="{{ isset($user->grupo_fav_id) ? 'grupo-'.$user->grupo_fav_id.' color' : '' }}">
                     <strong>
-                        {{ $user->grupo_fav->nombre ?? '' }}
+                        {{ $user->grupo_fav->nombre ?? 'Ninguno' }}
                     </strong>
                 </td>
             </tr>
