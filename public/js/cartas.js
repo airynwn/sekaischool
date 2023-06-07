@@ -34,38 +34,15 @@ async function anadirCarta(event) {
     const cartasModal = new bootstrap.Modal(document.getElementById('anadirCartaModal'));
     cartasModal.show();
 
-  }
-
-async function buscarCartas(event) {
-    event.preventDefault();
-    // Empieza con la página en 0 y el contenedor de cartas vacío
-    page = 0;
-    const contenedor = document.getElementById("cartas-container");
-    contenedor.innerHTML = "";
-    await cargarCartas();
 }
 
-// Página inicial
-let page = 1;
-let cargando = false;
+// formData que contiene los filtros
+let formDataBusqueda;
 
-window.addEventListener('scroll', function() {
-    // Al scrollear hacia abajo se cargan más cartas
-  if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-    cargarCartas();
-  }
-});
-
-async function cargarCartas() {
-    if (cargando) {
-        return;
-    }
-
-    // Empieza sumando una página (0 --> 1)
-    cargando = true;
-    page++;
-
-    // Construye el formulario para pasarle los filtros al scroll
+/**
+ * Obtiene los filtros seleccionados en el formulario para buscar cartas
+ */
+function obtenerFormData() {
     const form = document.getElementById("filter-wrapper");
 
     let formData = new FormData(form);
@@ -87,9 +64,47 @@ async function cargarCartas() {
     formData.append("atributos", JSON.stringify(atributos));
     formData.append("pjs", JSON.stringify(pjs));
 
+    formDataBusqueda = formData;
+}
+
+async function buscarCartas(event) {
+    event.preventDefault();
+    // Empieza con la página en 0 y el contenedor de cartas vacío
+    page = 0;
+    const contenedor = document.getElementById("cartas-container");
+    contenedor.innerHTML = "";
+    obtenerFormData();
+    await cargarCartas();
+}
+
+// Página inicial
+let page = 1;
+let cargando = false;
+
+// Datos iniciales
+window.onload = () => {
+    obtenerFormData();
+}
+
+window.addEventListener('scroll', function() {
+    // Al scrollear hacia abajo se cargan más cartas
+    if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+        cargarCartas();
+    }
+});
+
+async function cargarCartas() {
+    if (cargando) {
+        return;
+    }
+
+    // Empieza sumando una página (0 --> 1)
+    cargando = true;
+    page++;
+
     await fetch(`/cartas/buscar?page=${page}`, {
           method: "POST",
-          body: formData,
+          body: formDataBusqueda,
     })
     .then(response => {
         if (response.ok) {
