@@ -63,7 +63,7 @@
                     </span>
                     <span>
                         <picture>
-                            <img src="img/icons/birthday.png" alt="Cumpleaños/Aniversario"
+                            <img src="img/icons/5_star.png" alt="Cumpleaños/Aniversario"
                             data-id="5" onclick="seleccionar(this)" class="select-rareza rareza">
                         </picture>
                     </span>
