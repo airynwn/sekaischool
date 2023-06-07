@@ -38,71 +38,15 @@ async function anadirCarta(event) {
 
 async function buscarCartas(event) {
     event.preventDefault();
-
-    const form = event.target;
-    // Objeto con los datos del formulario (_token, grupo, rareza, atributo, personaje)
-    let formData = new FormData(form);
-
-    let grupos = [];
-    const listaGrupos = document.querySelectorAll(".select-grupo.selected");
-    listaGrupos.forEach((e) => {
-        let id = e.getAttribute("data-id");
-        grupos.push(id);
-    });
-
-    let rareza = [];
-    const listaRareza = document.querySelectorAll(".select-rareza.selected");
-    listaRareza.forEach((e) => {
-        let id = e.getAttribute("data-id");
-        rareza.push(id);
-    });
-
-    let atributos = [];
-    const listaAtributos = document.querySelectorAll(".select-atributo.selected");
-    listaAtributos.forEach((e) => {
-        let id = e.getAttribute("data-id");
-        atributos.push(id);
-    });
-
-    let pjs = [];
-    const listaPjs = document.querySelectorAll(".select-personaje.selected");
-    listaPjs.forEach((e) => {
-        let id = e.getAttribute("data-id");
-        pjs.push(id);
-    });
-
-    // Construye formData con los datos seleccionados
-    // pasados a JSON para enviar al controller
-    formData.append("grupos", JSON.stringify(grupos));
-    formData.append("rareza", JSON.stringify(rareza));
-    formData.append("atributos", JSON.stringify(atributos));
-    formData.append("pjs", JSON.stringify(pjs));
-
-    await fetch('/cartas/buscar', {
-        method: "POST",
-        body: formData,
-      })
-      .then(response => {
-        if (response.ok) {
-            return response.text();
-        } else {
-            throw new Error(response.text());
-        }
-    })
-      .then(result => {
-        console.log(result)
-        let contenedor = document.getElementById("cartas-container");
-        contenedor.innerHTML = result;
-    })
-      .catch(e => {
-        console.log(e);
-        return "Se ha producido un error. Inténtelo más tarde.";
-    });
-
+    // Empieza con la página en 0 y el contenedor de cartas vacío
+    page = 0;
+    const contenedor = document.getElementById("cartas-container");
+    contenedor.innerHTML = "";
+    await cargarCartas();
 }
 
 // Página inicial
-let page = 2;
+let page = 1;
 let cargando = false;
 
 window.addEventListener('scroll', function() {
@@ -112,24 +56,59 @@ window.addEventListener('scroll', function() {
   }
 });
 
-function cargarCartas() {
-  if (cargando) {
-    return;
-  }
-
-  cargando = true;
-
-  const xhr = new XMLHttpRequest();
-  xhr.open('GET', '/cartas?page=' + page, true);
-  xhr.onload = () => {
-    if (xhr.status === 200) {
-      const parser = new DOMParser();
-      const responseHtml = parser.parseFromString(xhr.responseText, 'text/html');
-      const nuevasCartas = responseHtml.getElementById('cartas-container').innerHTML;
-      document.getElementById('cartas-container').insertAdjacentHTML('beforeend', nuevasCartas);
-      page++;
-      cargando = false;
+async function cargarCartas() {
+    if (cargando) {
+        return;
     }
-  };
-  xhr.send();
+
+    // Empieza sumando una página (0 --> 1)
+    cargando = true;
+    page++;
+
+    // Construye el formulario para pasarle los filtros al scroll
+    const form = document.getElementById("filter-wrapper");
+
+    let formData = new FormData(form);
+
+    const listaGrupos = document.querySelectorAll(".select-grupo.selected");
+    const grupos = Array.from(listaGrupos, e => e.getAttribute("data-id"));
+
+    const listaRareza = document.querySelectorAll(".select-rareza.selected");
+    const rareza = Array.from(listaRareza, e => e.getAttribute("data-id"));
+
+    const listaAtributos = document.querySelectorAll(".select-atributo.selected");
+    const atributos = Array.from(listaAtributos, e => e.getAttribute("data-id"));
+
+    const listaPjs = document.querySelectorAll(".select-personaje.selected");
+    const pjs = Array.from(listaPjs, e => e.getAttribute("data-id"));
+
+    formData.append("grupos", JSON.stringify(grupos));
+    formData.append("rareza", JSON.stringify(rareza));
+    formData.append("atributos", JSON.stringify(atributos));
+    formData.append("pjs", JSON.stringify(pjs));
+
+    await fetch(`/cartas/buscar?page=${page}`, {
+          method: "POST",
+          body: formData,
+    })
+    .then(response => {
+        if (response.ok) {
+            return response.text();
+        } else {
+            throw new Error(response.text());
+        }
+    })
+    .then(result => {
+        // Añade las nuevas cartas al final del contenedor al scrollear
+        console.log(result);
+        const contenedor = document.getElementById("cartas-container");
+        contenedor.insertAdjacentHTML('beforeend', result);
+        cargando = false;
+    })
+    .catch(e => {
+        console.log(e);
+        const contenedor = document.getElementById("cartas-container");
+        contenedor.innerHTML = "<p>Se ha producido un erorr. Inténtelo más tarde</p>"
+
+    });
 }
