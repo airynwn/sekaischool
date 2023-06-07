@@ -275,7 +275,7 @@ class CartaController extends Controller
         ->when($buscarPjs, function ($query) use ($buscarPjs) {
             return $query->whereIn('pj_id', $buscarPjs);
         })
-        ->get();
+        ->orderBy('id')->paginate(4);
 
         return view('pages.listaCartas', [
             'cartas' => $cartas,
