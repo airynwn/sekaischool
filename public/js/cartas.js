@@ -88,9 +88,9 @@ window.onload = () => {
 
 window.addEventListener('scroll', function() {
     // Al scrollear hacia abajo se cargan más cartas
-  if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-    cargarCartas();
-  }
+    if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+        cargarCartas();
+    }
 });
 
 async function cargarCartas() {
