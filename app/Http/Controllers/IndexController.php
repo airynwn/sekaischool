@@ -31,6 +31,7 @@ class IndexController extends Controller
                 'title' => explode(' ', $cumple->nombre)[0],
                 'start' => Carbon::createFromFormat('d-m', $cumple->respuesta),
                 'allDay' => true,
+                'textColor' => 'black',
                 'classNames' => [
                     'fc-cumple-' . strtolower(explode(' ', $cumple->nombre)[0]),
                     'fc-negro',
