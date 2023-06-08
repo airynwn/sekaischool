@@ -115,6 +115,15 @@
                     Buscar
                 </button>
             </div>
+            <div class="caja-icons">
+                <button type="reset" class="buscar" onclick="limpiarFiltros(event)">
+                <span class="fa-stack">
+                    <i class="fa-regular fa-circle fa-stack-2x"></i>
+                    <i class="fa-solid fa-filter-circle-xmark fa-stack-1x"></i>
+                </span>
+                Limpiar filtros
+                </button>
+            </div>
         </form>
     </div>
     <div class="col" id="cartas">

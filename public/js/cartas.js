@@ -67,6 +67,13 @@ function obtenerFormData() {
     formDataBusqueda = formData;
 }
 
+function limpiarFiltros(event) {
+    let selected = document.querySelectorAll('.selected');
+    selected.forEach(e => {
+        e.classList.remove('selected');
+    });
+}
+
 async function buscarCartas(event) {
     event.preventDefault();
     // Empieza con la página en 0 y el contenedor de cartas vacío
