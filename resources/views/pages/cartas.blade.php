@@ -26,7 +26,7 @@
                 <span class="opcion">Grupo</span>
                 <div class="caja-content">
                     @foreach ($grupos as $grupo)
-                        <span data-id="{{ $grupo->id }}"  class="select-grupo"
+                        <span data-id="{{ $grupo->id }}"  class="select-grupos"
                             onclick="seleccionar(this)">
                             {{ $grupo->nombre }}
                         </span>
@@ -75,31 +75,31 @@
                 <div class="caja-icons">
                     <span>
                         <picture>
-                            <img src="img/icons/cute.png" alt="Cute" class="select-atributo"
+                            <img src="img/icons/cute.png" alt="Cute" class="select-atributos"
                             data-id="cute" onclick="seleccionar(this)">
                         </picture>
                     </span>
                     <span>
                         <picture>
-                            <img src="img/icons/mysterious.png" alt="Mysterious" class="select-atributo"
+                            <img src="img/icons/mysterious.png" alt="Mysterious" class="select-atributos"
                             data-id="mysterious" onclick="seleccionar(this)">
                         </picture>
                     </span>
                     <span>
                         <picture>
-                            <img src="img/icons/cool.png" alt="Cool" class="select-atributo"
+                            <img src="img/icons/cool.png" alt="Cool" class="select-atributos"
                             data-id="cool" onclick="seleccionar(this)">
                         </picture>
                     </span>
                     <span>
                         <picture>
-                            <img src="img/icons/happy.png" alt="Happy" class="select-atributo"
+                            <img src="img/icons/happy.png" alt="Happy" class="select-atributos"
                             data-id="happy" onclick="seleccionar(this)">
                         </picture>
                     </span>
                     <span>
                         <picture>
-                            <img src="img/icons/pure.png" alt="Pure" class="select-atributo"
+                            <img src="img/icons/pure.png" alt="Pure" class="select-atributos"
                             data-id="pure" onclick="seleccionar(this)">
                         </picture>
                     </span>

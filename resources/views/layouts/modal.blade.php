@@ -12,7 +12,7 @@
                         <div class="col">
                             <picture>
                                 <img src="{{ $pj->chibi }}" alt="Chibi {{ $pj->nombre }}"
-                                class="img-fluid select-personaje"
+                                class="img-fluid select-pjs"
                                 data-id="{{ $pj->id }}" onclick="seleccionar(this)">
                             </picture>
                         </div>
