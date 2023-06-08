@@ -41,8 +41,18 @@ let formDataBusqueda;
 
 function obtenerCookie() {
     const filtros = localStorage.getItem("filtros");
-    if (filtros === null) {
-        filtros.setItem(JSON.stringify(formDataBusqueda));
+    if (filtros !== null) {
+        const obj = JSON.parse(filtros);
+        console.log(obj);
+        // {grupos: Array(1), rareza: Array(0), atributos: Array(0), pjs: Array(0)}
+        for (let [atrib, listaSel] of Object.entries(obj)) {
+            // atrib: grupos, rareza... listaSel: 1, 2...
+            for (let sel of listaSel) {
+                // Marca como selected los elementos seleccionados
+                let elem = document.querySelector(`.select-${atrib}[data-id="${sel}"]`);
+                elem.classList.add('selected');
+            }
+        }
     }
 }
 
@@ -51,29 +61,29 @@ function obtenerCookie() {
  */
 function obtenerFormData() {
     const form = document.getElementById("filter-wrapper");
+    const formData = new FormData(form);
 
-    let formData = new FormData(form);
+    // Array de los data-id de cada campo
+    getArr = (c) => Array.from(document.querySelectorAll(c), e => e.getAttribute("data-id"));
 
-    const listaGrupos = document.querySelectorAll(".select-grupo.selected");
-    const grupos = Array.from(listaGrupos, e => e.getAttribute("data-id"));
+    // Obtiene los valores (data-id) cada campo filtrado (selected)
+    const obj = {
+        "grupos": getArr(".select-grupos.selected"),
+        "rareza":  getArr(".select-rareza.selected"),
+        "atributos": getArr(".select-atributos.selected"),
+        "pjs": getArr(".select-pjs.selected")
+    }
 
-    const listaRareza = document.querySelectorAll(".select-rareza.selected");
-    const rareza = Array.from(listaRareza, e => e.getAttribute("data-id"));
-
-    const listaAtributos = document.querySelectorAll(".select-atributo.selected");
-    const atributos = Array.from(listaAtributos, e => e.getAttribute("data-id"));
-
-    const listaPjs = document.querySelectorAll(".select-personaje.selected");
-    const pjs = Array.from(listaPjs, e => e.getAttribute("data-id"));
-
-    formData.append("grupos", JSON.stringify(grupos));
-    formData.append("rareza", JSON.stringify(rareza));
-    formData.append("atributos", JSON.stringify(atributos));
-    formData.append("pjs", JSON.stringify(pjs));
+    Object.keys(obj).forEach(key => formData.append(key, JSON.stringify(obj[key])));
 
     formDataBusqueda = formData;
+    // Guarda los filtros en la cookie
+    localStorage.setItem("filtros", JSON.stringify(obj));
 }
 
+/**
+ * Botón para limpiar los filtros seleccionados
+ */
 function limpiarFiltros(event) {
     let selected = document.querySelectorAll('.selected');
     selected.forEach(e => {
@@ -97,8 +107,8 @@ let cargando = false;
 
 // Datos iniciales
 window.onload = () => {
-    obtenerFormData();
     obtenerCookie();
+    obtenerFormData();
 }
 
 window.addEventListener('scroll', function() {
