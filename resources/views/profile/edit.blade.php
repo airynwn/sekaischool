@@ -175,7 +175,8 @@
                     </div>
                     <div class="col d-flex justify-content-center espacio">
                         <button type="submit">Cambiar contraseña</button>
-
+                    </div>
+                    <div class="col d-flex justify-content-center espacio">
                         @if (session('status') === 'password-updated')
                             <p
                                 x-data="{ show: true }"
