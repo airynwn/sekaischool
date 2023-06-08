@@ -40,8 +40,8 @@
                 list:     'lista'
             },
             validRange: {
-                start: new Date().getFullYear()+'-01-01',
-                end: new Date().getFullYear()+'-12-31'
+                start: new Date().getFullYear() + 1+'-01-01',
+                end: new Date().getFullYear() + 1+'-12-31'
             }
         });
         calendar.render();
