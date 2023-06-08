@@ -39,6 +39,13 @@ async function anadirCarta(event) {
 // formData que contiene los filtros
 let formDataBusqueda;
 
+function obtenerCookie() {
+    const filtros = localStorage.getItem("filtros");
+    if (filtros === null) {
+        filtros.setItem(JSON.stringify(formDataBusqueda));
+    }
+}
+
 /**
  * Obtiene los filtros seleccionados en el formulario para buscar cartas
  */
@@ -91,6 +98,7 @@ let cargando = false;
 // Datos iniciales
 window.onload = () => {
     obtenerFormData();
+    obtenerCookie();
 }
 
 window.addEventListener('scroll', function() {
