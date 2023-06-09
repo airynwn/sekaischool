@@ -37,7 +37,7 @@
                     </tr>
                     <tr class="fila-cristal">
                         <td><img src="img/icons/crystal.png" alt="Cristal" class="img-fluid"></td>
-                        <td></td>
+                        <td><strong>Cartas obtenidas: <span id="cartas">0</span></strong></td>
                         <td><strong>Cristales gastados: <span id="cristales">0</span></strong></td>
                     </tr>
                 </tbody>

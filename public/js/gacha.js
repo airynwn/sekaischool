@@ -49,8 +49,12 @@ async function gachaPull() {
         }
 
         total = total + 10;
+
         let cristales = document.getElementById("cristales");
         cristales.innerHTML = parseInt(cristales.innerHTML) + 3000;
+
+        let cartas = document.getElementById("cartas");
+        cartas.innerHTML = total;
 
         // Cálculo de porcentajes
         document.getElementById("pc-2").innerHTML = ((count2.innerHTML / total) * 100).toFixed(2);
@@ -69,6 +73,7 @@ async function gachaPull() {
 function resetPull() {
     total = 0;
     document.getElementById("cristales").innerHTML = '0';
+    document.getElementById("cartas").innerHTML = '0';
     document.getElementById("count-2").innerHTML = '0';
     document.getElementById("count-3").innerHTML = '0';
     document.getElementById("count-4").innerHTML = '0';
