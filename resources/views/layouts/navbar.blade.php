@@ -33,6 +33,9 @@
                 <li class="nav-item">
                     <a class="nav-link active brillo" href="{{ route('pages.grupos') }}">Grupos</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link active brillo" href="{{ route('pages.gacha') }}">Simulador gacha</a>
+                </li>
             </ul>
             @if (auth()->check())
             <ul class="navbar-nav">
