@@ -94,6 +94,7 @@ body {
     animation: gradient-3 4s linear infinite;
     animation-direction: alternate;
 }
+
 @keyframes gradient-3 {
     0% {background-position: 0%}
     100% {background-position: 100%}
@@ -105,6 +106,7 @@ body {
     animation: gradient-4 4s ease-in-out infinite;
     animation-direction: alternate-reverse;
 }
+
 @keyframes gradient-4 {
     0% {background-position: 0%}
     100% {background-position: 100%}
@@ -122,4 +124,19 @@ body {
 
 .fila-cristal {
     background: linear-gradient(90deg, #00fdeca4, #8f4affb7);
+    background-size: 700%;
+    animation: cristal 4s ease-in-out infinite;
+    animation-direction: alternate;
+}
+
+@keyframes cristal {
+    0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
