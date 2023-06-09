@@ -284,3 +284,10 @@ i {
 .comic.active {
     opacity: 1;
 }
+
+.select-personaje {
+    transition: transform 0.3s ease-in-out;
+}
+.select-personaje:hover {
+    transform: scale(1.1);
+}
