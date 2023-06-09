@@ -45,6 +45,7 @@ Route::get('/personajes', [PersonajeController::class, 'index'])->name('pages.pe
 Route::post('/personajes/personaje', [PersonajeController::class, 'show'])->name('pages.personaje');
         /**** Gacha ****/
 Route::get('/gacha', [GachaController::class, 'index'])->name('pages.gacha');
+Route::post('/gacha/pull', [GachaController::class, 'pull'])->name('pages.gacha.pull');
 
 /************* User *************/
 Route::middleware(['auth', 'valido'])->group(function () {
