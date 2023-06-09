@@ -1,0 +1,125 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Source+Sans+Pro&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500&family=Source+Sans+Pro&display=swap');
+
+h3 {
+    color: white;
+    font-family: 'Fredoka One', sans-serif;
+    font-weight: 400;
+    text-align: center;
+}
+
+.header {
+    background: linear-gradient(90deg, #3AA89B 0%, #9D44FF 100%);
+}
+
+#logo {
+    height: 35px;
+    animation: logo-progresivo 2s;
+}
+
+@keyframes logo-progresivo {
+    0% {
+        filter: opacity(0);
+    }
+
+    100% {
+        filter: opacity(1);
+    }
+}
+
+.dropdown-item:focus, .dropdown-item:hover {
+    background-color: #ffffff30 !important; /*Sobreescribe bootstrap*/
+}
+
+.login {
+    text-decoration: none;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.18);
+}
+
+.noborder {
+    border: none !important;
+}
+
+
+/***********************************************/
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    background: url("../img/background.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+}
+
+/* ? Para que el espacio que sobra de columna en las cajas de una fila no se rellene */
+.row {
+    align-items: flex-start;
+}
+
+.espacio {
+    margin: 10px 0 10px 0;
+}
+
+.brillo:hover {
+    filter: drop-shadow(0 0 0.5em white);
+    transition: all 0.5s;
+}
+
+.btn-gacha {
+    background: linear-gradient(0deg, #00fdec, #d6fffa);
+    border-radius: 20px;
+    padding: 0.5em 1em;
+    border: 3px white;
+    border-style: solid;
+    color: #3C4B64;
+    font-weight: bold;
+}
+
+.carta-card {
+    background: linear-gradient(115.51deg, #7c75ff71 0%, #ffffff44 100%);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(12.5px);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    border-radius: 20px;
+    margin: 0.25em;
+    padding: 0.25em;
+}
+
+.card-3 {
+    background: linear-gradient(45deg, #ff7403bd, #ffe657cc, #ffae00b2);
+    background-size: 700%;
+    animation: gradient-3 4s linear infinite;
+    animation-direction: alternate;
+}
+@keyframes gradient-3 {
+    0% {background-position: 0%}
+    100% {background-position: 100%}
+}
+
+.card-4 {
+    background: linear-gradient(128deg, #ff76f0 0%, #35c5dc 50%, #904aff 100%);
+    background-size: 700%;
+    animation: gradient-4 4s ease-in-out infinite;
+    animation-direction: alternate-reverse;
+}
+@keyframes gradient-4 {
+    0% {background-position: 0%}
+    100% {background-position: 100%}
+}
+
+.tabla {
+    background: #ffffff2a;
+    width: 100%;
+    text-align: center;
+}
+
+.tabla tr {
+    border: 1px solid #ffffff6c;
+}
+
+.fila-cristal {
+    background: linear-gradient(90deg, #00fdeca4, #8f4affb7);
+}
