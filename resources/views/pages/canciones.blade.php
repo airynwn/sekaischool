@@ -4,7 +4,7 @@
 @endsection
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/canciones.css') }}">
-    <script type="text/javascript" src="{{ asset('js/canciones.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/canciones.js') }}" defer></script>
 @endsection
 {{-- Main --}}
 @section('content')
@@ -13,13 +13,19 @@
         <div class="col d-flex flex-column justify-content-center" id="titulo">
             <hr>
             <h1>Adivina la canción</h1>
-            <em class="text-center">Podrás seguir jugando con una nueva canción después de acertar</em>
+            <ul>
+                <li>Al principio sólo podrás escuchar 2 segundos</li>
+                <li>Cada fallo te dará 2 segundos más para escuchar</li>
+                <li>Una vez aciertes, volverás a poder escuchar sólo los 2 primeros segundos</li>
+                <li>Podrás seguir jugando con una nueva canción después de acertar</li>
+            </ul>
+            <em class="text-center">¡Suerte!</em>
             <hr>
         </div>
     </div>
     <div class="row espacio">
         <div class="col d-flex justify-content-center" id="contenedor-audio">
-            <audio controls>
+            <audio controls id="audio-player">
                 <source src="{{ $random->audio }}" type="audio/ogg">
                 Tu navegador no soporta la reproducción de audio.
             </audio>
