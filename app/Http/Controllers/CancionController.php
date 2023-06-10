@@ -13,7 +13,7 @@ class CancionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $random = Cancion::inRandomOrder()->first();
 
@@ -21,19 +21,16 @@ class CancionController extends Controller
             'canciones' => Cancion::all(),
             'random' => $random,
         ]);
+
     }
 
     public function adivinar(Request $request)
     {
         $guess = $request->cancion;
         $solucion = $request->solucion;
-        Log::info('----'.$request->solucion);
         $random = Cancion::inRandomOrder()->first();
-        // if ()
 
-        return view('pages.canciones', [
-            'canciones' => Cancion::all(),
-            'post' => true,
+        return response()->json([
             'guess' => $guess,
             'solucion' => $solucion,
             'random' => $random,
