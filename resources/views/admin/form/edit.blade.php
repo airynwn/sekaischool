@@ -39,11 +39,14 @@
             {{-- STRING --}}
             @elseif (Schema::getColumnType($tabla, $columna) == 'string')
                 <input type="text" name="{{ $columna }}" value="{{ $dato->$columna }}">
-            {{-- FILE --}}
+            {{-- FILE IMAGE --}}
             @elseif ($columna == 'imagen' || $columna == 'logo' || $columna == 'comic' || $columna == 'chibi'
             || $columna == 'icon' || $columna == 'stamp' || $columna == 'sticker' || $columna == 'unidolized' ||
             $columna == 'idolized' || $columna == 'unidolized_icon' || $columna == 'idolized_icon')
                 <input type="file" name="{{ $columna }}" value="{{ $dato->$columna }}" accept="image/*">
+            {{-- FILE AUDIO --}}
+            @elseif ($columna == 'audio')
+                <input type="file" name="{{ $columna }}" value="{{ $dato->$columna }}" accept="audio/ogg">
             {{-- TEXT --}}
             @elseif (Schema::getColumnType($tabla, $columna) == 'text')
                 <textarea name="{{ $columna }}" rows="3" value="{{ $dato->$columna }}">{{ $dato->$columna }}</textarea>

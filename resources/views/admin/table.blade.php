@@ -20,6 +20,13 @@
                             <img src="{{ asset($fila->$columna) }}" width=100 alt="{{ $columna }}">
                         </div>
                     </td>
+                @elseif ($columna == 'audio')
+                    <td>
+                        <audio controls>
+                            <source src="{{ asset($fila->$columna) }}" type="audio/ogg">
+                            Tu navegador no soporta la reproducción de audio.
+                        </audio>
+                    </td>
                 @elseif ($columna == $fk)
                     @php
                         $fkcol = substr($fk, 0, -3) == 'pj' ? 'personaje' : substr($fk, 0, -3);
