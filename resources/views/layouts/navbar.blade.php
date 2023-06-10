@@ -46,7 +46,7 @@
                     <a class="nav-link active dropdown-toggle brillo" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         {{ auth()->user()->name }}
                     </a>
-                    <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end">
+                    <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end header">
                         <li><a class="dropdown-item" href="{{ route('profile.index') }}">Perfil</a></li>
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
