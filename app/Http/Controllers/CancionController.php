@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Cancion;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Route;
 
 class CancionController extends Controller
 {
@@ -13,14 +14,26 @@ class CancionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
         $random = Cancion::inRandomOrder()->first();
+        $canciones = Cancion::all();
+        $tablafk = null;
+        $fk = null;
 
-        return view('pages.canciones', [
-            'canciones' => Cancion::all(),
-            'random' => $random,
-        ]);
+        if (auth()->check() && auth()->user()->admin && strpos(Route::current()->getName(), 'admin') === 0) {
+            return view('admin.canciones.index', [
+                'canciones' => Cancion::orderBy('id')->paginate(5),
+                'tablafk' => $tablafk,
+                'fk' => $fk
+            ]);
+        } else {
+            return view('pages.canciones', [
+                'canciones' => $canciones,
+                'random' => $random,
+            ]);
+        }
+
 
     }
 
@@ -44,7 +57,15 @@ class CancionController extends Controller
      */
     public function create()
     {
-        //
+        $tabla = 'canciones';
+        $tablafk = null;
+        $fk = null;
+
+        return view('admin.canciones.create', [
+            'tabla' => $tabla,
+            'tablafk' => $tablafk,
+            'fk' => $fk
+        ]);
     }
 
     /**
@@ -55,7 +76,23 @@ class CancionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'titulo' => 'required|string',
+            'audio' => ['required', 'file', 'mimetypes:audio/ogg', 'max:10000'],
+        ]);
+
+        $cancion = Cancion::create($request->all());
+
+        $audio = 'cancion_' . $cancion->id . $request->file('audio')->getClientOriginalExtension();
+        $cancion->audio = str_replace(
+            'public',
+            'storage',
+            $request->file('audio')->storeAs('public/canciones', $audio)
+        );
+
+        $cancion->save();
+
+        return redirect()->route('admin.canciones.index')->with('success', 'Se ha creado la canción con éxito.');
     }
 
     /**
@@ -77,7 +114,16 @@ class CancionController extends Controller
      */
     public function edit(Cancion $cancion)
     {
-        //
+        $tabla = 'canciones';
+        $tablafk = null;
+        $fk = null;
+
+        return view('admin.canciones.edit', [
+            'tabla' => $tabla,
+            'tablafk' => $tablafk,
+            'fk' => $fk,
+            'dato' => $cancion,
+        ]);
     }
 
     /**
@@ -89,7 +135,30 @@ class CancionController extends Controller
      */
     public function update(Request $request, Cancion $cancion)
     {
-        //
+        $request->validate([
+            'titulo' => 'required|string',
+            'audio' => ['nullable', 'file', 'mimetypes:audio/ogg', 'max:10000'],
+        ]);
+
+        $audio = $cancion->audio;
+
+        $cancion->update($request->all());
+
+        if ($request->hasFile('audio')) {
+            $audio = 'cancion_' . $cancion->id . $request->file('audio')->getClientOriginalExtension();
+
+            $cancion->audio = str_replace(
+                'public',
+                'storage',
+                $request->file('audio')->storeAs('public/canciones', $audio)
+            );
+        } else {
+            $cancion->audio = $audio;
+        }
+
+        $cancion->save();
+
+        return redirect()->route('admin.canciones.index')->with('success', 'Se ha modificado la canción con éxito.');
     }
 
     /**
@@ -100,6 +169,8 @@ class CancionController extends Controller
      */
     public function destroy(Cancion $cancion)
     {
-        //
+        $cancion->delete();
+
+        return redirect()->route('admin.canciones.index')->with('success', 'Se ha eliminado la canción con éxito.');
     }
 }
