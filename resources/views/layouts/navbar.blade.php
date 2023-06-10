@@ -34,7 +34,10 @@
                     <a class="nav-link active brillo" href="{{ route('pages.grupos') }}">Grupos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active brillo" href="{{ route('pages.gacha') }}">Simulador gacha</a>
+                    <a class="nav-link active brillo" href="{{ route('pages.gacha') }}">Gacha</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active brillo" href="{{ route('pages.canciones') }}">Adivinar canciones</a>
                 </li>
             </ul>
             @if (auth()->check())

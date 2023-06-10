@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CancionController;
 use App\Http\Controllers\CartaController;
 use App\Http\Controllers\GachaController;
 use App\Http\Controllers\GrupoController;
@@ -46,6 +47,8 @@ Route::post('/personajes/personaje', [PersonajeController::class, 'show'])->name
         /**** Gacha ****/
 Route::get('/gacha', [GachaController::class, 'index'])->name('pages.gacha');
 Route::post('/gacha/pull', [GachaController::class, 'pull'])->name('pages.gacha.pull');
+        /**** Canciones ****/
+Route::get('/canciones', [CancionController::class, 'index'])->name('pages.canciones');
 
 /************* User *************/
 Route::middleware(['auth', 'valido'])->group(function () {
