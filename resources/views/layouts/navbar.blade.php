@@ -34,7 +34,10 @@
                     <a class="nav-link active brillo" href="{{ route('pages.grupos') }}">Grupos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active brillo" href="{{ route('pages.gacha') }}">Simulador gacha</a>
+                    <a class="nav-link active brillo" href="{{ route('pages.gacha') }}">Gacha</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active brillo" href="{{ route('pages.canciones') }}">Adivinar canciones</a>
                 </li>
             </ul>
             @if (auth()->check())
@@ -43,7 +46,7 @@
                     <a class="nav-link active dropdown-toggle brillo" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         {{ auth()->user()->name }}
                     </a>
-                    <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end">
+                    <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end header">
                         <li><a class="dropdown-item" href="{{ route('profile.index') }}">Perfil</a></li>
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf

@@ -1,0 +1,115 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Source+Sans+Pro&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500&family=Source+Sans+Pro&display=swap');
+
+h1 {
+    color: white;
+    font-family: 'Fredoka One', sans-serif;
+    font-weight: 400;
+    text-align: center;
+    filter: drop-shadow(0 0 10px #ffffffa0);
+}
+
+.header {
+    background: linear-gradient(90deg, #3AA89B 0%, #9D44FF 100%);
+}
+
+#logo {
+    height: 35px;
+    animation: logo-progresivo 2s;
+}
+
+@keyframes logo-progresivo {
+    0% {
+        filter: opacity(0);
+    }
+
+    100% {
+        filter: opacity(1);
+    }
+}
+
+.dropdown-item:focus, .dropdown-item:hover {
+    background-color: #ffffff30 !important; /*Sobreescribe bootstrap*/
+}
+
+.login {
+    text-decoration: none;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.18);
+}
+
+.noborder {
+    border: none !important;
+}
+
+
+/***********************************************/
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    background: url("../img/background.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+}
+
+/* ? Para que el espacio que sobra de columna en las cajas de una fila no se rellene */
+.row {
+    align-items: flex-start;
+}
+
+.espacio {
+    margin: 10px 0 10px 0;
+}
+
+.brillo:hover {
+    filter: drop-shadow(0 0 0.5em white);
+    transition: all 0.5s;
+}
+
+#titulo {
+    background: linear-gradient(90deg, #1e31cc90, #67d73890, #dc2c7090, #ffaf3690, #7c229e90);
+    background-size: 1000%;
+    animation: titulo 16s ease-in-out infinite;
+    animation-direction: normal;
+}
+
+@keyframes titulo {
+    0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+#cancion-guess {
+    background: #ffffff10;
+    border: none;
+    border-bottom: 1px solid #ffffff40;
+    color: white;
+    margin: 0 1em;
+    width: 70%;
+    transition: border-bottom 0.5s ease-in-out;
+}
+
+#cancion-guess:active,
+#cancion-guess:focus {
+    border: none;
+    border-bottom: 1px solid #00ffc893;
+    outline: none;
+}
+
+button[type=submit] {
+    background: linear-gradient(0deg, #00fdec, #d6fffa);
+    border-radius: 20px;
+    padding: 0.5em 1em;
+    border: 3px white;
+    border-style: solid;
+    color: #3C4B64;
+    font-weight: bold;
+}

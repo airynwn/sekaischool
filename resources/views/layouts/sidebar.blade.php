@@ -101,6 +101,12 @@
                       Relaciones
                     </a>
                   </li>
+                  <li>
+                    <a href="{{ route('admin.canciones.index') }}" class="nav-link text-white
+                    {{ Route::current()->getName() === 'admin.canciones.index' ? 'ruta-actual' : '' }}">
+                      Canciones
+                    </a>
+                  </li>
                 </ul>
             </div>
             <div class="col py-3 overflow-y-scroll" id="tabla-container">

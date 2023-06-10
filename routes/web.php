@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CancionController;
 use App\Http\Controllers\CartaController;
 use App\Http\Controllers\GachaController;
 use App\Http\Controllers\GrupoController;
@@ -46,6 +47,9 @@ Route::post('/personajes/personaje', [PersonajeController::class, 'show'])->name
         /**** Gacha ****/
 Route::get('/gacha', [GachaController::class, 'index'])->name('pages.gacha');
 Route::post('/gacha/pull', [GachaController::class, 'pull'])->name('pages.gacha.pull');
+        /**** Canciones ****/
+Route::get('/canciones', [CancionController::class, 'index'])->name('pages.canciones');
+Route::post('/canciones', [CancionController::class, 'adivinar'])->name('pages.canciones.guess');
 
 /************* User *************/
 Route::middleware(['auth', 'valido'])->group(function () {
@@ -112,6 +116,13 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
     Route::get('/relaciones/{relacion}/edit', [RelacionController::class, 'edit'])->name('admin.relaciones.edit');
     Route::put('/relaciones/{relacion}/edit', [RelacionController::class, 'update'])->name('admin.relaciones.update');
     Route::delete('/relaciones/{relacion}/delete', [RelacionController::class, 'destroy'])->name('admin.relaciones.destroy');
+    /************* Canciones *************/
+    Route::get('/canciones', [CancionController::class, 'index'])->name('admin.canciones.index');
+    Route::get('/canciones/create', [CancionController::class, 'create'])->name('admin.canciones.create');
+    Route::post('/canciones/create', [CancionController::class, 'store'])->name('admin.canciones.store');
+    Route::get('/canciones/{cancion}/edit', [CancionController::class, 'edit'])->name('admin.canciones.edit');
+    Route::put('/canciones/{cancion}/edit', [CancionController::class, 'update'])->name('admin.canciones.update');
+    Route::delete('/canciones/{cancion}/delete', [CancionController::class, 'destroy'])->name('admin.canciones.destroy');
     /************* Users *************/
     Route::get('/users', [UserController::class, 'index'])->name('admin.users.index');
     Route::put('/users/{user}/validar', [UserController::class, 'validar'])->name('admin.users.validar');

@@ -95,7 +95,7 @@ return [
     ],
     'max_digits' => 'El campo :attribute no puede tener más de :max dígitos.',
     'mimes' => 'The :attribute must be a file of type: :values.',
-    'mimetypes' => 'The :attribute must be a file of type: :values.',
+    'mimetypes' => 'El campo :attribute debe ser un archivo en alguno de estos formatos: :values.',
     'min' => [
         'array' => 'El campo :attribute debe tener al menos :min elementos.',
         'file' => 'The :attribute must be at least :min kilobytes.',
