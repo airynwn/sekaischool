@@ -23,16 +23,18 @@ async function adivinar(event) {
         reset.setAttribute('id', 'cancion-random');
 
         if (res.solucion === res.guess) {
-            respuesta.innerHTML = 'Has ganaoooo, toma otra';
+            respuesta.innerHTML = `
+            <button type="button" class="btn btn-success">¡Felicidades, has acertado!</button>`;
             audio.innerHTML =  `
-            <audio controls start="0" end="5">
+            <audio controls>
                 <source src="${res.random.audio}" type="audio/ogg">
                 Tu navegador no soporta la reproducción de audio.
               </audio>`;
 
             random.replaceWith(reset);
         } else {
-            respuesta.innerHTML = 'Respuesta incorrecta. ¡Sigue intentándolo!'
+            respuesta.innerHTML = `
+            <button type="button" class="btn btn-danger">Respuesta incorrecta. ¡Sigue intentándolo!</button>`
         }
         guess.value = '';
     })
