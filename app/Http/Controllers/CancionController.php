@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Cancion;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class CancionController extends Controller
 {
@@ -14,7 +15,29 @@ class CancionController extends Controller
      */
     public function index()
     {
-        return view('pages.canciones');
+        $random = Cancion::inRandomOrder()->first();
+
+        return view('pages.canciones', [
+            'canciones' => Cancion::all(),
+            'random' => $random,
+        ]);
+    }
+
+    public function adivinar(Request $request)
+    {
+        $guess = $request->cancion;
+        $solucion = $request->solucion;
+        Log::info('----'.$request->solucion);
+        $random = Cancion::inRandomOrder()->first();
+        // if ()
+
+        return view('pages.canciones', [
+            'canciones' => Cancion::all(),
+            'post' => true,
+            'guess' => $guess,
+            'solucion' => $solucion,
+            'random' => $random,
+        ]);
     }
 
     /**

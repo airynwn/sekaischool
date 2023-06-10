@@ -1,6 +1,6 @@
 @extends('layouts.guest')
 @section('title')
-    Simulador de gacha ♪ SekaiSchool
+    Adivina la canción ♪ SekaiSchool
 @endsection
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/gacha.css') }}">
@@ -44,7 +44,28 @@
     </div>
     <div class="row espacio">
         <div class="col d-flex justify-content-center">
-            <p>aqui va el audio</p>
+            <audio controls start="0" end="5">
+                <source src="{{ $random->audio }}" type="audio/ogg">
+                Tu navegador no soporta la reproducción de audio.
+              </audio>
+        </div>
+    </div>
+    <div class="row espacio">
+        <div class="col d-flex justify-content-center">
+            <form action="" method="post">
+                @csrf
+                <input type="hidden" name="solucion" value="{{ $random->titulo }}">
+                <input list="canciones" name="cancion">
+                <datalist id="canciones">
+                    @foreach ($canciones as $cancion)
+                    <option value="{{ $cancion->titulo }}">
+                    @endforeach
+                </datalist>
+                <button type="submit">Enviar</button>
+            </form>
+            @if (isset($post))
+            {{ $guess }} = {{ $solucion }}
+            @endif
         </div>
     </div>
 </div>

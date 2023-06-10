@@ -49,6 +49,7 @@ Route::get('/gacha', [GachaController::class, 'index'])->name('pages.gacha');
 Route::post('/gacha/pull', [GachaController::class, 'pull'])->name('pages.gacha.pull');
         /**** Canciones ****/
 Route::get('/canciones', [CancionController::class, 'index'])->name('pages.canciones');
+Route::post('/canciones', [CancionController::class, 'adivinar'])->name('pages.canciones');
 
 /************* User *************/
 Route::middleware(['auth', 'valido'])->group(function () {
