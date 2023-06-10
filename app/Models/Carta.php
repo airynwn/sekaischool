@@ -30,7 +30,7 @@ class Carta extends Model
      */
     public function users()
     {
-        return $this->belongsToMany(User::class, 'carta_id')
+        return $this->belongsToMany(User::class, 'inventario')
                     ->as('inventario')
                     ->withPivot('estado')
                     ->withTimestamps();
