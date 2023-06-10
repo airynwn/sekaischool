@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cancion;
+use Illuminate\Contracts\Encryption\DecryptException;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
 
@@ -33,8 +35,6 @@ class CancionController extends Controller
                 'random' => $random,
             ]);
         }
-
-
     }
 
     public function adivinar(Request $request)
@@ -42,10 +42,22 @@ class CancionController extends Controller
         $guess = $request->cancion;
         $solucion = $request->solucion;
         $random = Cancion::inRandomOrder()->first();
+        $acierto = false;
+        $titulo = null;
+
+        try {
+            $decrypted = Crypt::decryptString($solucion);
+            if ($decrypted === $guess) {
+                $acierto = true;
+                $titulo = $random->encriptar();
+            }
+        } catch (DecryptException $e) {
+            //
+        }
 
         return response()->json([
-            'guess' => $guess,
-            'solucion' => $solucion,
+            'acierto' => $acierto,
+            'titulo' => $titulo,
             'random' => $random,
         ]);
     }

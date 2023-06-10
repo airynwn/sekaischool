@@ -37,10 +37,10 @@ async function adivinar(event) {
         let reset = document.createElement('input');
         reset.setAttribute('type', 'hidden');
         reset.setAttribute('name', 'solucion');
-        reset.setAttribute('value', res.random.titulo);
+        reset.setAttribute('value', res.titulo);
         reset.setAttribute('id', 'cancion-random');
 
-        if (res.solucion === res.guess) {
+        if (res.acierto) {
             respuesta.innerHTML = `
             <button type="button" class="btn btn-success">¡Felicidades, has acertado!</button>`;
             audio.innerHTML =  `

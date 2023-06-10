@@ -35,7 +35,7 @@
         <div class="col d-flex justify-content-center">
             <form onsubmit="adivinar(event)" class="d-flex flex-column align-items-center gap-3 w-100">
                 @csrf
-                <input type="hidden" name="solucion" value="{{ $random->titulo }}" id="cancion-random">
+                <input type="hidden" name="solucion" value="{{ $random->encriptar() }}" id="cancion-random">
                 <input list="canciones" name="cancion" id="cancion-guess">
                 <datalist id="canciones">
                     @foreach ($canciones as $cancion)
