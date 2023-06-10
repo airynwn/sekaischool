@@ -15,6 +15,7 @@
         "nesbot/carbon": "^2.66"
     },
     "require-dev": {
+        "beyondcode/laravel-er-diagram-generator": "^2.0",
         "fakerphp/faker": "^1.9.1",
         "laravel/breeze": "*",
         "laravel/pint": "^1.0",
