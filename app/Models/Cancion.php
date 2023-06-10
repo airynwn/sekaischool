@@ -13,5 +13,5 @@ class Cancion extends Model
 
     public $timestamps = false;
 
-    protected $table = 'relaciones';
+    protected $table = 'canciones';
 }
