@@ -308,10 +308,11 @@ i {
 
 .post {
     text-align: initial;
+    word-break: break-all;
 }
 
 .escribir-post {
-    background-color: transparent;
+    background-color: #1e1438b7;
     border: none;
     border-radius: 5px;
     color: white;

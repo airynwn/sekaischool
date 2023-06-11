@@ -14,7 +14,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::orderBy('created_at', 'desc')->get();
+        $posts = Post::orderBy('created_at', 'desc')->limit(50)->get();
 
         return view('pages.comunidad', ['posts' => $posts]);
     }
@@ -56,9 +56,9 @@ class PostController extends Controller
         $modo = $request->modo;
 
         if ($modo === 'popular' && Post::whereHas('fans')->count() > 0) {
-            $posts = Post::withCount('fans')->orderBy('fans_count', 'desc')->get();
+            $posts = Post::withCount('fans')->orderBy('fans_count', 'desc')->limit(50)->get();
         } else {
-            $posts = Post::orderBy('created_at', 'desc')->get();
+            $posts = Post::orderBy('created_at', 'desc')->limit(50)->get();
         }
 
         return view('pages.posts', ['posts' => $posts])->render();

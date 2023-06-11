@@ -1,7 +1,7 @@
 @if (isset($post))
 <div class="row">
     <div class="col text-right">
-        <a class="text-white" onclick="volverInicio()">
+        <a class="text-white click" onclick="volverInicio()">
             <i class="fa-solid fa-angles-left"
             data-color="{{ strtolower(explode(' ', $personaje->nombre)[0]) }}"></i>Elegir personaje
         </a>
@@ -148,10 +148,10 @@
                         @endforeach
                     </div>
                     <div class="tabs">
-                        <div class="tab">
+                        <div class="tab click">
                             <i class="fa-solid fa-chevron-left" id="comic-anterior"></i>
                         </div>
-                        <div class="tab">
+                        <div class="tab click">
                             <i class="fa-solid fa-chevron-right" id="comic-siguiente"></i>
                         </div>
                     </div>

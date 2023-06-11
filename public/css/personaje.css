@@ -239,6 +239,10 @@ main {
     border-radius: 0 0 20px 0;
 }
 
+.click {
+    cursor: pointer;
+}
+
 i {
     color: white;
 }

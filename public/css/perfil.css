@@ -132,6 +132,7 @@ h2 {
 
 .caja-content span {
     margin-bottom: 0.5em;
+    word-break: break-all;
 }
 
 /********************* PERFIL  *********************/
@@ -427,7 +428,8 @@ button.selected-opacidad {
     color: white;
 }
 
-#post-container {
+#post-container,
+.col-cartas > .container-fluid {
     overflow-y: scroll;
     max-height: 490px;
 }

@@ -23,11 +23,11 @@
                 </p>
             </div>
         <!-- Iconos de interacción -->
-            <div class="caja-icons">
+            <div class="caja-icons justify-content-around">
                 <!-- Compartir y comentar -->
-                <div>
+                {{-- <div>
                     <i class="fa-solid fa-share-nodes"></i>
-                </div>
+                </div> --}}
                 <!-- Likes -->
                 <div>
                     <form onsubmit="valorarPost(event)"
@@ -50,9 +50,12 @@
                     id="confirmarBorradoForm"
                     data-post-id="{{ $post->id }}">
                     @csrf
-                    <button type="submit" class="btn btn-danger">
-                        &times;
+                    <button type="submit" class="vacio">
+                        <i class="fa-solid fa-trash"></i>
                     </button>
+                    {{-- <button type="submit" class="btn btn-danger">
+                        &times;
+                    </button> --}}
                 </form>
                 @endif
             </div>

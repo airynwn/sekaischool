@@ -16,7 +16,7 @@
     <div class="alert alert-success">{{ session('success') }}</div>
 @endif
     <div class="row">
-    <div class="col-lg-3 col-sm-5 order-0 contenedor">
+    {{-- <div class="col-lg-3 col-sm-5 order-0 contenedor">
         <h2>Tendencias</h2>
         <div class="caja">
             <div class="espacio"></div>
@@ -37,9 +37,9 @@
                 Buscar
             </button>
         </div>
-    </div>
+    </div> --}}
         <!-- *** COMUNIDAD *** -->
-    <div class="col-lg-6 col-12 order-1">
+    <div class="col-lg-8 col-12 order-1">
         <div class="container-fluid contenedor">
             <div class="row alinear-altura">
                 <div class="col">
@@ -73,7 +73,7 @@
                                 <div>
                                     <input type="hidden" name="user_id" value="{{ auth()->id() }}">
                                     <button type="submit" class="vacio">
-                                        <i class="fa-solid fa-pen-to-square"></i>
+                                        <i class="fa-solid fa-paper-plane"></i>
                                     </button>
                                 </div>
                             </div>
