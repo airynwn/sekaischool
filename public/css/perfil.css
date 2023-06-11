@@ -428,7 +428,8 @@ button.selected-opacidad {
     color: white;
 }
 
-#post-container {
+#post-container,
+.col-cartas > .container-fluid {
     overflow-y: scroll;
     max-height: 490px;
 }

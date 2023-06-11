@@ -22,7 +22,7 @@ class ProfileController extends Controller
     {
 
         $personajes = Personaje::all();
-        $cartas = $request->user()->cartas()->where('estado', 'coleccion')->get();
+        $cartas = $request->user()->cartas()->where('estado', 'coleccion')->orderBy('rareza', 'desc')->get();
 
         return view('profile.index', [
             'user' => $request->user(),
@@ -38,7 +38,7 @@ class ProfileController extends Controller
     {
         $personajes = Personaje::all();
         $user = User::where('name', $request->user)->firstOrFail();
-        $cartas = $user->cartas()->where('estado', 'coleccion')->get();
+        $cartas = $user->cartas()->where('estado', 'coleccion')->orderBy('rareza', 'desc')->get();
 
         return view('profile.index', [
             'user' => $user,
@@ -56,7 +56,7 @@ class ProfileController extends Controller
         $user = User::where('name', $request->user)->firstOrFail();
 
         if (isset($modo)) {
-            $cartas = $user->cartas()->where('estado', $modo)->get();
+            $cartas = $user->cartas()->where('estado', $modo)->orderBy('rareza', 'desc')->get();
         }
 
         return view('profile.inventario', [

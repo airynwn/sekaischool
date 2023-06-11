@@ -88,7 +88,7 @@
         <div class="col contenedor contenedor-padding">
             <span class="tab">Publicaciones</span>
             <div id="post-container">
-            @foreach ($user->posts as $post)
+            @foreach ($user->posts()->orderBy('created_at', 'desc')->limit(10)->get() as $post)
             <div class="caja espacio">
                 <span class="titulo">{{ $post->tiempo() }}</span>
                 <div class="caja-content">
@@ -116,9 +116,7 @@
                     </div>
                 </div>
                 <div class="espacio"></div>
-                <!-- g-3 (gutter-3) da separación horizontal y vertical entre columnas según pantalla -->
                 @if (!$user->cartas->isEmpty())
-                {{-- DESEOS: Hacer una variable según el botón onclick --}}
                 <div class="row row-cols-3 row-cols-md-4 row-cols-lg-5 g-3" id="cartas-container">
                     @include('profile.inventario', ['cartas'  => $cartas])
                 </div>
