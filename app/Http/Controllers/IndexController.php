@@ -29,7 +29,7 @@ class IndexController extends Controller
         foreach ($cumples as $cumple) {
             $event = [
                 'title' => explode(' ', $cumple->nombre)[0],
-                'start' => Carbon::createFromFormat('d-m', $cumple->respuesta)->setYear(Carbon::now()->year + 1),
+                'start' => Carbon::createFromFormat('d-m', $cumple->respuesta)->setYear(Carbon::now()->year),
                 'allDay' => true,
                 'textColor' => 'black',
                 'classNames' => [
