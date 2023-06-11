@@ -85,6 +85,13 @@ class ProfileController extends Controller
      */
     public function update(Request $request)
     {
+        $request->validate([
+            'biografia' => ['nullable', 'string', 'max:200'],
+            'discord' => ['nullable', 'string', 'min:2', 'max:32', 'regex:/^((.{2,32})#\d{4})$/'],
+            'twitter' => ['nullable', 'string', 'max:15', 'regex:/^@(\w){1,15}$/'],
+            'pj_fav_id' => ['nullable', 'exists:personajes,id'],
+            'grupo_fav_id' => ['nullable', 'exists:grupos,id'],
+        ]);
 
         if ($request->hasFile('avatar')) {
             $destino = storage_path('app/public/avatars');

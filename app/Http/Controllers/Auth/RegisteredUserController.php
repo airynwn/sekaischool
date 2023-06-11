@@ -40,7 +40,6 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
-        Log::info('Mostrandoooooo: '.$request);
         $request->validate([
             'name' => ['required', 'string', 'max:16', 'not_in:edit'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],

@@ -31,6 +31,7 @@
                 <details open>
                     <summary>Avatar</summary>
                     <div class="details-flex"></div>
+                    <p>Debe pesar menos de 1MB. En caso contrario, se mantendrá el avatar actual.</p>
                     <input type="file" name="avatar" id="avatar" onchange="previsualizar(event)">
                     <br>
                     <img src="" alt="" id="previsualizar-avatar">
