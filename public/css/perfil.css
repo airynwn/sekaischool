@@ -132,6 +132,7 @@ h2 {
 
 .caja-content span {
     margin-bottom: 0.5em;
+    word-break: break-all;
 }
 
 /********************* PERFIL  *********************/
