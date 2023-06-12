@@ -36,7 +36,7 @@
             <div class="caja">
                 <!-- Rareza -->
                 <span class="opcion">Rareza</span>
-                <div class="caja-icons">
+                <div class="caja-icons d-flex flex-column">
                     <span>
                         <picture>
                             <img src="img/icons/1_star.png" alt="Estrella"
