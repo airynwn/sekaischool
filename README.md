@@ -38,3 +38,18 @@ Para conseguir esto, es importante tener en cuenta el estilo y la ambientación 
 ---
 
 # Vistas de la aplicación
+
+## Portal de administración
+
+![1686588492732](image/README/1686588492732.png)
+
+* El administrador puede **crear**, **modificar** o **eliminar** los siguientes recursos: grupos, personajes, cartas, trivias, preguntas, respuestas, relaciones, canciones.
+* El usuario puede **validar** o **bloquear** el acceso a los usuarios.
+
+## Inicio
+
+![1686588651214](image/README/1686588651214.png)
+
+![1686588654382](image/README/1686588654382.png)
+
+![1686588657987](image/README/1686588657987.png)
