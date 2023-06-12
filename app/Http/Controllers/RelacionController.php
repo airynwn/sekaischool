@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Personaje;
 use App\Models\Relacion;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Validation\Rule;
 
 class RelacionController extends Controller
 {
@@ -48,13 +50,24 @@ class RelacionController extends Controller
      */
     public function store(Request $request)
     {
+        $pj1_id = $request->pj1_id;
+        $pj2_id = $request->pj2_id;
+
+        if ($pj1_id > $pj2_id) {
+            [$pj1_id, $pj2_id] = [$pj2_id, $pj1_id];
+        }
+
         $request->validate([
-            'pj1_id' => ['required', 'exists:personajes,id'],
-            'pj2_id' => ['required', 'exists:personajes,id'],
-            'descripcion' => 'required|string',
+            'pj1_id' => ['required', 'exists:personajes,id', 'different:pj2_id'],
+            'pj2_id' => ['required', 'exists:personajes,id', 'different:pj1_id'],
+            'descripcion' => 'required|string|unique:relaciones',
         ]);
 
-        Relacion::create($request->all());
+        Relacion::create([
+            'pj1_id' => $pj1_id,
+            'pj2_id' => $pj2_id,
+            'descripcion' => $request->descripcion,
+        ]);
 
         return redirect()->route('admin.relaciones.index')->with('success', 'Se ha creado la relación con éxito.');
     }
@@ -96,13 +109,24 @@ class RelacionController extends Controller
      */
     public function update(Request $request, Relacion $relacion)
     {
+        $pj1_id = $request->pj1_id;
+        $pj2_id = $request->pj2_id;
+
+        if ($pj1_id > $pj2_id) {
+            [$pj1_id, $pj2_id] = [$pj2_id, $pj1_id];
+        }
+
         $request->validate([
-            'pj1_id' => ['required', 'exists:personajes,id'],
-            'pj2_id' => ['required', 'exists:personajes,id'],
-            'descripcion' => 'required|string',
+            'pj1_id' => ['required', 'exists:personajes,id', 'different:pj2_id'],
+            'pj2_id' => ['required', 'exists:personajes,id', 'different:pj1_id'],
+            'descripcion' => ['required', 'string', Rule::unique('relaciones')->ignore($relacion->id)],
         ]);
 
-        $relacion->update($request->all());
+        $relacion->update([
+            'pj1_id' => $pj1_id,
+            'pj2_id' => $pj2_id,
+            'descripcion' => $request->descripcion,
+        ]);
 
         return redirect()->route('admin.relaciones.index')->with('success', 'Se ha modificado la relación con éxito.');
     }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Carta;
 use App\Models\Personaje;
 use Carbon\Carbon;
 
@@ -15,9 +16,11 @@ class IndexController extends Controller
     public function index()
     {
         $cumples = Personaje::cumples()->toJson();
+        $cartas = Carta::where('rareza', 4)->inRandomOrder()->limit(3)->get();
 
         return view('index', [
             'cumples' => $cumples,
+            'cartas' => $cartas,
         ]);
     }
 

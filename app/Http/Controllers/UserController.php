@@ -7,6 +7,7 @@ use App\Models\Personaje;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -17,7 +18,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::orderBy('id')->paginate(10);
+        $users = User::orderBy('valido', 'desc')->orderBy(DB::raw('lower(name)'))->paginate(10);
 
         if (auth()->user()->admin) {
             return view('admin.users.index', [
