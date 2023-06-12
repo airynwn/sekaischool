@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\DB;
 class UserController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Lista de Usuarios ordenado por validez y nombre (case insensitive).
      *
      * @return \Illuminate\Http\Response
      */
@@ -122,7 +122,7 @@ class UserController extends Controller
     }
 
     /**
-     * Guarda una carta en el inventario del usuario
+     * Guarda una carta en el inventario del usuario.
      *
      * @param  \App\Models\User  $user
      * @param  mixed $carta ID de la carta a guardar
@@ -149,7 +149,7 @@ class UserController extends Controller
     }
 
     /**
-     * Guarda una carta en el inventario del usuario
+     * Elimina una carta del inventario del usuario.
      *
      * @param  \App\Models\User  $user
      * @param  mixed $carta ID de la carta a guardar
@@ -171,6 +171,9 @@ class UserController extends Controller
         return response()->json(['info' => 'Se ha eliminado la carta ' . $carta->nombre . ' del inventario.'], 200);
     }
 
+    /**
+     * Valora positivamente un post.
+     */
     public function valorarPost(Request $request)
     {
         $user = User::find(auth()->id());

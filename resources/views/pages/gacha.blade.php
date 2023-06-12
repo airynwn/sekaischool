@@ -10,6 +10,23 @@
 @section('content')
 <div class="container">
     <div class="row espacio">
+        <div class="col text-center">
+            <h3>Simulador Gacha</h3>
+            <hr>
+            <div class="advertencia">
+                <p>
+                    Este simulador te permite jugar con la probabilidad y ver qué cartas te saldrían en una tirada.
+                </p>
+                <p>
+                    Las probabilidades fijas son: 2* -> 88.5% | 3* -> 8.5% | 4* -> 3%
+                </p>
+                <strong>
+                    ¡Recuerda que sólo es un simulador por diversión y no determina tu suerte real en el juego!
+                </strong>
+            </div>
+            <hr>
+        </div>
+    <div class="row espacio">
         <div class="col d-flex flex-column justify-content-center">
             <table class="tabla">
                 <thead>

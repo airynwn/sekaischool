@@ -167,6 +167,9 @@ async function eliminarPost(event) {
     form.reset();
 }
 
+/**
+ * Muestra los posts ordenados según el modo seleccionado (reciente/popular)
+ */
 async function mostrarPosts(event) {
     // Objeto con los datos del formulario (_token, modo)
     let formData = new FormData();

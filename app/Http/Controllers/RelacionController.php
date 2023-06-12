@@ -53,6 +53,7 @@ class RelacionController extends Controller
         $pj1_id = $request->pj1_id;
         $pj2_id = $request->pj2_id;
 
+        // Si el ID del pj1 es mayor que el del pj2, se intercambian las posiciones
         if ($pj1_id > $pj2_id) {
             [$pj1_id, $pj2_id] = [$pj2_id, $pj1_id];
         }

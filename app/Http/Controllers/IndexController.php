@@ -9,7 +9,7 @@ use Carbon\Carbon;
 class IndexController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Muestra la vista Index con cartas 4* aleatorias y cumpleaños.
      *
      * @return \Illuminate\Http\Response
      */
@@ -24,6 +24,9 @@ class IndexController extends Controller
         ]);
     }
 
+    /**
+     * Convierte los cumpleaños de los personajes en fechas de eventos del calendario.
+     */
     public function mostrarCumples()
     {
         $cumples = Personaje::cumples();

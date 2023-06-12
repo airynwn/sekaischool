@@ -10,7 +10,7 @@ use Illuminate\Validation\Rule;
 class GrupoController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Muestra la vista de grupos (admin/guest).
      *
      * @return \Illuminate\Http\Response
      */

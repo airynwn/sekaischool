@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class PostController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Vista Comunidad.
      *
      * @return \Illuminate\Http\Response
      */
@@ -46,7 +46,7 @@ class PostController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Muestra los posts ordenados por reciente/popular según el botón seleccionado.
      *
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response

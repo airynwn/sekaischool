@@ -91,6 +91,10 @@ function limpiarFiltros(event) {
     });
 }
 
+/**
+ * Busca las cartas según los filtros seleccionados
+ * Una vez cargados los filtros, permite hacer scroll infinito para ver más
+ */
 async function buscarCartas(event) {
     event.preventDefault();
     // Empieza con la página en 0 y el contenedor de cartas vacío
@@ -111,8 +115,8 @@ window.onload = () => {
     obtenerFormData();
 }
 
+// Scroll infinito: Al scrollear hacia abajo se cargan más cartas
 window.addEventListener('scroll', function() {
-    // Al scrollear hacia abajo se cargan más cartas
     if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
         cargarCartas();
     }

@@ -24,10 +24,6 @@
             </div>
         <!-- Iconos de interacción -->
             <div class="caja-icons justify-content-around">
-                <!-- Compartir y comentar -->
-                {{-- <div>
-                    <i class="fa-solid fa-share-nodes"></i>
-                </div> --}}
                 <!-- Likes -->
                 <div>
                     <form onsubmit="valorarPost(event)"
@@ -53,9 +49,6 @@
                     <button type="submit" class="vacio">
                         <i class="fa-solid fa-trash"></i>
                     </button>
-                    {{-- <button type="submit" class="btn btn-danger">
-                        &times;
-                    </button> --}}
                 </form>
                 @endif
             </div>

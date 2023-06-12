@@ -38,10 +38,3 @@
     </div>
 @endforeach
 </div>
-{{-- <div class="row">
-    <div class="col">
-        <div class="pagination justify-content-center">
-            {{ $cartas->links('pagination::bootstrap-4') }}
-        </div>
-    </div>
-</div> --}}

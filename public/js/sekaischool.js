@@ -9,6 +9,9 @@ function seleccionar(e) {
     e.classList.toggle("selected");
 }
 
+/**
+ * Muestra los caracteres de la contraseña al pulsar el ojo
+ */
 function ver() {
     let pw = document.getElementById("password");
     let pwconfirm = document.getElementById("password_confirmation");

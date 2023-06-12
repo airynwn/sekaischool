@@ -1,4 +1,8 @@
 let total = 0;
+
+/**
+ * Realiza una tirada
+ */
 async function gachaPull() {
     let formData = new FormData();
     const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
@@ -25,6 +29,7 @@ async function gachaPull() {
         let count4 = document.getElementById("count-4");
 
         for (const carta of Object.values(result.pull)) {
+            // Aumenta el contador de cartas según rareza
             if (carta.rareza === 2) {
                 count2.innerHTML = parseInt(count2.innerHTML) + 1;
             } else if (carta.rareza === 3) {
@@ -70,6 +75,9 @@ async function gachaPull() {
     });
 }
 
+/**
+ * Empieza de nuevo
+ */
 function resetPull() {
     total = 0;
     document.getElementById("cristales").innerHTML = '0';

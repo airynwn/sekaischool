@@ -12,9 +12,16 @@ function audioDuracion(max) {
     };
 }
 
+// La duración máxima empieza en 2
 let sec = 2;
 window.onload = () => audioDuracion(sec);
 
+/**
+ * El usuario intenta adivinar la canción que suena.
+ * El input se recoge y compara con la solución encriptada.
+ * Si acierta, un mensaje lo felicita y puede continuar adivinando.
+ * Si falla, se le dan 2 segundos más de escucha sucesivamente hasta que gane.
+ */
 async function adivinar(event) {
     event.preventDefault();
 
