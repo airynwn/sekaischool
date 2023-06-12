@@ -1,66 +1,40 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+![1686584515125](image/README/1686584515125.png)
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+---
 
-## About Laravel
+# Comunidad de Project Sekai
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+*«SekaiSchool» | Laura Alcón García | Curso 2022/23*
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 1. Descripción general del proyecto
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+SekaiSchool consiste en una comunidad y base de datos dedicada al videojuego gacha de ritmo Project Sekai y ambientada en este, con el propósito de disponer de información y recursos del juego, como los personajes y los grupos de este, así como una lista de las cartas existentes.
 
-## Learning Laravel
+Al ser una comunidad, los usuarios podrán tener una cuenta con la que controlar su colección de cartas y su lista de deseos, lo cual se almacenará en su perfil personal junto con otros datos personalizables. También podrán interactuar con otros usuarios mediante publicaciones y valoraciones como una red social.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 2. Funcionalidad principal de la aplicación
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+La funcionalidad principal es la creación de una página web que permita a los jugadores de Project Sekai acceder a información básica del juego, gestionar sus cartas y hacer uso de la sección de comunidad para conocer a otras personas con interés en el juego.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Los visitantes de la página podrán acceder a los recursos del juego (cartas, personajes y grupos) y, al registrarse o iniciar sesión como usuarios, podrán interactuar con los demás usuarios o editar su perfil.
 
-## Laravel Sponsors
+Los administradores tendrán un portal de administración a través del cual podrán gestionar personajes, grupos, cartas, trivias, preguntas, respuestas, relaciones, canciones y usuarios.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+Para conseguir esto, es importante tener en cuenta el estilo y la ambientación de la página, ya que la idea es que el sitio web tenga una apariencia atractiva y similar a la del juego, de forma que logre captar la atención de sus usuarios y sea fácil de usar.
 
-### Premium Partners
+## 3. Objetivos generales
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+* Objetivo: acceso a recursos del videojuego e interacción con su comunidad.
+* Casos de uso:
+  * Visitante: "registrarse", "iniciar sesión", "usar simulador gacha", "jugar a adivinar la canción", "ver cartas", "ver personajes", "ver grupos"
+  * Usuario: "crear publicación", "valorar publicación", "ver perfil y comunidad", "gestionar colección".
+  * Administrador: "gestionar cartas", "gestionar personajes", "gestionar grupos", "gestionar trivias", "gestionar preguntas", "gestionar respuestas", "gestionar relaciones," "gestionar canciones", "validar/bloquear usuario".
 
-## Contributing
+## 4. Elemento de innovación
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+* Minijuego de adivinar el nombre de la canción del juego que suena.
+* Simulador de obtención de cartas aleatoriamente (gacha).
 
-## Code of Conduct
+---
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+# Vistas de la aplicación
