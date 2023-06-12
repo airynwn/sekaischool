@@ -1,4 +1,5 @@
 @if (isset($post))
+{{-- Alpine --}}
 <div class="row">
     <div class="col" x-data="{ logo: '{{ asset($grupo->logo) }}' }">
         <img :src="logo" :alt="'Logo ' + '{{ $grupo->nombre }}'" class="img-fluid" width="150">
@@ -41,7 +42,6 @@
       <div class="panel espacio" data-color="border-grupo-{{ $grupo->id }}">
         <h2 data-color="grupo-{{ $grupo->id }}">Historia</h2>
         <div class="panel-content">
-          {{-- antes caja-content --}}
           <p class="justify">{{ $grupo->historia }}</p>
       </div>
     </div>

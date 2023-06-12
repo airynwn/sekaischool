@@ -194,11 +194,5 @@
         <div class="espacio"></div>
     </form>
 </div>
-{{-- <div>
-    @include('profile.partials.update-profile-information-form')
-</div>
-<div>
-    @include('profile.partials.update-password-form')
-</div> --}}
 @include('layouts.modal', ['personajes' => $personajes])
 @endsection
