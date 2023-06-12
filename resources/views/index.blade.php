@@ -1,4 +1,7 @@
 @extends('layouts.guest')
+@section('title')
+    Inicio ♪ SekaiSchool
+@endsection
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/index.css') }}">
     <link rel="stylesheet" href="{{ asset('css/colores.css') }}">
@@ -50,5 +53,17 @@
     </script>
 @endsection
 @section('content')
+<div class="container">
+    <div class="row">
+        <div class="col text-center">
+            <h1>SekaiSchool</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col text-center">
+            <em>Comunidad y base de datos de Project Sekai</em>
+        </div>
+    </div>
+</div>
 <div id="calendar"></div>
 @endsection
