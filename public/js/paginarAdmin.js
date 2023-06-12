@@ -8,6 +8,9 @@ document.addEventListener('click', (event) => {
     }
 });
 
+/**
+ * Paginación según URL de las tablas de la vista de Admin
+ */
 async function paginar(url) {
     await fetch(url)
     .then(response => {

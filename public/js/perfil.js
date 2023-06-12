@@ -41,6 +41,10 @@ async function eliminarCarta(event) {
     cartasModal.show();
 }
 
+/**
+ * Muestra las cartas según el modo seleccionado (colección/deseo)
+ * Baja la opacidad del modo no seleccionado
+ */
 async function mostrarCartas(event) {
     // Objeto con los datos del formulario (_token, modo)
     let formData = new FormData();

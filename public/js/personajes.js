@@ -25,7 +25,7 @@ async function mostrarPj(event) {
         console.log(result)
         let contenedor = document.getElementById("pj-container");
         contenedor.innerHTML = result;
-        // Cambia la altura de la columna con media query
+        // Cambia la altura de la columna de datos con media query
         const x = window.matchMedia("(max-width: 767px)");
         cambiarColumna(x);
         x.onchange = () => {

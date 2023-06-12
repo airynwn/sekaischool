@@ -117,14 +117,6 @@ function validarPwConfirm() {
     return false;
 }
 
-// TODO Fecha de cumpleaños
-
-// TODO FontAwesome Eye Icon al lado de los input password
-// document.getElementById("ver").addEventListener('click', () => {
-//     let dni = document.getElementById("dni");
-//     (dni.type == "text") ? dni.type = "password" : dni.type = "text";
-// });
-
 function validarRegistro(event) {
     event.preventDefault();
     let result = validarUsername();
@@ -134,15 +126,12 @@ function validarRegistro(event) {
     result = validarBio() && result;
     result = validarDc() && result;
     result = validarTw() && result;
-    // TODO email y to lo demas
-
 
     if (result) {
         console.log("Datos introducidos correctamente");
         event.target.submit();
     }
 }
-
 
 // Bio + Discord + Twitter
 function validarEditarPerfil(event) {

@@ -82,41 +82,6 @@ h4 {
     border: none !important;
 }
 
-/********************* MODAL  *********************/
-
-.flexbox-cerrar {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 0.5em;
-}
-
-.boton-cerrar {
-    background-color: #b83131;
-    padding: 0 0.5em 0 0.5em;
-    border-radius: 10px;
-    border: none;
-}
-
-        /****** Contenido Modal ******/
-
-#modal-personajes .caja {
-    background-image: none;
-}
-
-.modal-personajes-content {
-    visibility: hidden;
-    opacity: 0;
-    position: absolute;
-    top: 0; right: 0; bottom: 0; left: 0;
-    transition: all .4s;
-    overflow: auto;
-}
-
-.modal-personajes-content:target {
-    visibility: visible;
-    opacity: 1;
-  }
-
 
 /***********************************************/
 
@@ -147,15 +112,7 @@ h4 {
 
 /********************* INDEX  *********************/
 
-main {
-    /* padding: 1em; */
-}
-
 body {
-    /* background: url("../img/background.png") round fixed;
-    background-size: contain; */
-    /* background-image: linear-gradient(315deg, #713387, #3e2388, #1e3b97); */
-    /* background: url("../img/background.png"); */
     background-color: #1C1834;
     background-size: cover;
     background-position: center;
@@ -163,13 +120,6 @@ body {
     background-attachment: fixed;
     font-family: 'Source Sans Pro', sans-serif;
     color: white;
-    /* background: linear-gradient(
-        178.7deg,
-        rgba(45, 37, 142, 0.93) 1.11%,
-        rgba(31, 52, 162, 0.829063) 53.07%,
-        rgba(93, 26, 179, 0.74) 98.91%
-    );
-    color: white; */
 }
 
 .ruta-actual {
@@ -178,39 +128,12 @@ body {
 
 .sidebar {
     background-color: #2F2957;
-    /* background: linear-gradient(90.88deg, rgba(0, 0, 0, 0.28) 0.62%, rgba(0, 0, 0, 0.34) 99.1%); */
-    /* background: linear-gradient(90.88deg, rgba(0, 0, 0, 0.28) 0.62%, rgba(0, 0, 0, 0.34) 99.1%),
-linear-gradient(180deg, rgba(0, 66, 165, 0.11) 0%, rgba(189, 0, 255, 0.2) 100%); */
-    /* background: linear-gradient(180deg, rgba(69, 110, 255, 0.62) 0%, rgba(152, 71, 255, 0.6) 100%); */
-
-
-}
-
-@media only screen and (max-width:576px) {
-    body {
-        background-size: cover;
-    }
 }
 
 
 nav {
     font-family: 'Source Sans Pro', sans-serif;
 }
-
-/*
-Antiguo fondo pre-vídeo
- .home {
-    background: url("../img/bg-pc.png") center no-repeat;
-    background-size: cover;
-}
-@media only screen and (max-width:991px) {
-    .home {
-        background: url("../img/bg-movil.png") right;
-    }
-    main {
-        background-image: none;
-    }
-} */
 
 @media only screen and (max-width:991px) {
     .sidebar-width {
@@ -224,19 +147,6 @@ Antiguo fondo pre-vídeo
     }
 }
 
-#bg-video {
-    filter: opacity(0.3);
-    position: absolute;
-    z-index: 0;
-    -webkit-mask-image: -webkit-gradient(linear, left 80%, left bottom, from(rgb(0, 0, 0)),
-    to(rgba(0,0,0,0)))
-
-}
-
-.overlay {
-    position: relative;
-    z-index: 2;
-}
 
 #logo-index {
     height: 70px;
@@ -244,30 +154,6 @@ Antiguo fondo pre-vídeo
 
 .logo-asset {
     height: 200px;
-}
-
-#gacha-actual h1,
-.texto h1 {
-    background: linear-gradient(180deg, #3AA89B 0%, #4254F5 100%);
-    -webkit-background-clip: text;
-}
-
-#evento-actual h1 {
-    background: linear-gradient(180deg, #EC64F5 0%, #A022A8 100%);
-    -webkit-background-clip: text;
-}
-
-.footer {
-    box-sizing: border-box;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    align-content: flex-end;
-    bottom: 0;
-    padding: 0 10%;
-    position: fixed;
 }
 
 /* Fondo para iconos */
