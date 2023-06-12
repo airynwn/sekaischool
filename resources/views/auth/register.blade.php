@@ -5,6 +5,7 @@
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
     <script type="text/javascript" src="{{ asset('js/validaciones.js') }}" defer></script>
+    <script type="text/javascript" src="{{ asset('js/sekaischool.js') }}"></script>
 @endsection
 @section('content')
 <form method="POST" action="{{ route('register') }}" onsubmit="validarRegistro(event)">
@@ -34,7 +35,11 @@
                 </div>
                 {{--  --}}
                 <div class="campo espacio">
-                    <label for="password" class="mx-4">Contraseña</label>
+                    <div class="d-flex">
+                        <label for="password" class="mx-4">Contraseña</label>
+                        <i class="fa-solid fa-eye d-flex align-items-center"
+                        onclick="ver()"></i>
+                    </div>
                     <input type="password" name="password" id="password" class="mx-3">
                     <p class="error" id="password-error">
                         La contraseña debe tener al menos 8 caracteres, una letra y un número

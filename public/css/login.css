@@ -163,6 +163,10 @@ body {
     font-family: 'Source Sans Pro', sans-serif;
 }
 
+.fa-eye {
+    cursor: pointer;
+}
+
 /* Login: input azul + botón lila */
 #login-box .input-form {
     border: 1px solid #4254F5;

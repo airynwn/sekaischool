@@ -4,6 +4,7 @@
 @endsection
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
+    <script type="text/javascript" src="{{ asset('js/sekaischool.js') }}"></script>
 @endsection
 @section('content')
     <!-- Session Status -->
@@ -31,7 +32,11 @@
 
                     <!-- Password -->
                     <div class="campo">
-                        <x-input-label for="password" :value="__('Contraseña')" class="mx-4" />
+                        <div class="d-flex">
+                            <x-input-label for="password" :value="__('Contraseña')" class="mx-4" />
+                            <i class="fa-solid fa-eye d-flex align-items-center"
+                            onclick="ver()"></i>
+                        </div>
                         <x-text-input id="password" class="mx-3" type="password"
                             name="password" required autocomplete="current-password" />
 
