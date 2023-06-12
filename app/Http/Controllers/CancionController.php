@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Validation\Rule;
 
 class CancionController extends Controller
 {
@@ -89,8 +90,8 @@ class CancionController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'titulo' => 'required|string',
-            'audio' => ['required', 'file', 'mimetypes:audio/ogg', 'max:10000'],
+            'titulo' => 'required|string|unique:canciones',
+            'audio' => ['required', 'file', 'mimetypes:audio/ogg', 'max:10000', 'unique:canciones'],
         ]);
 
         $cancion = Cancion::create($request->all());
@@ -148,8 +149,8 @@ class CancionController extends Controller
     public function update(Request $request, Cancion $cancion)
     {
         $request->validate([
-            'titulo' => 'required|string',
-            'audio' => ['nullable', 'file', 'mimetypes:audio/ogg', 'max:10000'],
+            'titulo' => ['required', 'string', Rule::unique('canciones')->ignore($cancion->id)],
+            'audio' => ['nullable', 'file', 'mimetypes:audio/ogg', 'max:10000', Rule::unique('canciones')->ignore($cancion->id)],
         ]);
 
         $audio = $cancion->audio;

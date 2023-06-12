@@ -6,6 +6,7 @@ use App\Models\Grupo;
 use App\Models\Personaje;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Validation\Rule;
 
 class PersonajeController extends Controller
 {
@@ -62,15 +63,15 @@ class PersonajeController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nombre' => 'required|string',
-            'historia' => 'required|string',
-            'personalidad' => 'required|string',
-            'imagen' => ['required', 'image', 'max:3000'],
-            'comic' => ['required', 'image', 'max:500'],
-            'chibi' => ['required', 'image', 'max:200'],
-            'icon' => ['required', 'image', 'max:300'],
-            'stamp' => ['required', 'image', 'max:300'],
-            'sticker' => ['required', 'image', 'max:200'],
+            'nombre' => 'required|string|unique:personajes',
+            'historia' => 'required|string|unique:personajes',
+            'personalidad' => 'required|string|unique:personajes',
+            'imagen' => ['required', 'image', 'max:3000', 'unique:personajes'],
+            'comic' => ['required', 'image', 'max:500', 'unique:personajes'],
+            'chibi' => ['required', 'image', 'max:200', 'unique:personajes'],
+            'icon' => ['required', 'image', 'max:300', 'unique:personajes'],
+            'stamp' => ['required', 'image', 'max:300', 'unique:personajes'],
+            'sticker' => ['required', 'image', 'max:200', 'unique:personajes'],
             'grupo_id' => ['required', 'exists:grupos,id'],
         ]);
 
@@ -178,16 +179,16 @@ class PersonajeController extends Controller
     public function update(Request $request, Personaje $personaje)
     {
         $request->validate([
-            'nombre' => 'required|string',
-            'historia' => 'required|string',
-            'personalidad' => 'required|string',
-            'imagen' => ['nullable', 'image', 'max:3000'],
-            'comic' => ['nullable', 'image', 'max:500'],
-            'chibi' => ['nullable', 'image', 'max:200'],
-            'icon' => ['nullable', 'image', 'max:300'],
-            'stamp' => ['nullable', 'image', 'max:300'],
-            'sticker' => ['nullable', 'image', 'max:200'],
-            'grupo_id' => ['required', 'exists:grupos,id'],
+            'nombre' => ['required', 'string', Rule::unique('canciones')->ignore($personaje->id)],
+            'historia' => ['required', 'string', Rule::unique('canciones')->ignore($personaje->id)],
+            'personalidad' => ['required', 'string', Rule::unique('canciones')->ignore($personaje->id)],
+            'imagen' => ['nullable', 'image', 'max:3000', Rule::unique('canciones')->ignore($personaje->id)],
+            'comic' => ['nullable', 'image', 'max:500', Rule::unique('canciones')->ignore($personaje->id)],
+            'chibi' => ['nullable', 'image', 'max:200', Rule::unique('canciones')->ignore($personaje->id)],
+            'icon' => ['nullable', 'image', 'max:300', Rule::unique('canciones')->ignore($personaje->id)],
+            'stamp' => ['nullable', 'image', 'max:300', Rule::unique('canciones')->ignore($personaje->id)],
+            'sticker' => ['nullable', 'image', 'max:200', Rule::unique('canciones')->ignore($personaje->id)],
+            'grupo_id' => ['required', 'exists:grupos,id', Rule::unique('canciones')->ignore($personaje->id)],
         ]);
 
         $nombrepj = strtolower(explode(' ', $personaje->nombre)[0]);

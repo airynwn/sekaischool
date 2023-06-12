@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Pregunta;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Validation\Rule;
 
 class PreguntaController extends Controller
 {
@@ -55,7 +56,7 @@ class PreguntaController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'pregunta' => 'required|string',
+            'pregunta' => 'required|string|unique:preguntas',
         ]);
 
         Pregunta::create($request->all());
@@ -104,7 +105,7 @@ class PreguntaController extends Controller
     public function update(Request $request, Pregunta $pregunta)
     {
         $request->validate([
-            'pregunta' => 'required|string',
+            'pregunta' => ['required', 'string', Rule::unique('preguntas')->ignore($pregunta->id)],
         ]);
 
         $pregunta->update($request->all());

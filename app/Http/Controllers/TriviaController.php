@@ -6,6 +6,7 @@ use App\Models\Personaje;
 use App\Models\Trivia;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Validation\Rule;
 
 class TriviaController extends Controller
 {
@@ -56,7 +57,7 @@ class TriviaController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'dato' => 'required|string',
+            'dato' => 'required|string|unique:trivia',
             'pj_id' => ['required', 'exists:personajes,id'],
         ]);
 
@@ -106,7 +107,7 @@ class TriviaController extends Controller
     public function update(Request $request, Trivia $trivia)
     {
         $request->validate([
-            'dato' => 'required|string',
+            'dato' => ['required', 'string', Rule::unique('trivia')->ignore($trivia->id)],
             'pj_id' => ['required', 'exists:personajes,id'],
         ]);
 

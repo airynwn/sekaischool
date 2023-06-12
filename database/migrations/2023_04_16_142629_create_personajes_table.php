@@ -25,7 +25,6 @@ return new class extends Migration
             $table->text('icon');
             $table->text('stamp');
             $table->text('sticker');
-            // TODO (?) Opcional: Varias imágenes de comic
             $table->text('comic');
             // [FK] Grupo
             $table->foreign('grupo_id')->references('id')->on('grupos');

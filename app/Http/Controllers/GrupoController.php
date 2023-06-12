@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Grupo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Validation\Rule;
 
 class GrupoController extends Controller
 {
@@ -60,10 +61,10 @@ class GrupoController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nombre' => 'required|string',
-            'logo' => ['required', 'image', 'max:200'],
-            'imagen' => ['required', 'image', 'max:3000'],
-            'historia' => 'required|string',
+            'nombre' => 'required|string|unique:grupos',
+            'logo' => ['required', 'image', 'max:200', 'unique:grupos'],
+            'imagen' => ['required', 'image', 'max:3000', 'unique:grupos'],
+            'historia' => 'required|string|unique:grupos',
         ]);
 
         $grupo = Grupo::create($request->all());
@@ -133,10 +134,10 @@ class GrupoController extends Controller
     public function update(Request $request, Grupo $grupo)
     {
         $request->validate([
-            'nombre' => 'required|string',
-            'logo' => ['nullable', 'image', 'max:200'],
-            'imagen' => ['nullable', 'image', 'max:3000'],
-            'historia' => 'required|string',
+            'nombre' => ['required', 'string', Rule::unique('grupos')->ignore($grupo->id)],
+            'logo' => ['nullable', 'image', 'max:200', Rule::unique('grupos')->ignore($grupo->id)],
+            'imagen' => ['nullable', 'image', 'max:3000', Rule::unique('grupos')->ignore($grupo->id)],
+            'historia' => ['required', 'string', Rule::unique('grupos')->ignore($grupo->id)],
         ]);
 
         $logo = $grupo->logo;
