@@ -53,3 +53,99 @@ Para conseguir esto, es importante tener en cuenta el estilo y la ambientación 
 ![1686588654382](image/README/1686588654382.png)
 
 ![1686588657987](image/README/1686588657987.png)
+
+En el inicio se muestra información sobre el videojuego y la página, tres cartas de rareza 4 aleatorias, y un calendario con eventos marcados para mostrar la fecha de cumpleaños de los personajes.
+
+## Cartas
+
+![1686588886639](image/README/1686588886639.png)
+
+Lista de cartas existentes.
+
+* Se van mostrando más a medida que se scrollea hacia abajo (scroll infinito).
+* Si lo mira un usuario, puede añadir las cartas a su colección o lista de deseos.
+* Permite filtrar por grupo, rareza, atributo y/o personaje o limpiar filtros.
+* La última búsqueda se guarda y se selecciona automáticamente al volver.
+
+## Personajes
+
+![1686589049041](image/README/1686589049041.png)
+
+![1686589224729](image/README/1686589224729.png)
+
+![1686589257040](image/README/1686589257040.png)
+
+Lista de personajes con información de cada uno, imágenes y texto de su color.
+
+* Datos básicos (preguntas y respuestas genéricas)
+* Personalidad
+* Historia
+* Trivia
+* Relaciones con otros personajes
+* Cómics del grupo al que pertenece
+
+## Comunidad
+
+![1686589508600](image/README/1686589508600.png)
+
+Comunidad de usuarios estilo Twitter con clasificación por valoraciones (top 10).
+
+* Los posts se pueden ordenar por más reciente o más popular.
+* Se pueden valorar posts positivamente.
+* Los usuarios pueden borrar sus propios posts y los administradores pueden borrar todos.
+* Máximo de 50 posts.
+
+## Grupos
+
+![1686589764292](image/README/1686589764292.png)
+
+![1686589811585](image/README/1686589811585.png)
+
+Lista de grupos con información e imágenes de cada uno.
+
+* Menú de selección de grupos con vídeo de fondo por defecto
+* Miembros e historia del grupo
+
+## Simulador Gacha
+
+![1686589980629](image/README/1686589980629.png)
+
+Simulador de obtención de cartas de manera aleatoria (gacha) con los porcentajes reales del juego.
+
+* Interfaz gacha similar a la del juego
+* Tabla con información sobre las tiradas
+
+## Adivina la canción
+
+![1686590074478](image/README/1686590074478.png)
+
+Minijuego de adivinar la canción aleatoria del juego que suena en el audio.
+
+* Intentos infinitos
+* Se pueden escuchar los 2 primeros segundos y aumenta con cada fallo
+* Al acertar se genera una nueva canción aleatoria que adivinar
+* Solución encriptada para evitar trampas
+
+## Perfil
+
+![1686590216352](image/README/1686590216352.png)
+
+![1686590240618](image/README/1686590240618.png)
+
+![1686590271691](image/README/1686590271691.png)
+
+Perfil de usuario.
+
+* Avatar, biografía y cumpleaños
+* Grupo y personaje favoritos
+* Redes sociales
+* Últimos 10 posts
+* Colección de cartas y lista de deseos
+* Edición y personalización del perfil
+* Generación de PDF con datos del perfil del usuario
+
+## Login y Registro
+
+![1686590431412](image/README/1686590431412.png)
+
+![1686590434550](image/README/1686590434550.png)
