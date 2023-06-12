@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Route;
 class CartaController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Muestra la vista de Cartas (admin/guest) paginada.
      *
      * @return \Illuminate\Http\Response
      */

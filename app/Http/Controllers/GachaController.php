@@ -13,7 +13,7 @@ class GachaController extends Controller
     const R4_PROB = 3;
 
     /**
-     * Display a listing of the resource.
+     * Muestra la vista Gacha.
      *
      * @return \Illuminate\Http\Response
      */
@@ -25,7 +25,7 @@ class GachaController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Realiza una tirada de 10 cartas con las probabilidades fijas del juego.
      *
      * @return \Illuminate\Http\Response
      */

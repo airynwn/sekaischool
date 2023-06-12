@@ -13,7 +13,7 @@ use Illuminate\Validation\Rule;
 class CancionController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Muestra la vista de canciones pasando una aleatoria.
      *
      * @return \Illuminate\Http\Response
      */
@@ -38,6 +38,11 @@ class CancionController extends Controller
         }
     }
 
+    /**
+     * Encripta la solución y la compara con
+     * el intento (guess) de adivinar la canción
+     * para comprobar si acierta.
+     */
     public function adivinar(Request $request)
     {
         $guess = $request->cancion;
