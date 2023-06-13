@@ -73,6 +73,20 @@ function validarEmail() {
     return false;
 }
 
+function validarFecha() {
+    const cumple = document.getElementById("cumple");
+
+    if (/^\d{4}-\d{2}-\d{2}$/.test(cumple.value)){
+        document.getElementById('cumple-error').classList.remove('error-visible');
+        return true;
+    } else {
+        // alert("El usuario de Twitter sólo puede incluir letras, números y guión bajo hasta 15 caracteres y debe empezar por @");
+    }
+    document.getElementById('cumple-error').classList.add('cumple-visible');
+
+    return false;
+}
+
 function validarPw() {
     const password = document.getElementById("password");
 
@@ -126,6 +140,7 @@ function validarRegistro(event) {
     result = validarBio() && result;
     result = validarDc() && result;
     result = validarTw() && result;
+    result = validarFecha() && result;
 
     if (result) {
         console.log("Datos introducidos correctamente");

@@ -76,8 +76,11 @@
                 {{--  --}}
                 <div class="campo espacio">
                     <label for="cumple" class="mx-4">Fecha de cumpleaños</label>
-                    <small class="mx-4">No puedes cambiar esta información más adelante</small>
-                    <input type="date" name="cumple" id="cumple" class="mx-3">
+                    <small class="mx-4">(opcional) Se mostrará en tu perfil y no podrás cambiarla. Debe ser una fecha válida anterior a hoy.</small>
+                    <input type="date" name="cumple" id="cumple" class="mx-3" onchange="validarFecha()">
+                    <p class="error" id="cumple-error">
+                        Debes introducir una fecha válida.
+                    </p>
                 </div>
                 {{--  --}}
                 <div class="campo espacio">
