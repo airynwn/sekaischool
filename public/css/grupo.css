@@ -284,10 +284,6 @@ ul {
     height: 100%;
 }
 
-i:hover {
-    color: var(--wxs);
-}
-
 .center {
     justify-content: center;
 }
@@ -305,25 +301,8 @@ i:hover {
     width: 100%;
 }
 
-.avatar-foro {
-    max-width: 100%;
-    height: auto;
-}
-
-.comment {
-    text-align: justify;
-}
-
-@media only screen and (min-width: 450px) {
-    .avatar-foro {
-        width: 150px;
-        height: auto;
-    }
-}
-
 .container {
     color: white;
-    /* -webkit-text-stroke: 0.25px var(--ln); */
 }
 
 /****** Colores con variables ******/

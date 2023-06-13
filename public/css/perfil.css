@@ -200,7 +200,7 @@ div.container:nth-child(1) {
 
 @keyframes border-color {
     0% {
-        border-color: var(--usercolor);
+        border-color: white;
     }
 
     25% {
@@ -216,7 +216,7 @@ div.container:nth-child(1) {
     }
 
     100% {
-        border-color: var(--usercolor);
+        border-color: white;
     }
 }
 
@@ -365,7 +365,7 @@ span a {
 
 .bio {
     width: 90%;
-    word-break: break-word;
+    word-break: break-all;
 }
 
 .row>* {
