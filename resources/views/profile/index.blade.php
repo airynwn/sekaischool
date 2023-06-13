@@ -40,7 +40,9 @@
 
             <div class="botones">
                 <div class="espacio">
-                    <button id="cumple"><i class="fa-solid fa-cake-candles"></i> {{ $user->cumple ?? '01/01/1970'}}</button>
+                    @if (isset($user->cumple))
+                    <button id="cumple"><i class="fa-solid fa-cake-candles"></i> {{ Carbon\Carbon::parse($user->cumple)->format('d/m/Y') }}</button>
+                    @endif
                     <button id="grupo" data-color="{{ $user->grupo_fav->nombre ?? 'generico' }}">
                         {{ $user->grupo_fav->nombre ?? 'Grupo favorito' }}
                     </button>

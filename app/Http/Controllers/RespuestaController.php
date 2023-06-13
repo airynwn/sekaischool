@@ -7,6 +7,7 @@ use App\Models\Pregunta;
 use App\Models\Respuesta;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Validation\Rule;
 
 class RespuestaController extends Controller
 {
@@ -54,7 +55,10 @@ class RespuestaController extends Controller
         $request->validate([
             'respuesta' => 'required|string',
             'pregunta_id' => ['required', 'exists:preguntas,id'],
-            'pj_id' => ['required', 'exists:personajes,id'],
+            'pj_id' => ['required', 'exists:personajes,id', Rule::unique('respuestas')->where(function ($query) use ($request) {
+                return $query->where('pregunta_id', $request->pregunta_id)
+                             ->where('pj_id', $request->pj_id);
+            })],
         ]);
 
         Respuesta::create($request->all());
@@ -103,8 +107,6 @@ class RespuestaController extends Controller
     {
         $request->validate([
             'respuesta' => 'required|string',
-            'pregunta_id' => ['required', 'exists:preguntas,id'],
-            'pj_id' => ['required', 'exists:personajes,id'],
         ]);
 
         $respuesta->update($request->all());

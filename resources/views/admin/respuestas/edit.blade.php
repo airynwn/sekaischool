@@ -14,25 +14,9 @@
     @method('PUT')
     @csrf
         <div class="form-group">
-            <label for="pj_id">Personaje</label>
-            <select name="pj_id" id="pj_id">
-                @foreach ($personajes as $fila)
-                    <option {{ $respuesta->personaje->id === $fila->id ? 'selected' : '' }}
-                            value="{{ $fila->id }}">
-                        {{ $fila->nombre }}
-                    </option>
-                @endforeach
-            </select>
+            <label for="pj_id"><strong>Personaje</strong>: {{ $respuesta->personaje->nombre }}</label>
             <br>
-            <label for="pregunta_id">Pregunta</label>
-            <select name="pregunta_id" id="pregunta_id">
-                @foreach ($preguntas as $fila)
-                    <option {{ $respuesta->pregunta->id === $fila->id ? 'selected' : '' }}
-                            value="{{ $fila->id }}">
-                        {{ $fila->pregunta }}
-                    </option>
-                @endforeach
-            </select>
+            <label for="pregunta_id"><strong>Pregunta</strong>: {{ $respuesta->pregunta->pregunta }}</label>
             <br>
             <label for="respuesta">Respuesta</label>
             <textarea name="respuesta" rows="3" value="{{ $respuesta->respuesta }}">{{ $respuesta->respuesta }}</textarea>
