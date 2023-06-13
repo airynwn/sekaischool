@@ -58,13 +58,13 @@ async function adivinar(event) {
 
             random.replaceWith(reset);
             sec = 2;
-            console.log(sec);
+            // console.log(sec);
             audioDuracion(sec);
         } else {
             respuesta.innerHTML = `
             <button type="button" class="btn btn-danger">Respuesta incorrecta. ¡Sigue intentándolo!</button>`;
             sec = sec + 2;
-            console.log(sec);
+            // console.log(sec);
             audioDuracion(sec);
         }
         guess.value = '';

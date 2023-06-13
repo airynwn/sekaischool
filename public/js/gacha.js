@@ -68,7 +68,7 @@ async function gachaPull() {
 
     })
     .catch(e => {
-        console.log(e);
+        // console.log(e);
         const contenedor = document.getElementById("pull-result");
         contenedor.innerHTML = "<p>Se ha producido un erorr. Inténtelo más tarde</p>"
 

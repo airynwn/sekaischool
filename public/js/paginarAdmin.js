@@ -30,7 +30,7 @@ async function paginar(url) {
         actual.innerHTML = nuevo.innerHTML;
     })
     .catch(e => {
-        console.log(e);
+        // console.log(e);
         return "Se ha producido un error. Inténtelo más tarde.";
     });
 }

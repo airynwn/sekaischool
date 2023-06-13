@@ -23,7 +23,7 @@
                     .then(response => response.json())
                     .then(data => {
                         successCallback(data);
-                        console.log(data)
+                        // console.log(data)
                     })
                     .catch(error => {
                         failureCallback(error);

@@ -11,7 +11,7 @@ async function eliminarCarta(event) {
     const form = event.target;
     // Objeto con los datos del formulario (_token, carta)
     const formData = new FormData(form);
-    console.log("test");
+    // console.log("test");
 
     const msg = await fetch("/cartas/delete", {
         method: "POST",
@@ -29,7 +29,7 @@ async function eliminarCarta(event) {
         })
         .then((result) => result.info)
         .catch((e) => {
-            console.log(e);
+            // console.log(e);
             return "Se ha producido un error. Inténtelo más tarde.";
         });
 
@@ -63,8 +63,8 @@ async function mostrarCartas(event) {
     formData.append('modo', modo);
     formData.append('user', user);
 
-    console.log(modo);
-    console.log(user);
+    // console.log(modo);
+    // console.log(user);
 
     await fetch('/profile/inventario', {
         method: "POST",
@@ -78,12 +78,12 @@ async function mostrarCartas(event) {
         }
     })
       .then(result => {
-        console.log(result)
+        // console.log(result)
         let contenedor = document.getElementById("cartas-container");
         contenedor.innerHTML = result;
     })
       .catch(e => {
-        console.log(e);
+        // console.log(e);
         return "Se ha producido un error. Inténtelo más tarde.";
     });
 }

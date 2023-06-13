@@ -8,7 +8,7 @@ async function mostrarGrupo(event) {
     formData.append('_token', csrfToken);
     formData.append('grupo', grupoId);
 
-    console.log(grupoId);
+    // console.log(grupoId);
 
     await fetch('/grupos/grupo', {
         method: "POST",
@@ -22,12 +22,12 @@ async function mostrarGrupo(event) {
         }
     })
       .then(result => {
-        console.log(result)
+        // console.log(result)
         let contenedor = document.getElementById("grupo-container");
         contenedor.innerHTML = result;
     })
       .catch(e => {
-        console.log(e);
+        // console.log(e);
         return "Se ha producido un error. Inténtelo más tarde.";
     });
 }

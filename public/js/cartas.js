@@ -25,7 +25,7 @@ async function anadirCarta(event) {
       })
       .then(result => result.info)
       .catch(e => {
-        console.log(e);
+        // console.log(e);
         return "Se ha producido un error. Inténtelo más tarde.";
     });
 
@@ -43,7 +43,7 @@ function obtenerCookie() {
     const filtros = localStorage.getItem("filtros");
     if (filtros !== null) {
         const obj = JSON.parse(filtros);
-        console.log(obj);
+        // console.log(obj);
         // {grupos: Array(1), rareza: Array(0), atributos: Array(0), pjs: Array(0)}
         for (let [atrib, listaSel] of Object.entries(obj)) {
             // atrib: grupos, rareza... listaSel: 1, 2...
@@ -148,13 +148,13 @@ async function cargarCartas() {
     })
     .then(result => {
         // Añade las nuevas cartas al final del contenedor al scrollear
-        console.log(result);
+        // console.log(result);
         const contenedor = document.getElementById("cartas-container");
         contenedor.insertAdjacentHTML('beforeend', result);
         cargando = false;
     })
     .catch(e => {
-        console.log(e);
+        // console.log(e);
         const contenedor = document.getElementById("cartas-container");
         contenedor.innerHTML = "<p>Se ha producido un erorr. Inténtelo más tarde</p>"
 

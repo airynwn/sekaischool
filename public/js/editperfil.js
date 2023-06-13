@@ -8,8 +8,8 @@ function previsualizar(event) {
         const imagenUrl = URL.createObjectURL(archivos[0]);
         const avatar = document.querySelector("#previsualizar-avatar");
         avatar.src = imagenUrl;
-        console.log(avatar);
-        console.log(imagenUrl);
+        // console.log(avatar);
+        // console.log(imagenUrl);
         avatar.style.objectFit = 'cover';
         avatar.style.height = '250px';
         avatar.style.width = '250px';

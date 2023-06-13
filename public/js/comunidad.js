@@ -12,7 +12,7 @@ async function enviarPost(event) {
     // Objeto con los datos del formulario (_token, contenido, user_id)
     const formData = new FormData(form);
 
-    formData.forEach((value, key) => console.log(key,value));
+    // formData.forEach((value, key) => console.log(key,value));
 
     const msg = await fetch("/comunidad/post", {
         method: "POST",
@@ -27,7 +27,7 @@ async function enviarPost(event) {
         })
         .then((result) => result.info)
         .catch((e) => {
-            console.log(e.info);
+            // console.log(e.info);
             return "Se ha producido un error. Inténtelo más tarde.";
         });
 
@@ -59,7 +59,7 @@ async function valorarPost(event) {
     const postId = form.getAttribute("data-post-id");
 
 
-    formData.forEach((value, key) => console.log(key,value));
+    // formData.forEach((value, key) => console.log(key,value));
 
     const msg = await fetch(`/comunidad/${postId}/valorar`, {
         method: "POST",
@@ -81,7 +81,7 @@ async function valorarPost(event) {
         })
         .then((result) => result.info)
         .catch((e) => {
-            console.log(e.info);
+            // console.log(e.info);
             return "Se ha producido un error. Inténtelo más tarde.";
         });
 
@@ -131,7 +131,7 @@ async function eliminarPost(event) {
     const formData = new FormData(form);
     const postId = document.getElementById("hidden-post-id").value;
 
-    formData.forEach((value, key) => console.log(key,value));
+    // formData.forEach((value, key) => console.log(key,value));
 
     const msg = await fetch(`/comunidad/${postId}/delete`, {
         method: "POST",
@@ -150,7 +150,7 @@ async function eliminarPost(event) {
         })
         .then((result) => result.info)
         .catch((e) => {
-            console.log(e.info);
+            // console.log(e.info);
             return "Se ha producido un error. Inténtelo más tarde.";
         });
 
@@ -180,7 +180,7 @@ async function mostrarPosts(event) {
     formData.append('_token', csrfToken);
     formData.append('modo', modo);
 
-    console.log(modo);
+    // console.log(modo);
 
     await fetch('/comunidad/posts', {
         method: "POST",
@@ -194,12 +194,12 @@ async function mostrarPosts(event) {
         }
     })
       .then(result => {
-        console.log(result)
+        // console.log(result)
         let contenedor = document.getElementById("post-container");
         contenedor.innerHTML = result;
     })
       .catch(e => {
-        console.log(e);
+        // console.log(e);
         return "Se ha producido un error. Inténtelo más tarde.";
     });
 }

@@ -8,7 +8,7 @@ async function mostrarPj(event) {
     formData.append('_token', csrfToken);
     formData.append('personaje', pjId);
 
-    console.log(pjId);
+    // console.log(pjId);
 
     await fetch('/personajes/personaje', {
         method: "POST",
@@ -22,7 +22,7 @@ async function mostrarPj(event) {
         }
     })
       .then(result => {
-        console.log(result)
+        // console.log(result)
         let contenedor = document.getElementById("pj-container");
         contenedor.innerHTML = result;
         // Cambia la altura de la columna de datos con media query
@@ -34,7 +34,7 @@ async function mostrarPj(event) {
         carruselComics();
     })
       .catch(e => {
-        console.log(e);
+        // console.log(e);
         return "Se ha producido un error. Inténtelo más tarde.";
     });
 }
@@ -51,7 +51,7 @@ async function volverInicio() {
         throw new Error(response.text());
       }
     } catch (e) {
-      console.log(e);
+    //   console.log(e);
       return "Se ha producido un error. Inténtelo más tarde.";
     }
 }
@@ -76,7 +76,7 @@ function cambiarColumna(x) {
             col.style.maxHeight = `calc(50vw * ${img.height / img.width})`;
         };
     }
-    console.log(col);
+    // console.log(col);
 }
 
 /**

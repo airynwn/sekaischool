@@ -97,16 +97,16 @@ function validarPw() {
         return true;
     } else {
         if (password.value.length < 8) {
-            console.log('8c')
+            // console.log('8c')
             // alert("La contraseña debe tener al menos 8 caracteres");
         }
         if (/^(?!.*[A-Za-z])$/.test(password.value)) {
-            console.log('letra')
+            // console.log('letra')
             // Búsqueda hacia delante negativa: No tiene ninguna letra
             // alert("La contraseña debe tener al menos una letra");
         }
         if (/^(?!.*\d)$/.test(password.value)) {
-            console.log('numero')
+            // console.log('numero')
             // Búsqueda hacia delante negativa: No tiene ningún número
             // alert("La contraseña debe tener al menos un número");
         }
@@ -143,7 +143,7 @@ function validarRegistro(event) {
     result = validarFecha() && result;
 
     if (result) {
-        console.log("Datos introducidos correctamente");
+        // console.log("Datos introducidos correctamente");
         event.target.submit();
     }
 }
@@ -156,7 +156,7 @@ function validarEditarPerfil(event) {
     result = validarTw() && result;
 
     if (result) {
-        console.log("Datos introducidos correctamente");
+        // console.log("Datos introducidos correctamente");
         event.target.submit();
     }
 }
