@@ -33,6 +33,11 @@ class IndexController extends Controller
         $events = [];
 
         foreach ($cumples as $cumple) {
+            try {
+                $fecha = Carbon::createFromFormat('d-m', $cumple->respuesta);
+            } catch (\Exception $e) {
+                continue;
+            }
             $event = [
                 'title' => explode(' ', $cumple->nombre)[0],
                 'start' => Carbon::createFromFormat('d-m', $cumple->respuesta)->setYear(Carbon::now()->year),
