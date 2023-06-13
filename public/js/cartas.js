@@ -112,7 +112,11 @@ let cargando = false;
 // Datos iniciales
 window.onload = () => {
     obtenerCookie();
-    obtenerFormData();
+    const form = document.getElementById("filter-wrapper");
+    const formData = new FormData(form);
+    const values = ["grupos", "rareza", "atributos", "pjs"];
+    values.forEach(value => formData.append(value, "[]"));
+    formDataBusqueda = formData;
 }
 
 // Scroll infinito: Al scrollear hacia abajo se cargan más cartas
