@@ -46,10 +46,17 @@
                     class="btn btn-info text-white">Modificar</a>
                 <br>
                 <br>
-                <form action={{ route(str_replace('index', 'destroy', Route::current()->getName()), $fila) }}
+                {{-- <form action={{ route(str_replace('index', 'destroy', Route::current()->getName()), $fila) }}
                     method="POST">
                     @method('DELETE')
                     @csrf
+                    <button type="submit" class="btn btn-danger">Eliminar</button>
+                </form> --}}
+                <form onsubmit="confirmarBorradoAdmin(event)"
+                    id="confirmarBorradoForm"
+                    data-fila-id="{{ $fila }}">
+                    @csrf
+                    @method('DELETE')
                     <button type="submit" class="btn btn-danger">Eliminar</button>
                 </form>
             </td>
@@ -67,3 +74,27 @@
     @csrf
     <button type="submit" class="btn btn-outline-success">Crear</button>
 </form>
+<div class="modal fade" id="eliminarModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header modal-dark">
+            <h5 class="modal-title">Eliminar fila</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body modal-dark">¿Estás seguro de que deseas eliminar esta fila?</div>
+        <div class="modal-footer modal-dark">
+            <form action={{ route(str_replace('index', 'destroy', Route::current()->getName()), $fila) }}
+                method="POST">
+                @csrf
+                @method('DELETE')
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                    No, volver
+                </button>
+                <button type="submit" class="btn btn-danger" data-bs-dismiss="modal">
+                    Sí, estoy seguro
+                </button>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>

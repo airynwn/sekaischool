@@ -226,3 +226,9 @@ td>a {
     padding: 0.5em 2em;
     color: white;
 }
+
+.modal-dark {
+    background-color: #2F2957;
+    border-bottom-color: #584E9c;
+    border-top: none;
+}

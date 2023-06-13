@@ -34,3 +34,12 @@ async function paginar(url) {
         return "Se ha producido un error. Inténtelo más tarde.";
     });
 }
+
+function confirmarBorradoAdmin(event) {
+    event.preventDefault();
+
+    const modal = new bootstrap.Modal(
+        document.getElementById("eliminarModal")
+    );
+    modal.show();
+}
